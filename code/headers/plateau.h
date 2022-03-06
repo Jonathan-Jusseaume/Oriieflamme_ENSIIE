@@ -5,9 +5,9 @@
 
 #include "carte.h"
 #include "faction.h"
-#include "plateau.h"
 
-typedef struct s_plateau *plateau
+
+typedef struct s_plateau *plateau;
 
 
 /**
@@ -18,7 +18,7 @@ plateau nouveau_plateau();
 
 
 /**
- *une fonction pour libérer la mémoire associée à un plateau(et ses deux factions)
+ * une fonction pour libérer la mémoire associée à un plateau(et ses deux factions)
  * @param p : pointeur sur le plateau
  */
 void liberer_plateau(plateau p);
@@ -38,7 +38,7 @@ void initialiser(plateau p);
 faction *get_factions();
 
 /**
- *une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
+ * une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
  * @param p pointeur sur le plateau
  * @param f pointeur la faction possédant la carte
  * @param c carte à déposer par la faction
