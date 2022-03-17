@@ -30,14 +30,14 @@ booleen demander_renouvellement_main(faction f);
  * @param f : la faction à laquelle on va demander quelle carte de sa main elle veut poser face cachée.
  * @return carte : la carte que la faction veut poser face cachée.
  */
-carte demander_quelle_carte_poser_face_cachee(faction f);
+carte demander_carte_poser_face_cachee(faction f);
 
 /**
  * Une fonction pour demander à une faction à quelle position elle veut poser sa carte face cachée qu'elle a choisie précédemment.
  * @param f : la faction à laquelle on va demander à quelle position elle veut poser sa carte.
  * @param c : la carte que l'on veut poser à une position que la faction va choisir.
  */
-void demander_quelle_position_poser_carte(faction f, carte c);
+void demander_position_poser_carte(faction f, carte c);
 
 /**
  * Une fonction pour afficher l'effet d'une carte qui vient d'être retournée face visible.
@@ -49,6 +49,6 @@ void afficher_effet_carte_retournee(carte c);
  * Une fonction pour afficher l'effet d'une carte qui vient d'être retournée face visible.
  * @param f : la faction victorieuse.
  */
-void afficher_vainqueur_partie(faction f);
+void afficher_vainqueur(faction f);
 
 #endif //ORIIEFLAMME_GR_11_INTERFACE_H
