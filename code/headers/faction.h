@@ -1,6 +1,8 @@
 #ifndef ORIIEFLAMME_GR_11_FACTION_H
 #define ORIIEFLAMME_GR_11_FACTION_H
 
+#include "constante.h"
+
 typedef struct s_faction *faction;
 
 /**
@@ -8,7 +10,7 @@ typedef struct s_faction *faction;
  * @param faction : pointeur sur la faction qui veux faire l'action.
  * @return un boolean indiquant si la faction à remélanger sa main (true) ou non (false).
  */
-bool a_remelanger(faction f);
+boolean a_remelanger(faction f);
 
 /**
  * Fonction permettant à une faction d'utiliser l'option de remélanger sa main et la boîte à idée et de repiocher des cartes. 
@@ -20,7 +22,7 @@ void remelanger(faction f);
  * Fonction permettant à une faction de vider sa main dans sa pioche. 
  * @param f : pointeur sur la faction qui veux faire l'action.
  */
-void main_dans_pioche(faction f);
+void vider_main_dans_pioche(faction f);
 
 /**
  * Fonction permettant à une faction de mélanger sa pioche. 
