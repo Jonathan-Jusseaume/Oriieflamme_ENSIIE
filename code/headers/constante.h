@@ -4,8 +4,8 @@
 /*
  * Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0
  */
-typedef enum boolean {
+typedef enum booleen {
     FAUX = 0, VRAI = 1
-} boolean;
+} booleen;
 
 #endif //ORIIEFLAMME_GR_11_CONSTANTE_H

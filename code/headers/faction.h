@@ -10,7 +10,7 @@ typedef struct s_faction *faction;
  * @param faction : pointeur sur la faction qui veux faire l'action.
  * @return un boolean indiquant si la faction à remélanger sa main (true) ou non (false).
  */
-boolean a_remelanger(faction f);
+booleen a_remelanger(faction f);
 
 /**
  * Fonction permettant à une faction d'utiliser l'option de remélanger sa main et la boîte à idée et de repiocher des cartes. 
