@@ -8,12 +8,57 @@
 
 #include "carte.h"
 #include "faction.h"
+#include "constante.h"
+#include "position.h"
+
 
 /**
  * Structure correspondant à notre plateau de jeu
  */
-typedef struct s_plateau *plateau;
+typedef struct s_plateau {
 
+    /**
+     * tableau de pointeurs statiques contenant les cartes déposées par les factions
+     */
+    carte grille[NOMBRE_CARTES_MAXIMUM * 2][NOMBRE_CARTES_MAXIMUM * 2];
+
+    /**
+     * tableau de pointeurs statiques contenant un pointeur sur chaque joueur
+     */
+    faction factions[2];
+
+    /**
+     * nombre de cartes déposées sur le plateau
+     */
+    int nombre_cartes_posees;
+
+    /**
+    * abscisse de la carte la plus à gauche
+    */
+    int min_x;
+
+    /**
+    * abscisse de la carte la plus à droite
+    */
+    int max_x;
+
+    /**
+     * ordonnée de la carte la plus en haut
+     */
+    int min_y;
+
+    /**
+     *ordonnée de la carte la plus en bas
+     */
+    int max_y;
+
+    /**
+     * champs de la dernière carte retournée. En effet le plateau doit se souvenir de cette dernière carte dans le cas où celle-ci correspond à "Laurent Prevel"
+     */
+    carte derniere_carte_retournee;
+
+
+} *plateau;
 
 /**
  * Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus)
@@ -23,7 +68,7 @@ plateau nouveau_plateau();
 
 
 /**
- * une fonction pour libérer la mémoire associée à un plateau(et ses deux factions)
+ * une fonction pour libérer la mémoire associée à un plateau (et ses deux factions)
  * @param p : pointeur sur le plateau
  */
 void liberer_plateau(plateau p);
@@ -38,28 +83,36 @@ void initialiser(plateau p);
 
 /**
  * une fonction qui renvoie la liste des deux factions du jeu
- * @return pointeur sur la table des factions
+ * @param p pointeur sur le plateau
+ * @return faction : renvoie un pointeur sur la première case du tableau
  */
-faction *get_factions();
+faction get_factions(plateau p);
 
 /**
  * une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
  * @param p pointeur sur le plateau
  * @param f pointeur la faction possédant la carte
  * @param c carte à déposer par la faction
+ * @param pos position de la carte
  */
-void poser_carte(plateau p, faction f, carte c);
+void poser_carte(plateau p, faction f, carte c, position pos);
 
 
 /**
- * une fonction pour retourner une carte face visible et activer son effet
+ * une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet
  * @param p pointeur sur le plateau
- * @param f pointeur sur la faction
  * @param c pointeur sur la carte
+ * @return carte : pointeur sur la carte à renvoyer, et renvoi null s'il n'y a plus de carte à retourner
  */
+carte retourner_carte(plateau p, carte c);
 
-void retourner_carte(plateau p, faction f, carte c);
 
+/**
+ * une fonction qui détecte le vainqueur de la manche
+ * @param p pointeur sur le plateau
+ * @return id : entier représentant l'indice de la faction victorieuse
+ */
+int vainqueur_manche(plateau p);
 
 #endif //ORIIEFLAMME_GR_11_PLATEAU_H
 
