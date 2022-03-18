@@ -13,8 +13,9 @@
 
 /**
  * Une fonction pour afficher le plateau de jeu.
+ * @param p : le plateau de jeu à afficher.
  */
-void afficher_plateau();
+void afficher_plateau(plateau p);
 
 /**
  * Une fonction pour afficher la main d'une faction.
@@ -37,21 +38,24 @@ booleen demander_renouvellement_main(faction f);
 carte demander_carte_poser_face_cachee(faction f);
 
 /**
- * Une fonction pour demander à une faction à quelle position elle veut poser sa carte face cachée qu'elle a choisie précédemment.
- * @param f : la faction à laquelle on va demander à quelle position elle veut poser sa carte.
- * @param c : la carte que l'on veut poser à une position que la faction va choisir.
+ * Une fonction pour demander à une faction à quelle position elle veut poser sa carte face cachée qu'elle a choisie précédemment,
+ * et faire des vérifications sur cette position choisie.
+ * @param p : Le plateau de jeu sur lequel on va faire des vérifications pour la position choisie.
+ * @param f : La faction à laquelle on va demander à quelle position elle veut poser sa carte.
+ * @param c : La carte que l'on veut poser à une position que la faction va choisir.
+ * @return position : Position en abscisse et en ordonnée de la carte à poser, calculée à partir des entrées de l'utilisateur.
  */
-void demander_position_poser_carte(faction f, carte c);
+position demander_position_poser_carte(plateau p, faction f, carte c);
 
 /**
  * Une fonction pour afficher l'effet d'une carte qui vient d'être retournée face visible.
- * @param c : la carte dont on veut afficher l'effet.
+ * @param c : La carte dont on veut afficher l'effet.
  */
 void afficher_effet_carte_retournee(carte c);
 
 /**
- * Une fonction pour afficher l'effet d'une carte qui vient d'être retournée face visible.
- * @param f : la faction victorieuse.
+ * Une fonction pour afficher la faction victorieuse de la partie.
+ * @param f : la faction victorieuse de la partie.
  */
 void afficher_vainqueur(faction f);
 
