@@ -1,4 +1,7 @@
-
+/**
+ * @file plateau.h
+ * @brief Fichier contenant la structure et les fonctions liées à notre plateau de jeu
+ */
 #ifndef ORIIEFLAMME_GR_11_PLATEAU_H
 #define ORIIEFLAMME_GR_11_PLATEAU_H
 
@@ -6,12 +9,14 @@
 #include "carte.h"
 #include "faction.h"
 
-
+/**
+ * Structure correspondant à notre plateau de jeu
+ */
 typedef struct s_plateau *plateau;
 
 
 /**
- * une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus)
+ * Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus)
  * @return plateau : pointeur sur le plateau créer
  */
 plateau nouveau_plateau();

@@ -1,4 +1,8 @@
-
+/**
+ * @file interface.h
+ * @brief Fichier qui contient les fonctions faisant appel à des interactions utilisateurs
+ * et à des affichages
+ */
 #ifndef ORIIEFLAMME_GR_11_INTERFACE_H
 #define ORIIEFLAMME_GR_11_INTERFACE_H
 
