@@ -1,8 +1,15 @@
+/**
+ * @file faction.h
+ * @brief Fichier contenant la structure et les fonctions liées aux factions
+ */
 #ifndef ORIIEFLAMME_GR_11_FACTION_H
 #define ORIIEFLAMME_GR_11_FACTION_H
 
 #include "constante.h"
 
+/**
+ * Structure qui correspond à une des équipes de notre jeu
+ */
 typedef struct s_faction *faction;
 
 /**

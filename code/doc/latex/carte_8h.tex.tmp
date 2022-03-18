@@ -1,0 +1,20 @@
+\hypertarget{carte_8h}{}\doxysection{Référence du fichier headers/carte.h}
+\label{carte_8h}\index{headers/carte.h@{headers/carte.h}}
+
+
+Fichier contenant la structure liée aux cartes.  
+
+
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 0
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{carte_8h_a730c95e5b081b03f99f9189e8e90236c}\label{carte_8h_a730c95e5b081b03f99f9189e8e90236c}} 
+typedef struct s\+\_\+carte $\ast$ \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}
+\begin{DoxyCompactList}\small\item\em Structure correspondant à une carte de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier contenant la structure liée aux cartes. 
+
