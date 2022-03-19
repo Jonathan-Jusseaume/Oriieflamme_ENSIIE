@@ -30,6 +30,10 @@ typedef struct s_faction
      */
     int manches_gagnees;
     /**
+     * Boleen permettant de savoir si la faction a déjà remelanger (VRAI) ou non (FAUX).
+     */
+    booleen a_remelanger;
+    /**
      * Pointeur vers des cartes représentant les cartes dans la pioche de la faction.
      */
     carte *pioche;
