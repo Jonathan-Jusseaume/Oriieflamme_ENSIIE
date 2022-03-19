@@ -23,9 +23,9 @@ typedef struct s_plateau {
     carte grille[NOMBRE_CARTES_MAXIMUM * 2][NOMBRE_CARTES_MAXIMUM * 2];
 
     /**
-     * tableau de pointeurs statiques contenant un pointeur sur chaque joueur
+     * tableau de pointeurs contenant un pointeur sur chaque joueur
      */
-    faction factions[2];
+    faction* factions;
 
     /**
      * nombre de cartes déposées sur le plateau
@@ -87,7 +87,7 @@ int initialiser_manche(plateau p);
  * @param p pointeur sur le plateau
  * @return faction : liste des deux factions
  */
-faction[] get_factions(plateau p);
+faction* get_factions(plateau p);
 
 
 /**
@@ -103,12 +103,8 @@ void poser_carte(plateau p, faction f, carte c, position pos);
 /**
  * une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet
  * @param p pointeur sur le plateau
- * @param c pointeur sur la carte
  * @return carte : pointeur sur la carte à renvoyer, et renvoi null s'il n'y a plus de carte à retourner
  */
-carte retourner_carte(plateau p, carte c);
+carte retourner_carte(plateau p);
 
 #endif //ORIIEFLAMME_GR_11_PLATEAU_H
-
-
-
