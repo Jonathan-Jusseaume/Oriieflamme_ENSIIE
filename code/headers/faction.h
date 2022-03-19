@@ -28,7 +28,7 @@ typedef struct s_faction
     /**
      * Entier représentant les manches gagnées par la faction.
      */
-    int manches_gagnees = 0;
+    int manches_gagnees;
     /**
      * Pointeur vers des cartes représentant les cartes dans la pioche de la faction.
      */
