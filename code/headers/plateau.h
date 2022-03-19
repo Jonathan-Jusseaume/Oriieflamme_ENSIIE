@@ -75,18 +75,20 @@ void liberer_plateau(plateau p);
 
 
 /**
- * une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que le jeu est terminé
+ * une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que la partie est terminée
  * @param p : pointeur sur le plateau
+ * @return int : -1 si la partie n'est pas terminée, 0 si le joueur1 a gagné, 1 si le joueur2 a gagné
  */
-void initialiser(plateau p);
+int initialiser_manche(plateau p);
 
 
 /**
  * une fonction qui renvoie la liste des deux factions du jeu
  * @param p pointeur sur le plateau
- * @return faction : renvoie un pointeur sur la première case du tableau
+ * @return faction : liste des deux factions
  */
-faction get_factions(plateau p);
+faction[] get_factions(plateau p);
+
 
 /**
  * une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
@@ -105,14 +107,6 @@ void poser_carte(plateau p, faction f, carte c, position pos);
  * @return carte : pointeur sur la carte à renvoyer, et renvoi null s'il n'y a plus de carte à retourner
  */
 carte retourner_carte(plateau p, carte c);
-
-
-/**
- * une fonction qui détecte le vainqueur de la manche
- * @param p pointeur sur le plateau
- * @return id : entier représentant l'indice de la faction victorieuse
- */
-int vainqueur_manche(plateau p);
 
 #endif //ORIIEFLAMME_GR_11_PLATEAU_H
 
