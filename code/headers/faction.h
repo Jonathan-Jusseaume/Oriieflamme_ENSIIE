@@ -6,16 +6,43 @@
 #define ORIIEFLAMME_GR_11_FACTION_H
 
 #include "constante.h"
+#include "carte.h"
 
 /**
- * Structure qui correspond à une des équipes de notre jeu
+ * Structure représentant une faction.
  */
-typedef struct s_faction *faction;
+typedef struct s_faction
+{
+    /**
+     * Chaîne de caractère représentant le nom de la faction.
+     */
+    char *nom;
+    /**
+     * Entier représentant l'identifiant de la faction.
+     */
+    int identifiant_faction;
+    /**
+     * Entier représentant les points DDRS de la faction.
+     */
+    int points_DDRS;
+    /**
+     * Entier représentant les manches gagnées par la faction.
+     */
+    int manches_gagnees = 0;
+    /**
+     * Pointeur vers des cartes représentant les cartes dans la pioche de la faction.
+     */
+    carte *pioche;
+    /**
+     * Pointeur vers des cartes représentant les cartes dans la main de la faction.
+     */
+    carte *main;
+} *faction;
 
 /**
  * Fonction permettant de savoir si une faction a utilisé l'option de remélanger sa main et la boîte à idée et de repiocher des cartes.
  * @param faction : pointeur sur la faction qui veux faire l'action.
- * @return un boolean indiquant si la faction à remélanger sa main (true) ou non (false).
+ * @return un booleen indiquant si la faction à remélanger sa main (VRAI) ou non (FALSE).
  */
 booleen a_remelanger(faction f);
 
