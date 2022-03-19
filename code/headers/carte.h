@@ -26,7 +26,7 @@ typedef struct s_carte
     int identifiant_faction;
     /**
      * Entier représentant la numéro de la carte sur le plateau.
-     * Il est initialisé à -1 pour signifier que la carte n'est pas présente sur le tableau.
+     * Il est initialisé à -1 pour signifier que la carte n'est pas présente sur le plateau.
      * (par exemple la première carte auras son champ numero_plateau = 0).
      */
     int numero_plateau = -1;
