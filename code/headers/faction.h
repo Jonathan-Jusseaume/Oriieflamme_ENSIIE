@@ -30,7 +30,7 @@ typedef struct s_faction
      */
     int manches_gagnees;
     /**
-     * Boleen permettant de savoir si la faction a déjà remelanger (VRAI) ou non (FAUX).
+     *  Booléen qui vaut VRAI si la faction a déjà remélangé sa main, et FAUX sinon. 
      */
     booleen a_remelanger;
     /**
