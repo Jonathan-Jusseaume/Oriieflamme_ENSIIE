@@ -58,6 +58,7 @@ int main(void) {
             afficher_plateau(p);
             carte_retournee = retourner_carte(p);
         }
+        afficher_plateau(p);
         // On initialise la prochaine manche si le jeu n'est pas déjà terminé
         resultat_partie = initialiser_manche(p);
         numero_manche++;
