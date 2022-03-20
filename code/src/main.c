@@ -23,9 +23,9 @@ int main(void) {
             melanger_pioche(factions[i]);
             repioche(factions[i]);
             afficher_main_faction(factions[i]);
-            // Si la faction n'a pas déjà remelangé alors on lui demande si elle veut
+            // Si la faction n'a pas déjà remélangé alors on lui demande si elle veut
             if (a_remelanger(factions[i]) == FAUX) {
-                // Si elle accepte de renouveller sa main alors on la renouvelle
+                // Si elle accepte de renouveler sa main alors on la renouvelle
                 if (demander_renouvellement_main(factions[i]) == VRAI) {
                     remelanger(factions[i]);
                     repioche(factions[i]);
