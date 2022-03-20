@@ -12,9 +12,9 @@ int main(void) {
     plateau p = nouveau_plateau();
     faction *factions = get_factions(p);
     int resultat_partie = initialiser_manche(p);
-    // Tableau contenant des entiers allant de 0 à 1 qui correspond
+    // Tableau contenant des entiers allant de 0 à 1 qui correspond à l'indice du joueur qui débute le tour
     int *ordre_faction = generer_ordre_partie();
-    // Tableau qui nous permet de stocker le nombre de manches jouées
+    // Variable qui nous permet de compter le numéro de la manche
     int numero_manche = 0;
     // Boucle pour faire jouer tant que la partie n'est pas finie
     do {
@@ -36,7 +36,7 @@ int main(void) {
         // Phase 1, les joueurs posent les cartes à tour de rôle
         // On définit dans une variable l'indice de la faction active
         int indice_faction_active = ordre_faction[numero_manche];
-        // On demande à tour de role à un joueur de poser une carte jusqu'a avoir 16 cartes sur le plateau
+        // On demande à tour de rôle à un joueur de poser une carte jusqu'à avoir 16 cartes sur le plateau
         for (int nombre_cartes_posees = 0; nombre_cartes_posees < NOMBRE_CARTES_MAXIMUM; nombre_cartes_posees++) {
             // On affiche la main de la faction
             afficher_main_faction(factions[indice_faction_active]);
@@ -52,7 +52,7 @@ int main(void) {
         }
         // Phase 2, on retourne les cartes
         carte carte_retournee = retourner_carte(p);
-        // Quand la carte retournee vaut NULL, ça veut dire qu'il n'y a plus de cartes à retourner
+        // Quand la carte retournée vaut NULL, ça veut dire qu'il n'y a plus de cartes à retourner
         while (carte_retournee != NULL) {
             afficher_effet_carte_retournee(carte_retournee);
             afficher_plateau(p);
