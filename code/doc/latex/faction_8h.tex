@@ -6,28 +6,34 @@ Fichier contenant la structure et les fonctions liées aux factions.
 
 
 {\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}carte.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de faction.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
 % FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__faction}{s\+\_\+faction}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une faction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{faction_8h_a1dfd262d186041503cbda6f0ee39abba}\label{faction_8h_a1dfd262d186041503cbda6f0ee39abba}} 
-typedef struct s\+\_\+faction $\ast$ \mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}
-\begin{DoxyCompactList}\small\item\em Structure qui correspond à une des équipes de notre jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{faction_8h_ac777107515b3ba381cb4d7917f4ed054}\label{faction_8h_ac777107515b3ba381cb4d7917f4ed054}} 
+typedef struct \mbox{\hyperlink{structs__faction}{s\+\_\+faction}} $\ast$ \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une faction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{faction_8h_aa5fac7d477f9155b1e69b43e81175e51}{a\+\_\+remelanger}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{faction_8h_aa5fac7d477f9155b1e69b43e81175e51}{a\+\_\+remelanger}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de savoir si une faction a utilisé l\textquotesingle{}option de remélanger sa main et la boîte à idée et de repiocher des cartes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{faction_8h_af3fddbcee9e7bd24551c43276986c7af}{remelanger}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+void \mbox{\hyperlink{faction_8h_af3fddbcee9e7bd24551c43276986c7af}{remelanger}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Fonction permettant à une faction d\textquotesingle{}utiliser l\textquotesingle{}option de remélanger sa main et la boîte à idée et de repiocher des cartes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{faction_8h_af8a791fd733608d164b217a5e219bff0}{vider\+\_\+main\+\_\+dans\+\_\+pioche}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+void \mbox{\hyperlink{faction_8h_af8a791fd733608d164b217a5e219bff0}{vider\+\_\+main\+\_\+dans\+\_\+pioche}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Fonction permettant à une faction de vider sa main dans sa pioche. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{faction_8h_a442cb27da705cf95d0cfe56820c0a447}{melanger\+\_\+pioche}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+void \mbox{\hyperlink{faction_8h_a442cb27da705cf95d0cfe56820c0a447}{melanger\+\_\+pioche}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Fonction permettant à une faction de mélanger sa pioche. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{faction_8h_a85d8eb81e638ef0180cd8c760fe6f052}{repioche}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+void \mbox{\hyperlink{faction_8h_a85d8eb81e638ef0180cd8c760fe6f052}{repioche}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Fonction permettant à une faction de repiocher ses cartes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -41,7 +47,7 @@ Fichier contenant la structure et les fonctions liées aux factions.
 \index{faction.h@{faction.h}!a\_remelanger@{a\_remelanger}}
 \index{a\_remelanger@{a\_remelanger}!faction.h@{faction.h}}
 \doxysubsubsection{\texorpdfstring{a\_remelanger()}{a\_remelanger()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} a\+\_\+remelanger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} a\+\_\+remelanger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -53,13 +59,13 @@ Fonction permettant de savoir si une faction a utilisé l\textquotesingle{}optio
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-un boolean indiquant si la faction à remélanger sa main (true) ou non (false). 
+un booleen indiquant si la faction à remélanger sa main (VRAI) ou non (FALSE). 
 \end{DoxyReturn}
 \mbox{\Hypertarget{faction_8h_a442cb27da705cf95d0cfe56820c0a447}\label{faction_8h_a442cb27da705cf95d0cfe56820c0a447}} 
 \index{faction.h@{faction.h}!melanger\_pioche@{melanger\_pioche}}
 \index{melanger\_pioche@{melanger\_pioche}!faction.h@{faction.h}}
 \doxysubsubsection{\texorpdfstring{melanger\_pioche()}{melanger\_pioche()}}
-{\footnotesize\ttfamily void melanger\+\_\+pioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void melanger\+\_\+pioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -74,7 +80,7 @@ Fonction permettant à une faction de mélanger sa pioche.
 \index{faction.h@{faction.h}!remelanger@{remelanger}}
 \index{remelanger@{remelanger}!faction.h@{faction.h}}
 \doxysubsubsection{\texorpdfstring{remelanger()}{remelanger()}}
-{\footnotesize\ttfamily void remelanger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void remelanger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -89,7 +95,7 @@ Fonction permettant à une faction d\textquotesingle{}utiliser l\textquotesingle
 \index{faction.h@{faction.h}!repioche@{repioche}}
 \index{repioche@{repioche}!faction.h@{faction.h}}
 \doxysubsubsection{\texorpdfstring{repioche()}{repioche()}}
-{\footnotesize\ttfamily void repioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void repioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -104,7 +110,7 @@ Fonction permettant à une faction de repiocher ses cartes.
 \index{faction.h@{faction.h}!vider\_main\_dans\_pioche@{vider\_main\_dans\_pioche}}
 \index{vider\_main\_dans\_pioche@{vider\_main\_dans\_pioche}!faction.h@{faction.h}}
 \doxysubsubsection{\texorpdfstring{vider\_main\_dans\_pioche()}{vider\_main\_dans\_pioche()}}
-{\footnotesize\ttfamily void vider\+\_\+main\+\_\+dans\+\_\+pioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void vider\+\_\+main\+\_\+dans\+\_\+pioche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
