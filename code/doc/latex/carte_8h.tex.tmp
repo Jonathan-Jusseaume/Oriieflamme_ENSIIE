@@ -5,14 +5,22 @@
 Fichier contenant la structure liée aux cartes.  
 
 
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+{\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de carte.\+h\+:
 % FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__carte}{s\+\_\+carte}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{carte_8h_a730c95e5b081b03f99f9189e8e90236c}\label{carte_8h_a730c95e5b081b03f99f9189e8e90236c}} 
-typedef struct s\+\_\+carte $\ast$ \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}
-\begin{DoxyCompactList}\small\item\em Structure correspondant à une carte de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef struct \mbox{\hyperlink{structs__carte}{s\+\_\+carte}} $\ast$ \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}

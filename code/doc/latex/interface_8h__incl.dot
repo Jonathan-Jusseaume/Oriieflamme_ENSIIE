@@ -8,11 +8,16 @@ digraph "headers/interface.h"
   Node2 [label="faction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$faction_8h.html",tooltip="Fichier contenant la structure et les fonctions liées aux factions."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node3 [label="constante.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$constante_8h.html",tooltip="Fichier contenant différentes constantes qui seront utiles pour l'application."];
-  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="plateau.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plateau_8h.html",tooltip="Fichier contenant la structure et les fonctions liées à notre plateau de jeu."];
-  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="carte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$carte_8h.html",tooltip="Fichier contenant la structure liée aux cartes."];
-  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="carte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$carte_8h.html",tooltip="Fichier contenant la structure liée aux cartes."];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="plateau.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plateau_8h.html",tooltip="Fichier contenant la structure et les fonctions liées à notre plateau de jeu."];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="position.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$position_8h.html",tooltip="Fichier contenant la structure liée à la position de la carte sur la grille."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
 }

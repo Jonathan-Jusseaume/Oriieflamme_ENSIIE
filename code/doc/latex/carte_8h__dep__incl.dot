@@ -5,8 +5,12 @@ digraph "headers/carte.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="headers/carte.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Fichier contenant la structure liée aux cartes."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="headers/interface.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_8h.html",tooltip="Fichier qui contient les fonctions faisant appel à des interactions utilisateurs et à des affichages."];
+  Node2 [label="headers/faction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$faction_8h.html",tooltip="Fichier contenant la structure et les fonctions liées aux factions."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="headers/interface.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_8h.html",tooltip="Fichier qui contient les fonctions faisant appel à des interactions utilisateurs et à des affichages."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="headers/plateau.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plateau_8h.html",tooltip="Fichier contenant la structure et les fonctions liées à notre plateau de jeu."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="headers/plateau.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plateau_8h.html",tooltip="Fichier contenant la structure et les fonctions liées à notre plateau de jeu."];
-  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
 }

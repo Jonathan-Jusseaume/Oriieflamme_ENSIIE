@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['plateau_20',['plateau',['../plateau_8h.html#ae2140dc65b076c5838cf51ced133951a',1,'plateau.h']]],
-  ['plateau_2eh_21',['plateau.h',['../plateau_8h.html',1,'']]],
-  ['poser_5fcarte_22',['poser_carte',['../plateau_8h.html#a484bd1aa15911a758b11536d8a48d8a7',1,'plateau.h']]]
+  ['nom_32',['nom',['../structs__carte.html#a25253b2e4613e7af20e92f21188f618b',1,'s_carte::nom()'],['../structs__faction.html#a38f1aeadb8faf3287e3b71aa480c1114',1,'s_faction::nom()']]],
+  ['nombre_5fcartes_5fposees_33',['nombre_cartes_posees',['../structs__plateau.html#ab63f9ed25ef18cfd10695dde73ae712c',1,'s_plateau']]],
+  ['nouveau_5fplateau_34',['nouveau_plateau',['../plateau_8h.html#ac6fe2fb16f25c07723cb0d9f0aa4838e',1,'plateau.h']]],
+  ['numero_5fplateau_35',['numero_plateau',['../structs__carte.html#a0a959e7c4a9c3bcecb8f2aec08e1e4be',1,'s_carte']]]
 ];

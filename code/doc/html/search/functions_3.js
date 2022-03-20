@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initialiser_41',['initialiser',['../plateau_8h.html#a5c8c704d0f9e8060c8e018bdd5e39f87',1,'plateau.h']]]
+  ['initialiser_5fmanche_70',['initialiser_manche',['../plateau_8h.html#a97192436a0e6f10e1574b17daed17b46',1,'plateau.h']]]
 ];

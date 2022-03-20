@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['faction_12',['faction',['../faction_8h.html#a1dfd262d186041503cbda6f0ee39abba',1,'faction.h']]],
-  ['faction_2eh_13',['faction.h',['../faction_8h.html',1,'']]]
+  ['effet_14',['effet',['../structs__carte.html#a900e1adc7b105e93ed5165c6371655f1',1,'s_carte']]],
+  ['est_5fface_5fcachee_15',['est_face_cachee',['../structs__carte.html#ab99a2ae8ecf72ada8bb7d9bfa01d282b',1,'s_carte']]]
 ];

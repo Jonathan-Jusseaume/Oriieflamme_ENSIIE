@@ -1,27 +1,33 @@
 var indexSectionsWithContent =
 {
-  0: "abcdfgilmnprv",
-  1: "cfip",
-  2: "adgilmnprv",
-  3: "bcfp",
-  4: "b"
+  0: "abcdefgilmnoprsv",
+  1: "ps",
+  2: "cfip",
+  3: "adgilmnprv",
+  4: "adefgimnop",
+  5: "bcfp",
+  6: "b"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions",
-  3: "typedefs",
-  4: "enums"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "typedefs",
+  6: "enums"
 };
 
 var indexSectionLabels =
 {
   0: "Tout",
-  1: "Fichiers",
-  2: "Fonctions",
-  3: "Définitions de type",
-  4: "Énumérations"
+  1: "Classes",
+  2: "Fichiers",
+  3: "Fonctions",
+  4: "Variables",
+  5: "Définitions de type",
+  6: "Énumérations"
 };
 
