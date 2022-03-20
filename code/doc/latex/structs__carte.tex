@@ -1,0 +1,49 @@
+\hypertarget{structs__carte}{}\doxysection{Référence de la structure s\+\_\+carte}
+\label{structs__carte}\index{s\_carte@{s\_carte}}
+
+
+Structure représentant une carte.  
+
+
+
+
+{\ttfamily \#include $<$carte.\+h$>$}
+
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structs__carte_a25253b2e4613e7af20e92f21188f618b}\label{structs__carte_a25253b2e4613e7af20e92f21188f618b}} 
+char $\ast$ \mbox{\hyperlink{structs__carte_a25253b2e4613e7af20e92f21188f618b}{nom}}
+\begin{DoxyCompactList}\small\item\em Chaîne de caractère représentant le nom de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__carte_a900e1adc7b105e93ed5165c6371655f1}\label{structs__carte_a900e1adc7b105e93ed5165c6371655f1}} 
+char $\ast$ \mbox{\hyperlink{structs__carte_a900e1adc7b105e93ed5165c6371655f1}{effet}}
+\begin{DoxyCompactList}\small\item\em Chaîne de caractère représentant l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__carte_ac3771223b7a8c70cf8ada614d339f822}\label{structs__carte_ac3771223b7a8c70cf8ada614d339f822}} 
+int \mbox{\hyperlink{structs__carte_ac3771223b7a8c70cf8ada614d339f822}{identifiant\+\_\+faction}}
+\begin{DoxyCompactList}\small\item\em Entier représentant l\textquotesingle{}identifiant de la faction qui possède la carte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structs__carte_a0a959e7c4a9c3bcecb8f2aec08e1e4be}{numero\+\_\+plateau}}
+\begin{DoxyCompactList}\small\item\em Entier représentant la numéro de la carte sur le plateau. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__carte_ab99a2ae8ecf72ada8bb7d9bfa01d282b}\label{structs__carte_ab99a2ae8ecf72ada8bb7d9bfa01d282b}} 
+\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{structs__carte_ab99a2ae8ecf72ada8bb7d9bfa01d282b}{est\+\_\+face\+\_\+cachee}}
+\begin{DoxyCompactList}\small\item\em Booléen représentant l\textquotesingle{}état de la carte \+: VRAI = face cachée, FAUX = face visible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Structure représentant une carte. 
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{structs__carte_a0a959e7c4a9c3bcecb8f2aec08e1e4be}\label{structs__carte_a0a959e7c4a9c3bcecb8f2aec08e1e4be}} 
+\index{s\_carte@{s\_carte}!numero\_plateau@{numero\_plateau}}
+\index{numero\_plateau@{numero\_plateau}!s\_carte@{s\_carte}}
+\doxysubsubsection{\texorpdfstring{numero\_plateau}{numero\_plateau}}
+{\footnotesize\ttfamily int s\+\_\+carte\+::numero\+\_\+plateau}
+
+
+
+Entier représentant la numéro de la carte sur le plateau. 
+
+Il sera initialisé à -\/1 pour signifier que la carte n\textquotesingle{}est pas présente sur le plateau. (par exemple la première carte aura son champ numero\+\_\+plateau = 0). 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{carte_8h}{carte.\+h}}\end{DoxyCompactItemize}

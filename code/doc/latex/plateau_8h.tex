@@ -1,0 +1,152 @@
+\hypertarget{plateau_8h}{}\doxysection{Référence du fichier headers/plateau.h}
+\label{plateau_8h}\index{headers/plateau.h@{headers/plateau.h}}
+
+
+Fichier contenant la structure et les fonctions liées à notre plateau de jeu.  
+
+
+{\ttfamily \#include \char`\"{}carte.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}faction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de plateau.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}}
+\begin{DoxyCompactList}\small\item\em Structure correspondant à notre plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{plateau_8h_a7faac1085ff60a36200b354f66b213e8}\label{plateau_8h_a7faac1085ff60a36200b354f66b213e8}} 
+typedef struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}} $\ast$ \mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}
+\begin{DoxyCompactList}\small\item\em Structure correspondant à notre plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} \mbox{\hyperlink{plateau_8h_ac6fe2fb16f25c07723cb0d9f0aa4838e}{nouveau\+\_\+plateau}} ()
+\begin{DoxyCompactList}\small\item\em Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_a781e3e2b4c1d4964a6d9451b2df420db}{liberer\+\_\+plateau}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em une fonction pour libérer la mémoire associée à un plateau (et ses deux factions) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plateau_8h_a97192436a0e6f10e1574b17daed17b46}{initialiser\+\_\+manche}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que la partie est terminée \end{DoxyCompactList}\item 
+\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} $\ast$ \mbox{\hyperlink{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}{get\+\_\+factions}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em une fonction qui renvoie la liste des deux factions du jeu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}{poser\+\_\+carte}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p, \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structposition}{position}} pos)
+\begin{DoxyCompactList}\small\item\em une fonction pour permettre à une faction de poser une carte face cachée sur le plateau \end{DoxyCompactList}\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{plateau_8h_a21b1196e909cbee186cb34c50d86f7be}{retourner\+\_\+carte}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier contenant la structure et les fonctions liées à notre plateau de jeu. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}\label{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}} 
+\index{plateau.h@{plateau.h}!get\_factions@{get\_factions}}
+\index{get\_factions@{get\_factions}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_factions()}{get\_factions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}$\ast$ get\+\_\+factions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+une fonction qui renvoie la liste des deux factions du jeu 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & pointeur sur le plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+faction \+: liste des deux factions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_a97192436a0e6f10e1574b17daed17b46}\label{plateau_8h_a97192436a0e6f10e1574b17daed17b46}} 
+\index{plateau.h@{plateau.h}!initialiser\_manche@{initialiser\_manche}}
+\index{initialiser\_manche@{initialiser\_manche}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{initialiser\_manche()}{initialiser\_manche()}}
+{\footnotesize\ttfamily int initialiser\+\_\+manche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que la partie est terminée 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int \+: -\/1 si la partie n\textquotesingle{}est pas terminée, 0 si le joueur1 a gagné, 1 si le joueur2 a gagné 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_a781e3e2b4c1d4964a6d9451b2df420db}\label{plateau_8h_a781e3e2b4c1d4964a6d9451b2df420db}} 
+\index{plateau.h@{plateau.h}!liberer\_plateau@{liberer\_plateau}}
+\index{liberer\_plateau@{liberer\_plateau}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{liberer\_plateau()}{liberer\_plateau()}}
+{\footnotesize\ttfamily void liberer\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+une fonction pour libérer la mémoire associée à un plateau (et ses deux factions) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_ac6fe2fb16f25c07723cb0d9f0aa4838e}\label{plateau_8h_ac6fe2fb16f25c07723cb0d9f0aa4838e}} 
+\index{plateau.h@{plateau.h}!nouveau\_plateau@{nouveau\_plateau}}
+\index{nouveau\_plateau@{nouveau\_plateau}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{nouveau\_plateau()}{nouveau\_plateau()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} nouveau\+\_\+plateau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus) 
+
+\begin{DoxyReturn}{Renvoie}
+plateau \+: pointeur sur le plateau créer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}\label{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}} 
+\index{plateau.h@{plateau.h}!poser\_carte@{poser\_carte}}
+\index{poser\_carte@{poser\_carte}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{poser\_carte()}{poser\_carte()}}
+{\footnotesize\ttfamily void poser\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structposition}{position}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+une fonction pour permettre à une faction de poser une carte face cachée sur le plateau 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & pointeur sur le plateau \\
+\hline
+{\em f} & pointeur la faction possédant la carte \\
+\hline
+{\em c} & carte à déposer par la faction \\
+\hline
+{\em pos} & position de la carte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_a21b1196e909cbee186cb34c50d86f7be}\label{plateau_8h_a21b1196e909cbee186cb34c50d86f7be}} 
+\index{plateau.h@{plateau.h}!retourner\_carte@{retourner\_carte}}
+\index{retourner\_carte@{retourner\_carte}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{retourner\_carte()}{retourner\_carte()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} retourner\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & pointeur sur le plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+carte \+: pointeur sur la carte à renvoyer, et renvoi null s\textquotesingle{}il n\textquotesingle{}y a plus de carte à retourner 
+\end{DoxyReturn}
