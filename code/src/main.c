@@ -27,8 +27,11 @@ int main(void) {
             if (a_remelanger(factions[i]) == FAUX) {
                 // Si elle accepte de renouveler sa main alors on la renouvelle
                 if (demander_renouvellement_main(factions[i]) == VRAI) {
-                    remelanger(factions[i]);
+                    vider_main_dans_pioche(factions[i]);
+                    melanger_pioche(factions[i]);
                     repioche(factions[i]);
+                    // On indique que la faction a utilisé sa fonction pour remelanger
+                    remelanger(factions[i]);
                     afficher_main_faction(factions[i]);
                 }
             }
@@ -50,7 +53,7 @@ int main(void) {
             // On passe à la faction suivante
             indice_faction_active = (indice_faction_active + 1) % 2;
         }
-        // Phase 2, on retourne les cartes
+        // Phase 2, on retourne les cartesK
         carte carte_retournee = retourner_carte(p);
         // Quand la carte retournée vaut NULL, ça veut dire qu'il n'y a plus de cartes à retourner
         while (carte_retournee != NULL) {

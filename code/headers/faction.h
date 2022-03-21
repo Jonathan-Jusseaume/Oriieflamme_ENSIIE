@@ -11,8 +11,7 @@
 /**
  * Structure représentant une faction.
  */
-typedef struct s_faction
-{
+typedef struct s_faction {
     /**
      * Chaîne de caractère représentant le nom de la faction.
      */
@@ -51,8 +50,8 @@ typedef struct s_faction
 booleen a_remelanger(faction f);
 
 /**
- * Fonction permettant à une faction d'utiliser l'option de remélanger sa main et la boîte à idée et de repiocher des cartes. 
- * @param f : pointeur sur la faction qui veux faire l'action.
+ * Fonction qui permet d'indiquer que la faction passée en paramètre à décider de remelanger sa main
+ * @param f : pointeur sur la faction qui a remelangé sa main
  */
 void remelanger(faction f);
 
