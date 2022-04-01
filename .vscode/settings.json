@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "faction.h": "c",
+        "constante.h": "c",
+        "carte.h": "c"
+    }
+}
