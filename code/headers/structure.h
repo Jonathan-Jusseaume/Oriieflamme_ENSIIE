@@ -18,6 +18,7 @@ typedef struct s_liste_chainee_carte *liste_chainee_carte;
 /**
  * Structure qui correspond à un ensemble d'entiers. Nous l'utiliserons pour savoir
  * les indices des cartes que l'utilisateur doit piocher parmi la liste de cartes.
+ * Dans un ensemble, chaque élément ne peut être présent qu'une fois.
  */
 typedef struct s_ensemble_entier *ensemble_entier;
 
