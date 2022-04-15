@@ -83,10 +83,10 @@ liste_chainee_carte get_queue_liste_chainee(liste_chainee_carte l) {
 }
 
 ensemble_entier creer_ensemble_entier() {
-    ensemble_entier nouvelle_ensemble = (ensemble_entier) malloc(1 * sizeof(ensemble_entier));
-    nouvelle_ensemble->taille = 0;
-    nouvelle_ensemble->tableau = (int *) malloc(nouvelle_ensemble->taille * sizeof(int));
-    return nouvelle_ensemble;
+    ensemble_entier nouvel_ensemble = (ensemble_entier) malloc(1 * sizeof(ensemble_entier));
+    nouvel_ensemble->taille = 0;
+    nouvel_ensemble->tableau = (int *) malloc(nouvel_ensemble->taille * sizeof(int));
+    return nouvel_ensemble;
 }
 
 booleen ajouter_ensemble_entier(ensemble_entier ee, int valeur) {
@@ -115,6 +115,7 @@ void liberer_liste_chainee(liste_chainee_carte l) {
         return;
     }
     liberer_liste_chainee(l->queue);
+    free(l->tete);
     free(l);
 }
 

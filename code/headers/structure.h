@@ -17,7 +17,7 @@ typedef struct s_liste_chainee_carte *liste_chainee_carte;
 
 /**
  * Structure qui correspond à un ensemble d'entiers. Nous l'utiliserons pour savoir
- * les indices des cartes que l'utilisateur doit piocher parmi la liste de cartes.
+ * les indices des cartes que l'utilisateur doit piocher parmi la liste des cartes possibles (pioche).
  * Dans un ensemble, chaque élément ne peut être présent qu'une fois.
  */
 typedef struct s_ensemble_entier *ensemble_entier;
@@ -47,7 +47,7 @@ carte supprimer_carte_liste_chainee(liste_chainee_carte l, int indice_carte);
 
 /**
  * Renvoie la taille de la liste chainee passée en paramètre
- * @param l la liste chainée dont on veut connaître la date
+ * @param l la liste chainée dont on veut connaître la taille
  * @return la taille de la liste
  */
 int taille_liste_chainee(liste_chainee_carte l);
@@ -55,8 +55,8 @@ int taille_liste_chainee(liste_chainee_carte l);
 /**
  * Renvoie la carte à l'indice passée en paramètre
  * @param l la liste dont on veut obtenir un indice
- * @param indice_carte l'indice de la carte que l'on obtenir
- * @return la carte à l'indice passée en paramètre ou NULL si l'indice passée en paramètre est trop élevé
+ * @param indice_carte l'indice de la carte que l'on veut obtenir
+ * @return la carte à l'indice passée en paramètre ou NULL si l'indice passée en paramètre est en dehors de la liste
  */
 carte get_carte_liste_chainee(liste_chainee_carte l, int indice_carte);
 
@@ -77,12 +77,12 @@ carte get_valeur_tete_liste_chainee(liste_chainee_carte l);
 /**
  * Renvoie la queue de la liste chaînée passée en paramètre
  * @param l la liste chainée dont veut la queue
- * @return la queue de la liste chainée
+ * @return la queue de la liste chainée, NULL si la liste passée en paramètre est vide
  */
 liste_chainee_carte get_queue_liste_chainee(liste_chainee_carte l);
 
 /**
- * Libère la mémoire de la liste chaineee passée en paramètre
+ * Libère la mémoire de la liste chainée passée en paramètre
  * @param l la liste que l'on veut libérer
  */
 void liberer_liste_chainee(liste_chainee_carte l);
@@ -112,7 +112,7 @@ booleen contient_ensemble_entier(ensemble_entier ee, int valeur);
 
 /**
  * Renvoie la valeur contenue dans l'ensemble d'entiers à l'indice passé en paramètre
- * @param ee l'ensemble d'entiers dont on veut la valeur
+ * @param ee l'ensemble d'entiers dans lequel on veut la valeur
  * @param indice l'indice auquel on veut la valeur
  * @return -1 si l'indice est trop grand (on assume que cet ensemble ne contiendra que des nombres positifs),
  * la valeur à l'indice sinon

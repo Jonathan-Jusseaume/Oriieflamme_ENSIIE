@@ -36,7 +36,7 @@ int \mbox{\hyperlink{structure_8h_ae5a7cb2b30e92eaaa4cdfdcb3ce7311c}{taille\+\_\
 \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}{get\+\_\+queue\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
 \begin{DoxyCompactList}\small\item\em Renvoie la queue de la liste chaînée passée en paramètre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structure_8h_a43e024c8562347a8500553270189dda9}{liberer\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
-\begin{DoxyCompactList}\small\item\em Libère la mémoire de la liste chaineee passée en paramètre. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Libère la mémoire de la liste chainée passée en paramètre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}} \mbox{\hyperlink{structure_8h_a3b3ea4ca664aa6250430a16d7df4987d}{creer\+\_\+ensemble\+\_\+entier}} ()
 \begin{DoxyCompactList}\small\item\em Permet de créer un ensemble d\textquotesingle{}entiers. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{structure_8h_ab374e59bc45988d6783c4d69d50a7fb0}{ajouter\+\_\+ensemble\+\_\+entier}} (\mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}} ee, int valeur)
@@ -67,7 +67,7 @@ Fichier contenant les différentes structures nécessaires au bon fonctionnement
 
 Structure qui correspond à un ensemble d\textquotesingle{}entiers. 
 
-Nous l\textquotesingle{}utiliserons pour savoir les indices des cartes que l\textquotesingle{}utilisateur doit piocher parmi la liste de cartes. Dans un ensemble, chaque élément ne peut être présent qu\textquotesingle{}une fois. \mbox{\Hypertarget{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}\label{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}} 
+Nous l\textquotesingle{}utiliserons pour savoir les indices des cartes que l\textquotesingle{}utilisateur doit piocher parmi la liste des cartes possibles (pioche). Dans un ensemble, chaque élément ne peut être présent qu\textquotesingle{}une fois. \mbox{\Hypertarget{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}\label{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}} 
 \index{structure.h@{structure.h}!liste\_chainee\_carte@{liste\_chainee\_carte}}
 \index{liste\_chainee\_carte@{liste\_chainee\_carte}!structure.h@{structure.h}}
 \doxysubsubsection{\texorpdfstring{liste\_chainee\_carte}{liste\_chainee\_carte}}
@@ -167,11 +167,11 @@ Renvoie la carte à l\textquotesingle{}indice passée en paramètre.
 \begin{DoxyParams}{Paramètres}
 {\em l} & la liste dont on veut obtenir un indice \\
 \hline
-{\em indice\+\_\+carte} & l\textquotesingle{}indice de la carte que l\textquotesingle{}on obtenir \\
+{\em indice\+\_\+carte} & l\textquotesingle{}indice de la carte que l\textquotesingle{}on veut obtenir \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-la carte à l\textquotesingle{}indice passée en paramètre ou NULL si l\textquotesingle{}indice passée en paramètre est trop élevé 
+la carte à l\textquotesingle{}indice passée en paramètre ou NULL si l\textquotesingle{}indice passée en paramètre est en dehors de la liste 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}\label{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}} 
 \index{structure.h@{structure.h}!get\_queue\_liste\_chainee@{get\_queue\_liste\_chainee}}
@@ -189,7 +189,7 @@ Renvoie la queue de la liste chaînée passée en paramètre.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-la queue de la liste chainée 
+la queue de la liste chainée, NULL si la liste passée en paramètre est vide 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_a4f6935fb5c711e8f8e6ba6b95b9c4ac4}\label{structure_8h_a4f6935fb5c711e8f8e6ba6b95b9c4ac4}} 
 \index{structure.h@{structure.h}!get\_taille\_ensemble\_entier@{get\_taille\_ensemble\_entier}}
@@ -221,7 +221,7 @@ Renvoie la valeur contenue dans l\textquotesingle{}ensemble d\textquotesingle{}e
 
 
 \begin{DoxyParams}{Paramètres}
-{\em ee} & l\textquotesingle{}ensemble d\textquotesingle{}entiers dont on veut la valeur \\
+{\em ee} & l\textquotesingle{}ensemble d\textquotesingle{}entiers dans lequel on veut la valeur \\
 \hline
 {\em indice} & l\textquotesingle{}indice auquel on veut la valeur \\
 \hline
@@ -283,7 +283,7 @@ Libérer le pointeur de l\textquotesingle{}ensemble d\textquotesingle{}entiers p
 
 
 
-Libère la mémoire de la liste chaineee passée en paramètre. 
+Libère la mémoire de la liste chainée passée en paramètre. 
 
 
 \begin{DoxyParams}{Paramètres}
@@ -340,7 +340,7 @@ Renvoie la taille de la liste chainee passée en paramètre.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em l} & la liste chainée dont on veut connaître la date \\
+{\em l} & la liste chainée dont on veut connaître la taille \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
