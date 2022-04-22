@@ -26,137 +26,137 @@ typedef struct s_faction {
      */
     booleen a_remelanger;
     /**
-     * Pointeur vers des cartes représentant les cartes dans la pioche de la faction.
+     * Pointeur vers un Set représentant les cartes dans la pioche de la faction.
      */
-    carte *pioche;
+    ensemble_entier pioche;
     /**
-     * Pointeur vers des cartes représentant les cartes dans la main de la faction.
+     * Pointeur vers une liste chainée représentant les cartes dans la main de la faction.
      */
-    carte *main;
+    liste_chainee_carte main;
 } *faction;
 
 /**
  * Fonction permettant de recupérer le nom de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer le nom.
+ * @param f : pointeur sur la faction dont on veut récuperer le nom.
  * @return chaîne de caractères représentant le nom de la faction.
  */
-char *get_nom(faction faction) {
-    return faction->nom;
+char *get_nom(faction f) {
+    return f->nom;
 }
 
 /**
  * Fonction permettant de recupérer l'identifiant_faction de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer l'identifiant_faction.
+ * @param f : pointeur sur la faction dont on veut récuperer l'identifiant_faction.
  * @return entier représentant l'identifiant_faction de la faction.
  */
-int get_identifiant_faction(faction faction) {
-    return faction->identifiant_faction;
+int get_identifiant_faction(faction f) {
+    return f->identifiant_faction;
 }
 
 /**
  * Fonction permettant de recupérer les points_DDRS de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer les points_DDRS.
+ * @param f : pointeur sur la faction dont on veut récuperer les points_DDRS.
  * @return entier représentant les points_DDRS de la faction.
  */
-int get_points_DDRS(faction faction) {
-    return faction->points_DDRS;
+int get_points_DDRS(faction f) {
+    return f->points_DDRS;
 }
 
 /**
  * Fonction permettant de recupérer les manches_gagnees de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer les manches_gagnees.
+ * @param f : pointeur sur la faction dont on veut récuperer les manches_gagnees.
  * @return entier représentant les manches_gagnees de la faction.
  */
-int get_manches_gagnees(faction faction) {
-    return faction->manches_gagnees;
+int get_manches_gagnees(faction f) {
+    return f->manches_gagnees;
 }
 
 /**
  * Fonction permettant de recupérer le a_remelanger de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer le a_remelanger.
+ * @param f : pointeur sur la faction dont on veut récuperer le a_remelanger.
  * @return booleen représentant le a_remelanger de la faction.
  */
-booleen get_a_remelanger(faction faction) {
-    return faction->a_remelanger;
+booleen get_a_remelanger(faction f) {
+    return f->a_remelanger;
 }
 
 /**
  * Fonction permettant de recupérer la pioche de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer la pioche.
+ * @param f : pointeur sur la faction dont on veut récuperer la pioche.
  * @return tableau 1D de carte représentant la pioche de la faction.
  */
-carte *get_pioche(faction faction) {
-    return faction->pioche;
+carte *get_pioche(faction f) {
+    return f->pioche;
 }
 
 /**
  * Fonction permettant de recupérer la main de la faction.
- * @param faction : pointeur sur la faction dont on veut récuperer la main.
+ * @param f : pointeur sur la faction dont on veut récuperer la main.
  * @return tableau 1D de carte représentant la main de la faction.
  */
-carte *get_main(faction faction) {
-    return faction->main;
+carte *get_main(faction f) {
+    return f->main;
 }
 
 /**
  * Fonction permettant de changer le nom de la faction.
- * @param faction : pointeur sur la faction dont on veut changer son nom.
+ * @param f : pointeur sur la faction dont on veut changer son nom.
  * @param nom : chaîne de caractères que l'on va associer au nom de la faction.
  */
-void set_nom(faction faction, char *nom) {
-    faction->nom = nom;
+void set_nom(faction f, char *nom) {
+    f->nom = nom;
 }
 
 /**
  * Fonction permettant de changer l'identifiant_faction de la faction.
- * @param faction : pointeur sur la faction dont on veut changer son identifiant_faction.
+ * @param f : pointeur sur la faction dont on veut changer son identifiant_faction.
  * @param identifiant_faction : entier que l'on va associer à l'identifiant_faction de la faction.
  */
-void set_identifiant_faction(faction faction, int identifiant_faction) {
-    faction->identifiant_faction = identifiant_faction;
+void set_identifiant_faction(faction f, int identifiant_faction) {
+    f->identifiant_faction = identifiant_faction;
 }
 
 /**
  * Fonction permettant de changer les points_DDRS de la faction.
- * @param faction : pointeur sur la faction dont on veut changer ses points_DDRS.
+ * @param f : pointeur sur la faction dont on veut changer ses points_DDRS.
  * @param points_DDRS : entier que l'on va associer à les points_DDRS de la faction.
  */
-void set_points_DDRS(faction faction, int points_DDRS) {
-    faction->points_DDRS = points_DDRS;
+void set_points_DDRS(faction f, int points_DDRS) {
+    f->points_DDRS = points_DDRS;
 }
 
 /**
  * Fonction permettant de changer les manches_gagnees de la faction.
- * @param faction : pointeur sur la faction dont on veut changer ses manches_gagnees.
+ * @param f : pointeur sur la faction dont on veut changer ses manches_gagnees.
  * @param manches_gagnees : entier que l'on va associer à les manches_gagnees de la faction.
  */
-void set_manches_gagnees(faction faction, int manches_gagnees) {
-    faction->manches_gagnees = manches_gagnees;
+void set_manches_gagnees(faction f, int manches_gagnees) {
+    f->manches_gagnees = manches_gagnees;
 }
 
 /**
  * Fonction permettant de changer le a_remelanger de la faction.
- * @param faction : pointeur sur la faction dont on veut changer son a_remelanger.
+ * @param f : pointeur sur la faction dont on veut changer son a_remelanger.
  * @param a_remelanger : entier que l'on va associer à le a_remelanger de la faction.
  */
-void set_a_remelanger(faction faction, char *a_remelanger) {
-    faction->a_remelanger = a_remelanger;
+void set_a_remelanger(faction f, char *a_remelanger) {
+    f->a_remelanger = a_remelanger;
 }
 
 /**
  * Fonction permettant de changer la pioche de la faction.
- * @param faction : pointeur sur la faction dont on veut changer sa pioche.
+ * @param f : pointeur sur la faction dont on veut changer sa pioche.
  * @param pioche : entier que l'on va associer à la pioche de la faction.
  */
-void set_pioche(faction faction, char *pioche) {
-    faction->pioche = pioche;
+void set_pioche(faction f, char *pioche) {
+    f->pioche = pioche;
 }
 
 /**
  * Fonction permettant de changer la main de la faction.
- * @param faction : pointeur sur la faction dont on veut changer sa main.
+ * @param f : pointeur sur la faction dont on veut changer sa main.
  * @param main : entier que l'on va associer à la main de la faction.
  */
-void set_main(faction faction, char *main) {
-    faction->main = main;
+void set_main(faction f, char *main) {
+    f->main = main;
 }
