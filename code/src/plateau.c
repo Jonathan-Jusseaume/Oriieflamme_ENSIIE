@@ -125,6 +125,16 @@ carte get_derniere_carte_retournee(plateau plateau) {
 }
 
 /**
+ * Fonction permettant de recupérer la carte située à la position donnée en paramètre.
+ * @param x : abscisse de la carte à récupérer.
+ * @param y : ordonnée de la carte à récupérer.
+ * return pointeur sur la carte située à la position donnée en paramètre.
+ */
+ carte get_carte(plateau plateau, int x, int y) {
+    return plateau->grille[x][y];
+ }
+
+/**
  * Fonction permettant de changer la grille du plateau.
  * @param plateau : pointeur sur le plateau dont on veut changer sa grille.
  * @param grille : tableau 2D de carte que l'on va associer à la grille du plateau.

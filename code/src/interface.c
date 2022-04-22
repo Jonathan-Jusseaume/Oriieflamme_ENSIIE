@@ -15,9 +15,9 @@ void afficher_plateau(plateau p)
     {
         for(int y=get_min_y(p);x<=get_max_y(p);y++)
         {
-            if(get_grille(p)[x][y]!=NULL)
+            if(get_carte(p,x,y)!=NULL)
             {
-                printf("%d ",get_numero_plateau(grille[x][y]));
+                printf("%d ",get_numero_plateau(get_carte(p,x,y)));
             }
             else 
             {
@@ -51,13 +51,13 @@ void afficher_main_faction(faction f)
  */
 booleen demander_renouvellement_main(faction f)
 {
-    char rep = '';
-    while(rep!='O' || rep!='N')
+    char rep = "";
+    while(rep!="O" || rep!="N")
     {
         printf("Voulez vous renouveller votre main ? (O/N)");
-        scanf("%c",rep);
+        scanf("%s",rep);
     }
-    return rep == 'O' ? VRAI : FAUX;
+    return strcmp(rep,"O") || strcmp(rep,"o") ? VRAI : FAUX;
 };
 
 /**
@@ -71,16 +71,16 @@ carte demander_carte_poser_face_cachee(faction f)
     {
         afficher_main_faction(f);
 
-        int numero_carte = 0;
+        char *numero_carte = "";
         carte *main = get_main(f);
         carte clacarte = NULL;
         int i=0;
 
-        while(numero_carte>taille_liste_chainee(main); && numero_carte<=0)
+        do
         {
             printf("Quelle carte voulez vous placer face cachée sur le plateau ?");
-            scanf("%d",&numero_carte);
-        }
+            scanf("%s",numero_carte);
+        }while(atoi(numero_carte)>taille_liste_chainee(main) && atoi(numero_carte)<=0);
 
         while(get_queue_liste_chainee(main)!=NULL)
         {
@@ -105,8 +105,9 @@ carte demander_carte_poser_face_cachee(faction f)
  */
 position demander_position_poser_carte(plateau p, faction f, carte c)
 {
-        int carte_a_coller = 69;
+        char *carte_a_coller = "";
         direction dir = '';
+        char *dirs = "";
         position pos_carte = {15,15};
 
         if(get_nombre_cartes_posees(p)==0)
@@ -116,30 +117,31 @@ position demander_position_poser_carte(plateau p, faction f, carte c)
         do
         {
             printf("Tapez le numéro de la carte face cachée à côté de laquelle vous voulez vous placer ?\n");
-            scanf("%d",&carte_a_coller);
+            scanf("%s",carte_a_coller);
 
             for(int x=get_min_x(p);x<=get_max_x(p);x++)
             {
                 for(int y=get_min_y(p);x<=get_max_y(p);y++)
                 {
-                    if(carte_a_coller==get_numero_plateau(get_grille(p)[x][y]))
+                    if(atoi(carte_a_coller)==get_numero_plateau(get_carte(p,x,y)))
                     {
-                        if(get_grille(p)[x+1][y]!=NULL && get_grille(p)[x-1][y]!=NULL && get_grille(p)[x][y-1]!=NULL && get_grille(p)[x][y+1]!=NULL)
+                        if(get_carte(p,x+1,y)!=NULL && get_carte(p,x-1,y)!=NULL && get_carte(p,x,y-1)!=NULL && get_carte(p,x,y+1)!=NULL)
                         {
                             printf("Vous ne pouvez pas placer votre carte à côte de cette carte, toute les places sont prises.\n");
-                            carte_a_coller = 69;
+                            carte_a_coller = "-1";
                         }
                         else
                         {
                             do
                             {
                                 printf("Quelle direction voulez vous placer votre carte ? (H/B/D/G)");
-                                scanf("%c",&dir);
+                                scanf("%s",dirs);
+                                dir = dirs[0];
 
                                 switch (dir)
                                 {
                                 case 'H':
-                                    if(get_grille(p)[x+1][y]!=NULL)
+                                    if(get_carte(p,x+1,y)!=NULL)
                                     {
                                         printf("Vous ne pouvez pas placer votre carte à côte de cette carte, la place est prise.\n");
                                         dir = '';
@@ -153,7 +155,7 @@ position demander_position_poser_carte(plateau p, faction f, carte c)
                                     break;
 
                                 case 'B': 
-                                    if(get_grille(p)[x-1][y]!=NULL)
+                                    if(get_carte(p,x-1,y)!=NULL)
                                     {
                                         printf("Vous ne pouvez pas placer votre carte à côte de cette carte, la place est prise.\n");
                                         dir = '';
@@ -167,7 +169,7 @@ position demander_position_poser_carte(plateau p, faction f, carte c)
                                     break;
 
                                 case 'D':
-                                    if(get_grille(p)[x][y+1]!=NULL)
+                                    if(get_carte(p,x,y+1)!=NULL)
                                     {
                                         printf("Vous ne pouvez pas placer votre carte à côte de cette carte, la place est prise.\n");
                                         dir = '';
@@ -181,7 +183,7 @@ position demander_position_poser_carte(plateau p, faction f, carte c)
                                     break;
 
                                 case 'G':
-                                    if(get_grille(p)[x][y-1]!=NULL)
+                                    if(get_carte(p,x,y-1)!=NULL)
                                     {
                                         printf("Vous ne pouvez pas placer votre carte à côte de cette carte, la place est prise.\n");
                                         dir = '';
@@ -204,11 +206,11 @@ position demander_position_poser_carte(plateau p, faction f, carte c)
                     else
                     {
                         printf("Il pas de carte ici.\n");
-                        carte_a_coller = 69;
+                        carte_a_coller = "-1";
                     }
-                {
+                }
             }
-        } while (carte_a_coller>get_nombre_cartes_posees(p) && carte_a_coller<=0);   
+        } while (atoi(carte_a_coller)>get_nombre_cartes_posees(p) && atoi(carte_a_coller)<=0);   
 };
 
 /**
