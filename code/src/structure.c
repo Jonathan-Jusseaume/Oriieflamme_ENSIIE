@@ -224,7 +224,7 @@ carte supprimer_carte_liste_chainee(liste_chainee_carte l, int indice_carte) {
         return NULL;
     liste_chainee_carte nouvelle_queue = courant->queue->queue;
     carte carte_supprimee = courant->queue->tete;
-    free(courant->queue);
+
     courant->queue = nouvelle_queue;
     return carte_supprimee;
 }
