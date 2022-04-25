@@ -11,36 +11,7 @@
 /**
  * Structure représentant une faction.
  */
-typedef struct s_faction {
-    /**
-     * Chaîne de caractère représentant le nom de la faction.
-     */
-    char *nom;
-    /**
-     * Entier représentant l'identifiant de la faction.
-     */
-    int identifiant_faction;
-    /**
-     * Entier représentant les points DDRS de la faction.
-     */
-    int points_DDRS;
-    /**
-     * Entier représentant les manches gagnées par la faction.
-     */
-    int manches_gagnees;
-    /**
-     *  Booléen qui vaut VRAI si la faction a déjà remélangé sa main, et FAUX sinon. 
-     */
-    booleen a_remelanger;
-    /**
-     * Pointeur vers des cartes représentant les cartes dans la pioche de la faction.
-     */
-    carte *pioche;
-    /**
-     * Pointeur vers des cartes représentant les cartes dans la main de la faction.
-     */
-    carte *main;
-} *faction;
+typedef struct s_faction *faction;
 
 /**
  * Fonction permettant de savoir si une faction a utilisé l'option de remélanger sa main et la boîte à idée et de repiocher des cartes.
