@@ -34,7 +34,7 @@ typedef struct s_carte {
  * @param c : pointeur sur la carte dont on veut récuperer le nom.
  * @return chaîne de caractères représentant le nom de la carte.
  */
-char *get_nom(carte c) {
+char *get_nom_carte(carte c) {
     return c->nom;
 }
 
@@ -52,7 +52,7 @@ char *get_effet(carte c) {
  * @param c : pointeur sur la carte dont on veut récuperer l'identifiant_faction.
  * @return entier représentant l'identifiant_faction de la carte.
  */
-int get_identifiant_faction(carte c) {
+int get_identifiant_faction_carte(carte c) {
     return c->identifiant_faction;
 }
 
@@ -79,7 +79,7 @@ booleen get_est_face_cachee(carte carte) {
  * @param c : pointeur sur la carte dont on veut changer son nom.
  * @param nom : chaîne de caractères que l'on va associer au nom de la carte.
  */
-void set_nom(carte c, char *nom) {
+void set_nom_carte(carte c, char *nom) {
     c->nom = nom;
 }
 
@@ -97,7 +97,7 @@ void set_effet(carte c,char *effet) {
  * @param c : pointeur sur la carte dont on veut changer son identifiant_faction.
  * @param identifiant_faction : entier que l'on va associer à l'identifiant_faction de la carte.
  */
-void set_identifiant_faction(carte c, int identifiant_faction) {
+void set_identifiant_faction_carte(carte c, int identifiant_faction) {
     c->identifiant_faction = identifiant_faction;
 }
 

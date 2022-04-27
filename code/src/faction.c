@@ -40,7 +40,7 @@ typedef struct s_faction {
  * @param f : pointeur sur la faction dont on veut récuperer le nom.
  * @return chaîne de caractères représentant le nom de la faction.
  */
-char *get_nom(faction f) {
+char *get_nom_faction(faction f) {
     return f->nom;
 }
 
@@ -83,18 +83,18 @@ booleen get_a_remelanger(faction f) {
 /**
  * Fonction permettant de recupérer la pioche de la faction.
  * @param f : pointeur sur la faction dont on veut récuperer la pioche.
- * @return tableau 1D de carte représentant la pioche de la faction.
+ * @return Set de carte représentant la pioche de la faction.
  */
-carte *get_pioche(faction f) {
+ensemble_entier get_pioche(faction f) {
     return f->pioche;
 }
 
 /**
  * Fonction permettant de recupérer la main de la faction.
  * @param f : pointeur sur la faction dont on veut récuperer la main.
- * @return tableau 1D de carte représentant la main de la faction.
+ * @return liste chainee de carte représentant la main de la faction.
  */
-carte *get_main(faction f) {
+liste_chainee_carte get_main(faction f) {
     return f->main;
 }
 
@@ -103,7 +103,7 @@ carte *get_main(faction f) {
  * @param f : pointeur sur la faction dont on veut changer son nom.
  * @param nom : chaîne de caractères que l'on va associer au nom de la faction.
  */
-void set_nom(faction f, char *nom) {
+void set_nom_faction(faction f, char *nom) {
     f->nom = nom;
 }
 
@@ -146,17 +146,17 @@ void set_a_remelanger(faction f, char *a_remelanger) {
 /**
  * Fonction permettant de changer la pioche de la faction.
  * @param f : pointeur sur la faction dont on veut changer sa pioche.
- * @param pioche : entier que l'on va associer à la pioche de la faction.
+ * @param pioche : Set que l'on va associer à la pioche de la faction.
  */
-void set_pioche(faction f, char *pioche) {
+void set_pioche(faction f, ensemble_entier pioche) {
     f->pioche = pioche;
 }
 
 /**
  * Fonction permettant de changer la main de la faction.
  * @param f : pointeur sur la faction dont on veut changer sa main.
- * @param main : entier que l'on va associer à la main de la faction.
+ * @param main : liste chainee que l'on va associer à la main de la faction.
  */
-void set_main(faction f, char *main) {
+void set_main(faction f, liste_chainee_carte main) {
     f->main = main;
 }
