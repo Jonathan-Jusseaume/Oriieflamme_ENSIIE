@@ -1,4 +1,3 @@
-#include "effets.h"
 /**
  * @file constante.h
  * @brief Fichier contenant différentes constantes qui seront utiles pour l'application
@@ -12,6 +11,7 @@
 #define TAILLE_NOMBRE_OCCURRENCES 32
 #define FACTION1 0
 #define FACTION2 1
+#include "effets.h"
 
 
 /**
