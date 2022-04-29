@@ -2,6 +2,7 @@
 #include "../headers/faction.h"
 #include "../headers/constante.h"
 #include "../headers/position.h"
+#include "../headers/structure.h"
 
 
 /**
@@ -12,7 +13,7 @@ typedef struct s_plateau {
     /**
      * tableau de pointeurs statiques contenant les cartes déposées par les factions
      */
-    carte grille[NOMBRE_CARTES_MAXIMUM * 2][NOMBRE_CARTES_MAXIMUM * 2];
+    grille_carte grille;
 
     /**
      * tableau de pointeurs contenant un pointeur sur chaque joueur
@@ -23,26 +24,6 @@ typedef struct s_plateau {
      * nombre de cartes déposées sur le plateau
      */
     int nombre_cartes_posees;
-
-    /**
-    * abscisse de la carte la plus à gauche
-    */
-    int min_x;
-
-    /**
-    * abscisse de la carte la plus à droite
-    */
-    int max_x;
-
-    /**
-     * ordonnée de la carte la plus en haut
-     */
-    int min_y;
-
-    /**
-     *ordonnée de la carte la plus en bas
-     */
-    int max_y;
 
     /**
      * champs de la dernière carte retournée. En effet le plateau doit se souvenir de cette dernière carte dans le cas où celle-ci correspond à "Laurent Prevel"
@@ -57,7 +38,7 @@ typedef struct s_plateau {
  * @param p : pointeur sur le plateau dont on veut récuperer la grille.
  * @return tableau 2D de carte représentant la grille du plateau.
  */
-carte **get_grille(plateau p) {
+grille_carte *get_grille(plateau p) {
     return p->grille;
 }
 
@@ -80,42 +61,6 @@ int get_nombre_cartes_posees(plateau p) {
 }
 
 /**
- * Fonction permettant de recupérer le min_x du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le min_x.
- * @return entier représentant le min_x du plateau.
- */
-int get_min_x(plateau p) {
-    return p->min_x;
-}
-
-/**
- * Fonction permettant de recupérer le max_x du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le max_x.
- * @return entier représentant le max_x du plateau.
- */
-int get_max_x(plateau p) {
-    return p->max_x;
-}
-
-/**
- * Fonction permettant de recupérer le min_y du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le min_y.
- * @return entier représentant le min_y du plateau.
- */
-int get_min_y(plateau p) {
-    return p->min_y;
-}
-
-/**
- * Fonction permettant de recupérer le max_y du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le max_y.
- * @return entier représentant le max_y du plateau.
- */
-int get_max_y(plateau p) {
-    return p->max_y;
-}
-
-/**
  * Fonction permettant de recupérer le max_x du plateau.
  * @param p : pointeur sur le plateau dont on veut récuperer le max_x.
  * @return entier représentant le max_x du plateau.
@@ -129,12 +74,8 @@ carte get_derniere_carte_retournee(plateau p) {
  * @param p : pointeur sur le plateau dont on veut changer sa grille.
  * @param grille : tableau 2D de carte que l'on va associer à la grille du plateau.
  */
-void set_grille(plateau p, carte grille[NOMBRE_CARTES_MAXIMUM * 2][NOMBRE_CARTES_MAXIMUM * 2]) {
-    for(int i;i<NOMBRE_CARTES_MAXIMUM * 2;i++) {
-        for(int j;j<NOMBRE_CARTES_MAXIMUM * 2;j++) {
-                p->grille[i][j] = grille[i][j];
-        }    
-    }
+void set_grille(plateau p, grille_carte g) {
+    p->grille = g;
 }
 
 /**
@@ -154,42 +95,6 @@ void set_factions(plateau p,faction *factions) {
  */
 void set_nombre_cartes_posees(plateau p, int nombre_cartes_posees) {
     p->nombre_cartes_posees = nombre_cartes_posees;
-}
-
-/**
- * Fonction permettant de changer le min_x du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son min_x.
- * @param min_x : entier que l'on va associer au min_x du plateau.
- */
-void set_min_x(plateau p, int min_x) {
-    p->min_x = min_x;
-}
-
-/**
- * Fonction permettant de changer le max_x du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son max_x.
- * @param max_x : entier que l'on va associer au max_x du plateau.
- */
-void set_max_x(plateau p, int max_x) {
-    p->max_x = max_x;
-}
-
-/**
- * Fonction permettant de changer le min_y du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son min_y.
- * @param min_y : entier que l'on va associer au min_y du plateau.
- */
-void set_min_y(plateau p, int min_y) {
-    p->min_y = min_y;
-}
-
-/**
- * Fonction permettant de changer le max_y du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son max_y.
- * @param max_y : entier que l'on va associer au max_y du plateau.
- */
-void set_max_y(plateau p, int max_y) {
-    p->max_y = max_y;
 }
 
 /**
