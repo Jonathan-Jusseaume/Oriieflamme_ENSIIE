@@ -126,7 +126,7 @@ void set_manches_gagnees(faction f, int manches_gagnees);
  * @param f : pointeur sur la faction dont on veut changer son a_remelanger.
  * @param a_remelanger : entier que l'on va associer à le a_remelanger de la faction.
  */
-void set_a_remelanger(faction f, char *a_remelanger);
+void set_a_remelanger(faction f, booleen a_remelanger);
 /**
  * Fonction permettant de changer la pioche de la faction.
  * @param f : pointeur sur la faction dont on veut changer sa pioche.
