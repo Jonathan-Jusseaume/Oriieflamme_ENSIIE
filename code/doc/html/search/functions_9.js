@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vider_5fmain_5fdans_5fpioche_78',['vider_main_dans_pioche',['../faction_8h.html#af8a791fd733608d164b217a5e219bff0',1,'faction.h']]]
+  ['remelanger_111',['remelanger',['../faction_8h.html#af3fddbcee9e7bd24551c43276986c7af',1,'faction.h']]],
+  ['repioche_112',['repioche',['../faction_8h.html#a85d8eb81e638ef0180cd8c760fe6f052',1,'faction.h']]],
+  ['retourner_5fcarte_113',['retourner_carte',['../plateau_8h.html#a21b1196e909cbee186cb34c50d86f7be',1,'plateau.h']]]
 ];
