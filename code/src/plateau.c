@@ -11,14 +11,14 @@
 typedef struct s_plateau {
 
     /**
-     * tableau de pointeurs contenant un pointeur sur chaque faction
-     */
-    faction *factions;
+      * pointeur vers la grille de cartes : en effet celle-ci s'occupe de la gestion du plateau
+      */
+    grille_carte grille;
 
     /**
-     * pointeur vers la grille de cartes : en effet celle-ci s'occupe de la gestion du plateau
+     * tableau de pointeurs contenant un pointeur sur chaque joueur
      */
-    grille_carte grille_c;
+    faction *factions;
 
     /**
      * nombre de cartes déposées sur le plateau
@@ -26,7 +26,7 @@ typedef struct s_plateau {
     int nombre_cartes_posees;
 
     /**
-     * champs de la dernière carte retournée. En effet le plateau doit se souvenir de cette dernière carte dans le cas où celle-ci correspond à "Massinissa Merabet"
+     * champs de la dernière carte retournée. En effet le plateau doit se souvenir de cette dernière carte dans le cas où celle-ci correspond à "Laurent Prevel"
      */
     carte derniere_carte_retournee;
     /**
@@ -109,11 +109,6 @@ int initialiser_manche(plateau p) {
     return -1;
 }
 
-faction *get_factions(plateau p) {
-    /*retourne les factions*/
-    return p->factions;
-}
-
 void poser_carte(plateau p, carte c, position pos) {
     set_position(c, pos.absisse, pos.ordonnee);
     poser_carte_grille(p->grille_c, c, pos.ordonnee, pos.abscisse);
@@ -143,133 +138,35 @@ carte retourner_carte(plateau p) {
 }
 
 
-/**
- * Fonction permettant de recupérer le nombre_cartes_posees du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le nombre_cartes_posees.
- * @return entier représentant le nombre_cartes_posees du plateau.
- */
+grille_carte get_grille(plateau p) {
+    return p->grille;
+}
+
+faction *get_factions(plateau p) {
+    return p->factions;
+}
+
 int get_nombre_cartes_posees(plateau p) {
     return p->nombre_cartes_posees;
 }
 
-/**
- * Fonction permettant de recupérer le min_x du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le min_x.
- * @return entier représentant le min_x du plateau.
- */
-int get_min_x(plateau p) {
-    return p->min_x;
-}
-
-/**
- * Fonction permettant de recupérer le max_x du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le max_x.
- * @return entier représentant le max_x du plateau.
- */
-int get_max_x(plateau p) {
-    return p->max_x;
-}
-
-/**
- * Fonction permettant de recupérer le min_y du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le min_y.
- * @return entier représentant le min_y du plateau.
- */
-int get_min_y(plateau p) {
-    return p->min_y;
-}
-
-/**
- * Fonction permettant de recupérer le max_y du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le max_y.
- * @return entier représentant le max_y du plateau.
- */
-int get_max_y(plateau p) {
-    return p->max_y;
-}
-
-/**
- * Fonction permettant de recupérer le max_x du plateau.
- * @param p : pointeur sur le plateau dont on veut récuperer le max_x.
- * @return entier représentant le max_x du plateau.
- */
 carte get_derniere_carte_retournee(plateau p) {
     return p->derniere_carte_retournee;
 }
 
-/**
- * Fonction permettant de changer la grille du plateau.
- * @param p : pointeur sur le plateau dont on veut changer sa grille.
- * @param grille : tableau 2D de carte que l'on va associer à la grille du plateau.
- */
-void set_grille(plateau p, carte grille[NOMBRE_CARTES_MAXIMUM * 2][NOMBRE_CARTES_MAXIMUM * 2]) {
-    for (int i; i < NOMBRE_CARTES_MAXIMUM * 2; i++) {
-        for (int j; j < NOMBRE_CARTES_MAXIMUM * 2; j++) {
-            p->grille[i][j] = grille[i][j];
-        }
-    }
+void set_grille(plateau p, grille_carte g) {
+    p->grille = g;
 }
 
-/**
- * Fonction permettant de changer les factions du plateau.
- * @param p : pointeur sur le plateau dont on veut changer ses factions.
- * @param factions : tableau 1D de faction que l'on va associer aux factions du plateau.
- */
-void set_factions(plateau p, faction *factions) {
+void set_factions(plateau p,faction *factions) {
     free(p->factions);
     p->factions = factions;
 }
 
-/**
- * Fonction permettant de changer le nombre_cartes_posees du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son nombre_cartes_posees.
- * @param nombre_cartes_posees : entier que l'on va associer au nombre_cartes_posees du plateau.
- */
 void set_nombre_cartes_posees(plateau p, int nombre_cartes_posees) {
     p->nombre_cartes_posees = nombre_cartes_posees;
 }
 
-/**
- * Fonction permettant de changer le min_x du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son min_x.
- * @param min_x : entier que l'on va associer au min_x du plateau.
- */
-void set_min_x(plateau p, int min_x) {
-    p->min_x = min_x;
-}
-
-/**
- * Fonction permettant de changer le max_x du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son max_x.
- * @param max_x : entier que l'on va associer au max_x du plateau.
- */
-void set_max_x(plateau p, int max_x) {
-    p->max_x = max_x;
-}
-
-/**
- * Fonction permettant de changer le min_y du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son min_y.
- * @param min_y : entier que l'on va associer au min_y du plateau.
- */
-void set_min_y(plateau p, int min_y) {
-    p->min_y = min_y;
-}
-
-/**
- * Fonction permettant de changer le max_y du plateau.
- * @param p : pointeur sur le plateau dont on veut changer son max_y.
- * @param max_y : entier que l'on va associer au max_y du plateau.
- */
-void set_max_y(plateau p, int max_y) {
-    p->max_y = max_y;
-}
-
-/**
- * Fonction permettant de changer la derniere_carte_retournee du plateau.
- * @param p : pointeur sur le plateau dont on veut changer sa derniere_carte_retournee.
- * @param derniere_carte_retournee : carte que l'on va associer à la derniere_carte_retournee du plateau.
- */
 void set_derniere_carte_retournee(plateau p, carte derniere_carte_retournee) {
     p->derniere_carte_retournee = derniere_carte_retournee;
 }
