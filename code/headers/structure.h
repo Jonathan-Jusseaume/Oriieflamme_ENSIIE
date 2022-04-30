@@ -6,7 +6,103 @@
 #define ORIIEFLAMME_GR_11_STRUCTURE_H
 
 #include "carte.h"
+#include "position.h"
 #include "constante.h"
+
+
+/**
+ * Structure qui correspond à la grille qui va contenir les cartes posées
+ */
+typedef struct s_grille_carte *grille_carte;
+
+/**
+ * Initialise une grille de cartes de la taille passée en paramètre
+ * @param taille_grille la taille de la grille que l'on veut créer
+ * @return la grille initialisée
+ */
+grille_carte initialiser_grille(int taille_grille);
+
+/**
+ * Retire toutes les cartes de la grille en libérant leur mémoire associée
+ * Remet la valeur de de min_x, min_y, max_x, max_y à la valeur par défaut
+ * @param g la grille que l'on veut réinitialiser
+ */
+void reinitialiser_grille(grille_carte g);
+
+/**
+ * Libère la mémoire de la grille passée en paramètre
+ * @param g la grille dont on veut libérer la mémoire
+ */
+void liberer_grille(grille_carte g);
+
+/**
+ * Pose la carte passée en paramètre sur la grille passée en paramètre
+ * aux coordonnées y,x
+ * @param g la grille sur laquelle on veut poser la carte
+ * @param c la carte que l'on veut poser
+ * @param y l'ordonnée où l'on veut mettre la carte
+ * @param x l'abscisse où l'on veut mettre la carte
+ * @return VRAI si la carte a pu être posée, FAUX sinon
+ */
+booleen poser_carte_grille(grille_carte g, carte c, int y, int x);
+
+/**
+ * Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre
+ * @param g la grille dont on veut récupérer la carte
+ * @param y l'ordonnée de la carte
+ * @param x l'abscisse de la carte
+ * @return renvoie le pointeur vers la carte située à l'abscisse et l'ordonnée passée en paramètre, renvoie NULL
+ * si les coordonnées sont trop élevées pour la grille
+ */
+carte get_carte_grille(grille_carte g, int y, int x);
+
+/**
+ * Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre et la retire de la grille
+ * sans la libérer de la mémoire
+ * @param g la grille où l'on veut supprimer la carte
+ * @param y l'ordonnée de la carte que l'on veut supprimer
+ * @param x l'abscisse de la carte que l'on veut supprimer
+ * @return renvoie le pointeur vers la carte située à l'abscisse et l'ordonnée passée en paramètre, renvoie NULL
+ * si les coordonnées sont trop élevées pour la grille
+ */
+carte supprimer_carte_grille(grille_carte g, int y, int x);
+
+/**
+ * Renvoie l'abscisse de la carte la plus à gauche de la grille
+ * @param g la grille dont on veut obtenir l'information
+ * @return l'abscisse de la carte la plus à gauche la grille
+ */
+int get_min_x_grille(grille_carte g);
+
+/**
+ * Renvoie l'abscisse de la carte la plus à droite de la grille
+ * @param g la grille dont on veut obtenir l'information
+ * @return l'abscisse de la carte la plus à droite de la grille
+ */
+int get_max_x_grille(grille_carte g);
+
+/**
+ * Renvoie l'ordonnée de la carte la plus en haut de la grille
+ * @param g la grille dont on veut obtenir l'information
+ * @return l'ordonnée de la carte la plus en haut de la grille
+ */
+int get_min_y_grille(grille_carte g);
+
+/**
+ * Renvoie l'ordonnée de la carte la plus en bas de la grille
+ * @param g la grille dont on veut obtenir l'information
+ * @return l'ordonnée de la carte la plus en bas de la grille
+ */
+int get_max_y_grille(grille_carte g);
+
+/**
+ * Renvoie la position de la carte non retournée la plus en haut à gauche de la grille
+ * de carté passée en paramètre
+ * @param g la grille dont on veut récupérer l'information
+ * @return {-1,-1} s'il n'y a pas de cartes non retournées dans la grille, la position de la carte non
+ * retournée la plus en haut à gauche sinon
+ */
+position get_position_carte_haut_gauche_grille(grille_carte g);
 
 
 /**
@@ -14,13 +110,6 @@
  * nos factions
  */
 typedef struct s_liste_chainee_carte *liste_chainee_carte;
-
-/**
- * Structure qui correspond à un ensemble d'entiers. Nous l'utiliserons pour savoir
- * les indices des cartes que l'utilisateur doit piocher parmi la liste des cartes possibles (pioche).
- * Dans un ensemble, chaque élément ne peut être présent qu'une fois.
- */
-typedef struct s_ensemble_entier *ensemble_entier;
 
 /**
  * Fonction qui permet d'initialiser la liste chaînée des cartes
@@ -86,6 +175,13 @@ liste_chainee_carte get_queue_liste_chainee(liste_chainee_carte l);
  * @param l la liste que l'on veut libérer
  */
 void liberer_liste_chainee(liste_chainee_carte l);
+
+/**
+ * Structure qui correspond à un ensemble d'entiers. Nous l'utiliserons pour savoir
+ * les indices des cartes que l'utilisateur doit piocher parmi la liste des cartes possibles (pioche).
+ * Dans un ensemble, chaque élément ne peut être présent qu'une fois.
+ */
+typedef struct s_ensemble_entier *ensemble_entier;
 
 /**
  * Permet de créer un ensemble d'entiers
