@@ -3,6 +3,7 @@
 #include "../headers/constante.h"
 #include "../headers/position.h"
 #include "../headers/structure.h"
+#include <string.h>
 
 
 /**
@@ -41,6 +42,7 @@ plateau nouveau_plateau() {
     /*allocation de la mémoire pour notre plateau*/
     plateau p = (plateau) malloc(sizeof(struct s_plateau));
     /*initialisation des factions*/
+    p->grille = initialiser_grille(NOMBRE_CARTES_MAXIMUM * 2);
     p->factions = initialiser_factions();
     p->derniere_carte_retournee = NULL;
     p->nombre_cartes_retournees = 0;
@@ -61,7 +63,6 @@ int initialiser_manche(plateau p) {
     int manche_gagnee; /* variable qui va contenir le nombre de manches gagnées par le joueur en question*/
     int identifiant_fac_derniere_carte; /*variable qui contiendra l'identifiant de la faction correspondant à la dernière retournée*/
 
-    p->grille_c = initialiser_grille(NOMBRE_CARTES_MAXIMUM * 2);
     /*on vérifie que la dernière carte retournée n'est pas nulle et si la carte retournée est Laurent Prevel : en effet, le joueur qui a déposé cette carte a gagné la manche*/
     if (p->derniere_carte_retournee != NULL &&
         strcmp(get_nom_carte(p->derniere_carte_retournee), nom_cartes[Laurent_Prevel]) == 0) {
@@ -85,11 +86,11 @@ int initialiser_manche(plateau p) {
             /* sinon si les deux joueurs ont le même nombre de points : le joueur qui a la carte la plus en haut à gauche a gagné*/
         } else {
             int identifiant_fac_carte_plus_a_gauche;
-            for (int i = get_min_x_grille(p->grille_c); i < get_max_x_grille(p->grille_c); i++) {
-                if (get_grille(p->grille_c)[get_min_y_grille(p->grille_c)][i] != NULL) {
+            for (int i = get_min_x_grille(p->grille); i < get_max_x_grille(p->grille); i++) {
+                if (get_carte_grille(p->grille, get_min_y_grille(p->grille), i) != NULL) {
                     /*récupération de l'identifiant de la faction qui posé la carte la plus en haut à gauche*/
                     identifiant_fac_carte_plus_a_gauche = get_identifiant_faction_carte(
-                            get_grille(p->grille_c)[get_min_y_grille(p->grille_c)][i]);
+                            get_carte_grille(p->grille, get_min_y_grille(p->grille), i));
                     manche_gagnee = get_manches_gagnees(p->factions[identifiant_fac_carte_plus_a_gauche]);
                     set_manches_gagnees(p->factions[identifiant_fac_carte_plus_a_gauche], manche_gagnee++);
                 }
@@ -105,24 +106,24 @@ int initialiser_manche(plateau p) {
         return 1;
     }
     /*Sinon la partie n'est pas terminée : initialisation de la grille et de ses différents champs : min_x/max_x/min_y/max_y*/
-    reinitialiser_grille(p->grille_c);
+    reinitialiser_grille(p->grille);
     return -1;
 }
 
 void poser_carte(plateau p, carte c, position pos) {
-    set_position(c, pos.absisse, pos.ordonnee);
-    poser_carte_grille(p->grille_c, c, pos.ordonnee, pos.abscisse);
+    set_position(c, pos);
+    poser_carte_grille(p->grille, c, pos.ordonnee, pos.abscisse);
     p->nombre_cartes_posees++;
 }
 
 carte retourner_carte(plateau p) {
-    position pos = get_position_carte_haut_gauche_grille(p->grille_c);
+    position pos = get_position_carte_haut_gauche_grille(p->grille);
     /*si abscisse vaut -1 : les cartes ont été toutes retournées*/
     if (pos.abscisse == -1) {
         return NULL;
     }
     /*sinon, on récupère la carte en question et on la retourne en activant son effet*/
-    carte carte = get_carte_grille(p->grille_c, pos.ordonnee, pos.abscisse);
+    carte carte = get_carte_grille(p->grille, pos.ordonnee, pos.abscisse);
     /*on modifie le booléan associé afin que la carte devienne visible*/
     set_est_face_cachee(carte, FAUX);
 
@@ -130,7 +131,7 @@ carte retourner_carte(plateau p) {
     p->nombre_cartes_retournees++;
 
     /*on applique l'effet de la carte : on récupère la fonction associée à la carte*/
-    get_active_effet_carte(carte, p);
+    get_effet_fonction(carte);
     /*mise à jour de la dernière carte retournée*/
     p->derniere_carte_retournee = carte;
 
@@ -158,7 +159,7 @@ void set_grille(plateau p, grille_carte g) {
     p->grille = g;
 }
 
-void set_factions(plateau p,faction *factions) {
+void set_factions(plateau p, faction *factions) {
     free(p->factions);
     p->factions = factions;
 }

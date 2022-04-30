@@ -11,7 +11,7 @@
 #define TAILLE_NOMBRE_OCCURRENCES 32
 #define FACTION1 0
 #define FACTION2 1
-#include "effets.h"
+//#include "effets.h"
 
 /**
  * Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0
@@ -24,7 +24,7 @@ typedef enum booleen {
  * Enumération pour la direction de la carte à placer
  */
 typedef enum direction {
-    NORD, SUD, EST, OUEST
+    INCONNU = 'I', HAUT = 'H', BAS = 'B', GAUCHE = 'G', DROITE = 'D'
 } direction;
 
 /**
@@ -111,7 +111,7 @@ static char *nom_cartes[] = {
 /**
  * Tableau de pointeurs sur les différentes fonctions
  */
-
+/*
 static void *effets[] = {
         fise,
         fisa,
@@ -145,7 +145,7 @@ static void *effets[] = {
         lucienne_pacave,
         katrin_salhab,
         laurent_prevel
-};
+}; */
 
 /**
  * Tableau de chaine de caractère contenant les différents effets

@@ -67,7 +67,7 @@ carte retourner_carte(plateau p);
  * @param p : pointeur sur le plateau dont on veut récuperer la grille.
  * @return tableau 2D de carte représentant la grille du plateau.
  */
-grille_carte *get_grille(plateau p);
+grille_carte get_grille(plateau p);
 
 /**
  * Fonction permettant de recupérer les factions du plateau.

@@ -77,14 +77,14 @@ void test_initialiser_liste_chainee(void) {
  */
 void test_ajouter_tete_liste_chainee(void) {
     liste_chainee_carte lc = initialiser_liste_chainee();
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    lc = ajouter_tete_liste_chainee(lc, &c);
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    lc = ajouter_tete_liste_chainee(lc, c);
     CU_ASSERT(taille_liste_chainee(lc) == 1);
-    CU_ASSERT(get_valeur_tete_liste_chainee(lc)->est_face_cachee == VRAI);
-    struct s_carte c2 = {"T", "EFFET", 1, -1, FAUX};
-    lc = ajouter_tete_liste_chainee(lc, &c2);
+    CU_ASSERT(get_est_face_cachee(get_valeur_tete_liste_chainee(lc)) == VRAI);
+    carte c2 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    lc = ajouter_tete_liste_chainee(lc, c2);
     CU_ASSERT(taille_liste_chainee(lc) == 2);
-    CU_ASSERT(get_valeur_tete_liste_chainee(lc)->est_face_cachee == FAUX);
+    CU_ASSERT(get_est_face_cachee(get_valeur_tete_liste_chainee(lc)) == FAUX);
     liberer_liste_chainee(lc);
 }
 
@@ -94,11 +94,11 @@ void test_ajouter_tete_liste_chainee(void) {
 void test_get_carte_liste_chainee(void) {
     liste_chainee_carte lc = initialiser_liste_chainee();
     CU_ASSERT(get_carte_liste_chainee(lc, 1) == NULL);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    lc = ajouter_tete_liste_chainee(lc, &c);
-    struct s_carte c2 = {"T", "EFFET", 1, -1, FAUX};
-    lc = ajouter_tete_liste_chainee(lc, &c2);
-    CU_ASSERT(get_carte_liste_chainee(lc, 1)->est_face_cachee == VRAI);
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    lc = ajouter_tete_liste_chainee(lc, c);
+    carte c2 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    lc = ajouter_tete_liste_chainee(lc, c2);
+    CU_ASSERT(get_est_face_cachee(get_carte_liste_chainee(lc, 1)) == VRAI);
     liberer_liste_chainee(lc);
 }
 
@@ -108,12 +108,14 @@ void test_get_carte_liste_chainee(void) {
 void test_supprimer_carte_liste_chainee(void) {
     liste_chainee_carte lc = initialiser_liste_chainee();
     CU_ASSERT(supprimer_carte_liste_chainee(lc, 1) == NULL);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    lc = ajouter_tete_liste_chainee(lc, &c);
-    struct s_carte c2 = {"T", "EFFET", 1, -1, FAUX};
-    lc = ajouter_tete_liste_chainee(lc, &c2);
-    CU_ASSERT(supprimer_carte_liste_chainee(lc, 1)->est_face_cachee == VRAI);
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    lc = ajouter_tete_liste_chainee(lc, c);
+    carte c2 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    lc = ajouter_tete_liste_chainee(lc, c2);
+    carte carte_supprimee = supprimer_carte_liste_chainee(lc, 1);
+    CU_ASSERT(get_est_face_cachee(carte_supprimee) == VRAI);
     CU_ASSERT(taille_liste_chainee(lc) == 1);
+    free(carte_supprimee);
     liberer_liste_chainee(lc);
 }
 
@@ -142,22 +144,23 @@ void test_initialiser_grille(void) {
  */
 void test_poser_carte_grille(void) {
     grille_carte g = initialiser_grille(32);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    CU_ASSERT(VRAI == poser_carte_grille(g, &c, 15, 15));
-    CU_ASSERT(FAUX == poser_carte_grille(g, &c, 50, 15));
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    CU_ASSERT(VRAI == poser_carte_grille(g, c, 15, 15));
+    CU_ASSERT(FAUX == poser_carte_grille(g, c, 50, 15));
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 15);
     CU_ASSERT(get_min_x_grille(g) == 15);
     CU_ASSERT(get_min_y_grille(g) == 15);
-    CU_ASSERT(get_carte_grille(g, 15, 15)->est_face_cachee == VRAI);
-    struct s_carte c2 = {"T", "EFFET", 1, -1, FAUX};
-    CU_ASSERT(VRAI == poser_carte_grille(g, &c2, 14, 15));
+    CU_ASSERT(get_est_face_cachee(get_carte_grille(g, 15, 15)) == VRAI);
+    carte c2 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    CU_ASSERT(VRAI == poser_carte_grille(g, c2, 14, 15));
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 15);
     CU_ASSERT(get_min_x_grille(g) == 15);
     CU_ASSERT(get_min_y_grille(g) == 14);
-    CU_ASSERT(get_carte_grille(g, 14, 15)->est_face_cachee == FAUX);
-    CU_ASSERT(VRAI == poser_carte_grille(g, &c2, 16, 14));
+    CU_ASSERT(get_est_face_cachee(get_carte_grille(g, 14, 15)) == FAUX);
+    carte c3 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    CU_ASSERT(VRAI == poser_carte_grille(g, c3, 16, 14));
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 16);
     CU_ASSERT(get_min_x_grille(g) == 14);
@@ -173,13 +176,13 @@ void test_get_position_carte_haut_gauche_grille(void) {
     position p = get_position_carte_haut_gauche_grille(g);
     CU_ASSERT(-1 == p.ordonnee);
     CU_ASSERT(-1 == p.abscisse);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    CU_ASSERT(VRAI == poser_carte_grille(g, &c, 15, 15));
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    CU_ASSERT(VRAI == poser_carte_grille(g, c, 15, 15));
     p = get_position_carte_haut_gauche_grille(g);
     CU_ASSERT(15 == p.ordonnee);
     CU_ASSERT(15 == p.abscisse);
-    struct s_carte c2 = {"T", "EFFET", 1, -1, FAUX};
-    CU_ASSERT(VRAI == poser_carte_grille(g, &c2, 0, 0));
+    carte c2 = initialiser_carte("T", "EFFET", NULL, 1, -1, FAUX);
+    CU_ASSERT(VRAI == poser_carte_grille(g, c2, 0, 0));
     p = get_position_carte_haut_gauche_grille(g);
     CU_ASSERT(15 == p.ordonnee);
     CU_ASSERT(15 == p.abscisse);
@@ -192,16 +195,16 @@ void test_get_position_carte_haut_gauche_grille(void) {
  */
 void test_supprimer_carte_grille(void) {
     grille_carte g = initialiser_grille(32);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    poser_carte_grille(g, &c, 15, 15);
-    poser_carte_grille(g, &c, 0, 15);
-    poser_carte_grille(g, &c, 31, 15);
-    CU_ASSERT(FAUX == poser_carte_grille(g, &c, 50, 15));
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    poser_carte_grille(g, c, 15, 15);
+    poser_carte_grille(g, c, 0, 15);
+    poser_carte_grille(g, c, 31, 15);
+    CU_ASSERT(FAUX == poser_carte_grille(g, c, 50, 15));
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 31);
     CU_ASSERT(get_min_x_grille(g) == 15);
     CU_ASSERT(get_min_y_grille(g) == 0);
-    CU_ASSERT(supprimer_carte_grille(g, 0, 15)->est_face_cachee == VRAI);
+    CU_ASSERT(get_est_face_cachee(supprimer_carte_grille(g, 0, 15)) == VRAI);
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 31);
     CU_ASSERT(get_min_x_grille(g) == 15);
@@ -211,7 +214,7 @@ void test_supprimer_carte_grille(void) {
     CU_ASSERT(get_max_y_grille(g) == 31);
     CU_ASSERT(get_min_x_grille(g) == 15);
     CU_ASSERT(get_min_y_grille(g) == 15);
-    CU_ASSERT(supprimer_carte_grille(g, 31, 15)->est_face_cachee == VRAI);
+    CU_ASSERT(get_est_face_cachee(supprimer_carte_grille(g, 31, 15)) == VRAI);
     CU_ASSERT(get_max_x_grille(g) == 15);
     CU_ASSERT(get_max_y_grille(g) == 15);
     CU_ASSERT(get_min_x_grille(g) == 15);
@@ -224,10 +227,8 @@ void test_supprimer_carte_grille(void) {
  */
 void test_reinitialiser_grille(void) {
     grille_carte g = initialiser_grille(32);
-    struct s_carte c = {"T", "EFFET", 1, -1, VRAI};
-    poser_carte_grille(g, &c, 15, 15);
-    poser_carte_grille(g, &c, 0, 15);
-    poser_carte_grille(g, &c, 31, 15);
+    carte c = initialiser_carte("T", "EFFET", NULL, 1, -1, VRAI);
+    poser_carte_grille(g, c, 15, 15);
     reinitialiser_grille(g);
     for (int i = 0; i < 32; i++) {
         for (int j = 0; j < 32; j++) {
@@ -289,7 +290,8 @@ int run_all_tests() {
     if ((NULL == CU_add_test(pSuite, "initialiser_grille():", test_initialiser_grille))
         || (NULL == CU_add_test(pSuite, "poser_carte_grille():", test_poser_carte_grille))
         || (NULL == CU_add_test(pSuite, "supprimer_carte_grille():", test_supprimer_carte_grille))
-        || (NULL == CU_add_test(pSuite, "get_position_carte_haut_gauche_grille():", test_get_position_carte_haut_gauche_grille))
+        || (NULL ==
+            CU_add_test(pSuite, "get_position_carte_haut_gauche_grille():", test_get_position_carte_haut_gauche_grille))
         || (NULL == CU_add_test(pSuite, "reinitialiser_grille():", test_reinitialiser_grille))) {
         CU_cleanup_registry();
         return CU_get_error();

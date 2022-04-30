@@ -14,9 +14,8 @@ int main(int argc, char **argv) {
     // Si l'argument --test est passé au programme, alors on lance les tests unitaires et non le jeu
     if (argc == 2 && strcmp("--test", argv[1]) == 0) {
         run_all_tests();
-    }
-    // S'il n'y a pas --test, on lance le jeu
-  /*  else {
+    } // S'il n'y a pas --test, on lance le jeu
+    else {
         plateau p = nouveau_plateau();
         faction *factions = get_factions(p);
         int resultat_partie = initialiser_manche(p);
@@ -34,7 +33,7 @@ int main(int argc, char **argv) {
                 // Si la faction n'a pas déjà remélangé alors on lui demande si elle veut
                 if (a_remelanger(factions[i]) == FAUX) {
                     // Si elle accepte de renouveler sa main alors on la renouvelle
-                    if (demander_renouvellement_main(factions[i]) == VRAI) {
+                    if (demander_renouvellement_main() == VRAI) {
                         vider_main_dans_pioche(factions[i]);
                         melanger_pioche(factions[i]);
                         repioche(factions[i]);
@@ -57,7 +56,7 @@ int main(int argc, char **argv) {
                 afficher_plateau(p);
                 position position_carte = demander_position_poser_carte(p, factions[indice_faction_active],
                                                                         carte_a_poser);
-                poser_carte(p, factions[indice_faction_active], carte_a_poser, position_carte);
+                poser_carte(p, carte_a_poser, position_carte);
                 afficher_plateau(p);
                 // On passe à la faction suivante
                 indice_faction_active = (indice_faction_active + 1) % 2;
@@ -77,7 +76,8 @@ int main(int argc, char **argv) {
         } while (resultat_partie == PARTIE_NON_TERMINEE);
         afficher_vainqueur(factions[resultat_partie]);
         liberer_plateau(p);
-    } */
+    }
+
     return 0;
 }
 
