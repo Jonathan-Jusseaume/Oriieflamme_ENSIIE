@@ -1,4 +1,8 @@
 #include "../headers/constante.h"
+#include "../headers/position.h"
+#include "../headers/carte.h"
+#include "../headers/plateau.h"
+
 
 /**
  * Structure représentant une carte.
@@ -12,6 +16,17 @@ typedef struct s_carte {
      * Chaîne de caractère représentant l'effet de la carte.
      */
     char *effet;
+
+    /**
+     * Pointeur vers une fonction contenant l'effet de la carte
+     */
+    void (*effet_fonction)(carte c, plateau p);
+
+    /**
+     * Position de la carte
+     */
+    position pos;
+
     /**
      * Entier représentant l'identifiant de la faction qui possède la carte.
      */
@@ -27,11 +42,30 @@ typedef struct s_carte {
      */
     booleen est_face_cachee;
 
-}*carte;
+} *carte;
+
+
+carte initialiser_carte(char *nom, char *effet, void *effet_carte, int identifiant_faction, int numero_plateau,
+                        booleen est_face_cachee) {
+    /*initialisation de la carte avec les différents champs requis*/
+    carte c = (carte) malloc(sizeof(struct s_carte));
+    c->nom = nom;
+    c->effet = effet;
+    c->effet_fonction = effet_carte;
+    c->pos.abscisse = -1;
+    c->pos.abscisse = -1;
+    c->pos.ordonnee = -1;
+    c->identifiant_faction = identifiant_faction;
+    c->numero_plateau = numero_plateau;
+    c->est_face_cachee = est_face_cachee;
+    return c;
+}
+
 
 char *get_nom_carte(carte c) {
     return c->nom;
 }
+
 
 char *get_effet(carte c) {
     return c->effet;
@@ -60,6 +94,7 @@ void set_effet(carte c,char *effet) {
 void set_identifiant_faction_carte(carte c, int identifiant_faction) {
     c->identifiant_faction = identifiant_faction;
 }
+
 void set_numero_plateau(carte c, int numero_plateau) {
     c->numero_plateau = numero_plateau;
 }

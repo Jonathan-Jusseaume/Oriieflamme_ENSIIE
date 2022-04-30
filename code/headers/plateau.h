@@ -10,6 +10,8 @@
 #include "faction.h"
 #include "constante.h"
 #include "position.h"
+#include <stdlib.h>
+#include <string.h>
 #include "structure.h"
 
 
@@ -42,7 +44,7 @@ int initialiser_manche(plateau p);
  * @param p pointeur sur le plateau
  * @return faction : liste des deux factions
  */
-faction* get_factions(plateau p);
+faction *get_factions(plateau p);
 
 /**
  * une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
@@ -51,7 +53,7 @@ faction* get_factions(plateau p);
  * @param c carte à déposer par la faction
  * @param pos position de la carte
  */
-void poser_carte(plateau p, faction f, carte c, position pos);
+void poser_carte(plateau p, carte c, position pos);
 
 /**
  * une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet

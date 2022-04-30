@@ -7,11 +7,20 @@
 
 #include "constante.h"
 #include "carte.h"
+#include "structure.h"
+#include<stdlib.h>
+
 
 /**
  * Structure représentant une faction.
  */
 typedef struct s_faction *faction;
+
+/**
+ * Fonction permettant d'initialiser les deux factions
+ * @return faction* : pointeur sur les factions
+ */
+faction *initialiser_factions();
 
 /**
  * Fonction permettant de savoir si une faction a utilisé l'option de remélanger sa main et la boîte à idée et de repiocher des cartes.

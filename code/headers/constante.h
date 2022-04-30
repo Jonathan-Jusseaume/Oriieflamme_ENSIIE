@@ -13,7 +13,6 @@
 #define FACTION2 1
 #include "effets.h"
 
-
 /**
  * Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0
  */
