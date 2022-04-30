@@ -83,16 +83,32 @@ booleen get_est_face_cachee(carte carte) {
     return carte->est_face_cachee;
 }
 
+position get_position(carte c) {
+    return c->pos;
+}
+
+void *get_effet_fonction(carte c) {
+    return c->effet_fonction;
+}
+
 void set_nom_carte(carte c, char *nom) {
     c->nom = nom;
 }
 
-void set_effet(carte c,char *effet) {
+void set_position(carte c, position p) {
+    c->pos = p;
+}
+
+void set_effet(carte c, char *effet) {
     c->effet = effet;
 }
 
 void set_identifiant_faction_carte(carte c, int identifiant_faction) {
     c->identifiant_faction = identifiant_faction;
+}
+
+void set_effet_fonction_carte(carte c, void *effet_fonction) {
+    c->effet_fonction = effet_fonction;
 }
 
 void set_numero_plateau(carte c, int numero_plateau) {

@@ -60,16 +60,23 @@ grille_carte initialiser_grille(int taille_grille) {
     for (int i = 0; i < g->taille; i++) {
         g->grille[i] = (carte *) malloc(taille_grille * sizeof(carte));
     }
+    for (int i = 0; i < g->taille; i++) {
+        for (int j = 0; j < g->taille; j++) {
+            g->grille[i][j] = NULL;
+        }
+    }
     return g;
 }
 
 void reinitialiser_grille(grille_carte g) {
     // On parcourt la partie de la grille où il y a des cartes
-    for (int y = g->min_y; y <= g->max_y; y++) {
-        for (int x = g->min_x; x <= g->max_x; x++) {
+    for (int y = 0; y < g->taille; y++) {
+        for (int x = 0; x < g->taille; x++) {
             // S'il y a une carte sur cette position
             if (g->grille[y][x] != NULL) {
+                carte carte_a_liberer = g->grille[y][x];
                 g->grille[y][x] = NULL;
+                free(carte_a_liberer);
             }
         }
     }
@@ -82,6 +89,7 @@ void reinitialiser_grille(grille_carte g) {
 
 void liberer_grille(grille_carte g) {
     // On libère la grille
+    reinitialiser_grille(g);
     for (int i = 0; i < g->taille; i++) {
         free(g->grille[i]);
     }
@@ -128,11 +136,13 @@ carte supprimer_carte_grille(grille_carte g, int y, int x) {
         return NULL;
     }
     carte c_supprimee = g->grille[y][x];
+
     g->grille[y][x] = NULL;
     // On met à jour les min et max dans le cas où on a supprimé une carte qui était sur le max ou le min
     if (c_supprimee != NULL && (y == g->max_y || y == g->min_y || x == g->max_x || x == g->min_x)) {
+
         // On cherche les nouveaux maximum et minimum et les initialisant aux valeurs les plus grands ou plus petites possibles d'abord
-        int new_min_x = g->taille, new_max_x = 0, new_min_y = g->taille, new_max_y = 0;
+        int new_min_x = g->taille - 1, new_max_x = 0, new_min_y = g->taille - 1, new_max_y = 0;
         for (int y = g->min_y; y <= g->max_y; y++) {
             for (int x = g->min_x; x <= g->max_x; x++) {
                 // Si on trouve une carte, on teste si on peut changer les minimum/maximum
@@ -182,7 +192,7 @@ position get_position_carte_haut_gauche_grille(grille_carte g) {
     for (int y = g->min_y; y <= g->max_y; y++) {
         for (int x = g->min_x; x <= g->max_x; x++) {
             // Si on trouve une carte face cachée alors on retourne sa position
-            if (g->grille[y][x] != NULL && g->grille[y][x]->est_face_cachee == VRAI) {
+            if (g->grille[y][x] != NULL && get_est_face_cachee(g->grille[y][x]) == VRAI) {
                 p.abscisse = x;
                 p.ordonnee = y;
                 break;
@@ -224,7 +234,7 @@ carte supprimer_carte_liste_chainee(liste_chainee_carte l, int indice_carte) {
         return NULL;
     liste_chainee_carte nouvelle_queue = courant->queue->queue;
     carte carte_supprimee = courant->queue->tete;
-
+    free(courant->queue);
     courant->queue = nouvelle_queue;
     return carte_supprimee;
 }

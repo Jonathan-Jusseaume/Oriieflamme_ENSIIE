@@ -103,7 +103,7 @@ void repioche(faction f) {
         indice_carte = indice_liste_carte(get_valeur_indice_ensemble_entier(f->pioche, i));
         /*pointeur sur une carte initialisée : on initialise la carte avec les informations nécessaires en particulier son nom qui sera récupéré grâce à l'indice de l'ensemble*/
         carte c = initialiser_carte(nom_cartes[indice_carte],
-                                    effets_description[indice_carte], effets[indice_carte], f->identifiant_faction, -1,
+                                    effets_description[indice_carte],/* effets[indice_carte]*/ NULL, f->identifiant_faction, -1,
                                     FAUX);
         /*ajout de la carte en question dans la main*/
         ajouter_tete_liste_chainee(f->main, c);

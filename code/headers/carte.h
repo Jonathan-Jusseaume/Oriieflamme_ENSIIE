@@ -64,17 +64,40 @@ int get_numero_plateau(carte c);
 booleen get_est_face_cachee(carte carte);
 
 /**
+ * Fonction permettant de recupérer le champ position de la carte.
+ * @param carte : pointeur sur la carte dont on veut récuperer le champ position.
+ * @return position représentant le champ position de la carte.
+ */
+position get_position(carte c);
+
+/**
+ * Fonction permettant de recupérer le champ effet_fonction de la carte qui est la fonction déclencheant l'effet
+ * de la carte.
+ * @param carte : pointeur sur la carte dont on veut récuperer le champ effet_fonction.
+ * @return pointeur représentant le pointeur vers la fonction appliquant l'effet de la carte.
+ */
+void *get_effet_fonction(carte c);
+
+/**
  * Fonction permettant de changer le nom de la carte.
  * @param c : pointeur sur la carte dont on veut changer son nom.
  * @param nom : chaîne de caractères que l'on va associer au nom de la carte.
  */
 void set_nom_carte(carte c, char *nom);
+
+/**
+ * Fonction permettant de changer la position de la carte.
+ * @param c : pointeur sur la carte dont on veut changer la position.
+ * @param p : position que l'on va associer à la carte.
+ */
+void set_position(carte c, position p);
+
 /**
  * Fonction permettant de changer l'effet de la carte.
  * @param c : pointeur sur la carte dont on veut changer son effet.
  * @param effet : chaîne de caractères que l'on va associer à l'effet de la carte.
  */
-void set_effet(carte c,char *effet);
+void set_effet(carte c, char *effet);
 
 /**
  * Fonction permettant de changer l'identifiant_faction de la carte.
@@ -82,6 +105,13 @@ void set_effet(carte c,char *effet);
  * @param identifiant_faction : entier que l'on va associer à l'identifiant_faction de la carte.
  */
 void set_identifiant_faction_carte(carte c, int identifiant_faction);
+
+/**
+ * Fonction permettant de changer l'effet_fonction de la carte.
+ * @param c : pointeur sur la carte dont on veut changer son effet_fonction.
+ * @param effet_fonction : le pointeur vers la nouvelle fonction correspondant à l'effet de la carte
+ */
+void set_effet_fonction_carte(carte c, void *effet_fonction);
 
 /**
  * Fonction permettant de changer le numero_plateau de la carte.
