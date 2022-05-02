@@ -186,16 +186,20 @@ int get_max_y_grille(grille_carte g) {
     return g->max_y;
 }
 
-position get_position_carte_haut_gauche_grille(grille_carte g) {
+int get_taille_grille(grille_carte g) {
+    return g->taille;
+}
+
+position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face_cachee) {
     // On initialise une valeur par défaut pour la position que l'on va retourner
     position p = {-1, -1};
     for (int y = g->min_y; y <= g->max_y; y++) {
         for (int x = g->min_x; x <= g->max_x; x++) {
             // Si on trouve une carte face cachée alors on retourne sa position
-            if (g->grille[y][x] != NULL && get_est_face_cachee(g->grille[y][x]) == VRAI) {
+            if (g->grille[y][x] != NULL && (!veut_face_cachee || get_est_face_cachee(g->grille[y][x]) == VRAI)) {
                 p.abscisse = x;
                 p.ordonnee = y;
-                break;
+                return p;
             }
         }
     }
@@ -212,31 +216,40 @@ liste_chainee_carte initialiser_liste_chainee() {
     return NULL;
 }
 
-liste_chainee_carte ajouter_tete_liste_chainee(liste_chainee_carte l, carte c) {
+void ajouter_tete_liste_chainee(liste_chainee_carte *l, carte c) {
     liste_chainee_carte nouvelle_liste = (liste_chainee_carte) malloc(1 * sizeof(struct s_liste_chainee_carte));
     nouvelle_liste->tete = c;
-    nouvelle_liste->queue = l;
-    return nouvelle_liste;
+    nouvelle_liste->queue = *l;
+    *l = nouvelle_liste;
 }
 
-carte supprimer_carte_liste_chainee(liste_chainee_carte l, int indice_carte) {
-    if (liste_chainee_est_vide(l)) {
+carte supprimer_carte_liste_chainee(liste_chainee_carte *l, int indice_carte) {
+    carte c_supprimee = NULL;
+    if (liste_chainee_est_vide(*l)) {
         return NULL;
     }
-    liste_chainee_carte courant = l;
+    liste_chainee_carte courant = *l;
     if (indice_carte == 0) {
-        l = l->queue;
-        return courant->tete;
+        c_supprimee = courant->tete;
+        (*l) = courant->queue;
+        free(courant);
+        return c_supprimee;
     }
-    for (int i = 0; courant != NULL && i < indice_carte - 1; i++)
+    liste_chainee_carte precedent = *l;
+    int i = 0;
+    while (courant != NULL && i != indice_carte) {
+        precedent = courant;
         courant = courant->queue;
-    if (courant == NULL || courant->queue == NULL)
+        i++;
+    }
+    if (courant == NULL) {
         return NULL;
-    liste_chainee_carte nouvelle_queue = courant->queue->queue;
-    carte carte_supprimee = courant->queue->tete;
-    free(courant->queue);
-    courant->queue = nouvelle_queue;
-    return carte_supprimee;
+    }
+    c_supprimee = courant->tete;
+    precedent->queue = courant->queue;
+    free(courant);
+    return c_supprimee;
+
 }
 
 

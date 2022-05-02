@@ -68,6 +68,13 @@ carte get_carte_grille(grille_carte g, int y, int x);
 carte supprimer_carte_grille(grille_carte g, int y, int x);
 
 /**
+ * Renvoie la taille de la grille
+ * @param g la grille dont on veut obtenir l'information
+ * @return la taille de la grille
+ */
+int get_taille_grille(grille_carte g);
+
+/**
  * Renvoie l'abscisse de la carte la plus à gauche de la grille
  * @param g la grille dont on veut obtenir l'information
  * @return l'abscisse de la carte la plus à gauche la grille
@@ -97,12 +104,14 @@ int get_max_y_grille(grille_carte g);
 
 /**
  * Renvoie la position de la carte non retournée la plus en haut à gauche de la grille
- * de carté passée en paramètre
+ * de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu'on veuille qu'elle soit face
+ * cachée ou non
  * @param g la grille dont on veut récupérer l'information
+ * @param veut_face_cachee vaut vrai si on veut la dernière carte en haut à gauche non retournée
  * @return {-1,-1} s'il n'y a pas de cartes non retournées dans la grille, la position de la carte non
  * retournée la plus en haut à gauche sinon
  */
-position get_position_carte_haut_gauche_grille(grille_carte g);
+position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face_cachee);
 
 
 /**
@@ -124,15 +133,14 @@ liste_chainee_carte initialiser_liste_chainee();
  * @param c la carte que l'on veut ajouter à notre liste
  * @return Retourne la liste chaînée avec la carte ajoutée en tête
  */
-liste_chainee_carte ajouter_tete_liste_chainee(liste_chainee_carte l, carte c);
+void ajouter_tete_liste_chainee(liste_chainee_carte *l, carte c);
 
 /**
- * Supprime la carte à l'indice passée en paramètre, et la renvoie
+ * Supprime la carte à l'indice passée en paramètre
  * @param l la liste à laquelle on veut supprimer notre carte
- * @param indice_carte l'indice de la carte que l'on veut supprimer
- * @return la carte supprimée ou NULL si l'indice passée en paramètre est trop élevé
+ * @return la liste avec la carte supprimée
  */
-carte supprimer_carte_liste_chainee(liste_chainee_carte l, int indice_carte);
+carte supprimer_carte_liste_chainee(liste_chainee_carte* l, int indice_carte) ;
 
 /**
  * Renvoie la taille de la liste chainee passée en paramètre
