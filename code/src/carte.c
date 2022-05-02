@@ -1,8 +1,7 @@
 #include "../headers/constante.h"
 #include "../headers/position.h"
 #include "../headers/carte.h"
-#include "../headers/plateau.h"
-
+#include <stdlib.h>
 
 /**
  * Structure représentant une carte.
@@ -43,7 +42,6 @@ typedef struct s_carte {
     booleen est_face_cachee;
 
 } *carte;
-
 
 carte initialiser_carte(char *nom, char *effet, void *effet_carte, int identifiant_faction, int numero_plateau,
                         booleen est_face_cachee) {
@@ -87,7 +85,7 @@ position get_position(carte c) {
     return c->pos;
 }
 
-void *get_effet_fonction(carte c) {
+void (*get_effet_fonction(carte c))(carte c, plateau p) {
     return c->effet_fonction;
 }
 

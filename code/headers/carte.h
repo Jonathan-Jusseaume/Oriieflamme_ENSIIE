@@ -8,6 +8,8 @@
 #include "constante.h"
 #include "position.h"
 
+typedef struct s_plateau *plateau;
+
 /**
  * Structure représentant une carte.
  */
@@ -76,7 +78,7 @@ position get_position(carte c);
  * @param carte : pointeur sur la carte dont on veut récuperer le champ effet_fonction.
  * @return pointeur représentant le pointeur vers la fonction appliquant l'effet de la carte.
  */
-void *get_effet_fonction(carte c);
+void (*get_effet_fonction(carte c))(carte c, plateau p);
 
 /**
  * Fonction permettant de changer le nom de la carte.

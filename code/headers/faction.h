@@ -8,7 +8,7 @@
 #include "constante.h"
 #include "carte.h"
 #include "structure.h"
-#include<stdlib.h>
+#include <stdlib.h>
 
 
 /**
