@@ -1,0 +1,733 @@
+\hypertarget{effets_8h}{}\doxysection{Référence du fichier headers/effets.h}
+\label{effets_8h}\index{headers/effets.h@{headers/effets.h}}
+
+
+Fichier contenant les différents effets des cartes.  
+
+
+{\ttfamily \#include \char`\"{}carte.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}plateau.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}faction.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de effets.\+h\+:
+% FIG 0
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{effets_8h_a3b4d479970788586dbf85ed814dff62d}\label{effets_8h_a3b4d479970788586dbf85ed814dff62d}} 
+typedef void($\ast$ \mbox{\hyperlink{effets_8h_a3b4d479970788586dbf85ed814dff62d}{effet\+\_\+fonction}}) (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Le prototype des fonctions correspondant à l\textquotesingle{}effet des cartes qui est toujouo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{effets_8h_ac2ffa80b4962b8893be2336bbdbc1923}{fise}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte FISE La faction qui a posé cette carte gagne 1 point DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_abd2ab4b2842e541889a46725abc0855b}{fisa}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte FISA La faction qui a posé cette carte gagne 2 points DDRS si le nombre de cartes retournées sur le plateau est pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a88e6aff23b3d639dec40acccccf6b45e}{fc}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte FC La faction qui a posé cette carte gagne 4 points DDRS si une autre carte FC est retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_abeaba164f51445497141300741d4e310}{ecologiie}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Ecologiie La faction qui a posé cette carte gagne 1 points DDRS par carte FISE,FISA et FC retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a3920ae6914e0c498453f632152f5072e}{liiens}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Liiens Prends toutes les cartes FISE,FISA et FC retournées, les mélange et les place face cachées tout en haut à gauche du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aa1162a41b9cfa4b13fb3fee04efc77f3}{soirees\+\_\+sans\+\_\+alcool}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Soirees\+\_\+sans\+\_\+alcool Si une carte alcool est retournée, supprime toutes les cartes FISE, FISA et FC retournées et supprime la première et dernière ligne du plateau Sinon, la faction qui a posé cette carte de gagner 1 point DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a0b0019dab405af360d2baaca81b9cfa1}{alcool}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Alcool Supprime toutes les cartes touchant celle-\/ci (supprime la carte posée au-\/dessus, en-\/desssus, à sa gauche et à sa droite) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a0acf89e0837039fe92da6ece979ed148}{cafe}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Café Supprime toutes les cartes Thé et Alcool retournées du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a9651577bdab3b326ea692cafdc97e636}{the}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Thé Supprime toutes les cartes Café et Alcool retournées du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a3f2b82fb3539034e59defba0a11c7206}{ecocup}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Ecocup Ne fait rien. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aba02ebcc352a3b26d64205f5e5bca106}{reprographie}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Reprographie La faction adverse à celle qui a posé cette carte perd 1 point DDRS pour chaque pair de cartes retournées et identiques du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a3444804f13d4a47f79ad6248d2195998}{isolation\+\_\+batiment}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Isolation du bâtiment Chaque faction gagne 1 point DDRS par carte face cachée du plateau qu\textquotesingle{}elle a posé \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aae78bc41c5e51655f508a47750409283}{parcours\+\_\+sobriete\+\_\+numerique}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Parcours sobriété numérique Retourne toutes les cartes les plus à gauche et à droite de chaque ligne sans appliquer leur effet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a3def3dfb36fe4174d0db8536d71aaf5d}{heures\+\_\+supplementaires}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Heures supplémentaires Cette carte fait perdre 3 points DDRS à la faction adverse de celle qui a posé cette carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a964c46f0f278e59cc036de2d25713b2b}{kahina\+\_\+bouchama}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Kahina Bouchama Supprime du plateau une carte face cachée au hasard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a479defb24193c1dc6381141d8b59d8cb}{kevin\+\_\+goilard}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Kevin Goilard Supprime du plateau une ligne au hasard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_abf4dc295d3b4048d44905cbeb8e44d89}{massinissa\+\_\+merabet}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Massinissa Merabet La dernière carte retournée voit son effet s\textquotesingle{}activer à nouveau telle qu\textquotesingle{}elle appartient à la faction qui a posé la carte Massinissa Merabet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a4c172c192d0c23e7b28075312bbc98fd}{vitera\+\_\+y}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Vitéra Y La faction qui a le moins de points DRRS se voit conférer 3 points DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a54ac3b736efce45a7d8ff67ffda308dd}{jonas\+\_\+senizergues}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Jonas Senizergues Supprime toutes les cartes Heures supplémentaires retournées du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a0cbcd3c5e681d052757f90c6a2167251}{fetia\+\_\+bannour}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Fetia Bannour Si la carte Heures Supplémentaires est retournée, supprime du plateau toutes les cartes de la ligne et de la colonne où cette carte est posée (y compris elle-\/même) Sinon, la faction qui a posé cette carte gagne 1 points DDRS par carte Catherine Dubois, Anne-\/\+Laure Ligozat, Guillaume Burel, Christophe Mouilleron, Thomas Lim, Julien Forest et Dimitri Watel retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a12c553c3a1d1f7c3cb520571a84226ec}{catherine\+\_\+dubois}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Catherine Dubois Supprime du plateau la première et dernière carte de la ligne où est posée cette carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aed0e72b6210c54385ca3c73587612c20}{anne\+\_\+laure\+\_\+ligozat}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Anne-\/\+Laure Ligozat La faction qui a posé cette carte gagne 3 points DDRS et la dernière carte face cachée du plateau est supprimée pour chaque carte Ecologiie, Ecocup, Isolation du bâtiment et parcours Sobriété numérique retournées. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a118d0f711e060de6c04bfe7fc83c99b9}{guillaume\+\_\+burel}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Guillaume Burel Si la faction adverse de celle qui a posé cette carte a plus de points DDRS, la faction qui a posé cette carte lui vole 3 points DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aac2301c5cb05cf452f1127d8a00082f7}{christophe\+\_\+mouilleron}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Christophe Mouilleron Supprime du plateau toutes les cartes retournées sauf les cartes Christophe Mouilleron et Heures supplémentaires si la carte Heures supplémentaires est retournée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_af26f48d919871b0677f69ff08eb4b820}{thomas\+\_\+lim}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Thomas Lim Si la carte Julien Forest n\textquotesingle{}est pas retournée sur le plateau, la faction qui a posé cette carte gagne 3 points DDRS par carte FISE retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_ab5a81b5c48d71db99d2f580f35658588}{julien\+\_\+forest}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Julien Forest Si une carte café est retournée sur le plateau, la faction qui a posé cette carte gagne 6 points DDRS par carte FISE retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_ae2b2fd7f7eeaf29869d60b0ec3c9833c}{dimitri\+\_\+watel}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Dimitri Watel Si une carte thé est retournée sur le plateau, la faction qui a posé cette carte gagne 3 points DDRS par carte FISA ou FC retournée sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_ad80350c4713569686a8a74246c839cd5}{djibril\+\_\+aurelien\+\_\+dembele\+\_\+cabot}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Djibril-\/\+Aurélien-\/\+Dembele-\/\+Cabot S\textquotesingle{}il y a plus de 3 cartes retournées sur la ligne de cette carte sur le plateau, la faction qui a posé cette carte gagne 5 points DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a53d1034226f09321be655f02995c38d6}{eric\+\_\+lejeune}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Eric Lejeune Prend au hasard 5 cartes retournées du plateau (ou toutes les cartes retournées du plateau s\textquotesingle{}il y a moins de 5). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_a1ad52c05c23d2b3ba365499dea4b9702}{lucienne\+\_\+pacave}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Lucienne Pacave S\textquotesingle{}il y a une carte FISA retournée dans la même ligne ou la même colonne que cette carte, la faction qui a posé cette carte gagne 5 points DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_af72cecde65463d39ef91dbe36e98ad48}{katrin\+\_\+salhab}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Katrin Salhab Si les cartes Djibril-\/\+Aurélien Djembele-\/\+Cabeau, Eric Lejeune et Lucienne Pacavé sont retournées, la faction qui a posé cette carte gagne 10 points DDRS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{effets_8h_aa0d3a1f78b13a608717a74818691af99}{laurent\+\_\+prevel}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction pour l\textquotesingle{}effet de la carte Laurent Prével Si Laurent Prével est la dernière carte retournée du plateau, la faction qui a posé cette carte gagne la manche, quel que soit le nombre de points DDRS des deux factions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier contenant les différents effets des cartes. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{effets_8h_a0b0019dab405af360d2baaca81b9cfa1}\label{effets_8h_a0b0019dab405af360d2baaca81b9cfa1}} 
+\index{effets.h@{effets.h}!alcool@{alcool}}
+\index{alcool@{alcool}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{alcool()}{alcool()}}
+{\footnotesize\ttfamily void alcool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Alcool Supprime toutes les cartes touchant celle-\/ci (supprime la carte posée au-\/dessus, en-\/desssus, à sa gauche et à sa droite) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Alcool \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aed0e72b6210c54385ca3c73587612c20}\label{effets_8h_aed0e72b6210c54385ca3c73587612c20}} 
+\index{effets.h@{effets.h}!anne\_laure\_ligozat@{anne\_laure\_ligozat}}
+\index{anne\_laure\_ligozat@{anne\_laure\_ligozat}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{anne\_laure\_ligozat()}{anne\_laure\_ligozat()}}
+{\footnotesize\ttfamily void anne\+\_\+laure\+\_\+ligozat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Anne-\/\+Laure Ligozat La faction qui a posé cette carte gagne 3 points DDRS et la dernière carte face cachée du plateau est supprimée pour chaque carte Ecologiie, Ecocup, Isolation du bâtiment et parcours Sobriété numérique retournées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Anne-\/\+Laure Ligozat \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a0acf89e0837039fe92da6ece979ed148}\label{effets_8h_a0acf89e0837039fe92da6ece979ed148}} 
+\index{effets.h@{effets.h}!cafe@{cafe}}
+\index{cafe@{cafe}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{cafe()}{cafe()}}
+{\footnotesize\ttfamily void cafe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Café Supprime toutes les cartes Thé et Alcool retournées du plateau. 
+
+Si une carte Ecocup est retournée, la faction qui a posé cette carte gagne 1 points DDRS Sinon, la faction qui a posé cette carte gagne 1 points DDRS 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte Café \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a12c553c3a1d1f7c3cb520571a84226ec}\label{effets_8h_a12c553c3a1d1f7c3cb520571a84226ec}} 
+\index{effets.h@{effets.h}!catherine\_dubois@{catherine\_dubois}}
+\index{catherine\_dubois@{catherine\_dubois}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{catherine\_dubois()}{catherine\_dubois()}}
+{\footnotesize\ttfamily void catherine\+\_\+dubois (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Catherine Dubois Supprime du plateau la première et dernière carte de la ligne où est posée cette carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Catherine Dubois \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aac2301c5cb05cf452f1127d8a00082f7}\label{effets_8h_aac2301c5cb05cf452f1127d8a00082f7}} 
+\index{effets.h@{effets.h}!christophe\_mouilleron@{christophe\_mouilleron}}
+\index{christophe\_mouilleron@{christophe\_mouilleron}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{christophe\_mouilleron()}{christophe\_mouilleron()}}
+{\footnotesize\ttfamily void christophe\+\_\+mouilleron (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Christophe Mouilleron Supprime du plateau toutes les cartes retournées sauf les cartes Christophe Mouilleron et Heures supplémentaires si la carte Heures supplémentaires est retournée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Christophe Mouilleron \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_ae2b2fd7f7eeaf29869d60b0ec3c9833c}\label{effets_8h_ae2b2fd7f7eeaf29869d60b0ec3c9833c}} 
+\index{effets.h@{effets.h}!dimitri\_watel@{dimitri\_watel}}
+\index{dimitri\_watel@{dimitri\_watel}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{dimitri\_watel()}{dimitri\_watel()}}
+{\footnotesize\ttfamily void dimitri\+\_\+watel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Dimitri Watel Si une carte thé est retournée sur le plateau, la faction qui a posé cette carte gagne 3 points DDRS par carte FISA ou FC retournée sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Dimitri Watel \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_ad80350c4713569686a8a74246c839cd5}\label{effets_8h_ad80350c4713569686a8a74246c839cd5}} 
+\index{effets.h@{effets.h}!djibril\_aurelien\_dembele\_cabot@{djibril\_aurelien\_dembele\_cabot}}
+\index{djibril\_aurelien\_dembele\_cabot@{djibril\_aurelien\_dembele\_cabot}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{djibril\_aurelien\_dembele\_cabot()}{djibril\_aurelien\_dembele\_cabot()}}
+{\footnotesize\ttfamily void djibril\+\_\+aurelien\+\_\+dembele\+\_\+cabot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Djibril-\/\+Aurélien-\/\+Dembele-\/\+Cabot S\textquotesingle{}il y a plus de 3 cartes retournées sur la ligne de cette carte sur le plateau, la faction qui a posé cette carte gagne 5 points DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Djibril-\/\+Aurélien-\/\+Dembele-\/\+Cabot \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a3f2b82fb3539034e59defba0a11c7206}\label{effets_8h_a3f2b82fb3539034e59defba0a11c7206}} 
+\index{effets.h@{effets.h}!ecocup@{ecocup}}
+\index{ecocup@{ecocup}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{ecocup()}{ecocup()}}
+{\footnotesize\ttfamily void ecocup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Ecocup Ne fait rien. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Ecocup \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien car la carte ne fait rien 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_abeaba164f51445497141300741d4e310}\label{effets_8h_abeaba164f51445497141300741d4e310}} 
+\index{effets.h@{effets.h}!ecologiie@{ecologiie}}
+\index{ecologiie@{ecologiie}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{ecologiie()}{ecologiie()}}
+{\footnotesize\ttfamily void ecologiie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Ecologiie La faction qui a posé cette carte gagne 1 points DDRS par carte FISE,FISA et FC retournée sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte Ecologiie \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a53d1034226f09321be655f02995c38d6}\label{effets_8h_a53d1034226f09321be655f02995c38d6}} 
+\index{effets.h@{effets.h}!eric\_lejeune@{eric\_lejeune}}
+\index{eric\_lejeune@{eric\_lejeune}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{eric\_lejeune()}{eric\_lejeune()}}
+{\footnotesize\ttfamily void eric\+\_\+lejeune (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Eric Lejeune Prend au hasard 5 cartes retournées du plateau (ou toutes les cartes retournées du plateau s\textquotesingle{}il y a moins de 5). 
+
+Si une de ces cartes est une carte Catherine Dubois, Anne-\/\+Laure Ligozat, Guillaume Burel, Christophe Mouilleron, Thomas Lim, Julien Forest ou Dimitri Watel, mélange les et les place à gauche de la case la plus à gauche de la première ligne. Les prochaines cartes à être retournées sont ces cartes là. Sinon, supprimez ces cartes du plateau. 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Eric Lejeune \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a88e6aff23b3d639dec40acccccf6b45e}\label{effets_8h_a88e6aff23b3d639dec40acccccf6b45e}} 
+\index{effets.h@{effets.h}!fc@{fc}}
+\index{fc@{fc}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{fc()}{fc()}}
+{\footnotesize\ttfamily void fc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte FC La faction qui a posé cette carte gagne 4 points DDRS si une autre carte FC est retournée sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte FC \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a0cbcd3c5e681d052757f90c6a2167251}\label{effets_8h_a0cbcd3c5e681d052757f90c6a2167251}} 
+\index{effets.h@{effets.h}!fetia\_bannour@{fetia\_bannour}}
+\index{fetia\_bannour@{fetia\_bannour}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{fetia\_bannour()}{fetia\_bannour()}}
+{\footnotesize\ttfamily void fetia\+\_\+bannour (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Fetia Bannour Si la carte Heures Supplémentaires est retournée, supprime du plateau toutes les cartes de la ligne et de la colonne où cette carte est posée (y compris elle-\/même) Sinon, la faction qui a posé cette carte gagne 1 points DDRS par carte Catherine Dubois, Anne-\/\+Laure Ligozat, Guillaume Burel, Christophe Mouilleron, Thomas Lim, Julien Forest et Dimitri Watel retournée sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Fetia Bannour \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_abd2ab4b2842e541889a46725abc0855b}\label{effets_8h_abd2ab4b2842e541889a46725abc0855b}} 
+\index{effets.h@{effets.h}!fisa@{fisa}}
+\index{fisa@{fisa}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{fisa()}{fisa()}}
+{\footnotesize\ttfamily void fisa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte FISA La faction qui a posé cette carte gagne 2 points DDRS si le nombre de cartes retournées sur le plateau est pair. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte FISA \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_ac2ffa80b4962b8893be2336bbdbc1923}\label{effets_8h_ac2ffa80b4962b8893be2336bbdbc1923}} 
+\index{effets.h@{effets.h}!fise@{fise}}
+\index{fise@{fise}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{fise()}{fise()}}
+{\footnotesize\ttfamily void fise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte FISE La faction qui a posé cette carte gagne 1 point DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte FISE \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a118d0f711e060de6c04bfe7fc83c99b9}\label{effets_8h_a118d0f711e060de6c04bfe7fc83c99b9}} 
+\index{effets.h@{effets.h}!guillaume\_burel@{guillaume\_burel}}
+\index{guillaume\_burel@{guillaume\_burel}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{guillaume\_burel()}{guillaume\_burel()}}
+{\footnotesize\ttfamily void guillaume\+\_\+burel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Guillaume Burel Si la faction adverse de celle qui a posé cette carte a plus de points DDRS, la faction qui a posé cette carte lui vole 3 points DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Guillaume Burel \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a3def3dfb36fe4174d0db8536d71aaf5d}\label{effets_8h_a3def3dfb36fe4174d0db8536d71aaf5d}} 
+\index{effets.h@{effets.h}!heures\_supplementaires@{heures\_supplementaires}}
+\index{heures\_supplementaires@{heures\_supplementaires}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{heures\_supplementaires()}{heures\_supplementaires()}}
+{\footnotesize\ttfamily void heures\+\_\+supplementaires (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Heures supplémentaires Cette carte fait perdre 3 points DDRS à la faction adverse de celle qui a posé cette carte. 
+
+La faction adverse de celle qui a posé cette carte perd également 3 points DDRS par autre carte Heures supplémentaires retournée sur le plateau 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Heures supplémentaires \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a3444804f13d4a47f79ad6248d2195998}\label{effets_8h_a3444804f13d4a47f79ad6248d2195998}} 
+\index{effets.h@{effets.h}!isolation\_batiment@{isolation\_batiment}}
+\index{isolation\_batiment@{isolation\_batiment}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{isolation\_batiment()}{isolation\_batiment()}}
+{\footnotesize\ttfamily void isolation\+\_\+batiment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Isolation du bâtiment Chaque faction gagne 1 point DDRS par carte face cachée du plateau qu\textquotesingle{}elle a posé 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Isolation du bâtiment \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a54ac3b736efce45a7d8ff67ffda308dd}\label{effets_8h_a54ac3b736efce45a7d8ff67ffda308dd}} 
+\index{effets.h@{effets.h}!jonas\_senizergues@{jonas\_senizergues}}
+\index{jonas\_senizergues@{jonas\_senizergues}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{jonas\_senizergues()}{jonas\_senizergues()}}
+{\footnotesize\ttfamily void jonas\+\_\+senizergues (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Jonas Senizergues Supprime toutes les cartes Heures supplémentaires retournées du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Jonas Senizergues \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_ab5a81b5c48d71db99d2f580f35658588}\label{effets_8h_ab5a81b5c48d71db99d2f580f35658588}} 
+\index{effets.h@{effets.h}!julien\_forest@{julien\_forest}}
+\index{julien\_forest@{julien\_forest}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{julien\_forest()}{julien\_forest()}}
+{\footnotesize\ttfamily void julien\+\_\+forest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Julien Forest Si une carte café est retournée sur le plateau, la faction qui a posé cette carte gagne 6 points DDRS par carte FISE retournée sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Julien Forest \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a964c46f0f278e59cc036de2d25713b2b}\label{effets_8h_a964c46f0f278e59cc036de2d25713b2b}} 
+\index{effets.h@{effets.h}!kahina\_bouchama@{kahina\_bouchama}}
+\index{kahina\_bouchama@{kahina\_bouchama}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{kahina\_bouchama()}{kahina\_bouchama()}}
+{\footnotesize\ttfamily void kahina\+\_\+bouchama (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Kahina Bouchama Supprime du plateau une carte face cachée au hasard. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Kahina Bouchama \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_af72cecde65463d39ef91dbe36e98ad48}\label{effets_8h_af72cecde65463d39ef91dbe36e98ad48}} 
+\index{effets.h@{effets.h}!katrin\_salhab@{katrin\_salhab}}
+\index{katrin\_salhab@{katrin\_salhab}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{katrin\_salhab()}{katrin\_salhab()}}
+{\footnotesize\ttfamily void katrin\+\_\+salhab (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Katrin Salhab Si les cartes Djibril-\/\+Aurélien Djembele-\/\+Cabeau, Eric Lejeune et Lucienne Pacavé sont retournées, la faction qui a posé cette carte gagne 10 points DDRS. 
+
+Sinon, retourne toutes les cartes dans la même ligne de cette carte sans appliquer leurs effets. 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Katrin Salhab \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a479defb24193c1dc6381141d8b59d8cb}\label{effets_8h_a479defb24193c1dc6381141d8b59d8cb}} 
+\index{effets.h@{effets.h}!kevin\_goilard@{kevin\_goilard}}
+\index{kevin\_goilard@{kevin\_goilard}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{kevin\_goilard()}{kevin\_goilard()}}
+{\footnotesize\ttfamily void kevin\+\_\+goilard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Kevin Goilard Supprime du plateau une ligne au hasard. 
+
+La faction qui a posé cette carte gagne 2 points DDRS par carte supprimée dans cette ligne supprimée. 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Kevin Goilard \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aa0d3a1f78b13a608717a74818691af99}\label{effets_8h_aa0d3a1f78b13a608717a74818691af99}} 
+\index{effets.h@{effets.h}!laurent\_prevel@{laurent\_prevel}}
+\index{laurent\_prevel@{laurent\_prevel}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{laurent\_prevel()}{laurent\_prevel()}}
+{\footnotesize\ttfamily void laurent\+\_\+prevel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Laurent Prével Si Laurent Prével est la dernière carte retournée du plateau, la faction qui a posé cette carte gagne la manche, quel que soit le nombre de points DDRS des deux factions. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Laurent Prével \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a3920ae6914e0c498453f632152f5072e}\label{effets_8h_a3920ae6914e0c498453f632152f5072e}} 
+\index{effets.h@{effets.h}!liiens@{liiens}}
+\index{liiens@{liiens}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{liiens()}{liiens()}}
+{\footnotesize\ttfamily void liiens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Liiens Prends toutes les cartes FISE,FISA et FC retournées, les mélange et les place face cachées tout en haut à gauche du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte Liiens \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a1ad52c05c23d2b3ba365499dea4b9702}\label{effets_8h_a1ad52c05c23d2b3ba365499dea4b9702}} 
+\index{effets.h@{effets.h}!lucienne\_pacave@{lucienne\_pacave}}
+\index{lucienne\_pacave@{lucienne\_pacave}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{lucienne\_pacave()}{lucienne\_pacave()}}
+{\footnotesize\ttfamily void lucienne\+\_\+pacave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Lucienne Pacave S\textquotesingle{}il y a une carte FISA retournée dans la même ligne ou la même colonne que cette carte, la faction qui a posé cette carte gagne 5 points DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Lucienne Pacave \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_abf4dc295d3b4048d44905cbeb8e44d89}\label{effets_8h_abf4dc295d3b4048d44905cbeb8e44d89}} 
+\index{effets.h@{effets.h}!massinissa\_merabet@{massinissa\_merabet}}
+\index{massinissa\_merabet@{massinissa\_merabet}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{massinissa\_merabet()}{massinissa\_merabet()}}
+{\footnotesize\ttfamily void massinissa\+\_\+merabet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Massinissa Merabet La dernière carte retournée voit son effet s\textquotesingle{}activer à nouveau telle qu\textquotesingle{}elle appartient à la faction qui a posé la carte Massinissa Merabet. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Massinissa Merabet \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aae78bc41c5e51655f508a47750409283}\label{effets_8h_aae78bc41c5e51655f508a47750409283}} 
+\index{effets.h@{effets.h}!parcours\_sobriete\_numerique@{parcours\_sobriete\_numerique}}
+\index{parcours\_sobriete\_numerique@{parcours\_sobriete\_numerique}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{parcours\_sobriete\_numerique()}{parcours\_sobriete\_numerique()}}
+{\footnotesize\ttfamily void parcours\+\_\+sobriete\+\_\+numerique (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Parcours sobriété numérique Retourne toutes les cartes les plus à gauche et à droite de chaque ligne sans appliquer leur effet. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Parcours sobriété numérique \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aba02ebcc352a3b26d64205f5e5bca106}\label{effets_8h_aba02ebcc352a3b26d64205f5e5bca106}} 
+\index{effets.h@{effets.h}!reprographie@{reprographie}}
+\index{reprographie@{reprographie}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{reprographie()}{reprographie()}}
+{\footnotesize\ttfamily void reprographie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Reprographie La faction adverse à celle qui a posé cette carte perd 1 point DDRS pour chaque pair de cartes retournées et identiques du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Reprographie \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_aa1162a41b9cfa4b13fb3fee04efc77f3}\label{effets_8h_aa1162a41b9cfa4b13fb3fee04efc77f3}} 
+\index{effets.h@{effets.h}!soirees\_sans\_alcool@{soirees\_sans\_alcool}}
+\index{soirees\_sans\_alcool@{soirees\_sans\_alcool}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{soirees\_sans\_alcool()}{soirees\_sans\_alcool()}}
+{\footnotesize\ttfamily void soirees\+\_\+sans\+\_\+alcool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Soirees\+\_\+sans\+\_\+alcool Si une carte alcool est retournée, supprime toutes les cartes FISE, FISA et FC retournées et supprime la première et dernière ligne du plateau Sinon, la faction qui a posé cette carte de gagner 1 point DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Soirees\+\_\+sans\+\_\+alcool \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a9651577bdab3b326ea692cafdc97e636}\label{effets_8h_a9651577bdab3b326ea692cafdc97e636}} 
+\index{effets.h@{effets.h}!the@{the}}
+\index{the@{the}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{the()}{the()}}
+{\footnotesize\ttfamily void the (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Thé Supprime toutes les cartes Café et Alcool retournées du plateau. 
+
+Si une carte Ecocup est retournée, la faction qui a posé cette carte gagne 1 points DDRS Sinon, la faction qui a posé cette carte gagne 1 points DDRS 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur une carte Thé \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_af26f48d919871b0677f69ff08eb4b820}\label{effets_8h_af26f48d919871b0677f69ff08eb4b820}} 
+\index{effets.h@{effets.h}!thomas\_lim@{thomas\_lim}}
+\index{thomas\_lim@{thomas\_lim}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{thomas\_lim()}{thomas\_lim()}}
+{\footnotesize\ttfamily void thomas\+\_\+lim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Thomas Lim Si la carte Julien Forest n\textquotesingle{}est pas retournée sur le plateau, la faction qui a posé cette carte gagne 3 points DDRS par carte FISE retournée sur le plateau. 
+
+Sinon, la faction adverse perd 3 points DDRS par carte FISE retournée sur le plateau. 
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Thomas Lim \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{effets_8h_a4c172c192d0c23e7b28075312bbc98fd}\label{effets_8h_a4c172c192d0c23e7b28075312bbc98fd}} 
+\index{effets.h@{effets.h}!vitera\_y@{vitera\_y}}
+\index{vitera\_y@{vitera\_y}!effets.h@{effets.h}}
+\doxysubsubsection{\texorpdfstring{vitera\_y()}{vitera\_y()}}
+{\footnotesize\ttfamily void vitera\+\_\+y (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction pour l\textquotesingle{}effet de la carte Vitéra Y La faction qui a le moins de points DRRS se voit conférer 3 points DDRS. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & pointeur sur la carte Vitéra Y \\
+\hline
+{\em p} & pointeur sur le plateau de jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+On ne retourne rien, on agit juste sur la manche courante 
+\end{DoxyReturn}

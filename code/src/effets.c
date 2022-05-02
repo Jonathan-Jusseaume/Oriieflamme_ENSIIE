@@ -2,9 +2,9 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <time.h>
-#include "structure.h"
+#include "../headers/structure.h"
 #include <string.h>
-#include "constante.h"
+#include "../headers/constante.h"
 
 // ajoute (ou retire) points_a_ajouter points au score de la faction f
 void ajoute_points_DDRS(faction f, int points_a_ajouter) {

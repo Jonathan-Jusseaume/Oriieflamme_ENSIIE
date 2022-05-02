@@ -66,8 +66,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Définitions de type</a>  </div>
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier carte.h</div>  </div>
 </div><!--header-->
@@ -76,6 +77,7 @@ $(function() {
 <p>Fichier contenant la structure liée aux cartes.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="constante_8h_source.html">constante.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="position_8h_source.html">position.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de carte.h:</div>
 <div class="dyncontent">
@@ -89,22 +91,586 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 </div>
 <p><a href="carte_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__carte.html">s_carte</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une carte.  <a href="structs__carte.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
+<tr class="memitem:ae2140dc65b076c5838cf51ced133951a"><td class="memItemLeft" align="right" valign="top"><a id="ae2140dc65b076c5838cf51ced133951a"></a>
+typedef struct <a class="el" href="structs__plateau.html">s_plateau</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>plateau</b></td></tr>
+<tr class="separator:ae2140dc65b076c5838cf51ced133951a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a730c95e5b081b03f99f9189e8e90236c"><td class="memItemLeft" align="right" valign="top"><a id="a730c95e5b081b03f99f9189e8e90236c"></a>
 typedef struct <a class="el" href="structs__carte.html">s_carte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a></td></tr>
 <tr class="memdesc:a730c95e5b081b03f99f9189e8e90236c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une carte. <br /></td></tr>
 <tr class="separator:a730c95e5b081b03f99f9189e8e90236c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a5140dbdd7b0deca3861df712062b0a6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a5140dbdd7b0deca3861df712062b0a6b">initialiser_carte</a> (char *nom, char *effet, void *effet_carte, int identifiant_faction, int numero_plateau, <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> est_face_cachee)</td></tr>
+<tr class="memdesc:a5140dbdd7b0deca3861df712062b0a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'initialiser une carte.  <a href="carte_8h.html#a5140dbdd7b0deca3861df712062b0a6b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5140dbdd7b0deca3861df712062b0a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78b559cfc7c2d2dac537b11679faedb"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#ad78b559cfc7c2d2dac537b11679faedb">get_nom_carte</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:ad78b559cfc7c2d2dac537b11679faedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le nom de la carte.  <a href="carte_8h.html#ad78b559cfc7c2d2dac537b11679faedb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad78b559cfc7c2d2dac537b11679faedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e0672e26ede4e3110fa1ec5dda7a7f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#ac9e0672e26ede4e3110fa1ec5dda7a7f">get_effet</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:ac9e0672e26ede4e3110fa1ec5dda7a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer l'effet de la carte.  <a href="carte_8h.html#ac9e0672e26ede4e3110fa1ec5dda7a7f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac9e0672e26ede4e3110fa1ec5dda7a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95959ac5e284cbcf15f431e7dd3cb985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a95959ac5e284cbcf15f431e7dd3cb985">get_identifiant_faction_carte</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:a95959ac5e284cbcf15f431e7dd3cb985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer l'identifiant_faction de la carte.  <a href="carte_8h.html#a95959ac5e284cbcf15f431e7dd3cb985">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a95959ac5e284cbcf15f431e7dd3cb985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ecf4218a68bb4016d6aa5642e443765"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a1ecf4218a68bb4016d6aa5642e443765">get_numero_plateau</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:a1ecf4218a68bb4016d6aa5642e443765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le numero_plateau de la carte.  <a href="carte_8h.html#a1ecf4218a68bb4016d6aa5642e443765">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1ecf4218a68bb4016d6aa5642e443765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa048cb53c22fa656cb0235c25058c515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#aa048cb53c22fa656cb0235c25058c515">get_est_face_cachee</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>)</td></tr>
+<tr class="memdesc:aa048cb53c22fa656cb0235c25058c515"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le est_face_cachee de la carte.  <a href="carte_8h.html#aa048cb53c22fa656cb0235c25058c515">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa048cb53c22fa656cb0235c25058c515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438fb8eec133fb0ce39c05eb522a3c94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structposition.html">position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a438fb8eec133fb0ce39c05eb522a3c94">get_position</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:a438fb8eec133fb0ce39c05eb522a3c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le champ position de la carte.  <a href="carte_8h.html#a438fb8eec133fb0ce39c05eb522a3c94">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a438fb8eec133fb0ce39c05eb522a3c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199473a6a8e38169ef00b9a78535bc27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a199473a6a8e38169ef00b9a78535bc27">set_nom_carte</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, char *nom)</td></tr>
+<tr class="memdesc:a199473a6a8e38169ef00b9a78535bc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le nom de la carte.  <a href="carte_8h.html#a199473a6a8e38169ef00b9a78535bc27">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a199473a6a8e38169ef00b9a78535bc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c065aba20419656904eaca25c88bdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a19c065aba20419656904eaca25c88bdd">set_position</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="structposition.html">position</a> p)</td></tr>
+<tr class="memdesc:a19c065aba20419656904eaca25c88bdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la position de la carte.  <a href="carte_8h.html#a19c065aba20419656904eaca25c88bdd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a19c065aba20419656904eaca25c88bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696dedab9a77af771cbd8bed5b11ee1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a696dedab9a77af771cbd8bed5b11ee1d">set_effet</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, char *effet)</td></tr>
+<tr class="memdesc:a696dedab9a77af771cbd8bed5b11ee1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer l'effet de la carte.  <a href="carte_8h.html#a696dedab9a77af771cbd8bed5b11ee1d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a696dedab9a77af771cbd8bed5b11ee1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf2bbcb7ade1ef7889bdafcb59b48c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#aecf2bbcb7ade1ef7889bdafcb59b48c9">set_identifiant_faction_carte</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, int identifiant_faction)</td></tr>
+<tr class="memdesc:aecf2bbcb7ade1ef7889bdafcb59b48c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer l'identifiant_faction de la carte.  <a href="carte_8h.html#aecf2bbcb7ade1ef7889bdafcb59b48c9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aecf2bbcb7ade1ef7889bdafcb59b48c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3883e2f1aca05694430fc4412e385dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a3883e2f1aca05694430fc4412e385dea">set_effet_fonction_carte</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, void *<a class="el" href="effets_8h.html#a3b4d479970788586dbf85ed814dff62d">effet_fonction</a>)</td></tr>
+<tr class="memdesc:a3883e2f1aca05694430fc4412e385dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer l'effet_fonction de la carte.  <a href="carte_8h.html#a3883e2f1aca05694430fc4412e385dea">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3883e2f1aca05694430fc4412e385dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f87ed70bf8c3b793f4ce8d82af3cd6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a3f87ed70bf8c3b793f4ce8d82af3cd6e">set_numero_plateau</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, int numero_plateau)</td></tr>
+<tr class="memdesc:a3f87ed70bf8c3b793f4ce8d82af3cd6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le numero_plateau de la carte.  <a href="carte_8h.html#a3f87ed70bf8c3b793f4ce8d82af3cd6e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3f87ed70bf8c3b793f4ce8d82af3cd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e89662818d742ec9a22897615d3fcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#af0e89662818d742ec9a22897615d3fcf">set_est_face_cachee</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> est_face_cachee)</td></tr>
+<tr class="memdesc:af0e89662818d742ec9a22897615d3fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le est_face_cachee de la carte.  <a href="carte_8h.html#af0e89662818d742ec9a22897615d3fcf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af0e89662818d742ec9a22897615d3fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa0f988455ff9dd0f5a4576c01208f899"><td class="memItemLeft" align="right" valign="top">void(*)(<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="structs__plateau.html">plateau</a> p)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#aa0f988455ff9dd0f5a4576c01208f899">get_effet_fonction</a> (<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:aa0f988455ff9dd0f5a4576c01208f899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le champ effet_fonction de la carte qui est la fonction déclencheant l'effet de la carte.  <a href="carte_8h.html#aa0f988455ff9dd0f5a4576c01208f899">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa0f988455ff9dd0f5a4576c01208f899"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure liée aux cartes. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ac9e0672e26ede4e3110fa1ec5dda7a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e0672e26ede4e3110fa1ec5dda7a7f">&#9670;&nbsp;</a></span>get_effet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_effet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer l'effet de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut récuperer l'effet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>chaîne de caractères représentant l'effet de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="aa048cb53c22fa656cb0235c25058c515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa048cb53c22fa656cb0235c25058c515">&#9670;&nbsp;</a></span>get_est_face_cachee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> get_est_face_cachee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le est_face_cachee de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">carte</td><td>: pointeur sur la carte dont on veut récuperer le est_face_cachee. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>booleen représentant le est_face_cachee de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="a95959ac5e284cbcf15f431e7dd3cb985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95959ac5e284cbcf15f431e7dd3cb985">&#9670;&nbsp;</a></span>get_identifiant_faction_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_identifiant_faction_carte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer l'identifiant_faction de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut récuperer l'identifiant_faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant l'identifiant_faction de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="ad78b559cfc7c2d2dac537b11679faedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78b559cfc7c2d2dac537b11679faedb">&#9670;&nbsp;</a></span>get_nom_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_nom_carte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le nom de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut récuperer le nom. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>chaîne de caractères représentant le nom de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="a1ecf4218a68bb4016d6aa5642e443765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ecf4218a68bb4016d6aa5642e443765">&#9670;&nbsp;</a></span>get_numero_plateau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_numero_plateau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le numero_plateau de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut récuperer le numero_plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant le numero_plateau de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="a438fb8eec133fb0ce39c05eb522a3c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438fb8eec133fb0ce39c05eb522a3c94">&#9670;&nbsp;</a></span>get_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structposition.html">position</a> get_position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le champ position de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">carte</td><td>: pointeur sur la carte dont on veut récuperer le champ position. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>position représentant le champ position de la carte. </dd></dl>
+
+</div>
+</div>
+<a id="a5140dbdd7b0deca3861df712062b0a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5140dbdd7b0deca3861df712062b0a6b">&#9670;&nbsp;</a></span>initialiser_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> initialiser_carte </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>effet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>effet_carte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>identifiant_faction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero_plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td>
+          <td class="paramname"><em>est_face_cachee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'initialiser une carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>: nom de la carte </td></tr>
+    <tr><td class="paramname">effet</td><td>: effet de la carte </td></tr>
+    <tr><td class="paramname">effet_carte</td><td>: pointeur sur fonction vers l'effet de la carte </td></tr>
+    <tr><td class="paramname">identifiant_faction</td><td>: identifiant la faction </td></tr>
+    <tr><td class="paramname">numero_plateau</td><td>: entier représentant la numéro de la carte sur le plateau. </td></tr>
+    <tr><td class="paramname">est_face_cachee</td><td>: état de la carte : VRAI = face cachée, FAUX = face visible. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>carte : pointeur vers la carte </dd></dl>
+
+</div>
+</div>
+<a id="a696dedab9a77af771cbd8bed5b11ee1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696dedab9a77af771cbd8bed5b11ee1d">&#9670;&nbsp;</a></span>set_effet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_effet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>effet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer l'effet de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son effet. </td></tr>
+    <tr><td class="paramname">effet</td><td>: chaîne de caractères que l'on va associer à l'effet de la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3883e2f1aca05694430fc4412e385dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3883e2f1aca05694430fc4412e385dea">&#9670;&nbsp;</a></span>set_effet_fonction_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_effet_fonction_carte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>effet_fonction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer l'effet_fonction de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son effet_fonction. </td></tr>
+    <tr><td class="paramname">effet_fonction</td><td>: le pointeur vers la nouvelle fonction correspondant à l'effet de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af0e89662818d742ec9a22897615d3fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e89662818d742ec9a22897615d3fcf">&#9670;&nbsp;</a></span>set_est_face_cachee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_est_face_cachee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td>
+          <td class="paramname"><em>est_face_cachee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le est_face_cachee de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son est_face_cachee. </td></tr>
+    <tr><td class="paramname">est_face_cachee</td><td>: booleen que l'on va associer à le est_face_cachee de la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aecf2bbcb7ade1ef7889bdafcb59b48c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf2bbcb7ade1ef7889bdafcb59b48c9">&#9670;&nbsp;</a></span>set_identifiant_faction_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_identifiant_faction_carte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>identifiant_faction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer l'identifiant_faction de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son identifiant_faction. </td></tr>
+    <tr><td class="paramname">identifiant_faction</td><td>: entier que l'on va associer à l'identifiant_faction de la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a199473a6a8e38169ef00b9a78535bc27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199473a6a8e38169ef00b9a78535bc27">&#9670;&nbsp;</a></span>set_nom_carte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_nom_carte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le nom de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son nom. </td></tr>
+    <tr><td class="paramname">nom</td><td>: chaîne de caractères que l'on va associer au nom de la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f87ed70bf8c3b793f4ce8d82af3cd6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f87ed70bf8c3b793f4ce8d82af3cd6e">&#9670;&nbsp;</a></span>set_numero_plateau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_numero_plateau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero_plateau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le numero_plateau de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer son numero_plateau. </td></tr>
+    <tr><td class="paramname">numero_plateau</td><td>: entier que l'on va associer à le numero_plateau de la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a19c065aba20419656904eaca25c88bdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c065aba20419656904eaca25c88bdd">&#9670;&nbsp;</a></span>set_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structposition.html">position</a>&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la position de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>: pointeur sur la carte dont on veut changer la position. </td></tr>
+    <tr><td class="paramname">p</td><td>: position que l'on va associer à la carte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="aa0f988455ff9dd0f5a4576c01208f899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f988455ff9dd0f5a4576c01208f899">&#9670;&nbsp;</a></span>get_effet_fonction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(*)(<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="structs__plateau.html">plateau</a> p) get_effet_fonction(<a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le champ effet_fonction de la carte qui est la fonction déclencheant l'effet de la carte. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">carte</td><td>: pointeur sur la carte dont on veut récuperer le champ effet_fonction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur représentant le pointeur vers la fonction appliquant l'effet de la carte. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

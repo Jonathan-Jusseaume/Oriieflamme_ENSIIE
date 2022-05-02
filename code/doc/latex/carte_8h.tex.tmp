@@ -6,23 +6,337 @@ Fichier contenant la structure liée aux cartes.
 
 
 {\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de carte.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
 % FIG 1
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structs__carte}{s\+\_\+carte}}
-\begin{DoxyCompactList}\small\item\em Structure représentant une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{carte_8h_ae2140dc65b076c5838cf51ced133951a}\label{carte_8h_ae2140dc65b076c5838cf51ced133951a}} 
+typedef struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}} $\ast$ {\bfseries plateau}
 \item 
 \mbox{\Hypertarget{carte_8h_a730c95e5b081b03f99f9189e8e90236c}\label{carte_8h_a730c95e5b081b03f99f9189e8e90236c}} 
 typedef struct \mbox{\hyperlink{structs__carte}{s\+\_\+carte}} $\ast$ \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}
 \begin{DoxyCompactList}\small\item\em Structure représentant une carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{carte_8h_a5140dbdd7b0deca3861df712062b0a6b}{initialiser\+\_\+carte}} (char $\ast$nom, char $\ast$effet, void $\ast$effet\+\_\+carte, int identifiant\+\_\+faction, int numero\+\_\+plateau, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} est\+\_\+face\+\_\+cachee)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser une carte. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{carte_8h_ad78b559cfc7c2d2dac537b11679faedb}{get\+\_\+nom\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le nom de la carte. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{carte_8h_ac9e0672e26ede4e3110fa1ec5dda7a7f}{get\+\_\+effet}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{carte_8h_a95959ac5e284cbcf15f431e7dd3cb985}{get\+\_\+identifiant\+\_\+faction\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer l\textquotesingle{}identifiant\+\_\+faction de la carte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{carte_8h_a1ecf4218a68bb4016d6aa5642e443765}{get\+\_\+numero\+\_\+plateau}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le numero\+\_\+plateau de la carte. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{carte_8h_aa048cb53c22fa656cb0235c25058c515}{get\+\_\+est\+\_\+face\+\_\+cachee}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}})
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le est\+\_\+face\+\_\+cachee de la carte. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{carte_8h_a438fb8eec133fb0ce39c05eb522a3c94}{get\+\_\+position}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le champ position de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_a199473a6a8e38169ef00b9a78535bc27}{set\+\_\+nom\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le nom de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_a19c065aba20419656904eaca25c88bdd}{set\+\_\+position}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structposition}{position}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la position de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_a696dedab9a77af771cbd8bed5b11ee1d}{set\+\_\+effet}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, char $\ast$effet)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_aecf2bbcb7ade1ef7889bdafcb59b48c9}{set\+\_\+identifiant\+\_\+faction\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, int identifiant\+\_\+faction)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer l\textquotesingle{}identifiant\+\_\+faction de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_a3883e2f1aca05694430fc4412e385dea}{set\+\_\+effet\+\_\+fonction\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, void $\ast$\mbox{\hyperlink{effets_8h_a3b4d479970788586dbf85ed814dff62d}{effet\+\_\+fonction}})
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer l\textquotesingle{}effet\+\_\+fonction de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_a3f87ed70bf8c3b793f4ce8d82af3cd6e}{set\+\_\+numero\+\_\+plateau}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, int numero\+\_\+plateau)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le numero\+\_\+plateau de la carte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carte_8h_af0e89662818d742ec9a22897615d3fcf}{set\+\_\+est\+\_\+face\+\_\+cachee}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} est\+\_\+face\+\_\+cachee)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le est\+\_\+face\+\_\+cachee de la carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$)(\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p) \mbox{\hyperlink{carte_8h_aa0f988455ff9dd0f5a4576c01208f899}{get\+\_\+effet\+\_\+fonction}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le champ effet\+\_\+fonction de la carte qui est la fonction déclencheant l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 Fichier contenant la structure liée aux cartes. 
 
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{carte_8h_ac9e0672e26ede4e3110fa1ec5dda7a7f}\label{carte_8h_ac9e0672e26ede4e3110fa1ec5dda7a7f}} 
+\index{carte.h@{carte.h}!get\_effet@{get\_effet}}
+\index{get\_effet@{get\_effet}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_effet()}{get\_effet()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+effet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer l\textquotesingle{}effet de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut récuperer l\textquotesingle{}effet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+chaîne de caractères représentant l\textquotesingle{}effet de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_aa048cb53c22fa656cb0235c25058c515}\label{carte_8h_aa048cb53c22fa656cb0235c25058c515}} 
+\index{carte.h@{carte.h}!get\_est\_face\_cachee@{get\_est\_face\_cachee}}
+\index{get\_est\_face\_cachee@{get\_est\_face\_cachee}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_est\_face\_cachee()}{get\_est\_face\_cachee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} get\+\_\+est\+\_\+face\+\_\+cachee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{carte }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le est\+\_\+face\+\_\+cachee de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em carte} & \+: pointeur sur la carte dont on veut récuperer le est\+\_\+face\+\_\+cachee. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+booleen représentant le est\+\_\+face\+\_\+cachee de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_a95959ac5e284cbcf15f431e7dd3cb985}\label{carte_8h_a95959ac5e284cbcf15f431e7dd3cb985}} 
+\index{carte.h@{carte.h}!get\_identifiant\_faction\_carte@{get\_identifiant\_faction\_carte}}
+\index{get\_identifiant\_faction\_carte@{get\_identifiant\_faction\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_identifiant\_faction\_carte()}{get\_identifiant\_faction\_carte()}}
+{\footnotesize\ttfamily int get\+\_\+identifiant\+\_\+faction\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer l\textquotesingle{}identifiant\+\_\+faction de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut récuperer l\textquotesingle{}identifiant\+\_\+faction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant l\textquotesingle{}identifiant\+\_\+faction de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_ad78b559cfc7c2d2dac537b11679faedb}\label{carte_8h_ad78b559cfc7c2d2dac537b11679faedb}} 
+\index{carte.h@{carte.h}!get\_nom\_carte@{get\_nom\_carte}}
+\index{get\_nom\_carte@{get\_nom\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_nom\_carte()}{get\_nom\_carte()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+nom\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le nom de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut récuperer le nom. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+chaîne de caractères représentant le nom de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_a1ecf4218a68bb4016d6aa5642e443765}\label{carte_8h_a1ecf4218a68bb4016d6aa5642e443765}} 
+\index{carte.h@{carte.h}!get\_numero\_plateau@{get\_numero\_plateau}}
+\index{get\_numero\_plateau@{get\_numero\_plateau}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_numero\_plateau()}{get\_numero\_plateau()}}
+{\footnotesize\ttfamily int get\+\_\+numero\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le numero\+\_\+plateau de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut récuperer le numero\+\_\+plateau. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant le numero\+\_\+plateau de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_a438fb8eec133fb0ce39c05eb522a3c94}\label{carte_8h_a438fb8eec133fb0ce39c05eb522a3c94}} 
+\index{carte.h@{carte.h}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structposition}{position}} get\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le champ position de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em carte} & \+: pointeur sur la carte dont on veut récuperer le champ position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+position représentant le champ position de la carte. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_a5140dbdd7b0deca3861df712062b0a6b}\label{carte_8h_a5140dbdd7b0deca3861df712062b0a6b}} 
+\index{carte.h@{carte.h}!initialiser\_carte@{initialiser\_carte}}
+\index{initialiser\_carte@{initialiser\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{initialiser\_carte()}{initialiser\_carte()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} initialiser\+\_\+carte (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{char $\ast$}]{effet,  }\item[{void $\ast$}]{effet\+\_\+carte,  }\item[{int}]{identifiant\+\_\+faction,  }\item[{int}]{numero\+\_\+plateau,  }\item[{\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}}}]{est\+\_\+face\+\_\+cachee }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet d\textquotesingle{}initialiser une carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & \+: nom de la carte \\
+\hline
+{\em effet} & \+: effet de la carte \\
+\hline
+{\em effet\+\_\+carte} & \+: pointeur sur fonction vers l\textquotesingle{}effet de la carte \\
+\hline
+{\em identifiant\+\_\+faction} & \+: identifiant la faction \\
+\hline
+{\em numero\+\_\+plateau} & \+: entier représentant la numéro de la carte sur le plateau. \\
+\hline
+{\em est\+\_\+face\+\_\+cachee} & \+: état de la carte \+: VRAI = face cachée, FAUX = face visible. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+carte \+: pointeur vers la carte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{carte_8h_a696dedab9a77af771cbd8bed5b11ee1d}\label{carte_8h_a696dedab9a77af771cbd8bed5b11ee1d}} 
+\index{carte.h@{carte.h}!set\_effet@{set\_effet}}
+\index{set\_effet@{set\_effet}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_effet()}{set\_effet()}}
+{\footnotesize\ttfamily void set\+\_\+effet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{char $\ast$}]{effet }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer l\textquotesingle{}effet de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son effet. \\
+\hline
+{\em effet} & \+: chaîne de caractères que l\textquotesingle{}on va associer à l\textquotesingle{}effet de la carte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_a3883e2f1aca05694430fc4412e385dea}\label{carte_8h_a3883e2f1aca05694430fc4412e385dea}} 
+\index{carte.h@{carte.h}!set\_effet\_fonction\_carte@{set\_effet\_fonction\_carte}}
+\index{set\_effet\_fonction\_carte@{set\_effet\_fonction\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_effet\_fonction\_carte()}{set\_effet\_fonction\_carte()}}
+{\footnotesize\ttfamily void set\+\_\+effet\+\_\+fonction\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{void $\ast$}]{effet\+\_\+fonction }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer l\textquotesingle{}effet\+\_\+fonction de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son effet\+\_\+fonction. \\
+\hline
+{\em effet\+\_\+fonction} & \+: le pointeur vers la nouvelle fonction correspondant à l\textquotesingle{}effet de la carte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_af0e89662818d742ec9a22897615d3fcf}\label{carte_8h_af0e89662818d742ec9a22897615d3fcf}} 
+\index{carte.h@{carte.h}!set\_est\_face\_cachee@{set\_est\_face\_cachee}}
+\index{set\_est\_face\_cachee@{set\_est\_face\_cachee}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_est\_face\_cachee()}{set\_est\_face\_cachee()}}
+{\footnotesize\ttfamily void set\+\_\+est\+\_\+face\+\_\+cachee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}}}]{est\+\_\+face\+\_\+cachee }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer le est\+\_\+face\+\_\+cachee de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son est\+\_\+face\+\_\+cachee. \\
+\hline
+{\em est\+\_\+face\+\_\+cachee} & \+: booleen que l\textquotesingle{}on va associer à le est\+\_\+face\+\_\+cachee de la carte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_aecf2bbcb7ade1ef7889bdafcb59b48c9}\label{carte_8h_aecf2bbcb7ade1ef7889bdafcb59b48c9}} 
+\index{carte.h@{carte.h}!set\_identifiant\_faction\_carte@{set\_identifiant\_faction\_carte}}
+\index{set\_identifiant\_faction\_carte@{set\_identifiant\_faction\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_identifiant\_faction\_carte()}{set\_identifiant\_faction\_carte()}}
+{\footnotesize\ttfamily void set\+\_\+identifiant\+\_\+faction\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{int}]{identifiant\+\_\+faction }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer l\textquotesingle{}identifiant\+\_\+faction de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son identifiant\+\_\+faction. \\
+\hline
+{\em identifiant\+\_\+faction} & \+: entier que l\textquotesingle{}on va associer à l\textquotesingle{}identifiant\+\_\+faction de la carte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_a199473a6a8e38169ef00b9a78535bc27}\label{carte_8h_a199473a6a8e38169ef00b9a78535bc27}} 
+\index{carte.h@{carte.h}!set\_nom\_carte@{set\_nom\_carte}}
+\index{set\_nom\_carte@{set\_nom\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_nom\_carte()}{set\_nom\_carte()}}
+{\footnotesize\ttfamily void set\+\_\+nom\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer le nom de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son nom. \\
+\hline
+{\em nom} & \+: chaîne de caractères que l\textquotesingle{}on va associer au nom de la carte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_a3f87ed70bf8c3b793f4ce8d82af3cd6e}\label{carte_8h_a3f87ed70bf8c3b793f4ce8d82af3cd6e}} 
+\index{carte.h@{carte.h}!set\_numero\_plateau@{set\_numero\_plateau}}
+\index{set\_numero\_plateau@{set\_numero\_plateau}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_numero\_plateau()}{set\_numero\_plateau()}}
+{\footnotesize\ttfamily void set\+\_\+numero\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{int}]{numero\+\_\+plateau }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer le numero\+\_\+plateau de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer son numero\+\_\+plateau. \\
+\hline
+{\em numero\+\_\+plateau} & \+: entier que l\textquotesingle{}on va associer à le numero\+\_\+plateau de la carte. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_a19c065aba20419656904eaca25c88bdd}\label{carte_8h_a19c065aba20419656904eaca25c88bdd}} 
+\index{carte.h@{carte.h}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily void set\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structposition}{position}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer la position de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: pointeur sur la carte dont on veut changer la position. \\
+\hline
+{\em p} & \+: position que l\textquotesingle{}on va associer à la carte. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{carte_8h_aa0f988455ff9dd0f5a4576c01208f899}\label{carte_8h_aa0f988455ff9dd0f5a4576c01208f899}} 
+\index{carte.h@{carte.h}!get\_effet\_fonction@{get\_effet\_fonction}}
+\index{get\_effet\_fonction@{get\_effet\_fonction}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{get\_effet\_fonction}{get\_effet\_fonction}}
+{\footnotesize\ttfamily void($\ast$)(\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p) get\+\_\+effet\+\_\+fonction(\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le champ effet\+\_\+fonction de la carte qui est la fonction déclencheant l\textquotesingle{}effet de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em carte} & \+: pointeur sur la carte dont on veut récuperer le champ effet\+\_\+fonction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+pointeur représentant le pointeur vers la fonction appliquant l\textquotesingle{}effet de la carte. 
+\end{DoxyReturn}

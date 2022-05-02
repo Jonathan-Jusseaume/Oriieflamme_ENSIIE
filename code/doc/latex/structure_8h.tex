@@ -6,12 +6,18 @@ Fichier contenant les différentes structures nécessaires au bon fonctionnement
 
 
 {\ttfamily \#include \char`\"{}carte.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de structure.\+h\+:
 % FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}\label{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}} 
+typedef struct \mbox{\hyperlink{structs__grille__carte}{s\+\_\+grille\+\_\+carte}} $\ast$ \mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}
+\begin{DoxyCompactList}\small\item\em Structure qui correspond à la grille qui va contenir les cartes posées. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structs__liste__chainee__carte}{s\+\_\+liste\+\_\+chainee\+\_\+carte}} $\ast$ \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}}
 \begin{DoxyCompactList}\small\item\em Structure qui correspond à une liste chaînée de cartes. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structs__ensemble__entier}{s\+\_\+ensemble\+\_\+entier}} $\ast$ \mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}}
@@ -19,12 +25,36 @@ typedef struct \mbox{\hyperlink{structs__ensemble__entier}{s\+\_\+ensemble\+\_\+
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} \mbox{\hyperlink{structure_8h_a105217be86406505628df49e55f9b0d2}{initialiser\+\_\+grille}} (int taille\+\_\+grille)
+\begin{DoxyCompactList}\small\item\em Initialise une grille de cartes de la taille passée en paramètre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structure_8h_a666c5ef556cfdf6bb0eae10146bf9d6b}{reinitialiser\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Retire toutes les cartes de la grille en libérant leur mémoire associée Remet la valeur de de min\+\_\+x, min\+\_\+y, max\+\_\+x, max\+\_\+y à la valeur par défaut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structure_8h_ac38859e44d39f36f87a4f15e20ca107f}{liberer\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire de la grille passée en paramètre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{structure_8h_abfba164e76aec7e95adf2facf3df2b16}{poser\+\_\+carte\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, int y, int x)
+\begin{DoxyCompactList}\small\item\em Pose la carte passée en paramètre sur la grille passée en paramètre aux coordonnées y,x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structure_8h_a93d0b431163233ea27a29dfb9f6ef607}{get\+\_\+carte\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g, int y, int x)
+\begin{DoxyCompactList}\small\item\em Renvoie la carte de la grille à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structure_8h_a140dd5c0b9805b21a24b0424d3bb8117}{supprimer\+\_\+carte\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g, int y, int x)
+\begin{DoxyCompactList}\small\item\em Renvoie la carte de la grille à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre et la retire de la grille sans la libérer de la mémoire. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structure_8h_a9f05725c6f190b4c4a644b3dea09f884}{get\+\_\+taille\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie la taille de la grille. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structure_8h_a78caeb0f5f0d5c68146e7dae0637cce3}{get\+\_\+min\+\_\+x\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}abscisse de la carte la plus à gauche de la grille. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structure_8h_a8a53b8cb5e4ddd4e30212c856f006eb0}{get\+\_\+max\+\_\+x\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}abscisse de la carte la plus à droite de la grille. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structure_8h_a12db1c43c97059687c6aa5eb9aa9531d}{get\+\_\+min\+\_\+y\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}ordonnée de la carte la plus en haut de la grille. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structure_8h_abe08b4ecaddff87c859bd1d253c4325e}{get\+\_\+max\+\_\+y\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}ordonnée de la carte la plus en bas de la grille. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{structure_8h_a9555a358ab6ffbac1edf446c6770285c}{get\+\_\+position\+\_\+carte\+\_\+haut\+\_\+gauche\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} veut\+\_\+face\+\_\+cachee)
+\begin{DoxyCompactList}\small\item\em Renvoie la position de la carte non retournée la plus en haut à gauche de la grille de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu\textquotesingle{}on veuille qu\textquotesingle{}elle soit face cachée ou non. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structure_8h_ad3b8d3cd27c621d7417e94e7f2779cb2}{initialiser\+\_\+liste\+\_\+chainee}} ()
 \begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser la liste chaînée des cartes. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structure_8h_a47bcb17ada0e5753f47acbb3431ee32e}{ajouter\+\_\+tete\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+void \mbox{\hyperlink{structure_8h_aa43b51f52aa7af5445f599d85fb08bcb}{ajouter\+\_\+tete\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} $\ast$l, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
 \begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajouter en tete de la liste chaînée des cartes, la carte passée en paramètre. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structure_8h_a423fe058faa825790871e50dfa98daed}{supprimer\+\_\+carte\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l, int indice\+\_\+carte)
-\begin{DoxyCompactList}\small\item\em Supprime la carte à l\textquotesingle{}indice passée en paramètre, et la renvoie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structure_8h_a90df195cf47ac549aad59253c3cca3bf}{supprimer\+\_\+carte\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} $\ast$l, int indice\+\_\+carte)
+\begin{DoxyCompactList}\small\item\em Supprime la carte à l\textquotesingle{}indice passée en paramètre. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{structure_8h_ae5a7cb2b30e92eaaa4cdfdcb3ce7311c}{taille\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
 \begin{DoxyCompactList}\small\item\em Renvoie la taille de la liste chainee passée en paramètre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structure_8h_a5247443a35e5de02fb5b32b68425da08}{get\+\_\+carte\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l, int indice\+\_\+carte)
@@ -100,11 +130,11 @@ Ajoute l\textquotesingle{}entier à l\textquotesingle{}ensemble passé en param�
 \begin{DoxyReturn}{Renvoie}
 VRAI si la valeur a été ajoutée, FAUX sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structure_8h_a47bcb17ada0e5753f47acbb3431ee32e}\label{structure_8h_a47bcb17ada0e5753f47acbb3431ee32e}} 
+\mbox{\Hypertarget{structure_8h_aa43b51f52aa7af5445f599d85fb08bcb}\label{structure_8h_aa43b51f52aa7af5445f599d85fb08bcb}} 
 \index{structure.h@{structure.h}!ajouter\_tete\_liste\_chainee@{ajouter\_tete\_liste\_chainee}}
 \index{ajouter\_tete\_liste\_chainee@{ajouter\_tete\_liste\_chainee}!structure.h@{structure.h}}
 \doxysubsubsection{\texorpdfstring{ajouter\_tete\_liste\_chainee()}{ajouter\_tete\_liste\_chainee()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} ajouter\+\_\+tete\+\_\+liste\+\_\+chainee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}}}]{l,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ajouter\+\_\+tete\+\_\+liste\+\_\+chainee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} $\ast$}]{l,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
 
 
 
@@ -153,6 +183,28 @@ Permet de créer un ensemble d\textquotesingle{}entiers.
 \begin{DoxyReturn}{Renvoie}
 l\textquotesingle{}ensemble des entiers 
 \end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a93d0b431163233ea27a29dfb9f6ef607}\label{structure_8h_a93d0b431163233ea27a29dfb9f6ef607}} 
+\index{structure.h@{structure.h}!get\_carte\_grille@{get\_carte\_grille}}
+\index{get\_carte\_grille@{get\_carte\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_carte\_grille()}{get\_carte\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} get\+\_\+carte\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g,  }\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Renvoie la carte de la grille à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut récupérer la carte \\
+\hline
+{\em y} & l\textquotesingle{}ordonnée de la carte \\
+\hline
+{\em x} & l\textquotesingle{}abscisse de la carte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie le pointeur vers la carte située à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre, renvoie NULL si les coordonnées sont trop élevées pour la grille 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_a5247443a35e5de02fb5b32b68425da08}\label{structure_8h_a5247443a35e5de02fb5b32b68425da08}} 
 \index{structure.h@{structure.h}!get\_carte\_liste\_chainee@{get\_carte\_liste\_chainee}}
 \index{get\_carte\_liste\_chainee@{get\_carte\_liste\_chainee}!structure.h@{structure.h}}
@@ -172,6 +224,98 @@ Renvoie la carte à l\textquotesingle{}indice passée en paramètre.
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 la carte à l\textquotesingle{}indice passée en paramètre ou NULL si l\textquotesingle{}indice passée en paramètre est en dehors de la liste 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a8a53b8cb5e4ddd4e30212c856f006eb0}\label{structure_8h_a8a53b8cb5e4ddd4e30212c856f006eb0}} 
+\index{structure.h@{structure.h}!get\_max\_x\_grille@{get\_max\_x\_grille}}
+\index{get\_max\_x\_grille@{get\_max\_x\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_max\_x\_grille()}{get\_max\_x\_grille()}}
+{\footnotesize\ttfamily int get\+\_\+max\+\_\+x\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}abscisse de la carte la plus à droite de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut obtenir l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}abscisse de la carte la plus à droite de la grille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_abe08b4ecaddff87c859bd1d253c4325e}\label{structure_8h_abe08b4ecaddff87c859bd1d253c4325e}} 
+\index{structure.h@{structure.h}!get\_max\_y\_grille@{get\_max\_y\_grille}}
+\index{get\_max\_y\_grille@{get\_max\_y\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_max\_y\_grille()}{get\_max\_y\_grille()}}
+{\footnotesize\ttfamily int get\+\_\+max\+\_\+y\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}ordonnée de la carte la plus en bas de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut obtenir l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ordonnée de la carte la plus en bas de la grille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a78caeb0f5f0d5c68146e7dae0637cce3}\label{structure_8h_a78caeb0f5f0d5c68146e7dae0637cce3}} 
+\index{structure.h@{structure.h}!get\_min\_x\_grille@{get\_min\_x\_grille}}
+\index{get\_min\_x\_grille@{get\_min\_x\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_min\_x\_grille()}{get\_min\_x\_grille()}}
+{\footnotesize\ttfamily int get\+\_\+min\+\_\+x\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}abscisse de la carte la plus à gauche de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut obtenir l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}abscisse de la carte la plus à gauche la grille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a12db1c43c97059687c6aa5eb9aa9531d}\label{structure_8h_a12db1c43c97059687c6aa5eb9aa9531d}} 
+\index{structure.h@{structure.h}!get\_min\_y\_grille@{get\_min\_y\_grille}}
+\index{get\_min\_y\_grille@{get\_min\_y\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_min\_y\_grille()}{get\_min\_y\_grille()}}
+{\footnotesize\ttfamily int get\+\_\+min\+\_\+y\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}ordonnée de la carte la plus en haut de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut obtenir l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}ordonnée de la carte la plus en haut de la grille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a9555a358ab6ffbac1edf446c6770285c}\label{structure_8h_a9555a358ab6ffbac1edf446c6770285c}} 
+\index{structure.h@{structure.h}!get\_position\_carte\_haut\_gauche\_grille@{get\_position\_carte\_haut\_gauche\_grille}}
+\index{get\_position\_carte\_haut\_gauche\_grille@{get\_position\_carte\_haut\_gauche\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_position\_carte\_haut\_gauche\_grille()}{get\_position\_carte\_haut\_gauche\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structposition}{position}} get\+\_\+position\+\_\+carte\+\_\+haut\+\_\+gauche\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g,  }\item[{\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}}}]{veut\+\_\+face\+\_\+cachee }\end{DoxyParamCaption})}
+
+
+
+Renvoie la position de la carte non retournée la plus en haut à gauche de la grille de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu\textquotesingle{}on veuille qu\textquotesingle{}elle soit face cachée ou non. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut récupérer l\textquotesingle{}information \\
+\hline
+{\em veut\+\_\+face\+\_\+cachee} & vaut vrai si on veut la dernière carte en haut à gauche non retournée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\{-\/1,-\/1\} s\textquotesingle{}il n\textquotesingle{}y a pas de cartes non retournées dans la grille, la position de la carte non retournée la plus en haut à gauche sinon 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}\label{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}} 
 \index{structure.h@{structure.h}!get\_queue\_liste\_chainee@{get\_queue\_liste\_chainee}}
@@ -208,6 +352,24 @@ Renvoie la taille de l\textquotesingle{}ensemble d\textquotesingle{}entiers pass
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 la taille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a9f05725c6f190b4c4a644b3dea09f884}\label{structure_8h_a9f05725c6f190b4c4a644b3dea09f884}} 
+\index{structure.h@{structure.h}!get\_taille\_grille@{get\_taille\_grille}}
+\index{get\_taille\_grille@{get\_taille\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{get\_taille\_grille()}{get\_taille\_grille()}}
+{\footnotesize\ttfamily int get\+\_\+taille\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie la taille de la grille. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut obtenir l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la taille de la grille 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_a26c432ccb34bb5ab7765e7d8ae572056}\label{structure_8h_a26c432ccb34bb5ab7765e7d8ae572056}} 
 \index{structure.h@{structure.h}!get\_valeur\_indice\_ensemble\_entier@{get\_valeur\_indice\_ensemble\_entier}}
@@ -247,6 +409,24 @@ Renvoie la valeur de la tête de la chaine passée en paramètre.
 \begin{DoxyReturn}{Renvoie}
 NULL s\textquotesingle{}il y a pas de tete, la carte sinon 
 \end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a105217be86406505628df49e55f9b0d2}\label{structure_8h_a105217be86406505628df49e55f9b0d2}} 
+\index{structure.h@{structure.h}!initialiser\_grille@{initialiser\_grille}}
+\index{initialiser\_grille@{initialiser\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{initialiser\_grille()}{initialiser\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} initialiser\+\_\+grille (\begin{DoxyParamCaption}\item[{int}]{taille\+\_\+grille }\end{DoxyParamCaption})}
+
+
+
+Initialise une grille de cartes de la taille passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em taille\+\_\+grille} & la taille de la grille que l\textquotesingle{}on veut créer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la grille initialisée 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_ad3b8d3cd27c621d7417e94e7f2779cb2}\label{structure_8h_ad3b8d3cd27c621d7417e94e7f2779cb2}} 
 \index{structure.h@{structure.h}!initialiser\_liste\_chainee@{initialiser\_liste\_chainee}}
 \index{initialiser\_liste\_chainee@{initialiser\_liste\_chainee}!structure.h@{structure.h}}
@@ -273,6 +453,21 @@ Libérer le pointeur de l\textquotesingle{}ensemble d\textquotesingle{}entiers p
 
 \begin{DoxyParams}{Paramètres}
 {\em ee} & l\textquotesingle{}ensemble d\textquotesingle{}entiers que l\textquotesingle{}on va libérer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structure_8h_ac38859e44d39f36f87a4f15e20ca107f}\label{structure_8h_ac38859e44d39f36f87a4f15e20ca107f}} 
+\index{structure.h@{structure.h}!liberer\_grille@{liberer\_grille}}
+\index{liberer\_grille@{liberer\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{liberer\_grille()}{liberer\_grille()}}
+{\footnotesize\ttfamily void liberer\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire de la grille passée en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut libérer la mémoire \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{structure_8h_a43e024c8562347a8500553270189dda9}\label{structure_8h_a43e024c8562347a8500553270189dda9}} 
@@ -308,25 +503,84 @@ Permet de vérifier si la liste est vide ou non.
 \begin{DoxyReturn}{Renvoie}
 VRAI si la liste est vide, FAUX sinon 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structure_8h_a423fe058faa825790871e50dfa98daed}\label{structure_8h_a423fe058faa825790871e50dfa98daed}} 
+\mbox{\Hypertarget{structure_8h_abfba164e76aec7e95adf2facf3df2b16}\label{structure_8h_abfba164e76aec7e95adf2facf3df2b16}} 
+\index{structure.h@{structure.h}!poser\_carte\_grille@{poser\_carte\_grille}}
+\index{poser\_carte\_grille@{poser\_carte\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{poser\_carte\_grille()}{poser\_carte\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} poser\+\_\+carte\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Pose la carte passée en paramètre sur la grille passée en paramètre aux coordonnées y,x. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille sur laquelle on veut poser la carte \\
+\hline
+{\em c} & la carte que l\textquotesingle{}on veut poser \\
+\hline
+{\em y} & l\textquotesingle{}ordonnée où l\textquotesingle{}on veut mettre la carte \\
+\hline
+{\em x} & l\textquotesingle{}abscisse où l\textquotesingle{}on veut mettre la carte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+VRAI si la carte a pu être posée, FAUX sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a666c5ef556cfdf6bb0eae10146bf9d6b}\label{structure_8h_a666c5ef556cfdf6bb0eae10146bf9d6b}} 
+\index{structure.h@{structure.h}!reinitialiser\_grille@{reinitialiser\_grille}}
+\index{reinitialiser\_grille@{reinitialiser\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{reinitialiser\_grille()}{reinitialiser\_grille()}}
+{\footnotesize\ttfamily void reinitialiser\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Retire toutes les cartes de la grille en libérant leur mémoire associée Remet la valeur de de min\+\_\+x, min\+\_\+y, max\+\_\+x, max\+\_\+y à la valeur par défaut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille que l\textquotesingle{}on veut réinitialiser \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structure_8h_a140dd5c0b9805b21a24b0424d3bb8117}\label{structure_8h_a140dd5c0b9805b21a24b0424d3bb8117}} 
+\index{structure.h@{structure.h}!supprimer\_carte\_grille@{supprimer\_carte\_grille}}
+\index{supprimer\_carte\_grille@{supprimer\_carte\_grille}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{supprimer\_carte\_grille()}{supprimer\_carte\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} supprimer\+\_\+carte\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g,  }\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Renvoie la carte de la grille à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre et la retire de la grille sans la libérer de la mémoire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille où l\textquotesingle{}on veut supprimer la carte \\
+\hline
+{\em y} & l\textquotesingle{}ordonnée de la carte que l\textquotesingle{}on veut supprimer \\
+\hline
+{\em x} & l\textquotesingle{}abscisse de la carte que l\textquotesingle{}on veut supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie le pointeur vers la carte située à l\textquotesingle{}abscisse et l\textquotesingle{}ordonnée passée en paramètre, renvoie NULL si les coordonnées sont trop élevées pour la grille 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_a90df195cf47ac549aad59253c3cca3bf}\label{structure_8h_a90df195cf47ac549aad59253c3cca3bf}} 
 \index{structure.h@{structure.h}!supprimer\_carte\_liste\_chainee@{supprimer\_carte\_liste\_chainee}}
 \index{supprimer\_carte\_liste\_chainee@{supprimer\_carte\_liste\_chainee}!structure.h@{structure.h}}
 \doxysubsubsection{\texorpdfstring{supprimer\_carte\_liste\_chainee()}{supprimer\_carte\_liste\_chainee()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} supprimer\+\_\+carte\+\_\+liste\+\_\+chainee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}}}]{l,  }\item[{int}]{indice\+\_\+carte }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} supprimer\+\_\+carte\+\_\+liste\+\_\+chainee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} $\ast$}]{l,  }\item[{int}]{indice\+\_\+carte }\end{DoxyParamCaption})}
 
 
 
-Supprime la carte à l\textquotesingle{}indice passée en paramètre, et la renvoie. 
+Supprime la carte à l\textquotesingle{}indice passée en paramètre. 
 
 
 \begin{DoxyParams}{Paramètres}
 {\em l} & la liste à laquelle on veut supprimer notre carte \\
 \hline
-{\em indice\+\_\+carte} & l\textquotesingle{}indice de la carte que l\textquotesingle{}on veut supprimer \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-la carte supprimée ou NULL si l\textquotesingle{}indice passée en paramètre est trop élevé 
+la liste avec la carte supprimée 
 \end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_ae5a7cb2b30e92eaaa4cdfdcb3ce7311c}\label{structure_8h_ae5a7cb2b30e92eaaa4cdfdcb3ce7311c}} 
 \index{structure.h@{structure.h}!taille\_liste\_chainee@{taille\_liste\_chainee}}

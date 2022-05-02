@@ -14,20 +14,22 @@ Graphe des dépendances par inclusion de interface.\+h\+:
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{interface_8h_a9c8486eb8fb9c10b1a765dcaad5590c8}{afficher\+\_\+plateau}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+void \mbox{\hyperlink{interface_8h_a9c8486eb8fb9c10b1a765dcaad5590c8}{afficher\+\_\+plateau}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
 \begin{DoxyCompactList}\small\item\em Une fonction pour afficher le plateau de jeu. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{interface_8h_a1e5088d6a260f1361049e88a80681f78}{afficher\+\_\+main\+\_\+faction}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
+void \mbox{\hyperlink{interface_8h_a1e5088d6a260f1361049e88a80681f78}{afficher\+\_\+main\+\_\+faction}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Une fonction pour afficher la main d\textquotesingle{}une faction. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{interface_8h_a73a737a47cd0ea6d79a6216df7e4cc27}{demander\+\_\+renouvellement\+\_\+main}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
+\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{interface_8h_abc9ba00a5331b2fc9e409b1928017e09}{demander\+\_\+renouvellement\+\_\+main}} ()
 \begin{DoxyCompactList}\small\item\em Une fonction pour demander à une faction si elle veut renouveller sa main. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{interface_8h_a678ba2b4ae7780e057f7e3cc53daf736}{demander\+\_\+carte\+\_\+poser\+\_\+face\+\_\+cachee}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{interface_8h_a678ba2b4ae7780e057f7e3cc53daf736}{demander\+\_\+carte\+\_\+poser\+\_\+face\+\_\+cachee}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
 \begin{DoxyCompactList}\small\item\em Une fonction pour demander à une faction quelle carte de sa main elle veut poser face cachée. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{interface_8h_ae566417501f55c56b1f756ba24b71fbe}{demander\+\_\+position\+\_\+poser\+\_\+carte}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p, \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{interface_8h_ae566417501f55c56b1f756ba24b71fbe}{demander\+\_\+position\+\_\+poser\+\_\+carte}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
 \begin{DoxyCompactList}\small\item\em Une fonction pour demander à une faction à quelle position elle veut poser sa carte face cachée qu\textquotesingle{}elle a choisie précédemment, et faire des vérifications sur cette position choisie. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{interface_8h_a4822398fad96459f8ebf77aec2729bd2}{afficher\+\_\+effet\+\_\+carte\+\_\+retournee}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
 \begin{DoxyCompactList}\small\item\em Une fonction pour afficher l\textquotesingle{}effet d\textquotesingle{}une carte qui vient d\textquotesingle{}être retournée face visible. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{interface_8h_a89c5aeec6adfef61b3a48030263857ce}{afficher\+\_\+vainqueur}} (\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f)
-\begin{DoxyCompactList}\small\item\em Une fonction pour afficher la faction victorieuse de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{interface_8h_a89c5aeec6adfef61b3a48030263857ce}{afficher\+\_\+vainqueur}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+\begin{DoxyCompactList}\small\item\em Une fonction pour afficher la faction victorieuse de la partie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8h_aaf7bc1f331b83036bb9be691a9a35705}{demander\+\_\+appuyer\+\_\+sur\+\_\+entree}} (char $\ast$message, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} flush\+\_\+stdin)
+\begin{DoxyCompactList}\small\item\em Fonction demandant à un utilisateur d\textquotesingle{}appuyer sur entrée pour continuer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -55,7 +57,7 @@ Une fonction pour afficher l\textquotesingle{}effet d\textquotesingle{}une carte
 \index{interface.h@{interface.h}!afficher\_main\_faction@{afficher\_main\_faction}}
 \index{afficher\_main\_faction@{afficher\_main\_faction}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_main\_faction()}{afficher\_main\_faction()}}
-{\footnotesize\ttfamily void afficher\+\_\+main\+\_\+faction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+main\+\_\+faction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -70,7 +72,7 @@ Une fonction pour afficher la main d\textquotesingle{}une faction.
 \index{interface.h@{interface.h}!afficher\_plateau@{afficher\_plateau}}
 \index{afficher\_plateau@{afficher\_plateau}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_plateau()}{afficher\_plateau()}}
-{\footnotesize\ttfamily void afficher\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
 
 
 
@@ -85,7 +87,7 @@ Une fonction pour afficher le plateau de jeu.
 \index{interface.h@{interface.h}!afficher\_vainqueur@{afficher\_vainqueur}}
 \index{afficher\_vainqueur@{afficher\_vainqueur}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{afficher\_vainqueur()}{afficher\_vainqueur()}}
-{\footnotesize\ttfamily void afficher\+\_\+vainqueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void afficher\+\_\+vainqueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -96,11 +98,28 @@ Une fonction pour afficher la faction victorieuse de la partie.
 {\em f} & \+: la faction victorieuse de la partie. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{interface_8h_aaf7bc1f331b83036bb9be691a9a35705}\label{interface_8h_aaf7bc1f331b83036bb9be691a9a35705}} 
+\index{interface.h@{interface.h}!demander\_appuyer\_sur\_entree@{demander\_appuyer\_sur\_entree}}
+\index{demander\_appuyer\_sur\_entree@{demander\_appuyer\_sur\_entree}!interface.h@{interface.h}}
+\doxysubsubsection{\texorpdfstring{demander\_appuyer\_sur\_entree()}{demander\_appuyer\_sur\_entree()}}
+{\footnotesize\ttfamily void demander\+\_\+appuyer\+\_\+sur\+\_\+entree (\begin{DoxyParamCaption}\item[{char $\ast$}]{message,  }\item[{\mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}}}]{flush\+\_\+stdin }\end{DoxyParamCaption})}
+
+
+
+Fonction demandant à un utilisateur d\textquotesingle{}appuyer sur entrée pour continuer. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em message} & un message à afficher à l\textquotesingle{}utilisateur \\
+\hline
+{\em flush\+\_\+stdin} & permet de spécifier s\textquotesingle{}il y a besoin de flush le stdin \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{interface_8h_a678ba2b4ae7780e057f7e3cc53daf736}\label{interface_8h_a678ba2b4ae7780e057f7e3cc53daf736}} 
 \index{interface.h@{interface.h}!demander\_carte\_poser\_face\_cachee@{demander\_carte\_poser\_face\_cachee}}
 \index{demander\_carte\_poser\_face\_cachee@{demander\_carte\_poser\_face\_cachee}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{demander\_carte\_poser\_face\_cachee()}{demander\_carte\_poser\_face\_cachee()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} demander\+\_\+carte\+\_\+poser\+\_\+face\+\_\+cachee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} demander\+\_\+carte\+\_\+poser\+\_\+face\+\_\+cachee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
 
 
 
@@ -118,7 +137,7 @@ carte \+: la carte que la faction veut poser face cachée.
 \index{interface.h@{interface.h}!demander\_position\_poser\_carte@{demander\_position\_poser\_carte}}
 \index{demander\_position\_poser\_carte@{demander\_position\_poser\_carte}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{demander\_position\_poser\_carte()}{demander\_position\_poser\_carte()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structposition}{position}} demander\+\_\+position\+\_\+poser\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structposition}{position}} demander\+\_\+position\+\_\+poser\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
 
 
 
@@ -136,11 +155,11 @@ Une fonction pour demander à une faction à quelle position elle veut poser sa 
 \begin{DoxyReturn}{Renvoie}
 position \+: Position en abscisse et en ordonnée de la carte à poser, calculée à partir des entrées de l\textquotesingle{}utilisateur. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{interface_8h_a73a737a47cd0ea6d79a6216df7e4cc27}\label{interface_8h_a73a737a47cd0ea6d79a6216df7e4cc27}} 
+\mbox{\Hypertarget{interface_8h_abc9ba00a5331b2fc9e409b1928017e09}\label{interface_8h_abc9ba00a5331b2fc9e409b1928017e09}} 
 \index{interface.h@{interface.h}!demander\_renouvellement\_main@{demander\_renouvellement\_main}}
 \index{demander\_renouvellement\_main@{demander\_renouvellement\_main}!interface.h@{interface.h}}
 \doxysubsubsection{\texorpdfstring{demander\_renouvellement\_main()}{demander\_renouvellement\_main()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} demander\+\_\+renouvellement\+\_\+main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} demander\+\_\+renouvellement\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 

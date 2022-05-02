@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['derniere_5fcarte_5fretournee_119',['derniere_carte_retournee',['../structs__plateau.html#aa34cbb2523f45f039ba9f34121ec6ad3',1,'s_plateau']]]
+  ['cartes_5fsupprimees_354',['cartes_supprimees',['../structs__plateau.html#a323e740a55c74b6df5a60c226018c275',1,'s_plateau']]]
 ];

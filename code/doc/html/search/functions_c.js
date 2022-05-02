@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vider_5fmain_5fdans_5fpioche_116',['vider_main_dans_pioche',['../faction_8h.html#af8a791fd733608d164b217a5e219bff0',1,'faction.h']]]
+  ['nouveau_5fplateau_292',['nouveau_plateau',['../plateau_8h.html#ac6fe2fb16f25c07723cb0d9f0aa4838e',1,'plateau.c']]]
 ];

@@ -1,3 +1,7 @@
+/**
+ * @file effets.h
+ * @brief Fichier contenant les différents effets des cartes
+ */
 #ifndef ORIIEFLAMME_GR_11_EFFETS_H
 #define ORIIEFLAMME_GR_11_EFFETS_H
 

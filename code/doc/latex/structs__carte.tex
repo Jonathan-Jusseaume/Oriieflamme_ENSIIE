@@ -7,8 +7,8 @@ Structure représentant une carte.
 
 
 
-{\ttfamily \#include $<$carte.\+h$>$}
-
+Graphe de collaboration de s\+\_\+carte\+:
+% FIG 0
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +18,12 @@ char $\ast$ \mbox{\hyperlink{structs__carte_a25253b2e4613e7af20e92f21188f618b}{n
 \mbox{\Hypertarget{structs__carte_a900e1adc7b105e93ed5165c6371655f1}\label{structs__carte_a900e1adc7b105e93ed5165c6371655f1}} 
 char $\ast$ \mbox{\hyperlink{structs__carte_a900e1adc7b105e93ed5165c6371655f1}{effet}}
 \begin{DoxyCompactList}\small\item\em Chaîne de caractère représentant l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__carte_aded26be85ec09909812708fbdffe7561}\label{structs__carte_aded26be85ec09909812708fbdffe7561}} 
+void($\ast$ \mbox{\hyperlink{structs__carte_aded26be85ec09909812708fbdffe7561}{effet\+\_\+fonction}} )(\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Pointeur vers une fonction contenant l\textquotesingle{}effet de la carte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__carte_a6eb22ab8c18e8cd56a4704edf26022ce}\label{structs__carte_a6eb22ab8c18e8cd56a4704edf26022ce}} 
+\mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{structs__carte_a6eb22ab8c18e8cd56a4704edf26022ce}{pos}}
+\begin{DoxyCompactList}\small\item\em Position de la carte. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structs__carte_ac3771223b7a8c70cf8ada614d339f822}\label{structs__carte_ac3771223b7a8c70cf8ada614d339f822}} 
 int \mbox{\hyperlink{structs__carte_ac3771223b7a8c70cf8ada614d339f822}{identifiant\+\_\+faction}}
 \begin{DoxyCompactList}\small\item\em Entier représentant l\textquotesingle{}identifiant de la faction qui possède la carte. \end{DoxyCompactList}\item 
@@ -46,4 +52,4 @@ Il sera initialisé à -\/1 pour signifier que la carte n\textquotesingle{}est p
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-headers/\mbox{\hyperlink{carte_8h}{carte.\+h}}\end{DoxyCompactItemize}
+src/carte.\+c\end{DoxyCompactItemize}

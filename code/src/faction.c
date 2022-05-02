@@ -1,5 +1,6 @@
 #include "../headers/constante.h"
 #include "../headers/faction.h"
+#include "../headers/effets.h"
 
 /**
  * Structure représentant une faction.

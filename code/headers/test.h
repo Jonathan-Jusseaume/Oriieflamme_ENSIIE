@@ -1,9 +1,13 @@
+/**
+ * @file test.h
+ * @brief Fichier contenant tous les tests de notre jeu
+ */
 #ifndef ORIIEFLAMME_GR_11_TEST_H
 #define ORIIEFLAMME_GR_11_TEST_H
 
 /**
  * Lance toutes les fonctions de tests
- * @return
+ * @return le code d'erreur de CUNIT
  */
 int run_all_tests();
 

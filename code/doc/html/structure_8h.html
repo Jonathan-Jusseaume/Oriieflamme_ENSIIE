@@ -76,17 +76,27 @@ $(function() {
 <p>Fichier contenant les différentes structures nécessaires au bon fonctionnement de notre jeu.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="carte_8h_source.html">carte.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="position_8h_source.html">position.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="constante_8h_source.html">constante.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de structure.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="structure_8h__incl.png" border="0" usemap="#aheaders_2structure_8h" alt=""/></div>
 </div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="structure_8h__dep__incl.png" border="0" usemap="#aheaders_2structure_8hdep" alt=""/></div>
+</div>
 </div>
 <p><a href="structure_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
+<tr class="memitem:a493794ff82cc8798d9287f486d1a0f1a"><td class="memItemLeft" align="right" valign="top"><a id="a493794ff82cc8798d9287f486d1a0f1a"></a>
+typedef struct <a class="el" href="structs__grille__carte.html">s_grille_carte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a></td></tr>
+<tr class="memdesc:a493794ff82cc8798d9287f486d1a0f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure qui correspond à la grille qui va contenir les cartes posées. <br /></td></tr>
+<tr class="separator:a493794ff82cc8798d9287f486d1a0f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d78d3bef6e63a3d2eb434f164cacaa"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structs__liste__chainee__carte.html">s_liste_chainee_carte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a></td></tr>
 <tr class="memdesc:ab5d78d3bef6e63a3d2eb434f164cacaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure qui correspond à une liste chaînée de cartes.  <a href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab5d78d3bef6e63a3d2eb434f164cacaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,15 +106,51 @@ Définitions de type</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
+<tr class="memitem:a105217be86406505628df49e55f9b0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a105217be86406505628df49e55f9b0d2">initialiser_grille</a> (int taille_grille)</td></tr>
+<tr class="memdesc:a105217be86406505628df49e55f9b0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise une grille de cartes de la taille passée en paramètre.  <a href="structure_8h.html#a105217be86406505628df49e55f9b0d2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a105217be86406505628df49e55f9b0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666c5ef556cfdf6bb0eae10146bf9d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a666c5ef556cfdf6bb0eae10146bf9d6b">reinitialiser_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a666c5ef556cfdf6bb0eae10146bf9d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retire toutes les cartes de la grille en libérant leur mémoire associée Remet la valeur de de min_x, min_y, max_x, max_y à la valeur par défaut.  <a href="structure_8h.html#a666c5ef556cfdf6bb0eae10146bf9d6b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a666c5ef556cfdf6bb0eae10146bf9d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38859e44d39f36f87a4f15e20ca107f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#ac38859e44d39f36f87a4f15e20ca107f">liberer_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:ac38859e44d39f36f87a4f15e20ca107f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire de la grille passée en paramètre.  <a href="structure_8h.html#ac38859e44d39f36f87a4f15e20ca107f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac38859e44d39f36f87a4f15e20ca107f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfba164e76aec7e95adf2facf3df2b16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#abfba164e76aec7e95adf2facf3df2b16">poser_carte_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, int y, int x)</td></tr>
+<tr class="memdesc:abfba164e76aec7e95adf2facf3df2b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pose la carte passée en paramètre sur la grille passée en paramètre aux coordonnées y,x.  <a href="structure_8h.html#abfba164e76aec7e95adf2facf3df2b16">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abfba164e76aec7e95adf2facf3df2b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d0b431163233ea27a29dfb9f6ef607"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a93d0b431163233ea27a29dfb9f6ef607">get_carte_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g, int y, int x)</td></tr>
+<tr class="memdesc:a93d0b431163233ea27a29dfb9f6ef607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre.  <a href="structure_8h.html#a93d0b431163233ea27a29dfb9f6ef607">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a93d0b431163233ea27a29dfb9f6ef607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140dd5c0b9805b21a24b0424d3bb8117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a140dd5c0b9805b21a24b0424d3bb8117">supprimer_carte_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g, int y, int x)</td></tr>
+<tr class="memdesc:a140dd5c0b9805b21a24b0424d3bb8117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre et la retire de la grille sans la libérer de la mémoire.  <a href="structure_8h.html#a140dd5c0b9805b21a24b0424d3bb8117">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a140dd5c0b9805b21a24b0424d3bb8117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f05725c6f190b4c4a644b3dea09f884"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a9f05725c6f190b4c4a644b3dea09f884">get_taille_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a9f05725c6f190b4c4a644b3dea09f884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la taille de la grille.  <a href="structure_8h.html#a9f05725c6f190b4c4a644b3dea09f884">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9f05725c6f190b4c4a644b3dea09f884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78caeb0f5f0d5c68146e7dae0637cce3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a78caeb0f5f0d5c68146e7dae0637cce3">get_min_x_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a78caeb0f5f0d5c68146e7dae0637cce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'abscisse de la carte la plus à gauche de la grille.  <a href="structure_8h.html#a78caeb0f5f0d5c68146e7dae0637cce3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a78caeb0f5f0d5c68146e7dae0637cce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a53b8cb5e4ddd4e30212c856f006eb0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a8a53b8cb5e4ddd4e30212c856f006eb0">get_max_x_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a8a53b8cb5e4ddd4e30212c856f006eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'abscisse de la carte la plus à droite de la grille.  <a href="structure_8h.html#a8a53b8cb5e4ddd4e30212c856f006eb0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8a53b8cb5e4ddd4e30212c856f006eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12db1c43c97059687c6aa5eb9aa9531d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a12db1c43c97059687c6aa5eb9aa9531d">get_min_y_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a12db1c43c97059687c6aa5eb9aa9531d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'ordonnée de la carte la plus en haut de la grille.  <a href="structure_8h.html#a12db1c43c97059687c6aa5eb9aa9531d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a12db1c43c97059687c6aa5eb9aa9531d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe08b4ecaddff87c859bd1d253c4325e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#abe08b4ecaddff87c859bd1d253c4325e">get_max_y_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:abe08b4ecaddff87c859bd1d253c4325e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'ordonnée de la carte la plus en bas de la grille.  <a href="structure_8h.html#abe08b4ecaddff87c859bd1d253c4325e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abe08b4ecaddff87c859bd1d253c4325e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9555a358ab6ffbac1edf446c6770285c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structposition.html">position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a9555a358ab6ffbac1edf446c6770285c">get_position_carte_haut_gauche_grille</a> (<a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g, <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> veut_face_cachee)</td></tr>
+<tr class="memdesc:a9555a358ab6ffbac1edf446c6770285c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position de la carte non retournée la plus en haut à gauche de la grille de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu'on veuille qu'elle soit face cachée ou non.  <a href="structure_8h.html#a9555a358ab6ffbac1edf446c6770285c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9555a358ab6ffbac1edf446c6770285c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3b8d3cd27c621d7417e94e7f2779cb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#ad3b8d3cd27c621d7417e94e7f2779cb2">initialiser_liste_chainee</a> ()</td></tr>
 <tr class="memdesc:ad3b8d3cd27c621d7417e94e7f2779cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'initialiser la liste chaînée des cartes.  <a href="structure_8h.html#ad3b8d3cd27c621d7417e94e7f2779cb2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad3b8d3cd27c621d7417e94e7f2779cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47bcb17ada0e5753f47acbb3431ee32e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a47bcb17ada0e5753f47acbb3431ee32e">ajouter_tete_liste_chainee</a> (<a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> l, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
-<tr class="memdesc:a47bcb17ada0e5753f47acbb3431ee32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter en tete de la liste chaînée des cartes, la carte passée en paramètre.  <a href="structure_8h.html#a47bcb17ada0e5753f47acbb3431ee32e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a47bcb17ada0e5753f47acbb3431ee32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a423fe058faa825790871e50dfa98daed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a423fe058faa825790871e50dfa98daed">supprimer_carte_liste_chainee</a> (<a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> l, int indice_carte)</td></tr>
-<tr class="memdesc:a423fe058faa825790871e50dfa98daed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime la carte à l'indice passée en paramètre, et la renvoie.  <a href="structure_8h.html#a423fe058faa825790871e50dfa98daed">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a423fe058faa825790871e50dfa98daed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa43b51f52aa7af5445f599d85fb08bcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#aa43b51f52aa7af5445f599d85fb08bcb">ajouter_tete_liste_chainee</a> (<a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> *l, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c)</td></tr>
+<tr class="memdesc:aa43b51f52aa7af5445f599d85fb08bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter en tete de la liste chaînée des cartes, la carte passée en paramètre.  <a href="structure_8h.html#aa43b51f52aa7af5445f599d85fb08bcb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa43b51f52aa7af5445f599d85fb08bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90df195cf47ac549aad59253c3cca3bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#a90df195cf47ac549aad59253c3cca3bf">supprimer_carte_liste_chainee</a> (<a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> *l, int indice_carte)</td></tr>
+<tr class="memdesc:a90df195cf47ac549aad59253c3cca3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime la carte à l'indice passée en paramètre.  <a href="structure_8h.html#a90df195cf47ac549aad59253c3cca3bf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a90df195cf47ac549aad59253c3cca3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a7cb2b30e92eaaa4cdfdcb3ce7311c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structure_8h.html#ae5a7cb2b30e92eaaa4cdfdcb3ce7311c">taille_liste_chainee</a> (<a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> l)</td></tr>
 <tr class="memdesc:ae5a7cb2b30e92eaaa4cdfdcb3ce7311c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la taille de la liste chainee passée en paramètre.  <a href="structure_8h.html#ae5a7cb2b30e92eaaa4cdfdcb3ce7311c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae5a7cb2b30e92eaaa4cdfdcb3ce7311c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,16 +264,16 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a47bcb17ada0e5753f47acbb3431ee32e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47bcb17ada0e5753f47acbb3431ee32e">&#9670;&nbsp;</a></span>ajouter_tete_liste_chainee()</h2>
+<a id="aa43b51f52aa7af5445f599d85fb08bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa43b51f52aa7af5445f599d85fb08bcb">&#9670;&nbsp;</a></span>ajouter_tete_liste_chainee()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> ajouter_tete_liste_chainee </td>
+          <td class="memname">void ajouter_tete_liste_chainee </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> *&#160;</td>
           <td class="paramname"><em>l</em>, </td>
         </tr>
         <tr>
@@ -314,6 +360,51 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a93d0b431163233ea27a29dfb9f6ef607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d0b431163233ea27a29dfb9f6ef607">&#9670;&nbsp;</a></span>get_carte_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> get_carte_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut récupérer la carte </td></tr>
+    <tr><td class="paramname">y</td><td>l'ordonnée de la carte </td></tr>
+    <tr><td class="paramname">x</td><td>l'abscisse de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>renvoie le pointeur vers la carte située à l'abscisse et l'ordonnée passée en paramètre, renvoie NULL si les coordonnées sont trop élevées pour la grille </dd></dl>
+
+</div>
+</div>
 <a id="a5247443a35e5de02fb5b32b68425da08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5247443a35e5de02fb5b32b68425da08">&#9670;&nbsp;</a></span>get_carte_liste_chainee()</h2>
 
@@ -349,6 +440,152 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>la carte à l'indice passée en paramètre ou NULL si l'indice passée en paramètre est en dehors de la liste </dd></dl>
+
+</div>
+</div>
+<a id="a8a53b8cb5e4ddd4e30212c856f006eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a53b8cb5e4ddd4e30212c856f006eb0">&#9670;&nbsp;</a></span>get_max_x_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_max_x_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'abscisse de la carte la plus à droite de la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut obtenir l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>l'abscisse de la carte la plus à droite de la grille </dd></dl>
+
+</div>
+</div>
+<a id="abe08b4ecaddff87c859bd1d253c4325e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe08b4ecaddff87c859bd1d253c4325e">&#9670;&nbsp;</a></span>get_max_y_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_max_y_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'ordonnée de la carte la plus en bas de la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut obtenir l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>l'ordonnée de la carte la plus en bas de la grille </dd></dl>
+
+</div>
+</div>
+<a id="a78caeb0f5f0d5c68146e7dae0637cce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78caeb0f5f0d5c68146e7dae0637cce3">&#9670;&nbsp;</a></span>get_min_x_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_min_x_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'abscisse de la carte la plus à gauche de la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut obtenir l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>l'abscisse de la carte la plus à gauche la grille </dd></dl>
+
+</div>
+</div>
+<a id="a12db1c43c97059687c6aa5eb9aa9531d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12db1c43c97059687c6aa5eb9aa9531d">&#9670;&nbsp;</a></span>get_min_y_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_min_y_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'ordonnée de la carte la plus en haut de la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut obtenir l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>l'ordonnée de la carte la plus en haut de la grille </dd></dl>
+
+</div>
+</div>
+<a id="a9555a358ab6ffbac1edf446c6770285c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9555a358ab6ffbac1edf446c6770285c">&#9670;&nbsp;</a></span>get_position_carte_haut_gauche_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structposition.html">position</a> get_position_carte_haut_gauche_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td>
+          <td class="paramname"><em>veut_face_cachee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la position de la carte non retournée la plus en haut à gauche de la grille de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu'on veuille qu'elle soit face cachée ou non. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut récupérer l'information </td></tr>
+    <tr><td class="paramname">veut_face_cachee</td><td>vaut vrai si on veut la dernière carte en haut à gauche non retournée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>{-1,-1} s'il n'y a pas de cartes non retournées dans la grille, la position de la carte non retournée la plus en haut à gauche sinon </dd></dl>
 
 </div>
 </div>
@@ -403,6 +640,33 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>la taille </dd></dl>
+
+</div>
+</div>
+<a id="a9f05725c6f190b4c4a644b3dea09f884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f05725c6f190b4c4a644b3dea09f884">&#9670;&nbsp;</a></span>get_taille_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_taille_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la taille de la grille. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut obtenir l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la taille de la grille </dd></dl>
 
 </div>
 </div>
@@ -471,6 +735,33 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a105217be86406505628df49e55f9b0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105217be86406505628df49e55f9b0d2">&#9670;&nbsp;</a></span>initialiser_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> initialiser_grille </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>taille_grille</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise une grille de cartes de la taille passée en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taille_grille</td><td>la taille de la grille que l'on veut créer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la grille initialisée </dd></dl>
+
+</div>
+</div>
 <a id="ad3b8d3cd27c621d7417e94e7f2779cb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3b8d3cd27c621d7417e94e7f2779cb2">&#9670;&nbsp;</a></span>initialiser_liste_chainee()</h2>
 
@@ -511,6 +802,32 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">ee</td><td>l'ensemble d'entiers que l'on va libérer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac38859e44d39f36f87a4f15e20ca107f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38859e44d39f36f87a4f15e20ca107f">&#9670;&nbsp;</a></span>liberer_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void liberer_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère la mémoire de la grille passée en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille dont on veut libérer la mémoire </td></tr>
   </table>
   </dd>
 </dl>
@@ -570,8 +887,131 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a423fe058faa825790871e50dfa98daed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a423fe058faa825790871e50dfa98daed">&#9670;&nbsp;</a></span>supprimer_carte_liste_chainee()</h2>
+<a id="abfba164e76aec7e95adf2facf3df2b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfba164e76aec7e95adf2facf3df2b16">&#9670;&nbsp;</a></span>poser_carte_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> poser_carte_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pose la carte passée en paramètre sur la grille passée en paramètre aux coordonnées y,x. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille sur laquelle on veut poser la carte </td></tr>
+    <tr><td class="paramname">c</td><td>la carte que l'on veut poser </td></tr>
+    <tr><td class="paramname">y</td><td>l'ordonnée où l'on veut mettre la carte </td></tr>
+    <tr><td class="paramname">x</td><td>l'abscisse où l'on veut mettre la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>VRAI si la carte a pu être posée, FAUX sinon </dd></dl>
+
+</div>
+</div>
+<a id="a666c5ef556cfdf6bb0eae10146bf9d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a666c5ef556cfdf6bb0eae10146bf9d6b">&#9670;&nbsp;</a></span>reinitialiser_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reinitialiser_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retire toutes les cartes de la grille en libérant leur mémoire associée Remet la valeur de de min_x, min_y, max_x, max_y à la valeur par défaut. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille que l'on veut réinitialiser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a140dd5c0b9805b21a24b0424d3bb8117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140dd5c0b9805b21a24b0424d3bb8117">&#9670;&nbsp;</a></span>supprimer_carte_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> supprimer_carte_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la carte de la grille à l'abscisse et l'ordonnée passée en paramètre et la retire de la grille sans la libérer de la mémoire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>la grille où l'on veut supprimer la carte </td></tr>
+    <tr><td class="paramname">y</td><td>l'ordonnée de la carte que l'on veut supprimer </td></tr>
+    <tr><td class="paramname">x</td><td>l'abscisse de la carte que l'on veut supprimer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>renvoie le pointeur vers la carte située à l'abscisse et l'ordonnée passée en paramètre, renvoie NULL si les coordonnées sont trop élevées pour la grille </dd></dl>
+
+</div>
+</div>
+<a id="a90df195cf47ac549aad59253c3cca3bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90df195cf47ac549aad59253c3cca3bf">&#9670;&nbsp;</a></span>supprimer_carte_liste_chainee()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -579,7 +1019,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> supprimer_carte_liste_chainee </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> *&#160;</td>
           <td class="paramname"><em>l</em>, </td>
         </tr>
         <tr>
@@ -596,15 +1036,14 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Supprime la carte à l'indice passée en paramètre, et la renvoie. </p>
+<p>Supprime la carte à l'indice passée en paramètre. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>la liste à laquelle on veut supprimer notre carte </td></tr>
-    <tr><td class="paramname">indice_carte</td><td>l'indice de la carte que l'on veut supprimer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>la carte supprimée ou NULL si l'indice passée en paramètre est trop élevé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la liste avec la carte supprimée </dd></dl>
 
 </div>
 </div>

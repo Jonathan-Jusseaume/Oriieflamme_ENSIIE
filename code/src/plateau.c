@@ -6,6 +6,7 @@
 #include "../headers/interface.h"
 #include "../headers/effets.h"
 #include <string.h>
+#include <stdio.h>
 
 
 /**

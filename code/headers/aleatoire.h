@@ -1,4 +1,7 @@
-
+/**
+ * @file aleatoire.h
+ * @brief Fichier contenant les fonctions générant de l'aléatoire dans notre jeu
+ */
 #ifndef ORIIEFLAMME_GR_11_RANDOM_H
 #define ORIIEFLAMME_GR_11_RANDOM_H
 
