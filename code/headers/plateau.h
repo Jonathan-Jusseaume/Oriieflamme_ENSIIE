@@ -40,13 +40,6 @@ void liberer_plateau(plateau p);
 int initialiser_manche(plateau p);
 
 /**
- * une fonction qui renvoie la liste des deux factions du jeu
- * @param p pointeur sur le plateau
- * @return faction : liste des deux factions
- */
-faction *get_factions(plateau p);
-
-/**
  * une fonction pour permettre à une faction de poser une carte face cachée sur le plateau
  * @param p pointeur sur le plateau
  * @param f pointeur la faction possédant la carte
@@ -84,11 +77,31 @@ faction *get_factions(plateau p);
 int get_nombre_cartes_posees(plateau p);
 
 /**
+ * Fonction permettant de recupérer le nombre_cartes_retournees du plateau.
+ * @param p : pointeur sur le plateau dont on veut récuperer le nombre_cartes_retournees.
+ * @return entier représentant le nombre_cartes_retournees du plateau.
+ */
+int get_nombre_cartes_retournees(plateau p);
+
+/**
  * Fonction permettant de recupérer le max_x du plateau.
  * @param p : pointeur sur le plateau dont on veut récuperer le max_x.
  * @return entier représentant le max_x du plateau.
  */
 carte get_derniere_carte_retournee(plateau p);
+
+/**
+ * Fonction permettant de récupérer le nombre de cartes retournées sur le plateau
+ * @param p : pointeur sur le plateau dont on veut récupérer l'information
+ * @return entier représentant le nombre de carte retournées
+ */
+int get_nombre_cartes_retournees(plateau p);
+/**
+ * Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche.
+ * @param p : pointeur sur le plateau dont on veut récupérer l'information
+ * @return la liste des cartes supprimées durant la manche
+ */
+liste_chainee_carte get_cartes_supprimees(plateau p);
 
 /**
  * Fonction permettant de changer la grille du plateau.
@@ -102,7 +115,7 @@ void set_grille(plateau p, grille_carte g);
  * @param p : pointeur sur le plateau dont on veut changer ses factions.
  * @param factions : tableau 1D de faction que l'on va associer aux factions du plateau.
  */
-void set_factions(plateau p,faction *factions);
+void set_factions(plateau p, faction *factions);
 
 /**
  * Fonction permettant de changer le nombre_cartes_posees du plateau.
@@ -117,5 +130,12 @@ void set_nombre_cartes_posees(plateau p, int nombre_cartes_posees);
  * @param derniere_carte_retournee : carte que l'on va associer à la derniere_carte_retournee du plateau.
  */
 void set_derniere_carte_retournee(plateau p, carte derniere_carte_retournee);
+
+/**
+ * Fonction permettant de changer la liste_chainee_carte du plateau
+ * @param p : pointeur sur le plateau dont on veut changer sa liste_chainee
+ * @param lc : la liste de la nouvelle carte
+ */
+void set_cartes_supprimees(plateau p, liste_chainee_carte lc);
 
 #endif //ORIIEFLAMME_GR_11_PLATEAU_H

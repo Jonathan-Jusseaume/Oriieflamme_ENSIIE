@@ -34,7 +34,11 @@ typedef struct s_plateau {
      * champs correspondant au nombre de cartes retournées.
      */
     int nombre_cartes_retournees;
-
+    /**
+     * champ correspondant à la liste chaînée des cartes qui ont supprimées durant une manche
+     * Cette liste a pour but de libérer la mémoire à la fin de chaque manche
+     */
+    liste_chainee_carte cartes_supprimees;
 } *plateau;
 
 
@@ -151,8 +155,16 @@ int get_nombre_cartes_posees(plateau p) {
     return p->nombre_cartes_posees;
 }
 
+int get_nombre_cartes_retournees(plateau p) {
+    return p->nombre_cartes_retournees;
+}
+
 carte get_derniere_carte_retournee(plateau p) {
     return p->derniere_carte_retournee;
+}
+
+liste_chainee_carte get_cartes_supprimees(plateau p) {
+    return p->cartes_supprimees;
 }
 
 void set_grille(plateau p, grille_carte g) {
@@ -170,4 +182,8 @@ void set_nombre_cartes_posees(plateau p, int nombre_cartes_posees) {
 
 void set_derniere_carte_retournee(plateau p, carte derniere_carte_retournee) {
     p->derniere_carte_retournee = derniere_carte_retournee;
+}
+
+void set_cartes_supprimees(plateau p, liste_chainee_carte lc) {
+    p->cartes_supprimees = lc;
 }
