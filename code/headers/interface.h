@@ -59,4 +59,11 @@ void afficher_effet_carte_retournee(carte c);
  */
 void afficher_vainqueur(faction f);
 
+/**
+ * Fonction demandant à un utilisateur d'appuyer sur entrée pour continuer
+ * @param message un message à afficher à l'utilisateur
+ * @param flush_stdin permet de spécifier s'il y a besoin de flush le stdin
+ */
+void demander_appuyer_sur_entree(char *message, booleen flush_stdin);
+
 #endif //ORIIEFLAMME_GR_11_INTERFACE_H
