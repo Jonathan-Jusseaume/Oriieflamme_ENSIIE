@@ -51,7 +51,6 @@ carte initialiser_carte(char *nom, char *effet, void *effet_carte, int identifia
     c->effet = effet;
     c->effet_fonction = effet_carte;
     c->pos.abscisse = -1;
-    c->pos.abscisse = -1;
     c->pos.ordonnee = -1;
     c->identifiant_faction = identifiant_faction;
     c->numero_plateau = numero_plateau;

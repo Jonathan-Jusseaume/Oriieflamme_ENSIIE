@@ -3,6 +3,8 @@
 #include "../headers/constante.h"
 #include "../headers/position.h"
 #include "../headers/structure.h"
+#include "../headers/interface.h"
+#include "../headers/effets.h"
 #include <string.h>
 
 
@@ -51,6 +53,7 @@ plateau nouveau_plateau() {
     p->derniere_carte_retournee = NULL;
     p->nombre_cartes_retournees = 0;
     p->nombre_cartes_posees = 0;
+    p->cartes_supprimees = initialiser_liste_chainee();
     return p;
 }
 
@@ -59,6 +62,13 @@ void liberer_plateau(plateau p) {
         return;
     }
     /*libération de la mémoire pour les factions*/
+    liberer_grille(p->grille);
+    if (p->cartes_supprimees != NULL) {
+        liberer_liste_chainee(p->cartes_supprimees);
+    }
+    for (int i = 0; i < NOMBRE_FACTIONS; i++) {
+        free(p->factions[i]);
+    }
     free(p->factions);
     free(p);
 }
@@ -74,43 +84,63 @@ int initialiser_manche(plateau p) {
         identifiant_fac_derniere_carte = get_identifiant_faction_carte(p->derniere_carte_retournee);
         manche_gagnee = get_manches_gagnees(p->factions[identifiant_fac_derniere_carte]);
         /*on incrémente le nombre de manches de la faction qui a déposé la carte "Laurent Prével"*/
-        set_manches_gagnees(p->factions[identifiant_fac_derniere_carte], manche_gagnee++);
+        set_manches_gagnees(p->factions[identifiant_fac_derniere_carte], ++manche_gagnee);
+        printf("La faction %d a gagné la manche grâce à Laurent Prével \n", identifiant_fac_derniere_carte);
     } else {
         /*Permet d'incrémenter la manche en fonction du joueur gagnant*/
         /*si le joueur 1 a gagné la manche grâce à son nombre de points*/
         if (get_points_DDRS(p->factions[FACTION1]) > get_points_DDRS(p->factions[FACTION2])) {
             /*on incrémente le nombre de manches pour le joueur 1*/
-            manche_gagnee = get_manches_gagnees(p->factions[1]);
-            set_manches_gagnees(p->factions[FACTION1], manche_gagnee++);
+            manche_gagnee = get_manches_gagnees(p->factions[FACTION1]);
+            set_manches_gagnees(p->factions[FACTION1], ++manche_gagnee);
             /*si le joueur 2 a gagné la manche grâce à son nombre de points*/
+            printf("La faction %d a gagné la manche grâce à ses points \n", FACTION1);
         } else if (get_points_DDRS(p->factions[FACTION1]) < get_points_DDRS(p->factions[FACTION2])) {
             /*on incrémente le nombre de manches pour le joueur 2*/
             manche_gagnee = get_manches_gagnees(p->factions[FACTION2]);
-            set_manches_gagnees(p->factions[FACTION2], manche_gagnee++);
+            set_manches_gagnees(p->factions[FACTION2], ++manche_gagnee);
             /* sinon si les deux joueurs ont le même nombre de points : le joueur qui a la carte la plus en haut à gauche a gagné*/
+            printf("La faction %d a gagné la manche grâce à ses points \n", FACTION2);
         } else {
             int identifiant_fac_carte_plus_a_gauche;
-            for (int i = get_min_x_grille(p->grille); i < get_max_x_grille(p->grille); i++) {
+            for (int i = get_min_x_grille(p->grille); i <= get_max_x_grille(p->grille); i++) {
                 if (get_carte_grille(p->grille, get_min_y_grille(p->grille), i) != NULL) {
                     /*récupération de l'identifiant de la faction qui posé la carte la plus en haut à gauche*/
                     identifiant_fac_carte_plus_a_gauche = get_identifiant_faction_carte(
                             get_carte_grille(p->grille, get_min_y_grille(p->grille), i));
                     manche_gagnee = get_manches_gagnees(p->factions[identifiant_fac_carte_plus_a_gauche]);
-                    set_manches_gagnees(p->factions[identifiant_fac_carte_plus_a_gauche], manche_gagnee++);
+                    set_manches_gagnees(p->factions[identifiant_fac_carte_plus_a_gauche], ++manche_gagnee);
+                    printf("La faction %d a gagné la manche\n", identifiant_fac_carte_plus_a_gauche);
+                    break;
                 }
             }
         }
     }
+    // On remet le nombre de points DDRS à 0
+    for (int i = 0; i < NOMBRE_FACTIONS; i++) {
+        set_points_DDRS(p->factions[i], 0);
+    }
+
+    /*Sinon la partie n'est pas terminée : initialisation de la grille et de ses différents champs : min_x/max_x/min_y/max_y*/
+    if (p->cartes_supprimees != NULL) {
+        liberer_liste_chainee(p->cartes_supprimees);
+    }
+    reinitialiser_grille(p->grille);
+    p->derniere_carte_retournee = NULL;
+    p->nombre_cartes_retournees = 0;
+    p->nombre_cartes_posees = 0;
+    p->cartes_supprimees = initialiser_liste_chainee();
+
+
     /*Permet de savoir le joueur gagnant de la partie en fonction de son nombre de manches gagnées.*/
     if (get_manches_gagnees(p->factions[FACTION1]) == 2) {
         /*Le joueur 1 a gagné*/
-        return 0;
+        return FACTION1;
     } else if (get_manches_gagnees(p->factions[FACTION2]) == 2) {
         /*Le joueur 2 a gagné*/
-        return 1;
+        return FACTION2;
     }
-    /*Sinon la partie n'est pas terminée : initialisation de la grille et de ses différents champs : min_x/max_x/min_y/max_y*/
-    reinitialiser_grille(p->grille);
+
     return -1;
 }
 
@@ -121,7 +151,7 @@ void poser_carte(plateau p, carte c, position pos) {
 }
 
 carte retourner_carte(plateau p) {
-    position pos = get_position_carte_haut_gauche_grille(p->grille);
+    position pos = get_position_carte_haut_gauche_grille(p->grille, VRAI);
     /*si abscisse vaut -1 : les cartes ont été toutes retournées*/
     if (pos.abscisse == -1) {
         return NULL;
@@ -134,8 +164,10 @@ carte retourner_carte(plateau p) {
     /*on augmente de 1 le nombre de cartes retournées*/
     p->nombre_cartes_retournees++;
 
+    afficher_effet_carte_retournee(carte);
+
     /*on applique l'effet de la carte : on récupère la fonction associée à la carte*/
-    get_effet_fonction(carte);
+    (get_effet_fonction(carte))(carte, p);
     /*mise à jour de la dernière carte retournée*/
     p->derniere_carte_retournee = carte;
 
