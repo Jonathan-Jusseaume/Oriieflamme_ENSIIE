@@ -119,6 +119,12 @@ int initialiser_manche(plateau p) {
     // On remet le nombre de points DDRS à 0
     for (int i = 0; i < NOMBRE_FACTIONS; i++) {
         set_points_DDRS(p->factions[i], 0);
+        if(get_pioche(p->factions[i]) != NULL) {
+            liberer_ensemble_entier(get_pioche(p->factions[i]));
+        }
+        if(get_main(p->factions[i]) != NULL) {
+            liberer_liste_chainee(get_main(p->factions[i]));
+        }
     }
 
     /*Sinon la partie n'est pas terminée : initialisation de la grille et de ses différents champs : min_x/max_x/min_y/max_y*/
