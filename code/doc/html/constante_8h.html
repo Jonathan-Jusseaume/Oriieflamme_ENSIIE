@@ -89,6 +89,24 @@ Macros</h2></td></tr>
 <tr class="memitem:aa7ed7910faf231e69a48ef4c1eb00172"><td class="memItemLeft" align="right" valign="top"><a id="aa7ed7910faf231e69a48ef4c1eb00172"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NOMBRE_CARTES_MAXIMUM</b>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:aa7ed7910faf231e69a48ef4c1eb00172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac07b7dde850f710620ed1bad2dfa2e"><td class="memItemLeft" align="right" valign="top"><a id="afac07b7dde850f710620ed1bad2dfa2e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NOMBRE_FACTIONS</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:afac07b7dde850f710620ed1bad2dfa2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae8957996bb157a2a9928f70a1c46f5d"><td class="memItemLeft" align="right" valign="top"><a id="aae8957996bb157a2a9928f70a1c46f5d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NOMBRE_CARTES_MAIN</b>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:aae8957996bb157a2a9928f70a1c46f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4ee1e2022ee75d093ab4c76cf36f59"><td class="memItemLeft" align="right" valign="top"><a id="a2f4ee1e2022ee75d093ab4c76cf36f59"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NOMBRE_CARTES_TOTALES</b>&#160;&#160;&#160;47</td></tr>
+<tr class="separator:a2f4ee1e2022ee75d093ab4c76cf36f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4843b8716c24918bc55a770ad04ec236"><td class="memItemLeft" align="right" valign="top"><a id="a4843b8716c24918bc55a770ad04ec236"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TAILLE_NOMBRE_OCCURRENCES</b>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a4843b8716c24918bc55a770ad04ec236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8365b8ad699e295bebafadcc605dbf"><td class="memItemLeft" align="right" valign="top"><a id="afb8365b8ad699e295bebafadcc605dbf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FACTION1</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:afb8365b8ad699e295bebafadcc605dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5328660f413fef528b57780bade910f2"><td class="memItemLeft" align="right" valign="top"><a id="a5328660f413fef528b57780bade910f2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FACTION2</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5328660f413fef528b57780bade910f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
@@ -96,6 +114,10 @@ Définitions de type</h2></td></tr>
 typedef enum <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="constante_8h.html#af5098f7a48bcddd46220081b033ad6a1">booleen</a></td></tr>
 <tr class="memdesc:af5098f7a48bcddd46220081b033ad6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. <br /></td></tr>
 <tr class="separator:af5098f7a48bcddd46220081b033ad6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3c71721ce182f389b2a57c93d9b4b8"><td class="memItemLeft" align="right" valign="top"><a id="a1b3c71721ce182f389b2a57c93d9b4b8"></a>
+typedef enum <a class="el" href="constante_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="constante_8h.html#a1b3c71721ce182f389b2a57c93d9b4b8">direction</a></td></tr>
+<tr class="memdesc:a1b3c71721ce182f389b2a57c93d9b4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération pour la direction de la carte à placer. <br /></td></tr>
+<tr class="separator:a1b3c71721ce182f389b2a57c93d9b4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
@@ -104,6 +126,61 @@ typedef enum <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a4
  }</td></tr>
 <tr class="memdesc:a741a7664ae46ffb773db384a85a497e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. <br /></td></tr>
 <tr class="separator:a741a7664ae46ffb773db384a85a497e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f26e6ee9fcd62f75203b5402df8098"><td class="memItemLeft" align="right" valign="top"><a id="a99f26e6ee9fcd62f75203b5402df8098"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="constante_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> { <br />
+&#160;&#160;<b>INCONNU</b> = 'I'
+, <b>HAUT</b> = 'H'
+, <b>BAS</b> = 'B'
+, <b>GAUCHE</b> = 'G'
+, <br />
+&#160;&#160;<b>DROITE</b> = 'D'
+<br />
+ }</td></tr>
+<tr class="memdesc:a99f26e6ee9fcd62f75203b5402df8098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération pour la direction de la carte à placer. <br /></td></tr>
+<tr class="separator:a99f26e6ee9fcd62f75203b5402df8098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6f6e60d13a8826ae62d33e6e5a5642"><td class="memItemLeft" align="right" valign="top"><a id="a3a6f6e60d13a8826ae62d33e6e5a5642"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="constante_8h.html#a3a6f6e60d13a8826ae62d33e6e5a5642">cartes</a> { <br />
+&#160;&#160;<b>FISE</b>
+, <b>FISA</b>
+, <b>FC</b>
+, <b>EcologIIE</b>
+, <br />
+&#160;&#160;<b>lIIEns</b>
+, <b>Soiree_sans_alcool</b>
+, <b>Alcool</b>
+, <b>Cafe</b>
+, <br />
+&#160;&#160;<b>The</b>
+, <b>Ecocup</b>
+, <b>Reprographie</b>
+, <b>Isolation_du_batiment</b>
+, <br />
+&#160;&#160;<b>Parcours_sobriete_numerique</b>
+, <b>Heures_supplementaires</b>
+, <b>Kahina_Bouchama</b>
+, <b>Kevin_Goilard</b>
+, <br />
+&#160;&#160;<b>Massinissa_Merabet</b>
+, <b>Vitera_Y</b>
+, <b>Jonas_Senizergues</b>
+, <b>Fetia_Bannour</b>
+, <br />
+&#160;&#160;<b>Catherine_Dubois</b>
+, <b>Anne_Laure_Ligozat</b>
+, <b>Guillaume_Burel</b>
+, <b>Christophe_Mouilleron</b>
+, <br />
+&#160;&#160;<b>Thomas_Lim</b>
+, <b>Julien_Forest</b>
+, <b>Dimitri_Watel</b>
+, <b>Djibril_Aurelien_Dembele_Cabot</b>
+, <br />
+&#160;&#160;<b>Eric_Lejeune</b>
+, <b>Lucienne_Pacave</b>
+, <b>Katrin_Salhab</b>
+, <b>Laurent_Prevel</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3a6f6e60d13a8826ae62d33e6e5a5642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les noms des différentes cartes. <br /></td></tr>
+<tr class="separator:a3a6f6e60d13a8826ae62d33e6e5a5642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant différentes constantes qui seront utiles pour l'application. </p>

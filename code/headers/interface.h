@@ -28,7 +28,7 @@ void afficher_main_faction(faction f);
  * @param f : la faction à laquelle on va demander si elle veut renouveller sa main.
  * @return booleen : VRAI si la faction veut vider sa main, mélanger sa pioche et repiocher, FAUX sinon.
  */
-booleen demander_renouvellement_main(faction f);
+booleen demander_renouvellement_main();
 
 /**
  * Une fonction pour demander à une faction quelle carte de sa main elle veut poser face cachée.
@@ -58,5 +58,12 @@ void afficher_effet_carte_retournee(carte c);
  * @param f : la faction victorieuse de la partie.
  */
 void afficher_vainqueur(faction f);
+
+/**
+ * Fonction demandant à un utilisateur d'appuyer sur entrée pour continuer
+ * @param message un message à afficher à l'utilisateur
+ * @param flush_stdin permet de spécifier s'il y a besoin de flush le stdin
+ */
+void demander_appuyer_sur_entree(char *message, booleen flush_stdin);
 
 #endif //ORIIEFLAMME_GR_11_INTERFACE_H

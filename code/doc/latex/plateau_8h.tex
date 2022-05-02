@@ -9,36 +9,54 @@ Fichier contenant la structure et les fonctions liées à notre plateau de jeu.
 {\ttfamily \#include \char`\"{}faction.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}constante.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}position.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}structure.\+h\char`\"{}}\newline
 Graphe des dépendances par inclusion de plateau.\+h\+:
 % FIG 0
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
 % FIG 1
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}}
-\begin{DoxyCompactList}\small\item\em Structure correspondant à notre plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{plateau_8h_a7faac1085ff60a36200b354f66b213e8}\label{plateau_8h_a7faac1085ff60a36200b354f66b213e8}} 
-typedef struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}} $\ast$ \mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}
+\mbox{\Hypertarget{plateau_8h_ae2140dc65b076c5838cf51ced133951a}\label{plateau_8h_ae2140dc65b076c5838cf51ced133951a}} 
+typedef struct \mbox{\hyperlink{structs__plateau}{s\+\_\+plateau}} $\ast$ \mbox{\hyperlink{plateau_8h_ae2140dc65b076c5838cf51ced133951a}{plateau}}
 \begin{DoxyCompactList}\small\item\em Structure correspondant à notre plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} \mbox{\hyperlink{plateau_8h_ac6fe2fb16f25c07723cb0d9f0aa4838e}{nouveau\+\_\+plateau}} ()
+\mbox{\hyperlink{structs__plateau}{plateau}} \mbox{\hyperlink{plateau_8h_ac6fe2fb16f25c07723cb0d9f0aa4838e}{nouveau\+\_\+plateau}} ()
 \begin{DoxyCompactList}\small\item\em Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{plateau_8h_a781e3e2b4c1d4964a6d9451b2df420db}{liberer\+\_\+plateau}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+void \mbox{\hyperlink{plateau_8h_a781e3e2b4c1d4964a6d9451b2df420db}{liberer\+\_\+plateau}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
 \begin{DoxyCompactList}\small\item\em une fonction pour libérer la mémoire associée à un plateau (et ses deux factions) \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{plateau_8h_a97192436a0e6f10e1574b17daed17b46}{initialiser\+\_\+manche}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
+int \mbox{\hyperlink{plateau_8h_a97192436a0e6f10e1574b17daed17b46}{initialiser\+\_\+manche}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
 \begin{DoxyCompactList}\small\item\em une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que la partie est terminée \end{DoxyCompactList}\item 
-\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} $\ast$ \mbox{\hyperlink{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}{get\+\_\+factions}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
-\begin{DoxyCompactList}\small\item\em une fonction qui renvoie la liste des deux factions du jeu \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}{poser\+\_\+carte}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p, \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} f, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structposition}{position}} pos)
+void \mbox{\hyperlink{plateau_8h_ae841bb53b5c0cbbee1a71563a3419764}{poser\+\_\+carte}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{structposition}{position}} pos)
 \begin{DoxyCompactList}\small\item\em une fonction pour permettre à une faction de poser une carte face cachée sur le plateau \end{DoxyCompactList}\item 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{plateau_8h_a21b1196e909cbee186cb34c50d86f7be}{retourner\+\_\+carte}} (\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} p)
-\begin{DoxyCompactList}\small\item\em une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{plateau_8h_a21b1196e909cbee186cb34c50d86f7be}{retourner\+\_\+carte}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} \mbox{\hyperlink{plateau_8h_aa7b47f818097d78768fd82f4a415fa75}{get\+\_\+grille}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer la grille du plateau. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} $\ast$ \mbox{\hyperlink{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}{get\+\_\+factions}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer les factions du plateau. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plateau_8h_afbcd308a77b6abb0c97b5cb6e4c81b46}{get\+\_\+nombre\+\_\+cartes\+\_\+posees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le nombre\+\_\+cartes\+\_\+posees du plateau. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{plateau_8h_a812b1eda200eb025b7c00bc740956d73}{get\+\_\+nombre\+\_\+cartes\+\_\+retournees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le nombre\+\_\+cartes\+\_\+retournees du plateau. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{plateau_8h_aa1dbabc6486d1792c99d7919f272eb79}{get\+\_\+derniere\+\_\+carte\+\_\+retournee}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de recupérer le max\+\_\+x du plateau. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{plateau_8h_ae2ee9af294619762d18ab4aa0f0bd8b9}{get\+\_\+cartes\+\_\+supprimees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_a2752ed1d9f8cfaab671b6c474af342c4}{set\+\_\+grille}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la grille du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_a41eac8cf69a921c21f230c0f5a490e69}{set\+\_\+factions}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} $\ast$factions)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer les factions du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_a9165516891aec16579ee250531f5416f}{set\+\_\+nombre\+\_\+cartes\+\_\+posees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, int nombre\+\_\+cartes\+\_\+posees)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le nombre\+\_\+cartes\+\_\+posees du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_ae6f4755999c3ce98d0defbde5e6fa796}{set\+\_\+derniere\+\_\+carte\+\_\+retournee}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} derniere\+\_\+carte\+\_\+retournee)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la derniere\+\_\+carte\+\_\+retournee du plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{plateau_8h_aa450393a827c10d3540dec941dcacecd}{set\+\_\+cartes\+\_\+supprimees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} lc)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la liste\+\_\+chainee\+\_\+carte du plateau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -47,29 +65,129 @@ Fichier contenant la structure et les fonctions liées à notre plateau de jeu.
 
 
 \doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{plateau_8h_ae2ee9af294619762d18ab4aa0f0bd8b9}\label{plateau_8h_ae2ee9af294619762d18ab4aa0f0bd8b9}} 
+\index{plateau.h@{plateau.h}!get\_cartes\_supprimees@{get\_cartes\_supprimees}}
+\index{get\_cartes\_supprimees@{get\_cartes\_supprimees}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_cartes\_supprimees()}{get\_cartes\_supprimees()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} get\+\_\+cartes\+\_\+supprimees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récupérer l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la liste des cartes supprimées durant la manche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_aa1dbabc6486d1792c99d7919f272eb79}\label{plateau_8h_aa1dbabc6486d1792c99d7919f272eb79}} 
+\index{plateau.h@{plateau.h}!get\_derniere\_carte\_retournee@{get\_derniere\_carte\_retournee}}
+\index{get\_derniere\_carte\_retournee@{get\_derniere\_carte\_retournee}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_derniere\_carte\_retournee()}{get\_derniere\_carte\_retournee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} get\+\_\+derniere\+\_\+carte\+\_\+retournee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le max\+\_\+x du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récuperer le max\+\_\+x. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant le max\+\_\+x du plateau. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}\label{plateau_8h_a8304066b5d7e0cf641f77c9ac7f2f144}} 
 \index{plateau.h@{plateau.h}!get\_factions@{get\_factions}}
 \index{get\_factions@{get\_factions}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{get\_factions()}{get\_factions()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}$\ast$ get\+\_\+factions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}$\ast$ get\+\_\+factions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
 
 
 
-une fonction qui renvoie la liste des deux factions du jeu 
+Fonction permettant de recupérer les factions du plateau. 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em p} & pointeur sur le plateau \\
+{\em p} & \+: pointeur sur le plateau dont on veut récuperer les factions. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
-faction \+: liste des deux factions 
+tableau 1D de faction représentant les factions du plateau. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_aa7b47f818097d78768fd82f4a415fa75}\label{plateau_8h_aa7b47f818097d78768fd82f4a415fa75}} 
+\index{plateau.h@{plateau.h}!get\_grille@{get\_grille}}
+\index{get\_grille@{get\_grille}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_grille()}{get\_grille()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} get\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer la grille du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récuperer la grille. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+tableau 2D de carte représentant la grille du plateau. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_afbcd308a77b6abb0c97b5cb6e4c81b46}\label{plateau_8h_afbcd308a77b6abb0c97b5cb6e4c81b46}} 
+\index{plateau.h@{plateau.h}!get\_nombre\_cartes\_posees@{get\_nombre\_cartes\_posees}}
+\index{get\_nombre\_cartes\_posees@{get\_nombre\_cartes\_posees}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_nombre\_cartes\_posees()}{get\_nombre\_cartes\_posees()}}
+{\footnotesize\ttfamily int get\+\_\+nombre\+\_\+cartes\+\_\+posees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le nombre\+\_\+cartes\+\_\+posees du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récuperer le nombre\+\_\+cartes\+\_\+posees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant le nombre\+\_\+cartes\+\_\+posees du plateau. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_a812b1eda200eb025b7c00bc740956d73}\label{plateau_8h_a812b1eda200eb025b7c00bc740956d73}} 
+\index{plateau.h@{plateau.h}!get\_nombre\_cartes\_retournees@{get\_nombre\_cartes\_retournees}}
+\index{get\_nombre\_cartes\_retournees@{get\_nombre\_cartes\_retournees}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{get\_nombre\_cartes\_retournees()}{get\_nombre\_cartes\_retournees()}}
+{\footnotesize\ttfamily int get\+\_\+nombre\+\_\+cartes\+\_\+retournees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de recupérer le nombre\+\_\+cartes\+\_\+retournees du plateau. 
+
+Fonction permettant de récupérer le nombre de cartes retournées sur le plateau.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récuperer le nombre\+\_\+cartes\+\_\+retournees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant le nombre\+\_\+cartes\+\_\+retournees du plateau.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut récupérer l\textquotesingle{}information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+entier représentant le nombre de carte retournées 
 \end{DoxyReturn}
 \mbox{\Hypertarget{plateau_8h_a97192436a0e6f10e1574b17daed17b46}\label{plateau_8h_a97192436a0e6f10e1574b17daed17b46}} 
 \index{plateau.h@{plateau.h}!initialiser\_manche@{initialiser\_manche}}
 \index{initialiser\_manche@{initialiser\_manche}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{initialiser\_manche()}{initialiser\_manche()}}
-{\footnotesize\ttfamily int initialiser\+\_\+manche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int initialiser\+\_\+manche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
 
 
 
@@ -87,7 +205,7 @@ int \+: -\/1 si la partie n\textquotesingle{}est pas terminée, 0 si le joueur1 
 \index{plateau.h@{plateau.h}!liberer\_plateau@{liberer\_plateau}}
 \index{liberer\_plateau@{liberer\_plateau}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{liberer\_plateau()}{liberer\_plateau()}}
-{\footnotesize\ttfamily void liberer\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void liberer\+\_\+plateau (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
 
 
 
@@ -102,7 +220,7 @@ une fonction pour libérer la mémoire associée à un plateau (et ses deux fact
 \index{plateau.h@{plateau.h}!nouveau\_plateau@{nouveau\_plateau}}
 \index{nouveau\_plateau@{nouveau\_plateau}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{nouveau\_plateau()}{nouveau\_plateau()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}} nouveau\+\_\+plateau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs__plateau}{plateau}} nouveau\+\_\+plateau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -111,11 +229,11 @@ Une fonction pour créer un nouveau plateau (et les deux factions qui joueront d
 \begin{DoxyReturn}{Renvoie}
 plateau \+: pointeur sur le plateau créer 
 \end{DoxyReturn}
-\mbox{\Hypertarget{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}\label{plateau_8h_a66703ac43d533a8f1d1b851bfdeb392a}} 
+\mbox{\Hypertarget{plateau_8h_ae841bb53b5c0cbbee1a71563a3419764}\label{plateau_8h_ae841bb53b5c0cbbee1a71563a3419764}} 
 \index{plateau.h@{plateau.h}!poser\_carte@{poser\_carte}}
 \index{poser\_carte@{poser\_carte}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{poser\_carte()}{poser\_carte()}}
-{\footnotesize\ttfamily void poser\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}}}]{f,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structposition}{position}}}]{pos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void poser\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c,  }\item[{\mbox{\hyperlink{structposition}{position}}}]{pos }\end{DoxyParamCaption})}
 
 
 
@@ -136,7 +254,7 @@ une fonction pour permettre à une faction de poser une carte face cachée sur l
 \index{plateau.h@{plateau.h}!retourner\_carte@{retourner\_carte}}
 \index{retourner\_carte@{retourner\_carte}!plateau.h@{plateau.h}}
 \doxysubsubsection{\texorpdfstring{retourner\_carte()}{retourner\_carte()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} retourner\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plateau_8h_a7faac1085ff60a36200b354f66b213e8}{plateau}}}]{p }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} retourner\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
 
 
 
@@ -150,3 +268,88 @@ une fonction pour retourner la carte la plus en haut à gauche face visible et a
 \begin{DoxyReturn}{Renvoie}
 carte \+: pointeur sur la carte à renvoyer, et renvoi null s\textquotesingle{}il n\textquotesingle{}y a plus de carte à retourner 
 \end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_aa450393a827c10d3540dec941dcacecd}\label{plateau_8h_aa450393a827c10d3540dec941dcacecd}} 
+\index{plateau.h@{plateau.h}!set\_cartes\_supprimees@{set\_cartes\_supprimees}}
+\index{set\_cartes\_supprimees@{set\_cartes\_supprimees}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{set\_cartes\_supprimees()}{set\_cartes\_supprimees()}}
+{\footnotesize\ttfamily void set\+\_\+cartes\+\_\+supprimees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}}}]{lc }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer la liste\+\_\+chainee\+\_\+carte du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut changer sa liste\+\_\+chainee \\
+\hline
+{\em lc} & \+: la liste de la nouvelle carte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_ae6f4755999c3ce98d0defbde5e6fa796}\label{plateau_8h_ae6f4755999c3ce98d0defbde5e6fa796}} 
+\index{plateau.h@{plateau.h}!set\_derniere\_carte\_retournee@{set\_derniere\_carte\_retournee}}
+\index{set\_derniere\_carte\_retournee@{set\_derniere\_carte\_retournee}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{set\_derniere\_carte\_retournee()}{set\_derniere\_carte\_retournee()}}
+{\footnotesize\ttfamily void set\+\_\+derniere\+\_\+carte\+\_\+retournee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{derniere\+\_\+carte\+\_\+retournee }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer la derniere\+\_\+carte\+\_\+retournee du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut changer sa derniere\+\_\+carte\+\_\+retournee. \\
+\hline
+{\em derniere\+\_\+carte\+\_\+retournee} & \+: carte que l\textquotesingle{}on va associer à la derniere\+\_\+carte\+\_\+retournee du plateau. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_a41eac8cf69a921c21f230c0f5a490e69}\label{plateau_8h_a41eac8cf69a921c21f230c0f5a490e69}} 
+\index{plateau.h@{plateau.h}!set\_factions@{set\_factions}}
+\index{set\_factions@{set\_factions}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{set\_factions()}{set\_factions()}}
+{\footnotesize\ttfamily void set\+\_\+factions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} $\ast$}]{factions }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer les factions du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut changer ses factions. \\
+\hline
+{\em factions} & \+: tableau 1D de faction que l\textquotesingle{}on va associer aux factions du plateau. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_a2752ed1d9f8cfaab671b6c474af342c4}\label{plateau_8h_a2752ed1d9f8cfaab671b6c474af342c4}} 
+\index{plateau.h@{plateau.h}!set\_grille@{set\_grille}}
+\index{set\_grille@{set\_grille}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{set\_grille()}{set\_grille()}}
+{\footnotesize\ttfamily void set\+\_\+grille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer la grille du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut changer sa grille. \\
+\hline
+{\em grille} & \+: tableau 2D de carte que l\textquotesingle{}on va associer à la grille du plateau. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plateau_8h_a9165516891aec16579ee250531f5416f}\label{plateau_8h_a9165516891aec16579ee250531f5416f}} 
+\index{plateau.h@{plateau.h}!set\_nombre\_cartes\_posees@{set\_nombre\_cartes\_posees}}
+\index{set\_nombre\_cartes\_posees@{set\_nombre\_cartes\_posees}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{set\_nombre\_cartes\_posees()}{set\_nombre\_cartes\_posees()}}
+{\footnotesize\ttfamily void set\+\_\+nombre\+\_\+cartes\+\_\+posees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p,  }\item[{int}]{nombre\+\_\+cartes\+\_\+posees }\end{DoxyParamCaption})}
+
+
+
+Fonction permettant de changer le nombre\+\_\+cartes\+\_\+posees du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & \+: pointeur sur le plateau dont on veut changer son nombre\+\_\+cartes\+\_\+posees. \\
+\hline
+{\em nombre\+\_\+cartes\+\_\+posees} & \+: entier que l\textquotesingle{}on va associer au nombre\+\_\+cartes\+\_\+posees du plateau. \\
+\hline
+\end{DoxyParams}

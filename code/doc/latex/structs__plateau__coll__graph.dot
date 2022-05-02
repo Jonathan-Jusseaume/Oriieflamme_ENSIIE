@@ -4,9 +4,20 @@ digraph "s_plateau"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="s_plateau",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Structure correspondant à notre plateau de jeu."];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" factions" ];
-  Node2 [label="s_faction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__faction.html",tooltip="Structure représentant une faction."];
-  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" main\npioche" ];
-  Node3 [label="s_carte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__carte.html",tooltip="Structure représentant une carte."];
-  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" derniere_carte_retournee\ngrille" ];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" derniere_carte_retournee" ];
+  Node2 [label="s_carte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__carte.html",tooltip="Structure représentant une carte."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pos" ];
+  Node3 [label="position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structposition.html",tooltip="structure correspondant à la position de la carte qui va être placée sur la grille"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" factions" ];
+  Node4 [label="s_faction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__faction.html",tooltip="Structure représentant une faction."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pioche" ];
+  Node5 [label="s_ensemble_entier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__ensemble__entier.html",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" main" ];
+  Node6 [label="s_liste_chainee_carte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__liste__chainee__carte.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tete" ];
+  Node6 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" queue" ];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cartes_supprimees" ];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" grille" ];
+  Node7 [label="s_grille_carte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs__grille__carte.html",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" grille" ];
 }

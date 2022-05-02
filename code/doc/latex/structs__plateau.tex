@@ -7,38 +7,28 @@ Structure correspondant à notre plateau de jeu.
 
 
 
-{\ttfamily \#include $<$plateau.\+h$>$}
-
-
-
 Graphe de collaboration de s\+\_\+plateau\+:
 % FIG 0
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structs__plateau_a829ea54ae1dd43898460de8b0a54156b}\label{structs__plateau_a829ea54ae1dd43898460de8b0a54156b}} 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structs__plateau_a829ea54ae1dd43898460de8b0a54156b}{grille}} \mbox{[}NOMBRE\+\_\+\+CARTES\+\_\+\+MAXIMUM $\ast$2\mbox{]}\mbox{[}NOMBRE\+\_\+\+CARTES\+\_\+\+MAXIMUM $\ast$2\mbox{]}
-\begin{DoxyCompactList}\small\item\em tableau de pointeurs statiques contenant les cartes déposées par les factions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__plateau_a2f156197d54e710bfc777b956121a2c2}\label{structs__plateau_a2f156197d54e710bfc777b956121a2c2}} 
+\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} \mbox{\hyperlink{structs__plateau_a2f156197d54e710bfc777b956121a2c2}{grille}}
+\begin{DoxyCompactList}\small\item\em pointeur vers la grille de cartes \+: en effet celle-\/ci s\textquotesingle{}occupe de la gestion du plateau \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structs__plateau_a4c655d84eb93fbc852084c0fc175f125}\label{structs__plateau_a4c655d84eb93fbc852084c0fc175f125}} 
-\mbox{\hyperlink{faction_8h_ac777107515b3ba381cb4d7917f4ed054}{faction}} $\ast$ \mbox{\hyperlink{structs__plateau_a4c655d84eb93fbc852084c0fc175f125}{factions}}
+\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} $\ast$ \mbox{\hyperlink{structs__plateau_a4c655d84eb93fbc852084c0fc175f125}{factions}}
 \begin{DoxyCompactList}\small\item\em tableau de pointeurs contenant un pointeur sur chaque joueur \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structs__plateau_ab63f9ed25ef18cfd10695dde73ae712c}\label{structs__plateau_ab63f9ed25ef18cfd10695dde73ae712c}} 
 int \mbox{\hyperlink{structs__plateau_ab63f9ed25ef18cfd10695dde73ae712c}{nombre\+\_\+cartes\+\_\+posees}}
 \begin{DoxyCompactList}\small\item\em nombre de cartes déposées sur le plateau \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__plateau_a1d6e2510d8147d3d94bbae4982fa4b25}\label{structs__plateau_a1d6e2510d8147d3d94bbae4982fa4b25}} 
-int \mbox{\hyperlink{structs__plateau_a1d6e2510d8147d3d94bbae4982fa4b25}{min\+\_\+x}}
-\begin{DoxyCompactList}\small\item\em abscisse de la carte la plus à gauche \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__plateau_a22fb92fb530cbd68a9e232cfaa19d62a}\label{structs__plateau_a22fb92fb530cbd68a9e232cfaa19d62a}} 
-int \mbox{\hyperlink{structs__plateau_a22fb92fb530cbd68a9e232cfaa19d62a}{max\+\_\+x}}
-\begin{DoxyCompactList}\small\item\em abscisse de la carte la plus à droite \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__plateau_adb399d52f3fb5b30800f766325860a75}\label{structs__plateau_adb399d52f3fb5b30800f766325860a75}} 
-int \mbox{\hyperlink{structs__plateau_adb399d52f3fb5b30800f766325860a75}{min\+\_\+y}}
-\begin{DoxyCompactList}\small\item\em ordonnée de la carte la plus en haut \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__plateau_ac85d163d46947ad74c3e241e5bd0c9ae}\label{structs__plateau_ac85d163d46947ad74c3e241e5bd0c9ae}} 
-int \mbox{\hyperlink{structs__plateau_ac85d163d46947ad74c3e241e5bd0c9ae}{max\+\_\+y}}
-\begin{DoxyCompactList}\small\item\em ordonnée de la carte la plus en bas \end{DoxyCompactList}\item 
 \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} \mbox{\hyperlink{structs__plateau_aa34cbb2523f45f039ba9f34121ec6ad3}{derniere\+\_\+carte\+\_\+retournee}}
-\begin{DoxyCompactList}\small\item\em champs de la dernière carte retournée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em champs de la dernière carte retournée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__plateau_a14d81f533fedf9b4d8d936a5f9986666}\label{structs__plateau_a14d81f533fedf9b4d8d936a5f9986666}} 
+int \mbox{\hyperlink{structs__plateau_a14d81f533fedf9b4d8d936a5f9986666}{nombre\+\_\+cartes\+\_\+retournees}}
+\begin{DoxyCompactList}\small\item\em champs correspondant au nombre de cartes retournées. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__plateau_a323e740a55c74b6df5a60c226018c275}\label{structs__plateau_a323e740a55c74b6df5a60c226018c275}} 
+\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structs__plateau_a323e740a55c74b6df5a60c226018c275}{cartes\+\_\+supprimees}}
+\begin{DoxyCompactList}\small\item\em champ correspondant à la liste chaînée des cartes qui ont supprimées durant une manche Cette liste a pour but de libérer la mémoire à la fin de chaque manche \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -59,4 +49,4 @@ En effet le plateau doit se souvenir de cette dernière carte dans le cas où ce
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-headers/\mbox{\hyperlink{plateau_8h}{plateau.\+h}}\end{DoxyCompactItemize}
+src/plateau.\+c\end{DoxyCompactItemize}

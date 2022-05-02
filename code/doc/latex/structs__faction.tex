@@ -7,10 +7,6 @@ Structure représentant une faction.
 
 
 
-{\ttfamily \#include $<$faction.\+h$>$}
-
-
-
 Graphe de collaboration de s\+\_\+faction\+:
 % FIG 0
 \doxysubsection*{Attributs publics}
@@ -31,12 +27,12 @@ int \mbox{\hyperlink{structs__faction_a546b6c9dc1d2c08a8cc31a75f4741630}{manches
 \mbox{\Hypertarget{structs__faction_aa5173932fe7f9fbcc567f18c2d898387}\label{structs__faction_aa5173932fe7f9fbcc567f18c2d898387}} 
 \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{structs__faction_aa5173932fe7f9fbcc567f18c2d898387}{a\+\_\+remelanger}}
 \begin{DoxyCompactList}\small\item\em Booléen qui vaut VRAI si la faction a déjà remélangé sa main, et FAUX sinon. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__faction_ab2fd8dcc8f7563b62d8a0798d0570b04}\label{structs__faction_ab2fd8dcc8f7563b62d8a0798d0570b04}} 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} $\ast$ \mbox{\hyperlink{structs__faction_ab2fd8dcc8f7563b62d8a0798d0570b04}{pioche}}
-\begin{DoxyCompactList}\small\item\em Pointeur vers des cartes représentant les cartes dans la pioche de la faction. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structs__faction_a76cb46cb297bb3639ea7754217e12f66}\label{structs__faction_a76cb46cb297bb3639ea7754217e12f66}} 
-\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} $\ast$ \mbox{\hyperlink{structs__faction_a76cb46cb297bb3639ea7754217e12f66}{main}}
-\begin{DoxyCompactList}\small\item\em Pointeur vers des cartes représentant les cartes dans la main de la faction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{structs__faction_aa6bf4c70f857cce75ce87c76be9178b7}\label{structs__faction_aa6bf4c70f857cce75ce87c76be9178b7}} 
+\mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}} \mbox{\hyperlink{structs__faction_aa6bf4c70f857cce75ce87c76be9178b7}{pioche}}
+\begin{DoxyCompactList}\small\item\em Pointeur vers un Set représentant les cartes dans la pioche de la faction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structs__faction_aede537548e62b7f69fbc3c96df0ff7f9}\label{structs__faction_aede537548e62b7f69fbc3c96df0ff7f9}} 
+\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structs__faction_aede537548e62b7f69fbc3c96df0ff7f9}{main}}
+\begin{DoxyCompactList}\small\item\em Pointeur vers une liste chainée représentant les cartes dans la main de la faction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -44,4 +40,4 @@ Structure représentant une faction.
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-headers/\mbox{\hyperlink{faction_8h}{faction.\+h}}\end{DoxyCompactItemize}
+src/faction.\+c\end{DoxyCompactItemize}

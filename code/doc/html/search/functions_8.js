@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['remelanger_75',['remelanger',['../faction_8h.html#af3fddbcee9e7bd24551c43276986c7af',1,'faction.h']]],
-  ['repioche_76',['repioche',['../faction_8h.html#a85d8eb81e638ef0180cd8c760fe6f052',1,'faction.h']]],
-  ['retourner_5fcarte_77',['retourner_carte',['../plateau_8h.html#a21b1196e909cbee186cb34c50d86f7be',1,'plateau.h']]]
+  ['jonas_5fsenizergues_277',['jonas_senizergues',['../effets_8h.html#a54ac3b736efce45a7d8ff67ffda308dd',1,'effets.c']]],
+  ['julien_5fforest_278',['julien_forest',['../effets_8h.html#ab5a81b5c48d71db99d2f580f35658588',1,'effets.c']]]
 ];

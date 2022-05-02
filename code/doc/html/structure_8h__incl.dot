@@ -1,0 +1,15 @@
+digraph "headers/structure.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="headers/structure.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Fichier contenant les différentes structures nécessaires au bon fonctionnement de notre jeu."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="carte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$carte_8h.html",tooltip="Fichier contenant la structure liée aux cartes."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="constante.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$constante_8h.html",tooltip="Fichier contenant différentes constantes qui seront utiles pour l'application."];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="position.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$position_8h.html",tooltip="Fichier contenant la structure liée à la position de la carte sur la grille."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

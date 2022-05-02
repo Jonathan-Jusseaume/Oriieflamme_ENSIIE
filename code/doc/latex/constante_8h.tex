@@ -12,13 +12,34 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \item 
 \mbox{\Hypertarget{constante_8h_aa7ed7910faf231e69a48ef4c1eb00172}\label{constante_8h_aa7ed7910faf231e69a48ef4c1eb00172}} 
 \#define {\bfseries NOMBRE\+\_\+\+CARTES\+\_\+\+MAXIMUM}~16
+\item 
+\mbox{\Hypertarget{constante_8h_afac07b7dde850f710620ed1bad2dfa2e}\label{constante_8h_afac07b7dde850f710620ed1bad2dfa2e}} 
+\#define {\bfseries NOMBRE\+\_\+\+FACTIONS}~2
+\item 
+\mbox{\Hypertarget{constante_8h_aae8957996bb157a2a9928f70a1c46f5d}\label{constante_8h_aae8957996bb157a2a9928f70a1c46f5d}} 
+\#define {\bfseries NOMBRE\+\_\+\+CARTES\+\_\+\+MAIN}~8
+\item 
+\mbox{\Hypertarget{constante_8h_a2f4ee1e2022ee75d093ab4c76cf36f59}\label{constante_8h_a2f4ee1e2022ee75d093ab4c76cf36f59}} 
+\#define {\bfseries NOMBRE\+\_\+\+CARTES\+\_\+\+TOTALES}~47
+\item 
+\mbox{\Hypertarget{constante_8h_a4843b8716c24918bc55a770ad04ec236}\label{constante_8h_a4843b8716c24918bc55a770ad04ec236}} 
+\#define {\bfseries TAILLE\+\_\+\+NOMBRE\+\_\+\+OCCURRENCES}~32
+\item 
+\mbox{\Hypertarget{constante_8h_afb8365b8ad699e295bebafadcc605dbf}\label{constante_8h_afb8365b8ad699e295bebafadcc605dbf}} 
+\#define {\bfseries FACTION1}~0
+\item 
+\mbox{\Hypertarget{constante_8h_a5328660f413fef528b57780bade910f2}\label{constante_8h_a5328660f413fef528b57780bade910f2}} 
+\#define {\bfseries FACTION2}~1
 \end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{constante_8h_af5098f7a48bcddd46220081b033ad6a1}\label{constante_8h_af5098f7a48bcddd46220081b033ad6a1}} 
 typedef enum \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \mbox{\hyperlink{constante_8h_af5098f7a48bcddd46220081b033ad6a1}{booleen}}
-\begin{DoxyCompactList}\small\item\em Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{constante_8h_a1b3c71721ce182f389b2a57c93d9b4b8}\label{constante_8h_a1b3c71721ce182f389b2a57c93d9b4b8}} 
+typedef enum \mbox{\hyperlink{constante_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} \mbox{\hyperlink{constante_8h_a1b3c71721ce182f389b2a57c93d9b4b8}{direction}}
+\begin{DoxyCompactList}\small\item\em Enumération pour la direction de la carte à placer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,7 +47,60 @@ typedef enum \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{bo
 enum \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} \{ {\bfseries FAUX} = 0
 , {\bfseries VRAI} = 1
  \}
-\begin{DoxyCompactList}\small\item\em Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{constante_8h_a99f26e6ee9fcd62f75203b5402df8098}\label{constante_8h_a99f26e6ee9fcd62f75203b5402df8098}} 
+enum \mbox{\hyperlink{constante_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} \{ \newline
+{\bfseries INCONNU} = \textquotesingle{}I\textquotesingle{}
+, {\bfseries HAUT} = \textquotesingle{}H\textquotesingle{}
+, {\bfseries BAS} = \textquotesingle{}B\textquotesingle{}
+, {\bfseries GAUCHE} = \textquotesingle{}G\textquotesingle{}
+, \newline
+{\bfseries DROITE} = \textquotesingle{}D\textquotesingle{}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumération pour la direction de la carte à placer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{constante_8h_a3a6f6e60d13a8826ae62d33e6e5a5642}\label{constante_8h_a3a6f6e60d13a8826ae62d33e6e5a5642}} 
+enum \mbox{\hyperlink{constante_8h_a3a6f6e60d13a8826ae62d33e6e5a5642}{cartes}} \{ \newline
+{\bfseries FISE}
+, {\bfseries FISA}
+, {\bfseries FC}
+, {\bfseries Ecolog\+IIE}
+, \newline
+{\bfseries l\+IIEns}
+, {\bfseries Soiree\+\_\+sans\+\_\+alcool}
+, {\bfseries Alcool}
+, {\bfseries Cafe}
+, \newline
+{\bfseries The}
+, {\bfseries Ecocup}
+, {\bfseries Reprographie}
+, {\bfseries Isolation\+\_\+du\+\_\+batiment}
+, \newline
+{\bfseries Parcours\+\_\+sobriete\+\_\+numerique}
+, {\bfseries Heures\+\_\+supplementaires}
+, {\bfseries Kahina\+\_\+\+Bouchama}
+, {\bfseries Kevin\+\_\+\+Goilard}
+, \newline
+{\bfseries Massinissa\+\_\+\+Merabet}
+, {\bfseries Vitera\+\_\+Y}
+, {\bfseries Jonas\+\_\+\+Senizergues}
+, {\bfseries Fetia\+\_\+\+Bannour}
+, \newline
+{\bfseries Catherine\+\_\+\+Dubois}
+, {\bfseries Anne\+\_\+\+Laure\+\_\+\+Ligozat}
+, {\bfseries Guillaume\+\_\+\+Burel}
+, {\bfseries Christophe\+\_\+\+Mouilleron}
+, \newline
+{\bfseries Thomas\+\_\+\+Lim}
+, {\bfseries Julien\+\_\+\+Forest}
+, {\bfseries Dimitri\+\_\+\+Watel}
+, {\bfseries Djibril\+\_\+\+Aurelien\+\_\+\+Dembele\+\_\+\+Cabot}
+, \newline
+{\bfseries Eric\+\_\+\+Lejeune}
+, {\bfseries Lucienne\+\_\+\+Pacave}
+, {\bfseries Katrin\+\_\+\+Salhab}
+, {\bfseries Laurent\+\_\+\+Prevel}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumération contenant les noms des différentes cartes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}

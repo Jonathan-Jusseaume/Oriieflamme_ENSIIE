@@ -66,7 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Définitions de type</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
@@ -80,6 +79,9 @@ $(function() {
 <code>#include &quot;<a class="el" href="faction_8h_source.html">faction.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="constante_8h_source.html">constante.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="position_8h_source.html">position.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="structure_8h_source.html">structure.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de plateau.h:</div>
 <div class="dyncontent">
@@ -93,43 +95,121 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 </div>
 <p><a href="plateau_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__plateau.html">s_plateau</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure correspondant à notre plateau de jeu.  <a href="structs__plateau.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr class="memitem:a7faac1085ff60a36200b354f66b213e8"><td class="memItemLeft" align="right" valign="top"><a id="a7faac1085ff60a36200b354f66b213e8"></a>
-typedef struct <a class="el" href="structs__plateau.html">s_plateau</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a></td></tr>
-<tr class="memdesc:a7faac1085ff60a36200b354f66b213e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure correspondant à notre plateau de jeu. <br /></td></tr>
-<tr class="separator:a7faac1085ff60a36200b354f66b213e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2140dc65b076c5838cf51ced133951a"><td class="memItemLeft" align="right" valign="top"><a id="ae2140dc65b076c5838cf51ced133951a"></a>
+typedef struct <a class="el" href="structs__plateau.html">s_plateau</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ae2140dc65b076c5838cf51ced133951a">plateau</a></td></tr>
+<tr class="memdesc:ae2140dc65b076c5838cf51ced133951a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure correspondant à notre plateau de jeu. <br /></td></tr>
+<tr class="separator:ae2140dc65b076c5838cf51ced133951a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:ac6fe2fb16f25c07723cb0d9f0aa4838e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ac6fe2fb16f25c07723cb0d9f0aa4838e">nouveau_plateau</a> ()</td></tr>
+<tr class="memitem:ac6fe2fb16f25c07723cb0d9f0aa4838e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ac6fe2fb16f25c07723cb0d9f0aa4838e">nouveau_plateau</a> ()</td></tr>
 <tr class="memdesc:ac6fe2fb16f25c07723cb0d9f0aa4838e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus)  <a href="plateau_8h.html#ac6fe2fb16f25c07723cb0d9f0aa4838e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac6fe2fb16f25c07723cb0d9f0aa4838e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a781e3e2b4c1d4964a6d9451b2df420db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a781e3e2b4c1d4964a6d9451b2df420db">liberer_plateau</a> (<a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> p)</td></tr>
+<tr class="memitem:a781e3e2b4c1d4964a6d9451b2df420db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a781e3e2b4c1d4964a6d9451b2df420db">liberer_plateau</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
 <tr class="memdesc:a781e3e2b4c1d4964a6d9451b2df420db"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction pour libérer la mémoire associée à un plateau (et ses deux factions)  <a href="plateau_8h.html#a781e3e2b4c1d4964a6d9451b2df420db">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a781e3e2b4c1d4964a6d9451b2df420db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97192436a0e6f10e1574b17daed17b46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a97192436a0e6f10e1574b17daed17b46">initialiser_manche</a> (<a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> p)</td></tr>
+<tr class="memitem:a97192436a0e6f10e1574b17daed17b46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a97192436a0e6f10e1574b17daed17b46">initialiser_manche</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
 <tr class="memdesc:a97192436a0e6f10e1574b17daed17b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction pour initialiser une nouvelle manche du jeu, ou, le cas échéant, indiquer que la partie est terminée  <a href="plateau_8h.html#a97192436a0e6f10e1574b17daed17b46">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a97192436a0e6f10e1574b17daed17b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a8304066b5d7e0cf641f77c9ac7f2f144">get_factions</a> (<a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> p)</td></tr>
-<tr class="memdesc:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction qui renvoie la liste des deux factions du jeu  <a href="plateau_8h.html#a8304066b5d7e0cf641f77c9ac7f2f144">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66703ac43d533a8f1d1b851bfdeb392a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a66703ac43d533a8f1d1b851bfdeb392a">poser_carte</a> (<a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> p, <a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="structposition.html">position</a> pos)</td></tr>
-<tr class="memdesc:a66703ac43d533a8f1d1b851bfdeb392a"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction pour permettre à une faction de poser une carte face cachée sur le plateau  <a href="plateau_8h.html#a66703ac43d533a8f1d1b851bfdeb392a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a66703ac43d533a8f1d1b851bfdeb392a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21b1196e909cbee186cb34c50d86f7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a21b1196e909cbee186cb34c50d86f7be">retourner_carte</a> (<a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> p)</td></tr>
+<tr class="memitem:ae841bb53b5c0cbbee1a71563a3419764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ae841bb53b5c0cbbee1a71563a3419764">poser_carte</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> c, <a class="el" href="structposition.html">position</a> pos)</td></tr>
+<tr class="memdesc:ae841bb53b5c0cbbee1a71563a3419764"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction pour permettre à une faction de poser une carte face cachée sur le plateau  <a href="plateau_8h.html#ae841bb53b5c0cbbee1a71563a3419764">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae841bb53b5c0cbbee1a71563a3419764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b1196e909cbee186cb34c50d86f7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a21b1196e909cbee186cb34c50d86f7be">retourner_carte</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
 <tr class="memdesc:a21b1196e909cbee186cb34c50d86f7be"><td class="mdescLeft">&#160;</td><td class="mdescRight">une fonction pour retourner la carte la plus en haut à gauche face visible et activer son effet  <a href="plateau_8h.html#a21b1196e909cbee186cb34c50d86f7be">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a21b1196e909cbee186cb34c50d86f7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b47f818097d78768fd82f4a415fa75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#aa7b47f818097d78768fd82f4a415fa75">get_grille</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:aa7b47f818097d78768fd82f4a415fa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer la grille du plateau.  <a href="plateau_8h.html#aa7b47f818097d78768fd82f4a415fa75">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7b47f818097d78768fd82f4a415fa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a8304066b5d7e0cf641f77c9ac7f2f144">get_factions</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer les factions du plateau.  <a href="plateau_8h.html#a8304066b5d7e0cf641f77c9ac7f2f144">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8304066b5d7e0cf641f77c9ac7f2f144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcd308a77b6abb0c97b5cb6e4c81b46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#afbcd308a77b6abb0c97b5cb6e4c81b46">get_nombre_cartes_posees</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:afbcd308a77b6abb0c97b5cb6e4c81b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le nombre_cartes_posees du plateau.  <a href="plateau_8h.html#afbcd308a77b6abb0c97b5cb6e4c81b46">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afbcd308a77b6abb0c97b5cb6e4c81b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a812b1eda200eb025b7c00bc740956d73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a812b1eda200eb025b7c00bc740956d73">get_nombre_cartes_retournees</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:a812b1eda200eb025b7c00bc740956d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le nombre_cartes_retournees du plateau.  <a href="plateau_8h.html#a812b1eda200eb025b7c00bc740956d73">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a812b1eda200eb025b7c00bc740956d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1dbabc6486d1792c99d7919f272eb79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#aa1dbabc6486d1792c99d7919f272eb79">get_derniere_carte_retournee</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:aa1dbabc6486d1792c99d7919f272eb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le max_x du plateau.  <a href="plateau_8h.html#aa1dbabc6486d1792c99d7919f272eb79">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa1dbabc6486d1792c99d7919f272eb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ee9af294619762d18ab4aa0f0bd8b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ae2ee9af294619762d18ab4aa0f0bd8b9">get_cartes_supprimees</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:ae2ee9af294619762d18ab4aa0f0bd8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche.  <a href="plateau_8h.html#ae2ee9af294619762d18ab4aa0f0bd8b9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae2ee9af294619762d18ab4aa0f0bd8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2752ed1d9f8cfaab671b6c474af342c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a2752ed1d9f8cfaab671b6c474af342c4">set_grille</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> g)</td></tr>
+<tr class="memdesc:a2752ed1d9f8cfaab671b6c474af342c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la grille du plateau.  <a href="plateau_8h.html#a2752ed1d9f8cfaab671b6c474af342c4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2752ed1d9f8cfaab671b6c474af342c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41eac8cf69a921c21f230c0f5a490e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a41eac8cf69a921c21f230c0f5a490e69">set_factions</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> *factions)</td></tr>
+<tr class="memdesc:a41eac8cf69a921c21f230c0f5a490e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer les factions du plateau.  <a href="plateau_8h.html#a41eac8cf69a921c21f230c0f5a490e69">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a41eac8cf69a921c21f230c0f5a490e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9165516891aec16579ee250531f5416f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a9165516891aec16579ee250531f5416f">set_nombre_cartes_posees</a> (<a class="el" href="structs__plateau.html">plateau</a> p, int nombre_cartes_posees)</td></tr>
+<tr class="memdesc:a9165516891aec16579ee250531f5416f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le nombre_cartes_posees du plateau.  <a href="plateau_8h.html#a9165516891aec16579ee250531f5416f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9165516891aec16579ee250531f5416f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f4755999c3ce98d0defbde5e6fa796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#ae6f4755999c3ce98d0defbde5e6fa796">set_derniere_carte_retournee</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> derniere_carte_retournee)</td></tr>
+<tr class="memdesc:ae6f4755999c3ce98d0defbde5e6fa796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la derniere_carte_retournee du plateau.  <a href="plateau_8h.html#ae6f4755999c3ce98d0defbde5e6fa796">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae6f4755999c3ce98d0defbde5e6fa796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa450393a827c10d3540dec941dcacecd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#aa450393a827c10d3540dec941dcacecd">set_cartes_supprimees</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> lc)</td></tr>
+<tr class="memdesc:aa450393a827c10d3540dec941dcacecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la liste_chainee_carte du plateau.  <a href="plateau_8h.html#aa450393a827c10d3540dec941dcacecd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa450393a827c10d3540dec941dcacecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure et les fonctions liées à notre plateau de jeu. </p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ae2ee9af294619762d18ab4aa0f0bd8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ee9af294619762d18ab4aa0f0bd8b9">&#9670;&nbsp;</a></span>get_cartes_supprimees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> get_cartes_supprimees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récupérer l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la liste des cartes supprimées durant la manche </dd></dl>
+
+</div>
+</div>
+<a id="aa1dbabc6486d1792c99d7919f272eb79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1dbabc6486d1792c99d7919f272eb79">&#9670;&nbsp;</a></span>get_derniere_carte_retournee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> get_derniere_carte_retournee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le max_x du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récuperer le max_x. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant le max_x du plateau. </dd></dl>
+
+</div>
+</div>
 <a id="a8304066b5d7e0cf641f77c9ac7f2f144"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8304066b5d7e0cf641f77c9ac7f2f144">&#9670;&nbsp;</a></span>get_factions()</h2>
 
@@ -137,23 +217,112 @@ Fonctions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>* get_factions </td>
+          <td class="memname"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>* get_factions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>une fonction qui renvoie la liste des deux factions du jeu </p>
+<p>Fonction permettant de recupérer les factions du plateau. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td>pointeur sur le plateau </td></tr>
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récuperer les factions. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>faction : liste des deux factions </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>tableau 1D de faction représentant les factions du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="aa7b47f818097d78768fd82f4a415fa75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b47f818097d78768fd82f4a415fa75">&#9670;&nbsp;</a></span>get_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a> get_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer la grille du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récuperer la grille. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>tableau 2D de carte représentant la grille du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="afbcd308a77b6abb0c97b5cb6e4c81b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcd308a77b6abb0c97b5cb6e4c81b46">&#9670;&nbsp;</a></span>get_nombre_cartes_posees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_nombre_cartes_posees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le nombre_cartes_posees du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récuperer le nombre_cartes_posees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant le nombre_cartes_posees du plateau. </dd></dl>
+
+</div>
+</div>
+<a id="a812b1eda200eb025b7c00bc740956d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812b1eda200eb025b7c00bc740956d73">&#9670;&nbsp;</a></span>get_nombre_cartes_retournees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_nombre_cartes_retournees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le nombre_cartes_retournees du plateau. </p>
+<p>Fonction permettant de récupérer le nombre de cartes retournées sur le plateau.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récuperer le nombre_cartes_retournees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant le nombre_cartes_retournees du plateau.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut récupérer l'information </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant le nombre de carte retournées </dd></dl>
 
 </div>
 </div>
@@ -166,7 +335,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int initialiser_manche </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
@@ -193,7 +362,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void liberer_plateau </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
@@ -217,7 +386,7 @@ Fonctions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a> nouveau_plateau </td>
+          <td class="memname"><a class="el" href="structs__plateau.html">plateau</a> nouveau_plateau </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -230,8 +399,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a66703ac43d533a8f1d1b851bfdeb392a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66703ac43d533a8f1d1b851bfdeb392a">&#9670;&nbsp;</a></span>poser_carte()</h2>
+<a id="ae841bb53b5c0cbbee1a71563a3419764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae841bb53b5c0cbbee1a71563a3419764">&#9670;&nbsp;</a></span>poser_carte()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,14 +408,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void poser_carte </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
           <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -290,7 +453,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a> retourner_carte </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="plateau_8h.html#a7faac1085ff60a36200b354f66b213e8">plateau</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
@@ -305,6 +468,191 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>carte : pointeur sur la carte à renvoyer, et renvoi null s'il n'y a plus de carte à retourner </dd></dl>
+
+</div>
+</div>
+<a id="aa450393a827c10d3540dec941dcacecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa450393a827c10d3540dec941dcacecd">&#9670;&nbsp;</a></span>set_cartes_supprimees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_cartes_supprimees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td>
+          <td class="paramname"><em>lc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la liste_chainee_carte du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut changer sa liste_chainee </td></tr>
+    <tr><td class="paramname">lc</td><td>: la liste de la nouvelle carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae6f4755999c3ce98d0defbde5e6fa796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6f4755999c3ce98d0defbde5e6fa796">&#9670;&nbsp;</a></span>set_derniere_carte_retournee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_derniere_carte_retournee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="carte_8h.html#a730c95e5b081b03f99f9189e8e90236c">carte</a>&#160;</td>
+          <td class="paramname"><em>derniere_carte_retournee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la derniere_carte_retournee du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut changer sa derniere_carte_retournee. </td></tr>
+    <tr><td class="paramname">derniere_carte_retournee</td><td>: carte que l'on va associer à la derniere_carte_retournee du plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a41eac8cf69a921c21f230c0f5a490e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41eac8cf69a921c21f230c0f5a490e69">&#9670;&nbsp;</a></span>set_factions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_factions </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> *&#160;</td>
+          <td class="paramname"><em>factions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer les factions du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut changer ses factions. </td></tr>
+    <tr><td class="paramname">factions</td><td>: tableau 1D de faction que l'on va associer aux factions du plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2752ed1d9f8cfaab671b6c474af342c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2752ed1d9f8cfaab671b6c474af342c4">&#9670;&nbsp;</a></span>set_grille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_grille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a493794ff82cc8798d9287f486d1a0f1a">grille_carte</a>&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la grille du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut changer sa grille. </td></tr>
+    <tr><td class="paramname">grille</td><td>: tableau 2D de carte que l'on va associer à la grille du plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9165516891aec16579ee250531f5416f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9165516891aec16579ee250531f5416f">&#9670;&nbsp;</a></span>set_nombre_cartes_posees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_nombre_cartes_posees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nombre_cartes_posees</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le nombre_cartes_posees du plateau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: pointeur sur le plateau dont on veut changer son nombre_cartes_posees. </td></tr>
+    <tr><td class="paramname">nombre_cartes_posees</td><td>: entier que l'on va associer au nombre_cartes_posees du plateau. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -66,7 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Définitions de type</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
@@ -78,6 +77,8 @@ $(function() {
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="constante_8h_source.html">constante.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="carte_8h_source.html">carte.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="structure_8h_source.html">structure.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de faction.h:</div>
 <div class="dyncontent">
@@ -91,36 +92,75 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 </div>
 <p><a href="faction_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__faction.html">s_faction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une faction.  <a href="structs__faction.html#details">Plus de détails...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr class="memitem:ac777107515b3ba381cb4d7917f4ed054"><td class="memItemLeft" align="right" valign="top"><a id="ac777107515b3ba381cb4d7917f4ed054"></a>
-typedef struct <a class="el" href="structs__faction.html">s_faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a></td></tr>
-<tr class="memdesc:ac777107515b3ba381cb4d7917f4ed054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une faction. <br /></td></tr>
-<tr class="separator:ac777107515b3ba381cb4d7917f4ed054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfd262d186041503cbda6f0ee39abba"><td class="memItemLeft" align="right" valign="top"><a id="a1dfd262d186041503cbda6f0ee39abba"></a>
+typedef struct <a class="el" href="structs__faction.html">s_faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a></td></tr>
+<tr class="memdesc:a1dfd262d186041503cbda6f0ee39abba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une faction. <br /></td></tr>
+<tr class="separator:a1dfd262d186041503cbda6f0ee39abba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:aa5fac7d477f9155b1e69b43e81175e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#aa5fac7d477f9155b1e69b43e81175e51">a_remelanger</a> (<a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f)</td></tr>
+<tr class="memitem:a09f50fa25d14b03ac6caee696ebc5daa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a09f50fa25d14b03ac6caee696ebc5daa">initialiser_factions</a> ()</td></tr>
+<tr class="memdesc:a09f50fa25d14b03ac6caee696ebc5daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant d'initialiser les deux factions.  <a href="faction_8h.html#a09f50fa25d14b03ac6caee696ebc5daa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a09f50fa25d14b03ac6caee696ebc5daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5fac7d477f9155b1e69b43e81175e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#aa5fac7d477f9155b1e69b43e81175e51">a_remelanger</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
 <tr class="memdesc:aa5fac7d477f9155b1e69b43e81175e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de savoir si une faction a utilisé l'option de remélanger sa main et la boîte à idée et de repiocher des cartes.  <a href="faction_8h.html#aa5fac7d477f9155b1e69b43e81175e51">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa5fac7d477f9155b1e69b43e81175e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3fddbcee9e7bd24551c43276986c7af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#af3fddbcee9e7bd24551c43276986c7af">remelanger</a> (<a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f)</td></tr>
+<tr class="memitem:af3fddbcee9e7bd24551c43276986c7af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#af3fddbcee9e7bd24551c43276986c7af">remelanger</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
 <tr class="memdesc:af3fddbcee9e7bd24551c43276986c7af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'indiquer que la faction passée en paramètre à décider de remelanger sa main.  <a href="faction_8h.html#af3fddbcee9e7bd24551c43276986c7af">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af3fddbcee9e7bd24551c43276986c7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8a791fd733608d164b217a5e219bff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#af8a791fd733608d164b217a5e219bff0">vider_main_dans_pioche</a> (<a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f)</td></tr>
+<tr class="memitem:af8a791fd733608d164b217a5e219bff0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#af8a791fd733608d164b217a5e219bff0">vider_main_dans_pioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
 <tr class="memdesc:af8a791fd733608d164b217a5e219bff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant à une faction de vider sa main dans sa pioche.  <a href="faction_8h.html#af8a791fd733608d164b217a5e219bff0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af8a791fd733608d164b217a5e219bff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a442cb27da705cf95d0cfe56820c0a447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a442cb27da705cf95d0cfe56820c0a447">melanger_pioche</a> (<a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f)</td></tr>
+<tr class="memitem:a442cb27da705cf95d0cfe56820c0a447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a442cb27da705cf95d0cfe56820c0a447">melanger_pioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
 <tr class="memdesc:a442cb27da705cf95d0cfe56820c0a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant à une faction de mélanger sa pioche.  <a href="faction_8h.html#a442cb27da705cf95d0cfe56820c0a447">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a442cb27da705cf95d0cfe56820c0a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85d8eb81e638ef0180cd8c760fe6f052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a85d8eb81e638ef0180cd8c760fe6f052">repioche</a> (<a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a> f)</td></tr>
+<tr class="memitem:a85d8eb81e638ef0180cd8c760fe6f052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a85d8eb81e638ef0180cd8c760fe6f052">repioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
 <tr class="memdesc:a85d8eb81e638ef0180cd8c760fe6f052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant à une faction de repiocher ses cartes.  <a href="faction_8h.html#a85d8eb81e638ef0180cd8c760fe6f052">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a85d8eb81e638ef0180cd8c760fe6f052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57b88f8724de490cb90e40737786091"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#ab57b88f8724de490cb90e40737786091">get_nom_faction</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:ab57b88f8724de490cb90e40737786091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le nom de la faction.  <a href="faction_8h.html#ab57b88f8724de490cb90e40737786091">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab57b88f8724de490cb90e40737786091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b847cb16f0d4d374fbaa91e91c1a56b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a4b847cb16f0d4d374fbaa91e91c1a56b">get_identifiant_faction</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:a4b847cb16f0d4d374fbaa91e91c1a56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer l'identifiant_faction de la faction.  <a href="faction_8h.html#a4b847cb16f0d4d374fbaa91e91c1a56b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b847cb16f0d4d374fbaa91e91c1a56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef2771e33943965b8eee6e880383d3d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a7ef2771e33943965b8eee6e880383d3d">get_points_DDRS</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:a7ef2771e33943965b8eee6e880383d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer les points_DDRS de la faction.  <a href="faction_8h.html#a7ef2771e33943965b8eee6e880383d3d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ef2771e33943965b8eee6e880383d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88943e475e37be240d89628f38f3931"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#ab88943e475e37be240d89628f38f3931">get_manches_gagnees</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:ab88943e475e37be240d89628f38f3931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer les manches_gagnees de la faction.  <a href="faction_8h.html#ab88943e475e37be240d89628f38f3931">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab88943e475e37be240d89628f38f3931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b01f910543e58864e00ed891d902240"><td class="memItemLeft" align="right" valign="top"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a0b01f910543e58864e00ed891d902240">get_a_remelanger</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:a0b01f910543e58864e00ed891d902240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer le a_remelanger de la faction.  <a href="faction_8h.html#a0b01f910543e58864e00ed891d902240">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0b01f910543e58864e00ed891d902240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e6e2b675134ebda70f0b3cf35f6805"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#a5b56032063ed6e73a62a41a349fadfcf">ensemble_entier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#aa0e6e2b675134ebda70f0b3cf35f6805">get_pioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:aa0e6e2b675134ebda70f0b3cf35f6805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer la pioche de la faction.  <a href="faction_8h.html#aa0e6e2b675134ebda70f0b3cf35f6805">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa0e6e2b675134ebda70f0b3cf35f6805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6769a52c760d531f833a874d7d6032"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a4e6769a52c760d531f833a874d7d6032">get_main</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:a4e6769a52c760d531f833a874d7d6032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de recupérer la main de la faction.  <a href="faction_8h.html#a4e6769a52c760d531f833a874d7d6032">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4e6769a52c760d531f833a874d7d6032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd39aee960a9e6b5e825e080a8041328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#afd39aee960a9e6b5e825e080a8041328">set_nom_faction</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, char *nom)</td></tr>
+<tr class="memdesc:afd39aee960a9e6b5e825e080a8041328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le nom de la faction.  <a href="faction_8h.html#afd39aee960a9e6b5e825e080a8041328">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd39aee960a9e6b5e825e080a8041328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5307db6e3386930436effcb10d176238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a5307db6e3386930436effcb10d176238">set_identifiant_faction</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, int identifiant_faction)</td></tr>
+<tr class="memdesc:a5307db6e3386930436effcb10d176238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer l'identifiant_faction de la faction.  <a href="faction_8h.html#a5307db6e3386930436effcb10d176238">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5307db6e3386930436effcb10d176238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9907276ba24a2bbdbfc914290b7a6414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a9907276ba24a2bbdbfc914290b7a6414">set_points_DDRS</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, int points_DDRS)</td></tr>
+<tr class="memdesc:a9907276ba24a2bbdbfc914290b7a6414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer les points_DDRS de la faction.  <a href="faction_8h.html#a9907276ba24a2bbdbfc914290b7a6414">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9907276ba24a2bbdbfc914290b7a6414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dbabc5083d3f7edb0d5c344f53fae2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a31dbabc5083d3f7edb0d5c344f53fae2">set_manches_gagnees</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, int manches_gagnees)</td></tr>
+<tr class="memdesc:a31dbabc5083d3f7edb0d5c344f53fae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer les manches_gagnees de la faction.  <a href="faction_8h.html#a31dbabc5083d3f7edb0d5c344f53fae2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a31dbabc5083d3f7edb0d5c344f53fae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27dfa56eb080904277a18953f892c341"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a27dfa56eb080904277a18953f892c341">set_a_remelanger</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="faction_8h.html#aa5fac7d477f9155b1e69b43e81175e51">a_remelanger</a>)</td></tr>
+<tr class="memdesc:a27dfa56eb080904277a18953f892c341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer le a_remelanger de la faction.  <a href="faction_8h.html#a27dfa56eb080904277a18953f892c341">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a27dfa56eb080904277a18953f892c341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0681b98ae3236eded45f840a356bb0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a0681b98ae3236eded45f840a356bb0a8">set_pioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="structure_8h.html#a5b56032063ed6e73a62a41a349fadfcf">ensemble_entier</a> pioche)</td></tr>
+<tr class="memdesc:a0681b98ae3236eded45f840a356bb0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la pioche de la faction.  <a href="faction_8h.html#a0681b98ae3236eded45f840a356bb0a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0681b98ae3236eded45f840a356bb0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef730c875b61285b6287b7723ea48cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#acef730c875b61285b6287b7723ea48cd">set_main</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> main)</td></tr>
+<tr class="memdesc:acef730c875b61285b6287b7723ea48cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la main de la faction.  <a href="faction_8h.html#acef730c875b61285b6287b7723ea48cd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acef730c875b61285b6287b7723ea48cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure et les fonctions liées aux factions. </p>
@@ -134,7 +174,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> a_remelanger </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
@@ -152,6 +192,215 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0b01f910543e58864e00ed891d902240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b01f910543e58864e00ed891d902240">&#9670;&nbsp;</a></span>get_a_remelanger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> get_a_remelanger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le a_remelanger de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer le a_remelanger. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>booleen représentant le a_remelanger de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="a4b847cb16f0d4d374fbaa91e91c1a56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b847cb16f0d4d374fbaa91e91c1a56b">&#9670;&nbsp;</a></span>get_identifiant_faction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_identifiant_faction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer l'identifiant_faction de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer l'identifiant_faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant l'identifiant_faction de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="a4e6769a52c760d531f833a874d7d6032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e6769a52c760d531f833a874d7d6032">&#9670;&nbsp;</a></span>get_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> get_main </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer la main de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer la main. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>liste chainee de carte représentant la main de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="ab88943e475e37be240d89628f38f3931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88943e475e37be240d89628f38f3931">&#9670;&nbsp;</a></span>get_manches_gagnees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_manches_gagnees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer les manches_gagnees de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer les manches_gagnees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant les manches_gagnees de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="ab57b88f8724de490cb90e40737786091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57b88f8724de490cb90e40737786091">&#9670;&nbsp;</a></span>get_nom_faction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* get_nom_faction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer le nom de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer le nom. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>chaîne de caractères représentant le nom de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="aa0e6e2b675134ebda70f0b3cf35f6805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e6e2b675134ebda70f0b3cf35f6805">&#9670;&nbsp;</a></span>get_pioche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structure_8h.html#a5b56032063ed6e73a62a41a349fadfcf">ensemble_entier</a> get_pioche </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer la pioche de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer la pioche. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Set de carte représentant la pioche de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="a7ef2771e33943965b8eee6e880383d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef2771e33943965b8eee6e880383d3d">&#9670;&nbsp;</a></span>get_points_DDRS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_points_DDRS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de recupérer les points_DDRS de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut récuperer les points_DDRS. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>entier représentant les points_DDRS de la faction. </dd></dl>
+
+</div>
+</div>
+<a id="a09f50fa25d14b03ac6caee696ebc5daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f50fa25d14b03ac6caee696ebc5daa">&#9670;&nbsp;</a></span>initialiser_factions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>* initialiser_factions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant d'initialiser les deux factions. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>faction* : pointeur sur les factions </dd></dl>
+
+</div>
+</div>
 <a id="a442cb27da705cf95d0cfe56820c0a447"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a442cb27da705cf95d0cfe56820c0a447">&#9670;&nbsp;</a></span>melanger_pioche()</h2>
 
@@ -161,7 +410,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void melanger_pioche </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
@@ -187,7 +436,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void remelanger </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
@@ -213,7 +462,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void repioche </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
@@ -230,6 +479,265 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a id="a27dfa56eb080904277a18953f892c341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27dfa56eb080904277a18953f892c341">&#9670;&nbsp;</a></span>set_a_remelanger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_a_remelanger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="constante_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td>
+          <td class="paramname"><em>a_remelanger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le a_remelanger de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer son a_remelanger. </td></tr>
+    <tr><td class="paramname">a_remelanger</td><td>: entier que l'on va associer à le a_remelanger de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5307db6e3386930436effcb10d176238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5307db6e3386930436effcb10d176238">&#9670;&nbsp;</a></span>set_identifiant_faction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_identifiant_faction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>identifiant_faction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer l'identifiant_faction de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer son identifiant_faction. </td></tr>
+    <tr><td class="paramname">identifiant_faction</td><td>: entier que l'on va associer à l'identifiant_faction de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acef730c875b61285b6287b7723ea48cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef730c875b61285b6287b7723ea48cd">&#9670;&nbsp;</a></span>set_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_main </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a>&#160;</td>
+          <td class="paramname"><em>main</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la main de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer sa main. </td></tr>
+    <tr><td class="paramname">main</td><td>: liste chainee que l'on va associer à la main de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a31dbabc5083d3f7edb0d5c344f53fae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31dbabc5083d3f7edb0d5c344f53fae2">&#9670;&nbsp;</a></span>set_manches_gagnees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_manches_gagnees </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>manches_gagnees</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer les manches_gagnees de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer ses manches_gagnees. </td></tr>
+    <tr><td class="paramname">manches_gagnees</td><td>: entier que l'on va associer à les manches_gagnees de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd39aee960a9e6b5e825e080a8041328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd39aee960a9e6b5e825e080a8041328">&#9670;&nbsp;</a></span>set_nom_faction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_nom_faction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer le nom de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer son nom. </td></tr>
+    <tr><td class="paramname">nom</td><td>: chaîne de caractères que l'on va associer au nom de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0681b98ae3236eded45f840a356bb0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0681b98ae3236eded45f840a356bb0a8">&#9670;&nbsp;</a></span>set_pioche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_pioche </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structure_8h.html#a5b56032063ed6e73a62a41a349fadfcf">ensemble_entier</a>&#160;</td>
+          <td class="paramname"><em>pioche</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer la pioche de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer sa pioche. </td></tr>
+    <tr><td class="paramname">pioche</td><td>: Set que l'on va associer à la pioche de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9907276ba24a2bbdbfc914290b7a6414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9907276ba24a2bbdbfc914290b7a6414">&#9670;&nbsp;</a></span>set_points_DDRS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_points_DDRS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>points_DDRS</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction permettant de changer les points_DDRS de la faction. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>: pointeur sur la faction dont on veut changer ses points_DDRS. </td></tr>
+    <tr><td class="paramname">points_DDRS</td><td>: entier que l'on va associer à les points_DDRS de la faction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af8a791fd733608d164b217a5e219bff0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8a791fd733608d164b217a5e219bff0">&#9670;&nbsp;</a></span>vider_main_dans_pioche()</h2>
 
@@ -239,7 +747,7 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">void vider_main_dans_pioche </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="faction_8h.html#ac777107515b3ba381cb4d7917f4ed054">faction</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
