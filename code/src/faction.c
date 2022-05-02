@@ -93,31 +93,26 @@ void vider_main_dans_pioche(faction f) {
 void repioche(faction f) {
     /*variable qui contiendra l'indice obtenu dans la liste de carte*/
     int indice_carte;
-    /*on vide la main de la faction en question dans la pioche*/
-    vider_main_dans_pioche(f);
-    /*on mélange la pioche de la faction enq question*/
-    melanger_pioche(f);
     f->main = initialiser_liste_chainee();
 
     for (int i = 0; i < get_taille_ensemble_entier(f->pioche); i++) {
         indice_carte = indice_liste_carte(get_valeur_indice_ensemble_entier(f->pioche, i));
         /*pointeur sur une carte initialisée : on initialise la carte avec les informations nécessaires en particulier son nom qui sera récupéré grâce à l'indice de l'ensemble*/
         carte c = initialiser_carte(nom_cartes[indice_carte],
-                                    effets_description[indice_carte],/* effets[indice_carte]*/ NULL, f->identifiant_faction, -1,
-                                    FAUX);
+                                    effets_description[indice_carte], effets[indice_carte], f->identifiant_faction, -1,
+                                    VRAI);
         /*ajout de la carte en question dans la main*/
-        ajouter_tete_liste_chainee(f->main, c);
+        ajouter_tete_liste_chainee(&f->main, c);
     }
 }
 
 int indice_liste_carte(int indice_ensemble) {
     int effectif_cumule = 0;
-
     for (int i = 0; i < TAILLE_NOMBRE_OCCURRENCES; i++) {
         effectif_cumule = effectif_cumule + nombre_occurrences[i];
         /*on retourne un indice correspondant à notre liste de carte(et surtout qui prend en compte son nombre d'occurrences)
          lorsque l'indice de l'ensemble est supérieure à la somme cumulée des occurrences de chaque carte(de 0 à l'indice i)*/
-        if (effectif_cumule >= indice_ensemble) {
+        if (effectif_cumule > indice_ensemble) {
             return i;
         }
     }
