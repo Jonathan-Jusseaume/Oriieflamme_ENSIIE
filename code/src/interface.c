@@ -59,14 +59,14 @@ void afficher_plateau(plateau p) {
  * @param f : La faction dont on va afficher la main.
  */
 void afficher_main_faction(faction f) {
-    liste_chainee_carte main = get_main(f);
+    liste_chainee_carte main_faction = get_main(f);
     int i = 0;
     printf("\nMain de la faction %d : \n--------------------- \n", get_identifiant_faction(f));
-    while (main != NULL) {
+    while (main_faction != NULL) {
         i++;
-        printf("%d : %s", i, get_nom_carte(get_valeur_tete_liste_chainee(main)));
-        main = get_queue_liste_chainee(main);
-        if (main != NULL) {
+        printf("%d : %s", i, get_nom_carte(get_valeur_tete_liste_chainee(main_faction)));
+        main_faction = get_queue_liste_chainee(main_faction);
+        if (main_faction != NULL) {
             printf(", ");
         }
     }
@@ -97,15 +97,15 @@ carte demander_carte_poser_face_cachee(faction f) {
 
     if (f != NULL) {
         char numero_carte[10];
-        liste_chainee_carte main = get_main(f);
-        int taille = taille_liste_chainee(main);
+        liste_chainee_carte main_faction = get_main(f);
+        int taille = taille_liste_chainee(main_faction);
 
         do {
-          //  printf("Quelle carte voulez vous placer face cachée sur le plateau ? ");
+            printf("Quelle carte voulez vous placer face cachée sur le plateau ? ");
             scanf("%s", numero_carte);
         } while (!est_un_nombre(numero_carte) || atoi(numero_carte) > taille || atoi(numero_carte) <= 0);
-        carte_choisie = supprimer_carte_liste_chainee(&main, atoi(numero_carte) - 1);
-        set_main(f, main);
+        carte_choisie = supprimer_carte_liste_chainee(&main_faction, atoi(numero_carte) - 1);
+        set_main(f, main_faction);
     }
     return carte_choisie;
 }
