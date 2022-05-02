@@ -4,6 +4,7 @@
  */
 #ifndef ORIIEFLAMME_GR_11_CONSTANTE_H
 #define ORIIEFLAMME_GR_11_CONSTANTE_H
+
 #define NOMBRE_CARTES_MAXIMUM 16
 #define NOMBRE_FACTIONS 2
 #define NOMBRE_CARTES_MAIN 8
@@ -11,7 +12,7 @@
 #define TAILLE_NOMBRE_OCCURRENCES 32
 #define FACTION1 0
 #define FACTION2 1
-//#include "effets.h"
+
 
 /**
  * Enumération contenant les valeurs booléenes VRAI et FAUX valant respectivement 1 et 0
@@ -108,44 +109,6 @@ static char *nom_cartes[] = {
         "Katrin Salhab",
         "Laurent Prevel"
 };
-/**
- * Tableau de pointeurs sur les différentes fonctions
- */
-/*
-static void *effets[] = {
-        fise,
-        fisa,
-        fc,
-        ecologiie,
-        liiens,
-        soiree_sans_alcool,
-        alcool,
-        cafe,
-        the,
-        ecocup,
-        reprographie,
-        isolation_batiment,
-        parcours_sobriete_numerique,
-        heures_supplementaires,
-        kahina_bouchama,
-        kevin_goilard,
-        massinissa_merabet,
-        vitera_y,
-        jonas_senizergues,
-        fetia_bannour,
-        catherine_dubois,
-        anne_laure_ligozat,
-        guillaume_burel,
-        christophe_mouilleron,
-        thomas_lim,
-        julien_forest,
-        dimitri_watel,
-        djibril_aurelien_dembele_cabot,
-        eric_lejeune,
-        lucienne_pacave,
-        katrin_salhab,
-        laurent_prevel
-}; */
 
 /**
  * Tableau de chaine de caractère contenant les différents effets
