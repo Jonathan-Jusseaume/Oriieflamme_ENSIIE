@@ -2,7 +2,7 @@ CC=gcc -Wall -Wextra -std=c99
 OUTPUT=bin/main
 DIROBJ=obj
 DIRSRC=src
-OBJ_FILES_LIST=$(DIROBJ)/main.o $(DIROBJ)/carte.o $(DIROBJ)/faction.o $(DIROBJ)/interface.o $(DIROBJ)/plateau.o $(DIROBJ)/structure.o $(DIROBJ)/test.o
+OBJ_FILES_LIST=$(DIROBJ)/main.o $(DIROBJ)/carte.o $(DIROBJ)/faction.o $(DIROBJ)/interface.o $(DIROBJ)/plateau.o $(DIROBJ)/structure.o $(DIROBJ)/test.o $(DIROBJ)/aleatoire.o $(DIROBJ)/effets.o
 all: main
 main: $(OBJ_FILES_LIST)
 	$(CC) $^ -o $(OUTPUT) -lcunit
