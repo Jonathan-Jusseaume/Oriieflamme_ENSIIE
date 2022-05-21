@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Oriieflamme Groupe 11</title>
+    <link href="styles/game.css" rel="stylesheet" type="text/css">
+    <script src="scripts/constante.js"></script>
+    <script src="scripts/game.js"></script>
+</head>
+<body>
+<div class="waiting-for-player hidden">
+    En attente d'un autre joueur...
+</div>
+<div class="body-container">
+    <header>
+        <div class="first-faction-infos">
+            <h2>Votre faction</h2>
+            <h4>Manches gagnees : <span id="nombre-manche-gagnees-faction1"> </span> | Points DDRS : <span id="scoreFaction1"></span></h4>
+        </div>
+
+        <div class="current-round">
+            <h2>Manche <span id="manche-courante"></span></h2>
+            <h2 id="result"></h2>
+            <div id="actions"></div>
+        </div>
+
+        <div class="second-faction-infos">
+            <h2>Faction adverse</h2>
+            <h4>Manches gagnees : <span id="nombre-manche-gagnees-faction2"></span> | Points DDRS : <span id="scoreFaction2"></span></h4>
+        </div>
+    </header>
+    <div id="plateau" class="plateau-container">
+
+    </div>
+    <footer id="footer">
+    </footer>
+</div>
+</body>
+</html>
