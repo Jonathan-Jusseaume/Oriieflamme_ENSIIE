@@ -211,7 +211,7 @@ position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face
 
 char *grille_carte_to_string(grille_carte g) {
     // On parcourt afin de connaître la taille de notre chaine
-    int taille = 1;
+    int taille = 10;
     for (int y = g->min_y; y <= g->max_y; y++) {
         for (int x = g->min_x; x <= g->max_x; x++) {
             if (g->grille[y][x] != NULL) {
@@ -223,7 +223,11 @@ char *grille_carte_to_string(grille_carte g) {
         }
     }
     char *string = (char *) malloc(taille * sizeof(char));
-    string[0] = '\0';
+    snprintf(string, taille + 1, "%d,%d,%d,%d/",
+             g->min_x,
+             g->min_y,
+             g->max_x,
+             g->max_y);
     for (int y = g->min_y; y <= g->max_y; y++) {
         for (int x = g->min_x; x <= g->max_x; x++) {
             if (g->grille[y][x] != NULL) {
@@ -341,7 +345,7 @@ char *liste_chainee_carte_to_string(liste_chainee_carte l) {
     // On parcourt afin de connaître la taille de notre chaine
     int taille = 1;
     while (courant != NULL) {
-        char* carte_str = to_string_carte(get_valeur_tete_liste_chainee(courant));
+        char *carte_str = to_string_carte(get_valeur_tete_liste_chainee(courant));
         taille += strlen(carte_str) + 1;
         free(carte_str);
         courant = get_queue_liste_chainee(courant);

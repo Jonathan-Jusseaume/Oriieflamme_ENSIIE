@@ -33,6 +33,12 @@ void envoie_message_broadcast(char *message) {
     }
 }
 
+void envoie_plateau_broadcast() {
+    char *message = plateau_to_string(p);
+    envoie_message_broadcast(message);
+    free(message);
+}
+
 void lire_message_poser_carte_et_mettre_a_jour_plateau(const unsigned char *message) {
     int indice = 0;
     int indice_carte = 0;
@@ -43,9 +49,7 @@ void lire_message_poser_carte_et_mettre_a_jour_plateau(const unsigned char *mess
     carte carte_choisie = supprimer_carte_liste_chainee(&main_faction, indice_carte - 1);
     set_main(factions[indice], main_faction);
     poser_carte(p, carte_choisie, (position) {abscisse, ordonnee});
-    char *pl = plateau_to_string(p);
-    envoie_message_broadcast(pl);
-    free(pl);
+    envoie_plateau_broadcast();
 }
 
 void lire_message_demande_repioche(const unsigned char *msg) {
@@ -60,9 +64,7 @@ void lire_message_demande_repioche(const unsigned char *msg) {
         repioche(factions[indice]);
         // On indique que la faction a utilisé sa fonction pour remelanger
         remelanger(factions[indice]);
-        char *pl = plateau_to_string(p);
-        envoie_message_broadcast(pl);
-        free(pl);
+        envoie_plateau_broadcast();
     }
 }
 
@@ -92,9 +94,7 @@ void ouverture_connexion(ws_cli_conn_t *client) {
                 repioche(factions[i]);
             }
             // On envoie le plateau et donc les mains aux joueurs
-            char *message = plateau_to_string(p);
-            envoie_message_broadcast(message);
-            free(message);
+            envoie_plateau_broadcast();
             // On demande si le joueur 1 veut repiocher car il n'a pas encore pioché
             ws_sendframe_txt(clients[0], "PIOCHE");
             indice_faction_active = ordre_faction[numero_manche];
@@ -142,7 +142,8 @@ void reception_message(ws_cli_conn_t *client,
     }
     printf("%d \n", get_nombre_cartes_posees(p));
     // Si les deux joueurs ont donné leur réponse et qu'il y a encore des cartes à poser alors il faut demander
-    if (factions_reponse_repioche[0] && factions_reponse_repioche[1] && get_nombre_cartes_posees(p) < NOMBRE_CARTES_MAXIMUM) {
+    if (factions_reponse_repioche[0] && factions_reponse_repioche[1] &&
+        get_nombre_cartes_posees(p) < NOMBRE_CARTES_MAXIMUM) {
         if (!a_lu_message) {
             lire_message_poser_carte_et_mettre_a_jour_plateau(msg);
             a_lu_message = VRAI;
@@ -163,16 +164,13 @@ void reception_message(ws_cli_conn_t *client,
         carte carte_retournee = retourner_carte(p);
         // Quand la carte retournée vaut NULL, ça veut dire qu'il n'y a plus de cartes à retourner, on envoie à chaque fois le tout en broadcast
         while (carte_retournee != NULL) {
-            char *message = plateau_to_string(p);
-            envoie_message_broadcast(message);
-            free(message);
-            sleep(5);
+            envoie_plateau_broadcast();
+            sleep(3);
             carte_retournee = retourner_carte(p);
         }
-        char *message = plateau_to_string(p);
-        envoie_message_broadcast(message);
-        free(message);
+        envoie_plateau_broadcast();
         int resultat_partie = initialiser_manche(p);
+        envoie_plateau_broadcast();
         char buffer[20];
         snprintf(buffer, 20, "RESULTAT:%d", resultat_partie);
         envoie_message_broadcast(buffer);
@@ -182,27 +180,25 @@ void reception_message(ws_cli_conn_t *client,
             exit(0);
         } else {
             sleep(5);
+            numero_manche++;
             for (int i = 0; i < NOMBRE_FACTIONS; i++) {
                 melanger_pioche(factions[i]);
                 repioche(factions[i]);
             }
-            char *message = plateau_to_string(p);
-            envoie_message_broadcast(message);
-            free(message);
-            if (!a_remelanger(factions[0])) {
-                factions_reponse_repioche[0] = FAUX;
+            envoie_plateau_broadcast();
+            factions_reponse_repioche[0] = a_remelanger(factions[0]);
+            factions_reponse_repioche[1] = a_remelanger(factions[1]);
+            if (!factions_reponse_repioche[0]) {
                 ws_sendframe_txt(clients[0], "PIOCHE");
+            } else if (!factions_reponse_repioche[1]) {
+                ws_sendframe_txt(clients[1], "PIOCHE");
+            } else {
+                indice_faction_active = ordre_faction[numero_manche];
+                ws_sendframe_txt(clients[indice_faction_active], "POSE");
             }
-            if (!a_remelanger(factions[1])) {
-                factions_reponse_repioche[1] = FAUX;
-                if (factions_reponse_repioche[0]) {
-                    ws_sendframe_txt(clients[1], "PIOCHE");
-                }
-            }
-
 
         }
-        numero_manche++;
+
     }
 }
 
