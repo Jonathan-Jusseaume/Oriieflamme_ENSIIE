@@ -152,6 +152,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aa450393a827c10d3540dec941dcacecd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#aa450393a827c10d3540dec941dcacecd">set_cartes_supprimees</a> (<a class="el" href="structs__plateau.html">plateau</a> p, <a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> lc)</td></tr>
 <tr class="memdesc:aa450393a827c10d3540dec941dcacecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la liste_chainee_carte du plateau.  <a href="plateau_8h.html#aa450393a827c10d3540dec941dcacecd">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa450393a827c10d3540dec941dcacecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4319068b7a758e1195ab96c03fc76233"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8h.html#a4319068b7a758e1195ab96c03fc76233">plateau_to_string</a> (<a class="el" href="structs__plateau.html">plateau</a> p)</td></tr>
+<tr class="memdesc:a4319068b7a758e1195ab96c03fc76233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction transformant le plateau en chaîne de caractères.  <a href="plateau_8h.html#a4319068b7a758e1195ab96c03fc76233">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4319068b7a758e1195ab96c03fc76233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure et les fonctions liées à notre plateau de jeu. </p>
@@ -396,6 +399,33 @@ Fonctions</h2></td></tr>
 
 <p>Une fonction pour créer un nouveau plateau (et les deux factions qui joueront dessus) </p>
 <dl class="section return"><dt>Renvoie</dt><dd>plateau : pointeur sur le plateau créer </dd></dl>
+
+</div>
+</div>
+<a id="a4319068b7a758e1195ab96c03fc76233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4319068b7a758e1195ab96c03fc76233">&#9670;&nbsp;</a></span>plateau_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* plateau_to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structs__plateau.html">plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction transformant le plateau en chaîne de caractères. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>le plateau dont on veut obtenir la chaîne de caractères </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>renvoie une chaîne de caractères de la forme: "PLATEAU\ngrille\nfaction_1\nfaction_2" </dd></dl>
 
 </div>
 </div>

@@ -1,0 +1,85 @@
+\hypertarget{ws__file_8c}{}\doxysection{Référence du fichier lib/ws\+Server/tests/fuzzy/ws\+\_\+file.c}
+\label{ws__file_8c}\index{lib/wsServer/tests/fuzzy/ws\_file.c@{lib/wsServer/tests/fuzzy/ws\_file.c}}
+
+
+Read a given stream of frames from a file and parse them.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ws.\+h$>$}\newline
+Graphe des dépendances par inclusion de ws\+\_\+file.\+c\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ws__file_8c_acad817bd7c7f16e077c8f4a411cf60c3}{onopen}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Called when a client connects to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ws__file_8c_a75da9864e55abf37e022f421340398e1}{onclose}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Called when a client disconnects to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ws__file_8c_a2864d75de905dbfa15b7b19b327cc449}{onmessage}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const unsigned char $\ast$msg, uint64\+\_\+t size, int type)
+\begin{DoxyCompactList}\small\item\em Called when a client connects to the server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws__file_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{ws__file_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int \mbox{\hyperlink{ws__file_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Main routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Read a given stream of frames from a file and parse them. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{ws__file_8c_a75da9864e55abf37e022f421340398e1}\label{ws__file_8c_a75da9864e55abf37e022f421340398e1}} 
+\index{ws\_file.c@{ws\_file.c}!onclose@{onclose}}
+\index{onclose@{onclose}!ws\_file.c@{ws\_file.c}}
+\doxysubsubsection{\texorpdfstring{onclose()}{onclose()}}
+{\footnotesize\ttfamily void onclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Called when a client disconnects to the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. The {\ttfamily client} parameter is used in order to send messages and retrieve informations about the client. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ws__file_8c_a2864d75de905dbfa15b7b19b327cc449}\label{ws__file_8c_a2864d75de905dbfa15b7b19b327cc449}} 
+\index{ws\_file.c@{ws\_file.c}!onmessage@{onmessage}}
+\index{onmessage@{onmessage}!ws\_file.c@{ws\_file.c}}
+\doxysubsubsection{\texorpdfstring{onmessage()}{onmessage()}}
+{\footnotesize\ttfamily void onmessage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const unsigned char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Called when a client connects to the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. The {\ttfamily client} parameter is used in order to send messages and retrieve informations about the client.\\
+\hline
+{\em msg} & Received message, this message can be a text or binary message.\\
+\hline
+{\em size} & Message size (in bytes).\\
+\hline
+{\em type} & Message type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ws__file_8c_acad817bd7c7f16e077c8f4a411cf60c3}\label{ws__file_8c_acad817bd7c7f16e077c8f4a411cf60c3}} 
+\index{ws\_file.c@{ws\_file.c}!onopen@{onopen}}
+\index{onopen@{onopen}!ws\_file.c@{ws\_file.c}}
+\doxysubsubsection{\texorpdfstring{onopen()}{onopen()}}
+{\footnotesize\ttfamily void onopen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Called when a client connects to the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. The {\ttfamily client} parameter is used in order to send messages and retrieve informations about the client. \\
+\hline
+\end{DoxyParams}

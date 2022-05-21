@@ -60,8 +60,10 @@ void \mbox{\hyperlink{faction_8h_a27dfa56eb080904277a18953f892c341}{set\+\_\+a\+
 \begin{DoxyCompactList}\small\item\em Fonction permettant de changer le a\+\_\+remelanger de la faction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{faction_8h_a0681b98ae3236eded45f840a356bb0a8}{set\+\_\+pioche}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f, \mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}} pioche)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de changer la pioche de la faction. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{faction_8h_acef730c875b61285b6287b7723ea48cd}{set\+\_\+main}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f, \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} main)
-\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la main de la faction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{faction_8h_acef730c875b61285b6287b7723ea48cd}{set\+\_\+main}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f, \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{ws__file_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}})
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la main de la faction. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{faction_8h_af3ba2975acbf286b26b6703fe3429aa7}{faction\+\_\+to\+\_\+string}} (\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}} f)
+\begin{DoxyCompactList}\small\item\em Renvoie la faction passée en paramètre sous forme de chaîne de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -87,6 +89,24 @@ Fonction permettant de savoir si une faction a utilisé l\textquotesingle{}optio
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
 un booleen indiquant si la faction à remélanger sa main (VRAI) ou non (FALSE). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{faction_8h_af3ba2975acbf286b26b6703fe3429aa7}\label{faction_8h_af3ba2975acbf286b26b6703fe3429aa7}} 
+\index{faction.h@{faction.h}!faction\_to\_string@{faction\_to\_string}}
+\index{faction\_to\_string@{faction\_to\_string}!faction.h@{faction.h}}
+\doxysubsubsection{\texorpdfstring{faction\_to\_string()}{faction\_to\_string()}}
+{\footnotesize\ttfamily char$\ast$ faction\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{faction_8h_a1dfd262d186041503cbda6f0ee39abba}{faction}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Renvoie la faction passée en paramètre sous forme de chaîne de caractères. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & la faction dont on veut obtenir les informations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la chaîne sous la forme\+: \char`\"{}identifiant\+\_\+faction$\vert$nom$\vert$a\+\_\+remelanger$\vert$points\+\_\+\+DDRS$\vert$manches\+\_\+gagnees\+\_\+main\char`\"{} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{faction_8h_a0b01f910543e58864e00ed891d902240}\label{faction_8h_a0b01f910543e58864e00ed891d902240}} 
 \index{faction.h@{faction.h}!get\_a\_remelanger@{get\_a\_remelanger}}

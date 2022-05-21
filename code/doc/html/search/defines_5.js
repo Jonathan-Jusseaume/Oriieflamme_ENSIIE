@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['ws_5fclse_5finvutf8_554',['WS_CLSE_INVUTF8',['../ws_8h.html#a67438f9d23bbcdc2e1927e9dce505008',1,'ws.h']]],
+  ['ws_5fclse_5fnormal_555',['WS_CLSE_NORMAL',['../ws_8h.html#a2ff326178afdc6da3905790161803fd5',1,'ws.h']]],
+  ['ws_5fclse_5fproterr_556',['WS_CLSE_PROTERR',['../ws_8h.html#a194a5eaa86bb6f2ba2b7c8cd878416e8',1,'ws.h']]],
+  ['ws_5ffin_557',['WS_FIN',['../ws_8h.html#a92ac38df97a72ad13675c9392b6f0ef5',1,'ws.h']]],
+  ['ws_5ffin_5fshift_558',['WS_FIN_SHIFT',['../ws_8h.html#a7fe11fc8d80fba497ce07483671da710',1,'ws.h']]],
+  ['ws_5ffr_5fop_5fbin_559',['WS_FR_OP_BIN',['../ws_8h.html#a11579cec919cb1fa742865ef68a1ecbf',1,'ws.h']]],
+  ['ws_5ffr_5fop_5fclse_560',['WS_FR_OP_CLSE',['../ws_8h.html#a51dcb053c17f2a4b4bfcd38e4a90e88c',1,'ws.h']]],
+  ['ws_5ffr_5fop_5fcont_561',['WS_FR_OP_CONT',['../ws_8h.html#a71e23145425a949410e8253a628160ec',1,'ws.h']]],
+  ['ws_5ffr_5fop_5fping_562',['WS_FR_OP_PING',['../ws_8h.html#a95fcab327cc3b908e251d18387b926ab',1,'ws.h']]],
+  ['ws_5ffr_5fop_5fpong_563',['WS_FR_OP_PONG',['../ws_8h.html#a61067031f718130b0db190d556847620',1,'ws.h']]],
+  ['ws_5ffr_5fop_5ftxt_564',['WS_FR_OP_TXT',['../ws_8h.html#af6abad47b51003413393946d60bbc4ca',1,'ws.h']]],
+  ['ws_5ffr_5fop_5funsupported_565',['WS_FR_OP_UNSUPPORTED',['../ws_8h.html#ae3529b135c003e493f9678f97ad04355',1,'ws.h']]],
+  ['ws_5fhs_5faccept_566',['WS_HS_ACCEPT',['../ws_8h.html#a7e97e32d281f1207b742728d6fe4c010',1,'ws.h']]],
+  ['ws_5fhs_5facclen_567',['WS_HS_ACCLEN',['../ws_8h.html#a986c51bec0dedd926053ab4185203cc0',1,'ws.h']]],
+  ['ws_5fhs_5freq_568',['WS_HS_REQ',['../ws_8h.html#ab9fdadc01700da8ac3a78ba6473c9fe9',1,'ws.h']]],
+  ['ws_5fkey_5flen_569',['WS_KEY_LEN',['../ws_8h.html#a99b7044cf6174b9a71ec0110ab4e4f06',1,'ws.h']]],
+  ['ws_5fkeyms_5flen_570',['WS_KEYMS_LEN',['../ws_8h.html#a3017bcf986aad8396dee9a8bd6ecd97a',1,'ws.h']]],
+  ['ws_5fms_5flen_571',['WS_MS_LEN',['../ws_8h.html#a0982da5873cb0636a9cd3c9b38e2fd6b',1,'ws.h']]],
+  ['ws_5fstate_5fclosed_572',['WS_STATE_CLOSED',['../ws_8h.html#a02363560e73ebd3d01c09902d2290c4d',1,'ws.h']]],
+  ['ws_5fstate_5fclosing_573',['WS_STATE_CLOSING',['../ws_8h.html#a0463873293d20536a4fa2445af3ca7e9',1,'ws.h']]],
+  ['ws_5fstate_5fconnecting_574',['WS_STATE_CONNECTING',['../ws_8h.html#a2e0dc474d59b4f6362baeb9c3f556523',1,'ws.h']]],
+  ['ws_5fstate_5fopen_575',['WS_STATE_OPEN',['../ws_8h.html#a2fe743eb09e44700deb9f6bc1bc5e484',1,'ws.h']]]
+];

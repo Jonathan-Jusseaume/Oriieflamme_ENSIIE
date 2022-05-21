@@ -7,6 +7,7 @@
 #include <string.h>
 #include "../headers/test.h"
 #include "../headers/aleatoire.h"
+#include "../headers/socket.h"
 
 #define PARTIE_NON_TERMINEE -1
 #define NOMBRE_FACTIONS 2
@@ -16,7 +17,20 @@ int main(int argc, char **argv) {
     // Si l'argument --test est passé au programme, alors on lance les tests unitaires et non le jeu
     if (argc == 2 && strcmp("--test", argv[1]) == 0) {
         run_all_tests();
-    } // S'il n'y a pas --test, on lance le jeu
+    }
+        // Si l'argument --test est passé au programme, alors on lance le serveur websocket
+    else if (argc == 2 && strcmp("--online", argv[1]) == 0) {
+        // La librairie nous fait associer chaque événement a une méthode
+        struct ws_events evs;
+        evs.onopen = &ouverture_connexion;
+        evs.onclose = &fermeture_connexion;
+        evs.onmessage = &reception_message;
+
+        // On écoute sur le port 8080, chaque client aura son propre thread
+        ws_socket(&evs, 8080, 0, 1000);
+
+    }
+        // Par défaut on lance une partie en local
     else {
         plateau p = nouveau_plateau();
         faction *factions = get_factions(p);
@@ -97,6 +111,15 @@ int main(int argc, char **argv) {
         liberer_plateau(p);
     }
 
+
     return 0;
 }
+
+
+/*
+int main(int argc, char **argv) {
+
+
+    return 0;
+} */
 

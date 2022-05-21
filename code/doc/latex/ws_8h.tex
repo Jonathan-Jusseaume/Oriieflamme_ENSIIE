@@ -1,0 +1,436 @@
+\hypertarget{ws_8h}{}\doxysection{Référence du fichier lib/ws\+Server/include/ws.h}
+\label{ws_8h}\index{lib/wsServer/include/ws.h@{lib/wsServer/include/ws.h}}
+
+
+ws\+Server constants and functions.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+Graphe des dépendances par inclusion de ws.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structws__events}{ws\+\_\+events}}
+\begin{DoxyCompactList}\small\item\em events Web Socket events types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a67438f9d23bbcdc2e1927e9dce505008}\label{ws_8h_a67438f9d23bbcdc2e1927e9dce505008}} 
+\#define \mbox{\hyperlink{ws_8h_a67438f9d23bbcdc2e1927e9dce505008}{WS\+\_\+\+CLSE\+\_\+\+INVUTF8}}~1007
+\begin{DoxyCompactList}\small\item\em Inconsistent message (invalid utf-\/8) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a75df3820bf0b91400aab3c8185f07601}\label{ws_8h_a75df3820bf0b91400aab3c8185f07601}} 
+\#define {\bfseries SEND}(client,  buf,  len)~send\+\_\+all((client), (buf), (len), MSG\+\_\+\+NOSIGNAL)
+\item 
+\mbox{\Hypertarget{ws_8h_adb3ecacb45248204e24f7ec4a377bb5d}\label{ws_8h_adb3ecacb45248204e24f7ec4a377bb5d}} 
+\#define {\bfseries RECV}(fd,  buf,  len)~recv((fd)-\/$>$client\+\_\+sock, (buf), (len), 0)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Global configurations}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a0a8f91f93d75a07f0ae45077db45b3eb}\label{ws_8h_a0a8f91f93d75a07f0ae45077db45b3eb}} 
+\#define \mbox{\hyperlink{ws_8h_a0a8f91f93d75a07f0ae45077db45b3eb}{MAX\+\_\+\+CLIENTS}}~8
+\begin{DoxyCompactList}\small\item\em Max clients connected simultaneously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Key and message configurations.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_ac146c3c7afc6f342ae4f476bd46d924a}\label{ws_8h_ac146c3c7afc6f342ae4f476bd46d924a}} 
+\#define \mbox{\hyperlink{ws_8h_ac146c3c7afc6f342ae4f476bd46d924a}{MESSAGE\+\_\+\+LENGTH}}~2048
+\begin{DoxyCompactList}\small\item\em Message buffer length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_aecae779890dfc6b313fe2854369e5497}\label{ws_8h_aecae779890dfc6b313fe2854369e5497}} 
+\#define \mbox{\hyperlink{ws_8h_aecae779890dfc6b313fe2854369e5497}{MAX\+\_\+\+FRAME\+\_\+\+LENGTH}}~(16$\ast$1024$\ast$1024)
+\begin{DoxyCompactList}\small\item\em Maximum frame/message length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a99b7044cf6174b9a71ec0110ab4e4f06}\label{ws_8h_a99b7044cf6174b9a71ec0110ab4e4f06}} 
+\#define \mbox{\hyperlink{ws_8h_a99b7044cf6174b9a71ec0110ab4e4f06}{WS\+\_\+\+KEY\+\_\+\+LEN}}~24
+\begin{DoxyCompactList}\small\item\em Web\+Socket key length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a0982da5873cb0636a9cd3c9b38e2fd6b}\label{ws_8h_a0982da5873cb0636a9cd3c9b38e2fd6b}} 
+\#define \mbox{\hyperlink{ws_8h_a0982da5873cb0636a9cd3c9b38e2fd6b}{WS\+\_\+\+MS\+\_\+\+LEN}}~36
+\begin{DoxyCompactList}\small\item\em Magic string length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a3017bcf986aad8396dee9a8bd6ecd97a}\label{ws_8h_a3017bcf986aad8396dee9a8bd6ecd97a}} 
+\#define \mbox{\hyperlink{ws_8h_a3017bcf986aad8396dee9a8bd6ecd97a}{WS\+\_\+\+KEYMS\+\_\+\+LEN}}~(\mbox{\hyperlink{ws_8h_a99b7044cf6174b9a71ec0110ab4e4f06}{WS\+\_\+\+KEY\+\_\+\+LEN}} + \mbox{\hyperlink{ws_8h_a0982da5873cb0636a9cd3c9b38e2fd6b}{WS\+\_\+\+MS\+\_\+\+LEN}})
+\begin{DoxyCompactList}\small\item\em Accept message response length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_ac7b1a3f98e5ef53ab7ca035d85471e66}\label{ws_8h_ac7b1a3f98e5ef53ab7ca035d85471e66}} 
+\#define \mbox{\hyperlink{ws_8h_ac7b1a3f98e5ef53ab7ca035d85471e66}{MAGIC\+\_\+\+STRING}}~\char`\"{}258EAFA5-\/E914-\/47DA-\/95CA-\/C5\+AB0\+DC85\+B11\char`\"{}
+\begin{DoxyCompactList}\small\item\em Magic string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Handshake constants.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_ab9fdadc01700da8ac3a78ba6473c9fe9}\label{ws_8h_ab9fdadc01700da8ac3a78ba6473c9fe9}} 
+\#define \mbox{\hyperlink{ws_8h_ab9fdadc01700da8ac3a78ba6473c9fe9}{WS\+\_\+\+HS\+\_\+\+REQ}}~\char`\"{}Sec-\/Web\+Socket-\/Key\char`\"{}
+\begin{DoxyCompactList}\small\item\em Alias for \textquotesingle{}Sec-\/\+Web\+Socket-\/\+Key\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a986c51bec0dedd926053ab4185203cc0}\label{ws_8h_a986c51bec0dedd926053ab4185203cc0}} 
+\#define \mbox{\hyperlink{ws_8h_a986c51bec0dedd926053ab4185203cc0}{WS\+\_\+\+HS\+\_\+\+ACCLEN}}~130
+\begin{DoxyCompactList}\small\item\em Handshake accept message length. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{ws_8h_a7e97e32d281f1207b742728d6fe4c010}{WS\+\_\+\+HS\+\_\+\+ACCEPT}}
+\begin{DoxyCompactList}\small\item\em Handshake accept message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a96dd473db0b3d10bd43390cdacb00120}\label{ws_8h_a96dd473db0b3d10bd43390cdacb00120}} 
+\#define \mbox{\hyperlink{ws_8h_a96dd473db0b3d10bd43390cdacb00120}{DEBUG}}(...)
+\begin{DoxyCompactList}\small\item\em Debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Frame types.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a92ac38df97a72ad13675c9392b6f0ef5}\label{ws_8h_a92ac38df97a72ad13675c9392b6f0ef5}} 
+\#define \mbox{\hyperlink{ws_8h_a92ac38df97a72ad13675c9392b6f0ef5}{WS\+\_\+\+FIN}}~128
+\begin{DoxyCompactList}\small\item\em Frame FIN. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a7fe11fc8d80fba497ce07483671da710}\label{ws_8h_a7fe11fc8d80fba497ce07483671da710}} 
+\#define \mbox{\hyperlink{ws_8h_a7fe11fc8d80fba497ce07483671da710}{WS\+\_\+\+FIN\+\_\+\+SHIFT}}~7
+\begin{DoxyCompactList}\small\item\em Frame FIN shift. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a71e23145425a949410e8253a628160ec}\label{ws_8h_a71e23145425a949410e8253a628160ec}} 
+\#define \mbox{\hyperlink{ws_8h_a71e23145425a949410e8253a628160ec}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+CONT}}~0
+\begin{DoxyCompactList}\small\item\em Continuation frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_af6abad47b51003413393946d60bbc4ca}\label{ws_8h_af6abad47b51003413393946d60bbc4ca}} 
+\#define \mbox{\hyperlink{ws_8h_af6abad47b51003413393946d60bbc4ca}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+TXT}}~1
+\begin{DoxyCompactList}\small\item\em Text frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a11579cec919cb1fa742865ef68a1ecbf}\label{ws_8h_a11579cec919cb1fa742865ef68a1ecbf}} 
+\#define \mbox{\hyperlink{ws_8h_a11579cec919cb1fa742865ef68a1ecbf}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+BIN}}~2
+\begin{DoxyCompactList}\small\item\em Binary frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a51dcb053c17f2a4b4bfcd38e4a90e88c}\label{ws_8h_a51dcb053c17f2a4b4bfcd38e4a90e88c}} 
+\#define \mbox{\hyperlink{ws_8h_a51dcb053c17f2a4b4bfcd38e4a90e88c}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+CLSE}}~8
+\begin{DoxyCompactList}\small\item\em Close frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a95fcab327cc3b908e251d18387b926ab}\label{ws_8h_a95fcab327cc3b908e251d18387b926ab}} 
+\#define \mbox{\hyperlink{ws_8h_a95fcab327cc3b908e251d18387b926ab}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+PING}}~0x9
+\begin{DoxyCompactList}\small\item\em Ping frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a61067031f718130b0db190d556847620}\label{ws_8h_a61067031f718130b0db190d556847620}} 
+\#define \mbox{\hyperlink{ws_8h_a61067031f718130b0db190d556847620}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+PONG}}~0xA
+\begin{DoxyCompactList}\small\item\em Pong frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_ae3529b135c003e493f9678f97ad04355}\label{ws_8h_ae3529b135c003e493f9678f97ad04355}} 
+\#define \mbox{\hyperlink{ws_8h_ae3529b135c003e493f9678f97ad04355}{WS\+\_\+\+FR\+\_\+\+OP\+\_\+\+UNSUPPORTED}}~0xF
+\begin{DoxyCompactList}\small\item\em Unsupported frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Close codes}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a2ff326178afdc6da3905790161803fd5}\label{ws_8h_a2ff326178afdc6da3905790161803fd5}} 
+\#define \mbox{\hyperlink{ws_8h_a2ff326178afdc6da3905790161803fd5}{WS\+\_\+\+CLSE\+\_\+\+NORMAL}}~1000
+\begin{DoxyCompactList}\small\item\em Normal close. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a194a5eaa86bb6f2ba2b7c8cd878416e8}\label{ws_8h_a194a5eaa86bb6f2ba2b7c8cd878416e8}} 
+\#define \mbox{\hyperlink{ws_8h_a194a5eaa86bb6f2ba2b7c8cd878416e8}{WS\+\_\+\+CLSE\+\_\+\+PROTERR}}~1002
+\begin{DoxyCompactList}\small\item\em Protocol error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Connection states}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a2e0dc474d59b4f6362baeb9c3f556523}\label{ws_8h_a2e0dc474d59b4f6362baeb9c3f556523}} 
+\#define \mbox{\hyperlink{ws_8h_a2e0dc474d59b4f6362baeb9c3f556523}{WS\+\_\+\+STATE\+\_\+\+CONNECTING}}~0
+\begin{DoxyCompactList}\small\item\em Connection not established yet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a2fe743eb09e44700deb9f6bc1bc5e484}\label{ws_8h_a2fe743eb09e44700deb9f6bc1bc5e484}} 
+\#define \mbox{\hyperlink{ws_8h_a2fe743eb09e44700deb9f6bc1bc5e484}{WS\+\_\+\+STATE\+\_\+\+OPEN}}~1
+\begin{DoxyCompactList}\small\item\em Communicating. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a0463873293d20536a4fa2445af3ca7e9}\label{ws_8h_a0463873293d20536a4fa2445af3ca7e9}} 
+\#define \mbox{\hyperlink{ws_8h_a0463873293d20536a4fa2445af3ca7e9}{WS\+\_\+\+STATE\+\_\+\+CLOSING}}~2
+\begin{DoxyCompactList}\small\item\em Closing state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a02363560e73ebd3d01c09902d2290c4d}\label{ws_8h_a02363560e73ebd3d01c09902d2290c4d}} 
+\#define \mbox{\hyperlink{ws_8h_a02363560e73ebd3d01c09902d2290c4d}{WS\+\_\+\+STATE\+\_\+\+CLOSED}}~3
+\begin{DoxyCompactList}\small\item\em Closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Timeout util}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_aab882fbb7595b97461f54850fc8eb217}\label{ws_8h_aab882fbb7595b97461f54850fc8eb217}} 
+\#define \mbox{\hyperlink{ws_8h_aab882fbb7595b97461f54850fc8eb217}{MS\+\_\+\+TO\+\_\+\+NS}}(x)~((x)$\ast$1000000)
+\begin{DoxyCompactList}\small\item\em Nanoseconds macro converter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ws_8h_a53bb6ce0dbc843daa4ad914d78713ac2}\label{ws_8h_a53bb6ce0dbc843daa4ad914d78713ac2}} 
+\#define \mbox{\hyperlink{ws_8h_a53bb6ce0dbc843daa4ad914d78713ac2}{TIMEOUT\+\_\+\+MS}}~(500)
+\begin{DoxyCompactList}\small\item\em Timeout in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8h_a2b6c39132c2b4a8c28bc7a5fd9a4782e}\label{ws_8h_a2b6c39132c2b4a8c28bc7a5fd9a4782e}} 
+typedef struct \mbox{\hyperlink{structws__connection}{ws\+\_\+connection}} {\bfseries ws\+\_\+cli\+\_\+conn\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ws_8h_a4b23f0ffa1e04bb15f05d59eddde367d}{get\+\_\+handshake\+\_\+accept}} (char $\ast$ws\+Key, unsigned char $\ast$$\ast$dest)
+\begin{DoxyCompactList}\small\item\em Gets the field Sec-\/\+Web\+Socket-\/\+Accept on response, by an previously informed key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a27482c3c5192c17f4f4f4e390ded31b9}{get\+\_\+handshake\+\_\+response}} (char $\ast$hsrequest, char $\ast$$\ast$hsresponse)
+\begin{DoxyCompactList}\small\item\em Gets the complete response to accomplish a succesfully handshake. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{ws_8h_a9e976bca5a46baee91569ef33bb74f21}{ws\+\_\+getaddress}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Gets the IP address relative to a client connection opened by the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a2cd8113634018b506a948b6d42c75bae}{ws\+\_\+sendframe}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli, const char $\ast$msg, uint64\+\_\+t size, int type)
+\begin{DoxyCompactList}\small\item\em Creates and send an Web\+Socket frame with some payload data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a513af9fe222b7b45550d8794afeca200}{ws\+\_\+sendframe\+\_\+txt}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Sends a Web\+Socket text frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a1967a31496e31d5d0e7e47c0cede1e04}{ws\+\_\+sendframe\+\_\+bin}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli, const char $\ast$msg, uint64\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends a Web\+Socket binary frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a0e9292115bab833001593a83e7ca167b}{ws\+\_\+get\+\_\+state}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli)
+\begin{DoxyCompactList}\small\item\em For a given {\ttfamily client}, gets the current state for the connection, or -\/1 if invalid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_a68609fbdb7cb996339c61be2aee37b52}{ws\+\_\+close\+\_\+client}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli)
+\begin{DoxyCompactList}\small\item\em Close the client connection for the given {\ttfamily client} with normal close code (1000) and no reason string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8h_aa37bbcf33e10623a2e18f9587cee8508}{ws\+\_\+socket}} (struct \mbox{\hyperlink{structws__events}{ws\+\_\+events}} $\ast$evs, uint16\+\_\+t port, int thread\+\_\+loop, uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Main loop for the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ws_8h_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli, int threshold)
+\begin{DoxyCompactList}\small\item\em Sends a PING frame to the client {\ttfamily cli} with threshold {\ttfamily threshold}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+ws\+Server constants and functions. 
+
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{ws_8h_a7e97e32d281f1207b742728d6fe4c010}\label{ws_8h_a7e97e32d281f1207b742728d6fe4c010}} 
+\index{ws.h@{ws.h}!WS\_HS\_ACCEPT@{WS\_HS\_ACCEPT}}
+\index{WS\_HS\_ACCEPT@{WS\_HS\_ACCEPT}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{WS\_HS\_ACCEPT}{WS\_HS\_ACCEPT}}
+{\footnotesize\ttfamily \#define WS\+\_\+\+HS\+\_\+\+ACCEPT}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \textcolor{stringliteral}{"{}HTTP/1.1 101 Switching Protocols\(\backslash\)r\(\backslash\)n"{}} \(\backslash\)}
+\DoxyCodeLine{        \textcolor{stringliteral}{"{}Upgrade: websocket\(\backslash\)r\(\backslash\)n"{}}               \(\backslash\)}
+\DoxyCodeLine{        \textcolor{stringliteral}{"{}Connection: Upgrade\(\backslash\)r\(\backslash\)n"{}}              \(\backslash\)}
+\DoxyCodeLine{        \textcolor{stringliteral}{"{}Sec-\/WebSocket-\/Accept: "{}}}
+
+\end{DoxyCode}
+
+
+Handshake accept message. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{ws_8h_a4b23f0ffa1e04bb15f05d59eddde367d}\label{ws_8h_a4b23f0ffa1e04bb15f05d59eddde367d}} 
+\index{ws.h@{ws.h}!get\_handshake\_accept@{get\_handshake\_accept}}
+\index{get\_handshake\_accept@{get\_handshake\_accept}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{get\_handshake\_accept()}{get\_handshake\_accept()}}
+{\footnotesize\ttfamily int get\+\_\+handshake\+\_\+accept (\begin{DoxyParamCaption}\item[{char $\ast$}]{ws\+Key,  }\item[{unsigned char $\ast$$\ast$}]{dest }\end{DoxyParamCaption})}
+
+
+
+Gets the field Sec-\/\+Web\+Socket-\/\+Accept on response, by an previously informed key. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ws\+Key} & Sec-\/\+Web\+Socket-\/\+Key \\
+\hline
+{\em dest} & source to be stored the value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success and a negative number otherwise.
+\end{DoxyReturn}
+\begin{DoxyAttention}{Attention}
+This is part of the internal API and is documented just for completeness. 
+\end{DoxyAttention}
+\mbox{\Hypertarget{ws_8h_a27482c3c5192c17f4f4f4e390ded31b9}\label{ws_8h_a27482c3c5192c17f4f4f4e390ded31b9}} 
+\index{ws.h@{ws.h}!get\_handshake\_response@{get\_handshake\_response}}
+\index{get\_handshake\_response@{get\_handshake\_response}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{get\_handshake\_response()}{get\_handshake\_response()}}
+{\footnotesize\ttfamily int get\+\_\+handshake\+\_\+response (\begin{DoxyParamCaption}\item[{char $\ast$}]{hsrequest,  }\item[{char $\ast$$\ast$}]{hsresponse }\end{DoxyParamCaption})}
+
+
+
+Gets the complete response to accomplish a succesfully handshake. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hsrequest} & Client request. \\
+\hline
+{\em hsresponse} & Server response.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success and a negative number otherwise.
+\end{DoxyReturn}
+\begin{DoxyAttention}{Attention}
+This is part of the internal API and is documented just for completeness. 
+\end{DoxyAttention}
+\mbox{\Hypertarget{ws_8h_a68609fbdb7cb996339c61be2aee37b52}\label{ws_8h_a68609fbdb7cb996339c61be2aee37b52}} 
+\index{ws.h@{ws.h}!ws\_close\_client@{ws\_close\_client}}
+\index{ws\_close\_client@{ws\_close\_client}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_close\_client()}{ws\_close\_client()}}
+{\footnotesize\ttfamily int ws\+\_\+close\+\_\+client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Close the client connection for the given {\ttfamily client} with normal close code (1000) and no reason string. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 on success, -\/1 otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the client did not send a close frame in TIMEOUT\+\_\+\+MS milliseconds, the server will close the connection with error code (1002). 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8h_a0e9292115bab833001593a83e7ca167b}\label{ws_8h_a0e9292115bab833001593a83e7ca167b}} 
+\index{ws.h@{ws.h}!ws\_get\_state@{ws\_get\_state}}
+\index{ws\_get\_state@{ws\_get\_state}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_get\_state()}{ws\_get\_state()}}
+{\footnotesize\ttfamily int ws\+\_\+get\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+For a given {\ttfamily client}, gets the current state for the connection, or -\/1 if invalid. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the connection state or -\/1 if invalid {\ttfamily client}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{ws_8h_a2e0dc474d59b4f6362baeb9c3f556523}{WS\+\_\+\+STATE\+\_\+\+CONNECTING}} 
+
+\mbox{\hyperlink{ws_8h_a2fe743eb09e44700deb9f6bc1bc5e484}{WS\+\_\+\+STATE\+\_\+\+OPEN}} 
+
+\mbox{\hyperlink{ws_8h_a0463873293d20536a4fa2445af3ca7e9}{WS\+\_\+\+STATE\+\_\+\+CLOSING}} 
+
+\mbox{\hyperlink{ws_8h_a02363560e73ebd3d01c09902d2290c4d}{WS\+\_\+\+STATE\+\_\+\+CLOSED}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ws_8h_a9e976bca5a46baee91569ef33bb74f21}\label{ws_8h_a9e976bca5a46baee91569ef33bb74f21}} 
+\index{ws.h@{ws.h}!ws\_getaddress@{ws\_getaddress}}
+\index{ws\_getaddress@{ws\_getaddress}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_getaddress()}{ws\_getaddress()}}
+{\footnotesize\ttfamily char$\ast$ ws\+\_\+getaddress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Gets the IP address relative to a client connection opened by the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointer the ip address, or NULL if fails.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned string is static, no need to free up memory. 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8h_abdfe68596e6987166559161a617c9b51}\label{ws_8h_abdfe68596e6987166559161a617c9b51}} 
+\index{ws.h@{ws.h}!ws\_ping@{ws\_ping}}
+\index{ws\_ping@{ws\_ping}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_ping()}{ws\_ping()}}
+{\footnotesize\ttfamily void ws\+\_\+ping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{cli,  }\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Sends a PING frame to the client {\ttfamily cli} with threshold {\ttfamily threshold}. 
+
+This routine sends a PING to a single client pointed to by {\ttfamily cli} or a broadcast PING if {\ttfamily cli} is NULL. If the specified client does not respond up to {\ttfamily threshold} PINGs, the connection is aborted.
+
+\mbox{\hyperlink{ws_8c_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping()}} is not automatic\+: the user who wants to send keep-\/alive PINGs {\itshape must} call this routine in a timely manner, whether on a different thread or inside an event.
+
+See \mbox{\hyperlink{ping_8c}{examples/ping/ping.\+c}} for a minimal example usage.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cli} & Client to be sent, if NULL, broadcast. \\
+\hline
+{\em threshold} & How many ignored PINGs should tolerate? (should be positive and greater than 0).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It should be noted that the time between each call to \mbox{\hyperlink{ws_8c_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping()}} is the timeout itself for receiving the PONG.
+\end{DoxyNote}
+It is also important to note that for devices with unstable connections (such as a weak Wi\+Fi signal or 3/4/5G from a cell phone), a threshold greater than 1 is advisable. \mbox{\Hypertarget{ws_8h_a2cd8113634018b506a948b6d42c75bae}\label{ws_8h_a2cd8113634018b506a948b6d42c75bae}} 
+\index{ws.h@{ws.h}!ws\_sendframe@{ws\_sendframe}}
+\index{ws\_sendframe@{ws\_sendframe}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe()}{ws\_sendframe()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Creates and send an Web\+Socket frame with some payload data. 
+
+This routine is intended to be used to create a websocket frame for a given type e sending to the client. For higher level routines, please check \mbox{\hyperlink{ws_8c_a51f4a5c4b414f9da92d2853387d9d588}{ws\+\_\+sendframe\+\_\+txt}} and \mbox{\hyperlink{ws_8c_af9cba274e7eb2f81ea2af01d23d1f40e}{ws\+\_\+sendframe\+\_\+bin}}.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send. \\
+\hline
+{\em size} & Binary message size. \\
+\hline
+{\em type} & Frame type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If {\ttfamily size} is -\/1, it is assumed that a text frame is being sent, otherwise, a binary frame. In the later case, the {\ttfamily size} is used. 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8h_a1967a31496e31d5d0e7e47c0cede1e04}\label{ws_8h_a1967a31496e31d5d0e7e47c0cede1e04}} 
+\index{ws.h@{ws.h}!ws\_sendframe\_bin@{ws\_sendframe\_bin}}
+\index{ws\_sendframe\_bin@{ws\_sendframe\_bin}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe\_bin()}{ws\_sendframe\_bin()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Sends a Web\+Socket binary frame. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send. \\
+\hline
+{\em size} & Binary message size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ws_8h_a513af9fe222b7b45550d8794afeca200}\label{ws_8h_a513af9fe222b7b45550d8794afeca200}} 
+\index{ws.h@{ws.h}!ws\_sendframe\_txt@{ws\_sendframe\_txt}}
+\index{ws\_sendframe\_txt@{ws\_sendframe\_txt}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe\_txt()}{ws\_sendframe\_txt()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe\+\_\+txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Sends a Web\+Socket text frame. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send, null terminated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ws_8h_aa37bbcf33e10623a2e18f9587cee8508}\label{ws_8h_aa37bbcf33e10623a2e18f9587cee8508}} 
+\index{ws.h@{ws.h}!ws\_socket@{ws\_socket}}
+\index{ws\_socket@{ws\_socket}!ws.h@{ws.h}}
+\doxysubsubsection{\texorpdfstring{ws\_socket()}{ws\_socket()}}
+{\footnotesize\ttfamily int ws\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structws__events}{ws\+\_\+events}} $\ast$}]{evs,  }\item[{uint16\+\_\+t}]{port,  }\item[{int}]{thread\+\_\+loop,  }\item[{uint32\+\_\+t}]{timeout\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+Main loop for the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em evs} & Events structure. \\
+\hline
+{\em port} & Server port. \\
+\hline
+{\em thread\+\_\+loop} & If any value other than zero, runs the accept loop in another thread and immediately returns. If 0, runs in the same thread and blocks execution.\\
+\hline
+{\em timeout\+\_\+ms} & Max timeout if the client is not responding (in milliseconds).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+If {\ttfamily thread\+\_\+loop} != 0, returns 0. Otherwise, never returns. 
+\end{DoxyReturn}

@@ -113,6 +113,15 @@ int get_max_y_grille(grille_carte g);
  */
 position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face_cachee);
 
+/**
+ * Renvoie la grille sous forme de chaîne de caractères
+ * @param g la grille dont on veut la chaîne de caractères
+ * @return renvoie une concaténation de la forme "carte;carte;;|;;carte;carte"; on sépare les lignes
+ * par | et chaque colonne par ;. S'il n'y a pas de carte sur la case, on ne met rien sinon
+ * on fait appel à carte_to_string
+ */
+char* grille_carte_to_string(grille_carte g);
+
 
 /**
  * Structure qui correspond à une liste chaînée de cartes. Nous l'utiliserons pour gérer la main de
@@ -177,6 +186,13 @@ carte get_valeur_tete_liste_chainee(liste_chainee_carte l);
  * @return la queue de la liste chainée, NULL si la liste passée en paramètre est vide
  */
 liste_chainee_carte get_queue_liste_chainee(liste_chainee_carte l);
+
+/**
+ * Renvoie la liste chaînée sous forme de chaîne
+ * @param l la liste dont on veut la châine
+ * @return une chaîne au format: "carte;carte;carte"
+ */
+char* liste_chainee_carte_to_string(liste_chainee_carte l);
 
 /**
  * Libère la mémoire de la liste chainée passée en paramètre

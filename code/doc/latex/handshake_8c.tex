@@ -1,0 +1,82 @@
+\hypertarget{handshake_8c}{}\doxysection{Référence du fichier lib/ws\+Server/src/handshake.c}
+\label{handshake_8c}\index{lib/wsServer/src/handshake.c@{lib/wsServer/src/handshake.c}}
+
+
+Handshake routines.  
+
+
+{\ttfamily \#include $<$base64.\+h$>$}\newline
+{\ttfamily \#include $<$sha1.\+h$>$}\newline
+{\ttfamily \#include $<$ws.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Graphe des dépendances par inclusion de handshake.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{handshake_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{handshake_8c_a3024ccd4a9af5109d24e6c57565d74a1}} 
+\#define {\bfseries \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}~200809L
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{handshake_8c_a4b23f0ffa1e04bb15f05d59eddde367d}{get\+\_\+handshake\+\_\+accept}} (char $\ast$ws\+Key, unsigned char $\ast$$\ast$dest)
+\begin{DoxyCompactList}\small\item\em Gets the field Sec-\/\+Web\+Socket-\/\+Accept on response, by an previously informed key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{handshake_8c_a27482c3c5192c17f4f4f4e390ded31b9}{get\+\_\+handshake\+\_\+response}} (char $\ast$hsrequest, char $\ast$$\ast$hsresponse)
+\begin{DoxyCompactList}\small\item\em Gets the complete response to accomplish a succesfully handshake. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Handshake routines. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{handshake_8c_a4b23f0ffa1e04bb15f05d59eddde367d}\label{handshake_8c_a4b23f0ffa1e04bb15f05d59eddde367d}} 
+\index{handshake.c@{handshake.c}!get\_handshake\_accept@{get\_handshake\_accept}}
+\index{get\_handshake\_accept@{get\_handshake\_accept}!handshake.c@{handshake.c}}
+\doxysubsubsection{\texorpdfstring{get\_handshake\_accept()}{get\_handshake\_accept()}}
+{\footnotesize\ttfamily int get\+\_\+handshake\+\_\+accept (\begin{DoxyParamCaption}\item[{char $\ast$}]{ws\+Key,  }\item[{unsigned char $\ast$$\ast$}]{dest }\end{DoxyParamCaption})}
+
+
+
+Gets the field Sec-\/\+Web\+Socket-\/\+Accept on response, by an previously informed key. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ws\+Key} & Sec-\/\+Web\+Socket-\/\+Key \\
+\hline
+{\em dest} & source to be stored the value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success and a negative number otherwise.
+\end{DoxyReturn}
+\begin{DoxyAttention}{Attention}
+This is part of the internal API and is documented just for completeness. 
+\end{DoxyAttention}
+\mbox{\Hypertarget{handshake_8c_a27482c3c5192c17f4f4f4e390ded31b9}\label{handshake_8c_a27482c3c5192c17f4f4f4e390ded31b9}} 
+\index{handshake.c@{handshake.c}!get\_handshake\_response@{get\_handshake\_response}}
+\index{get\_handshake\_response@{get\_handshake\_response}!handshake.c@{handshake.c}}
+\doxysubsubsection{\texorpdfstring{get\_handshake\_response()}{get\_handshake\_response()}}
+{\footnotesize\ttfamily int get\+\_\+handshake\+\_\+response (\begin{DoxyParamCaption}\item[{char $\ast$}]{hsrequest,  }\item[{char $\ast$$\ast$}]{hsresponse }\end{DoxyParamCaption})}
+
+
+
+Gets the complete response to accomplish a succesfully handshake. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hsrequest} & Client request. \\
+\hline
+{\em hsresponse} & Server response.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success and a negative number otherwise.
+\end{DoxyReturn}
+\begin{DoxyAttention}{Attention}
+This is part of the internal API and is documented just for completeness. 
+\end{DoxyAttention}

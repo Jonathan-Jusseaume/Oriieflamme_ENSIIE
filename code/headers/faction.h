@@ -150,4 +150,11 @@ void set_pioche(faction f, ensemble_entier pioche);
  */
 void set_main(faction f, liste_chainee_carte main);
 
+/**
+ * Renvoie la faction passée en paramètre sous forme de chaîne de caractères
+ * @param f la faction dont on veut obtenir les informations
+ * @return la chaîne sous la forme: "identifiant_faction|nom|a_remelanger|points_DDRS|manches_gagnees_main"
+ */
+char* faction_to_string(faction f);
+
 #endif //ORIIEFLAMME_GR_11_FACTION_H

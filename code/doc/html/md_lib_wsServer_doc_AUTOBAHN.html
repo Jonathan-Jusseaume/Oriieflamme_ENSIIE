@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: Autobahn and standard support</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Autobahn and standard support </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Although wsServer strives to be as simple as possible, the library does intend to used in production and relies on two (but not limited to) tools for that: <a class="el" href="md_lib_wsServer_doc_FUZZING.html">AFL</a> and Autobahn WebSocket Testsuite. The former ensures that wsServer is stable enough to be run even under unexpected conditions, such as when under attack. The latter is discussed below.</p>
+<p><a href="https://github.com/crossbario/autobahn-testsuite">Autobahn|Testsuite</a> is a third-party tool that performs a series of automated tests that verify the correctness of client and server websocket implementations in conformance to the specification. With more than 500 test cases, Autobahn extensively tests client and server implementations and also evaluates its performance.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Run tests</h1>
+<p>Testing requires pre-installation of <a href="https://github.com/crossbario/autobahn-testsuite">Autobahn|Testsuite</a>. Alternatively, it is possible to use the Docker image used in the CI tests, in this case, export the environment variable 'TRAVIS', as <code>export TRAVIS=true</code>.</p>
+<p>After that, tests can be invoked via Makefile or CMake: </p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Makefile</h2>
+<div class="fragment"><div class="line"># Ensure project is in clean state</div>
+<div class="line">$ make clean</div>
+<div class="line"># Build and execute tests</div>
+<div class="line">$ make tests</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md3"></a>
+CMake</h2>
+<div class="fragment"><div class="line">$ mkdir build &amp;&amp; cd build/</div>
+<div class="line"># Configure project and enable tests build</div>
+<div class="line">$ cmake .. \</div>
+<div class="line">  -DCMAKE_BUILD_TYPE=Release \</div>
+<div class="line">  -DENABLE_WSSERVER_TEST=On</div>
+<div class="line"># Build project</div>
+<div class="line">$ make -j4</div>
+<div class="line"># Execute tests</div>
+<div class="line">$ make test</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Tests results</h1>
+<p>From the <a href="https://theldus.github.io/wsServer/autobahn">tests</a>, it can be seen that wsServer passes all Autobahn|Testsuite tests. The only tests that are not run (12.* and 13.*) concern WebSocket Compression, which is defined as an extension of the websocket protocol and defined in <a href="https://datatracker.ietf.org/doc/html/rfc7692">RFC 7692</a>. Compression does not belong to <a href="https://tools.ietf.org/html/rfc6455">RFC 6455</a>.</p>
+<p>Therefore, I believe it is safe to say that wsServer is RFC 6455 compliant and should behave correctly in different scenarios. Any unexpected behavior regarding communication with the client is considered an error, and an issue must be reported. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

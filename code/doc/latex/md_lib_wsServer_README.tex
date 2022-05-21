@@ -1,0 +1,132 @@
+\href{https://opensource.org/licenses/GPL-3.0}{\texttt{ }} \href{https://app.travis-ci.com/Theldus/wsServer}{\texttt{ }}
+
+ws\+Server -\/ a very tiny Web\+Socket server library written in C\hypertarget{md_lib_wsServer_README_autotoc_md48}{}\doxysection{Library}\label{md_lib_wsServer_README_autotoc_md48}
+ws\+Server is a tiny, lightweight Web\+Socket server library written in C that intends to be easy to use, fast, hackable, and compliant to the \href{https://tools.ietf.org/html/rfc6455}{\texttt{ RFC 6455}}.
+
+The main features are\+:
+\begin{DoxyItemize}
+\item Send/\+Receive Text and Binary messages
+\item PING/\+PONG frames
+\item Opening/\+Closing handshakes
+\item Event based (onmessage, onopen, onclose)
+\item Portability\+: Works fine on Windows, Linux (Android included), mac\+OS and Free\+BSD
+\end{DoxyItemize}
+
+See Autobahn \href{https://theldus.github.io/wsServer/autobahn}{\texttt{ report}} and the \mbox{\hyperlink{md_lib_wsServer_doc_AUTOBAHN}{docs}} for an \textquotesingle{}in-\/depth\textquotesingle{} analysis.\hypertarget{md_lib_wsServer_README_autotoc_md49}{}\doxysection{Building}\label{md_lib_wsServer_README_autotoc_md49}
+ws\+Server only requires a C99-\/compatible compiler (such as GCC, Clang, TCC and others) and no external libraries.\hypertarget{md_lib_wsServer_README_autotoc_md50}{}\doxysubsection{Make}\label{md_lib_wsServer_README_autotoc_md50}
+The preferred way to build ws\+Server on Linux environments\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/Theldus/wsServer}
+\DoxyCodeLine{cd wsServer/}
+\DoxyCodeLine{make}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Optionally, a user can also install wsServer into the system,}
+\DoxyCodeLine{\# either on default paths or by providing PREFIX or DESTDIR env}
+\DoxyCodeLine{\# vars to the Makefile.}
+\DoxyCodeLine{}
+\DoxyCodeLine{make install \# Or make install DESTDIR=/my/folder/}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_README_autotoc_md51}{}\doxysubsection{CMake}\label{md_lib_wsServer_README_autotoc_md51}
+CMake enables the user to easily build ws\+Server in others environments other than Linux and also allows the use of an IDE to build the project automatically. If that\textquotesingle{}s your case\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/Theldus/wsServer}
+\DoxyCodeLine{cd wsServer/}
+\DoxyCodeLine{mkdir build \&\& cd build/}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{./examples/echo/echo \# Waiting for incoming connections...}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_README_autotoc_md52}{}\doxysubsection{Windows support}\label{md_lib_wsServer_README_autotoc_md52}
+Windows has native support via Min\+GW, toolchain setup and build steps are detailed \href{https://github.com/Theldus/wsServer/blob/master/doc/BUILD_WINDOWS.md}{\texttt{ here}}.\hypertarget{md_lib_wsServer_README_autotoc_md53}{}\doxysection{Why to complicate if things can be simple?}\label{md_lib_wsServer_README_autotoc_md53}
+ws\+Server abstracts the idea of sockets and you only need to deal with three types of events defined\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* New client. */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_acad817bd7c7f16e077c8f4a411cf60c3}{onopen}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Client disconnected. */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_a75da9864e55abf37e022f421340398e1}{onclose}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Client sent a text message. */}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_a2864d75de905dbfa15b7b19b327cc449}{onmessage}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *msg,}
+\DoxyCodeLine{    uint64\_t size, \textcolor{keywordtype}{int} type);}
+
+\end{DoxyCode}
+
+
+this is all you need to worry about, nothing to think about return values in socket, accepting connections, and so on.
+
+As a gift, each client is handled in a separate thread, so you will not have to worry about it.\hypertarget{md_lib_wsServer_README_autotoc_md54}{}\doxysubsection{A complete example}\label{md_lib_wsServer_README_autotoc_md54}
+More examples, including the respective html files, can be found in examples/ folder, ;-\/).
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{ws_8h}{ws.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_acad817bd7c7f16e077c8f4a411cf60c3}{onopen}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *cli;}
+\DoxyCodeLine{    cli = \mbox{\hyperlink{ws_8h_a9e976bca5a46baee91569ef33bb74f21}{ws\_getaddress}}(client);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Connection opened, addr: \%s\(\backslash\)n"{}}, cli);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_a75da9864e55abf37e022f421340398e1}{onclose}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *cli;}
+\DoxyCodeLine{    cli = \mbox{\hyperlink{ws_8h_a9e976bca5a46baee91569ef33bb74f21}{ws\_getaddress}}(client);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Connection closed, addr: \%s\(\backslash\)n"{}}, cli);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{ping_8c_a2864d75de905dbfa15b7b19b327cc449}{onmessage}}(\mbox{\hyperlink{structws__connection}{ws\_cli\_conn\_t}} *client,}
+\DoxyCodeLine{    \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *msg, uint64\_t size, \textcolor{keywordtype}{int} type)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *cli;}
+\DoxyCodeLine{    cli = \mbox{\hyperlink{ws_8h_a9e976bca5a46baee91569ef33bb74f21}{ws\_getaddress}}(client);}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}I receive a message: \%s (\%zu), from: \%s\(\backslash\)n"{}}, msg,}
+\DoxyCodeLine{        size, cli);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    sleep(2);}
+\DoxyCodeLine{    \mbox{\hyperlink{ws_8h_a513af9fe222b7b45550d8794afeca200}{ws\_sendframe\_txt}}(client, \textcolor{stringliteral}{"{}hello"{}});}
+\DoxyCodeLine{    sleep(2);}
+\DoxyCodeLine{    \mbox{\hyperlink{ws_8h_a513af9fe222b7b45550d8794afeca200}{ws\_sendframe\_txt}}(client, \textcolor{stringliteral}{"{}world"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{ping_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{/* Register events. */}}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structws__events}{ws\_events}} evs;}
+\DoxyCodeLine{    evs.\mbox{\hyperlink{structws__events_a7eaba79ad2d2403ca3db16db00f58e20}{onopen}}    = \&\mbox{\hyperlink{ping_8c_acad817bd7c7f16e077c8f4a411cf60c3}{onopen}};}
+\DoxyCodeLine{    evs.onclose   = \&\mbox{\hyperlink{ping_8c_a75da9864e55abf37e022f421340398e1}{onclose}};}
+\DoxyCodeLine{    evs.onmessage = \&\mbox{\hyperlink{ping_8c_a2864d75de905dbfa15b7b19b327cc449}{onmessage}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{     * Main loop, this function never* returns.}}
+\DoxyCodeLine{\textcolor{comment}{     *}}
+\DoxyCodeLine{\textcolor{comment}{     * *If the third argument is != 0, a new thread is created}}
+\DoxyCodeLine{\textcolor{comment}{     * to handle new connections.}}
+\DoxyCodeLine{\textcolor{comment}{     */}}
+\DoxyCodeLine{    \mbox{\hyperlink{ws_8h_aa37bbcf33e10623a2e18f9587cee8508}{ws\_socket}}(\&evs, 8080, 0, 1000);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} (0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+the example above can be built with\+: {\ttfamily make examples}.\hypertarget{md_lib_wsServer_README_autotoc_md55}{}\doxysection{Web\+Socket client\+: Toy\+WS}\label{md_lib_wsServer_README_autotoc_md55}
+Inside {\ttfamily extra/toyws} there is a companion project called Toy\+WS. Toy\+WS is a very simple \& dumb Web\+Socket client made exclusively to work with ws\+Server. Extremely limited, its usage is highly discouraged with other servers other than ws\+Server and is only meant to be used in conjunction with ws\+Server.
+
+This mini-\/project only serves as an aid to ws\+Server and frees the user from using additional projects to use ws\+Server in its entirety.
+
+More info at\+: \mbox{\hyperlink{md_lib_wsServer_extra_toyws_README}{extra/toyws/\+README.md}}\hypertarget{md_lib_wsServer_README_autotoc_md56}{}\doxysection{SSL/\+TLS Support}\label{md_lib_wsServer_README_autotoc_md56}
+ws\+Server does not currently support encryption. However, it is possible to use it in conjunction with \href{https://www.stunnel.org/}{\texttt{ Stunnel}}, a proxy that adds TLS support to existing projects. Just follow \mbox{\hyperlink{md_lib_wsServer_doc_TLS}{these}} four easy steps to get TLS support on ws\+Server.\hypertarget{md_lib_wsServer_README_autotoc_md57}{}\doxysection{Contributing}\label{md_lib_wsServer_README_autotoc_md57}
+ws\+Server is always open to the community and willing to accept contributions, whether with issues, documentation, testing, new features, bugfixes, typos... welcome aboard. Make sure to read the \mbox{\hyperlink{md_lib_wsServer_doc_CODING_STYLE}{coding-\/style}} guidelines before sending a PR.
+
+Was the project helpful to you? Have something to say about it? Leave your comments \href{https://github.com/Theldus/wsServer/discussions/30}{\texttt{ here}}.\hypertarget{md_lib_wsServer_README_autotoc_md58}{}\doxysection{License and Authors}\label{md_lib_wsServer_README_autotoc_md58}
+ws\+Server is licensed under GPLv3 License. Written by Davidson Francis and \href{https://github.com/Theldus/wsServer/graphs/contributors}{\texttt{ others}} contributors. 

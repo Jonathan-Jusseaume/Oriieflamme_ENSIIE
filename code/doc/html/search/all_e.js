@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['ordonnee_117',['ordonnee',['../structposition.html#a546ff556ab31894e0a0ef2b05bc26056',1,'position']]]
+  ['onclose_153',['onclose',['../structws__events.html#ac0e799551d275b26b4bbf69642ed1b47',1,'ws_events::onclose()'],['../ping_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;ping.c'],['../vtouchpad_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;vtouchpad.c'],['../ws__file_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;ws_file.c']]],
+  ['onmessage_154',['onmessage',['../structws__events.html#a2459884732b5485c35bf2840f2def453',1,'ws_events::onmessage()'],['../ping_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;ping.c'],['../vtouchpad_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;vtouchpad.c'],['../ws__file_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;ws_file.c']]],
+  ['onopen_155',['onopen',['../structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20',1,'ws_events::onopen()'],['../ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;ping.c'],['../vtouchpad_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;vtouchpad.c'],['../ws__file_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;ws_file.c']]],
+  ['ordonnee_156',['ordonnee',['../structposition.html#a546ff556ab31894e0a0ef2b05bc26056',1,'position']]],
+  ['ouverture_5fconnexion_157',['ouverture_connexion',['../socket_8h.html#aaa497e289a1efd90ba914176762db3b3',1,'socket.c']]]
 ];

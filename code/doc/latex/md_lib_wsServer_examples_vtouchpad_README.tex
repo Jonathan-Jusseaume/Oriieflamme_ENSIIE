@@ -1,0 +1,48 @@
+This example implements a simple \textquotesingle{}virtual touchpad\textquotesingle{} that allows a web client to control a remote computer\textquotesingle{}s mouse via ws\+Server/websocket.\hypertarget{md_lib_wsServer_examples_vtouchpad_README_autotoc_md39}{}\doxysection{Features}\label{md_lib_wsServer_examples_vtouchpad_README_autotoc_md39}
+ ~\newline
+ vtouchpad example 
+
+The larger area represents the main touchpad, move the cursor over it to move the mouse. Left and right clicks within this area also work as expected.
+
+The two smaller buttons represent the left and right buttons respectively.\hypertarget{md_lib_wsServer_examples_vtouchpad_README_autotoc_md40}{}\doxysection{Building}\label{md_lib_wsServer_examples_vtouchpad_README_autotoc_md40}
+Since mouse movement is OS-\/dependent, this example works on a limited number of systems, currently Linux, Free\+BSD and Windows.
+
+{\bfseries{Linux and Free\+BSD builds\+:}}
+
+vtouchpad requires the environment to run under X11, and requires lib\+X11, lib\+Xtst or libxdo (comes with xdotool).
+
+A build for Ubuntu and the like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo apt install libxdo-\/dev}
+\DoxyCodeLine{\$ cd wsServer/}
+\DoxyCodeLine{\$ mkdir build \&\& cd build/}
+\DoxyCodeLine{\$ cmake ..}
+\DoxyCodeLine{\$ make}
+\DoxyCodeLine{\$ ./examples/vtouchpad/vtouchpad}
+
+\end{DoxyCode}
+ Free\+BSD (although xdotool is available, the package is currently without maintainer, so its use is discouraged; a normal build already works as expected)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ cd wsServer/}
+\DoxyCodeLine{\$ mkdir build \&\& cd build/}
+\DoxyCodeLine{\$ cmake ..}
+\DoxyCodeLine{\$ make}
+\DoxyCodeLine{\$ ./examples/vtouchpad/vtouchpad}
+
+\end{DoxyCode}
+
+
+{\bfseries{Windows builds\+:}}
+
+It does not require any special libraries, and should work on any version above Windows 2000.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ cd wsServer/}
+\DoxyCodeLine{\$ mkdir build \&\& cd build/}
+\DoxyCodeLine{\$ cmake .. -\/G "{}MinGW Makefiles"{}}
+\DoxyCodeLine{\$ mingw32-\/make}
+\DoxyCodeLine{\$ ./examples/vtouchpad/vtouchpad.exe}
+
+\end{DoxyCode}
+ 

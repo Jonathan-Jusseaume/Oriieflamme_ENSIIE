@@ -1,0 +1,306 @@
+\hypertarget{ws_8c}{}\doxysection{Référence du fichier lib/ws\+Server/src/ws.c}
+\label{ws_8c}\index{lib/wsServer/src/ws.c@{lib/wsServer/src/ws.c}}
+
+
+ws\+Server main routines.  
+
+
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$utf8.\+h$>$}\newline
+{\ttfamily \#include $<$ws.\+h$>$}\newline
+Graphe des dépendances par inclusion de ws.\+c\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structws__connection}{ws\+\_\+connection}}
+\begin{DoxyCompactList}\small\item\em Client socks. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structws__frame__data}{ws\+\_\+frame\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Web\+Socket frame data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ws_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{ws_8c_a3024ccd4a9af5109d24e6c57565d74a1}} 
+\#define {\bfseries \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}~200809L
+\item 
+\mbox{\Hypertarget{ws_8c_a9f55d0e90dc8cc6b2287312435cdde48}\label{ws_8c_a9f55d0e90dc8cc6b2287312435cdde48}} 
+\#define {\bfseries MSG\+\_\+\+NOSIGNAL}~0
+\item 
+\#define \mbox{\hyperlink{ws_8c_abdbd02e60ad09c181def92fa80249a5b}{CLIENT\+\_\+\+VALID}}(cli)
+\begin{DoxyCompactList}\small\item\em Client validity macro. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{ws_8c_aea79cc428b838697aa82b579ae3dcf76}{panic}}(s)
+\begin{DoxyCompactList}\small\item\em Issues an error message and aborts the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{ws_8c_a9e976bca5a46baee91569ef33bb74f21}{ws\+\_\+getaddress}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Gets the IP address relative to a client connection opened by the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_a4d95cbb7f7c35370c67b0a185ce0f0f2}{ws\+\_\+sendframe}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const char $\ast$msg, uint64\+\_\+t size, int type)
+\begin{DoxyCompactList}\small\item\em Creates and send an Web\+Socket frame with some payload data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ws_8c_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$cli, int threshold)
+\begin{DoxyCompactList}\small\item\em Sends a PING frame to the client {\ttfamily cli} with threshold {\ttfamily threshold}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_a51f4a5c4b414f9da92d2853387d9d588}{ws\+\_\+sendframe\+\_\+txt}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Sends a Web\+Socket text frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_af9cba274e7eb2f81ea2af01d23d1f40e}{ws\+\_\+sendframe\+\_\+bin}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const char $\ast$msg, uint64\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends a Web\+Socket binary frame. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_a5b7f96380125b6b822adb1f3a2d244f0}{ws\+\_\+get\+\_\+state}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em For a given {\ttfamily client}, gets the current state for the connection, or -\/1 if invalid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_a2ed222c311283a5e55f98eeb49767873}{ws\+\_\+close\+\_\+client}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Close the client connection for the given {\ttfamily client} with normal close code (1000) and no reason string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ws_8c_aa37bbcf33e10623a2e18f9587cee8508}{ws\+\_\+socket}} (struct \mbox{\hyperlink{structws__events}{ws\+\_\+events}} $\ast$evs, uint16\+\_\+t port, int thread\+\_\+loop, uint32\+\_\+t timeout\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Main loop for the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+ws\+Server main routines. 
+
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{ws_8c_abdbd02e60ad09c181def92fa80249a5b}\label{ws_8c_abdbd02e60ad09c181def92fa80249a5b}} 
+\index{ws.c@{ws.c}!CLIENT\_VALID@{CLIENT\_VALID}}
+\index{CLIENT\_VALID@{CLIENT\_VALID}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{CLIENT\_VALID}{CLIENT\_VALID}}
+{\footnotesize\ttfamily \#define CLIENT\+\_\+\+VALID(\begin{DoxyParamCaption}\item[{}]{cli }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((cli) != NULL \&\& (cli) >= \&client\_socks[0] \&\& \(\backslash\)}
+\DoxyCodeLine{        (cli) <= \&client\_socks[\mbox{\hyperlink{ws_8h_a0a8f91f93d75a07f0ae45077db45b3eb}{MAX\_CLIENTS}} -\/ 1])}
+
+\end{DoxyCode}
+
+
+Client validity macro. 
+
+\mbox{\Hypertarget{ws_8c_aea79cc428b838697aa82b579ae3dcf76}\label{ws_8c_aea79cc428b838697aa82b579ae3dcf76}} 
+\index{ws.c@{ws.c}!panic@{panic}}
+\index{panic@{panic}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{panic}{panic}}
+{\footnotesize\ttfamily \#define panic(\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}             \(\backslash\)}
+\DoxyCodeLine{    \{              \(\backslash\)}
+\DoxyCodeLine{        perror(s); \(\backslash\)}
+\DoxyCodeLine{        exit(-\/1);  \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0);}
+
+\end{DoxyCode}
+
+
+Issues an error message and aborts the program. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & Error message. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{ws_8c_a2ed222c311283a5e55f98eeb49767873}\label{ws_8c_a2ed222c311283a5e55f98eeb49767873}} 
+\index{ws.c@{ws.c}!ws\_close\_client@{ws\_close\_client}}
+\index{ws\_close\_client@{ws\_close\_client}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_close\_client()}{ws\_close\_client()}}
+{\footnotesize\ttfamily int ws\+\_\+close\+\_\+client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Close the client connection for the given {\ttfamily client} with normal close code (1000) and no reason string. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 on success, -\/1 otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the client did not send a close frame in TIMEOUT\+\_\+\+MS milliseconds, the server will close the connection with error code (1002). 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8c_a5b7f96380125b6b822adb1f3a2d244f0}\label{ws_8c_a5b7f96380125b6b822adb1f3a2d244f0}} 
+\index{ws.c@{ws.c}!ws\_get\_state@{ws\_get\_state}}
+\index{ws\_get\_state@{ws\_get\_state}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_get\_state()}{ws\_get\_state()}}
+{\footnotesize\ttfamily int ws\+\_\+get\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+For a given {\ttfamily client}, gets the current state for the connection, or -\/1 if invalid. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the connection state or -\/1 if invalid {\ttfamily client}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{ws_8h_a2e0dc474d59b4f6362baeb9c3f556523}{WS\+\_\+\+STATE\+\_\+\+CONNECTING}} 
+
+\mbox{\hyperlink{ws_8h_a2fe743eb09e44700deb9f6bc1bc5e484}{WS\+\_\+\+STATE\+\_\+\+OPEN}} 
+
+\mbox{\hyperlink{ws_8h_a0463873293d20536a4fa2445af3ca7e9}{WS\+\_\+\+STATE\+\_\+\+CLOSING}} 
+
+\mbox{\hyperlink{ws_8h_a02363560e73ebd3d01c09902d2290c4d}{WS\+\_\+\+STATE\+\_\+\+CLOSED}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ws_8c_a9e976bca5a46baee91569ef33bb74f21}\label{ws_8c_a9e976bca5a46baee91569ef33bb74f21}} 
+\index{ws.c@{ws.c}!ws\_getaddress@{ws\_getaddress}}
+\index{ws\_getaddress@{ws\_getaddress}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_getaddress()}{ws\_getaddress()}}
+{\footnotesize\ttfamily char$\ast$ ws\+\_\+getaddress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+Gets the IP address relative to a client connection opened by the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Pointer the ip address, or NULL if fails.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned string is static, no need to free up memory. 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8c_abdfe68596e6987166559161a617c9b51}\label{ws_8c_abdfe68596e6987166559161a617c9b51}} 
+\index{ws.c@{ws.c}!ws\_ping@{ws\_ping}}
+\index{ws\_ping@{ws\_ping}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_ping()}{ws\_ping()}}
+{\footnotesize\ttfamily void ws\+\_\+ping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{cli,  }\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Sends a PING frame to the client {\ttfamily cli} with threshold {\ttfamily threshold}. 
+
+This routine sends a PING to a single client pointed to by {\ttfamily cli} or a broadcast PING if {\ttfamily cli} is NULL. If the specified client does not respond up to {\ttfamily threshold} PINGs, the connection is aborted.
+
+\mbox{\hyperlink{ws_8c_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping()}} is not automatic\+: the user who wants to send keep-\/alive PINGs {\itshape must} call this routine in a timely manner, whether on a different thread or inside an event.
+
+See \mbox{\hyperlink{ping_8c}{examples/ping/ping.\+c}} for a minimal example usage.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cli} & Client to be sent, if NULL, broadcast. \\
+\hline
+{\em threshold} & How many ignored PINGs should tolerate? (should be positive and greater than 0).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It should be noted that the time between each call to \mbox{\hyperlink{ws_8c_abdfe68596e6987166559161a617c9b51}{ws\+\_\+ping()}} is the timeout itself for receiving the PONG.
+\end{DoxyNote}
+It is also important to note that for devices with unstable connections (such as a weak Wi\+Fi signal or 3/4/5G from a cell phone), a threshold greater than 1 is advisable. \mbox{\Hypertarget{ws_8c_a4d95cbb7f7c35370c67b0a185ce0f0f2}\label{ws_8c_a4d95cbb7f7c35370c67b0a185ce0f0f2}} 
+\index{ws.c@{ws.c}!ws\_sendframe@{ws\_sendframe}}
+\index{ws\_sendframe@{ws\_sendframe}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe()}{ws\_sendframe()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Creates and send an Web\+Socket frame with some payload data. 
+
+This routine is intended to be used to create a websocket frame for a given type e sending to the client. For higher level routines, please check \mbox{\hyperlink{ws_8c_a51f4a5c4b414f9da92d2853387d9d588}{ws\+\_\+sendframe\+\_\+txt}} and \mbox{\hyperlink{ws_8c_af9cba274e7eb2f81ea2af01d23d1f40e}{ws\+\_\+sendframe\+\_\+bin}}.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send. \\
+\hline
+{\em size} & Binary message size. \\
+\hline
+{\em type} & Frame type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If {\ttfamily size} is -\/1, it is assumed that a text frame is being sent, otherwise, a binary frame. In the later case, the {\ttfamily size} is used. 
+\end{DoxyNote}
+\mbox{\Hypertarget{ws_8c_af9cba274e7eb2f81ea2af01d23d1f40e}\label{ws_8c_af9cba274e7eb2f81ea2af01d23d1f40e}} 
+\index{ws.c@{ws.c}!ws\_sendframe\_bin@{ws\_sendframe\_bin}}
+\index{ws\_sendframe\_bin@{ws\_sendframe\_bin}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe\_bin()}{ws\_sendframe\_bin()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe\+\_\+bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Sends a Web\+Socket binary frame. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send. \\
+\hline
+{\em size} & Binary message size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ws_8c_a51f4a5c4b414f9da92d2853387d9d588}\label{ws_8c_a51f4a5c4b414f9da92d2853387d9d588}} 
+\index{ws.c@{ws.c}!ws\_sendframe\_txt@{ws\_sendframe\_txt}}
+\index{ws\_sendframe\_txt@{ws\_sendframe\_txt}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_sendframe\_txt()}{ws\_sendframe\_txt()}}
+{\footnotesize\ttfamily int ws\+\_\+sendframe\+\_\+txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Sends a Web\+Socket text frame. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Target to be send. If NULL, broadcast the message. \\
+\hline
+{\em msg} & Message to be send, null terminated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns the number of bytes written, -\/1 if error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ws_8c_aa37bbcf33e10623a2e18f9587cee8508}\label{ws_8c_aa37bbcf33e10623a2e18f9587cee8508}} 
+\index{ws.c@{ws.c}!ws\_socket@{ws\_socket}}
+\index{ws\_socket@{ws\_socket}!ws.c@{ws.c}}
+\doxysubsubsection{\texorpdfstring{ws\_socket()}{ws\_socket()}}
+{\footnotesize\ttfamily int ws\+\_\+socket (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structws__events}{ws\+\_\+events}} $\ast$}]{evs,  }\item[{uint16\+\_\+t}]{port,  }\item[{int}]{thread\+\_\+loop,  }\item[{uint32\+\_\+t}]{timeout\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+Main loop for the server. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em evs} & Events structure. \\
+\hline
+{\em port} & Server port. \\
+\hline
+{\em thread\+\_\+loop} & If any value other than zero, runs the accept loop in another thread and immediately returns. If 0, runs in the same thread and blocks execution.\\
+\hline
+{\em timeout\+\_\+ms} & Max timeout if the client is not responding (in milliseconds).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+If {\ttfamily thread\+\_\+loop} != 0, returns 0. Otherwise, never returns. 
+\end{DoxyReturn}

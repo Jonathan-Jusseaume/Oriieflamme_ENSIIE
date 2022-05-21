@@ -20,7 +20,14 @@ typedef struct position {
      */
     int ordonnee;
 
-}position;
+} position;
+
+/**
+ * Fonction transformant une position en chaîne de caractères
+ * @param p la position dont on veut avoir la chaîne de caractères
+ * @return la position sous la forme: "abscisse,ordonnee"
+ */
+char *position_to_string(position p);
 
 #endif //ORIIEFLAMME_GR_11_POSITION_H
 

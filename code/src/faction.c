@@ -175,3 +175,26 @@ void set_pioche(faction f, ensemble_entier pioche) {
 void set_main(faction f, liste_chainee_carte main) {
     f->main = main;
 }
+
+char* faction_to_string(faction f) {
+    size_t taille = 0;
+    char *str_main = liste_chainee_carte_to_string(f->main);
+    // On fait un snprintf afin de déterminer la taille à réserver
+    taille = snprintf(NULL, taille, "%d|%s|%d|%d|%d|%s",
+                      f->identifiant_faction,
+                      f->nom,
+                      f->a_remelanger,
+                      f->points_DDRS,
+                      f->manches_gagnees,
+                      str_main);
+    char *str = (char *) malloc((taille + 1) * sizeof(char));
+    snprintf(str, taille + 1, "%d|%s|%d|%d|%d|%s",
+             f->identifiant_faction,
+             f->nom,
+             f->a_remelanger,
+             f->points_DDRS,
+             f->manches_gagnees,
+             str_main);
+    free(str_main);
+    return str;
+}
