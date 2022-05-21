@@ -96,6 +96,7 @@ carte get_derniere_carte_retournee(plateau p);
  * @return entier représentant le nombre de carte retournées
  */
 int get_nombre_cartes_retournees(plateau p);
+
 /**
  * Fonction permettant de récupérer la liste chainée des cartes supprimées durant une manche.
  * @param p : pointeur sur le plateau dont on veut récupérer l'information
@@ -137,5 +138,12 @@ void set_derniere_carte_retournee(plateau p, carte derniere_carte_retournee);
  * @param lc : la liste de la nouvelle carte
  */
 void set_cartes_supprimees(plateau p, liste_chainee_carte lc);
+
+/**
+ * Fonction transformant le plateau en chaîne de caractères
+ * @param p le plateau dont on veut obtenir la chaîne de caractères
+ * @return renvoie une chaîne de caractères de la forme: "PLATEAU\ngrille\nfaction_1\nfaction_2"
+ */
+char *plateau_to_string(plateau p);
 
 #endif //ORIIEFLAMME_GR_11_PLATEAU_H

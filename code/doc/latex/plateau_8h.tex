@@ -56,7 +56,9 @@ void \mbox{\hyperlink{plateau_8h_a9165516891aec16579ee250531f5416f}{set\+\_\+nom
 void \mbox{\hyperlink{plateau_8h_ae6f4755999c3ce98d0defbde5e6fa796}{set\+\_\+derniere\+\_\+carte\+\_\+retournee}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} derniere\+\_\+carte\+\_\+retournee)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de changer la derniere\+\_\+carte\+\_\+retournee du plateau. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{plateau_8h_aa450393a827c10d3540dec941dcacecd}{set\+\_\+cartes\+\_\+supprimees}} (\mbox{\hyperlink{structs__plateau}{plateau}} p, \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} lc)
-\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la liste\+\_\+chainee\+\_\+carte du plateau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer la liste\+\_\+chainee\+\_\+carte du plateau. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{plateau_8h_a4319068b7a758e1195ab96c03fc76233}{plateau\+\_\+to\+\_\+string}} (\mbox{\hyperlink{structs__plateau}{plateau}} p)
+\begin{DoxyCompactList}\small\item\em Fonction transformant le plateau en chaîne de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -228,6 +230,24 @@ Une fonction pour créer un nouveau plateau (et les deux factions qui joueront d
 
 \begin{DoxyReturn}{Renvoie}
 plateau \+: pointeur sur le plateau créer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plateau_8h_a4319068b7a758e1195ab96c03fc76233}\label{plateau_8h_a4319068b7a758e1195ab96c03fc76233}} 
+\index{plateau.h@{plateau.h}!plateau\_to\_string@{plateau\_to\_string}}
+\index{plateau\_to\_string@{plateau\_to\_string}!plateau.h@{plateau.h}}
+\doxysubsubsection{\texorpdfstring{plateau\_to\_string()}{plateau\_to\_string()}}
+{\footnotesize\ttfamily char$\ast$ plateau\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__plateau}{plateau}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction transformant le plateau en chaîne de caractères. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & le plateau dont on veut obtenir la chaîne de caractères \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie une chaîne de caractères de la forme\+: \char`\"{}\+PLATEAU\textbackslash{}ngrille\textbackslash{}nfaction\+\_\+1\textbackslash{}nfaction\+\_\+2\char`\"{} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{plateau_8h_ae841bb53b5c0cbbee1a71563a3419764}\label{plateau_8h_ae841bb53b5c0cbbee1a71563a3419764}} 
 \index{plateau.h@{plateau.h}!poser\_carte@{poser\_carte}}

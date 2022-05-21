@@ -129,4 +129,11 @@ void set_numero_plateau(carte c, int numero_plateau);
  */
 void set_est_face_cachee(carte c, booleen est_face_cachee);
 
+/**
+ * Renvoie une chaine de caractères avec les informations de la carte
+ * @param c les informations de la carte sous forme de chaîne de caractères
+ * @return une chaîne de caractères de la forme: "nom,position,identifiant_faction,numero_plateau,est_face_cachee"
+ */
+char *to_string_carte(carte c);
+
 #endif //ORIIEFLAMME_GR_11_CARTE_H

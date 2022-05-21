@@ -1,0 +1,31 @@
+\hypertarget{structws__events}{}\doxysection{Référence de la structure ws\+\_\+events}
+\label{structws__events}\index{ws\_events@{ws\_events}}
+
+
+events Web Socket events types.  
+
+
+
+
+{\ttfamily \#include $<$ws.\+h$>$}
+
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structws__events_a7eaba79ad2d2403ca3db16db00f58e20}\label{structws__events_a7eaba79ad2d2403ca3db16db00f58e20}} 
+void($\ast$ \mbox{\hyperlink{structws__events_a7eaba79ad2d2403ca3db16db00f58e20}{onopen}} )(\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em On open event, called when a new client connects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structws__events_ac0e799551d275b26b4bbf69642ed1b47}\label{structws__events_ac0e799551d275b26b4bbf69642ed1b47}} 
+void($\ast$ \mbox{\hyperlink{structws__events_ac0e799551d275b26b4bbf69642ed1b47}{onclose}} )(\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em On close event, called when a client disconnects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structws__events_a2459884732b5485c35bf2840f2def453}\label{structws__events_a2459884732b5485c35bf2840f2def453}} 
+void($\ast$ \mbox{\hyperlink{structws__events_a2459884732b5485c35bf2840f2def453}{onmessage}} )(\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const unsigned char $\ast$msg, uint64\+\_\+t msg\+\_\+size, int type)
+\begin{DoxyCompactList}\small\item\em On message event, called when a client sends a text or binary message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+events Web Socket events types. 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+lib/ws\+Server/include/\mbox{\hyperlink{ws_8h}{ws.\+h}}\end{DoxyCompactItemize}

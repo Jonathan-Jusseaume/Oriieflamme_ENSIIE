@@ -1,0 +1,64 @@
+\hypertarget{structws__connection}{}\doxysection{Référence de la structure ws\+\_\+connection}
+\label{structws__connection}\index{ws\_connection@{ws\_connection}}
+
+
+Client socks.  
+
+
+\doxysubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structws__connection_a8c0a71be00ad2401c8f5800fa4bf73ab}{client\+\_\+sock}}
+\begin{DoxyCompactList}\small\item\em Client socket FD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structws__connection_a3382a238ff58d2932867c01a5c00cc6c}\label{structws__connection_a3382a238ff58d2932867c01a5c00cc6c}} 
+int \mbox{\hyperlink{structws__connection_a3382a238ff58d2932867c01a5c00cc6c}{state}}
+\begin{DoxyCompactList}\small\item\em Web\+Socket current state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structws__connection_af65e1b94e469839fdfd0a941a5351999}\label{structws__connection_af65e1b94e469839fdfd0a941a5351999}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries mtx\+\_\+state}
+\item 
+\mbox{\Hypertarget{structws__connection_a3cb8683f265e5ff2a2c86cd1f1f3bc0a}\label{structws__connection_a3cb8683f265e5ff2a2c86cd1f1f3bc0a}} 
+pthread\+\_\+cond\+\_\+t {\bfseries cnd\+\_\+state\+\_\+close}
+\item 
+\mbox{\Hypertarget{structws__connection_a5e98fe0e3a7e3777b0a237c499663fbf}\label{structws__connection_a5e98fe0e3a7e3777b0a237c499663fbf}} 
+pthread\+\_\+t {\bfseries thrd\+\_\+tout}
+\item 
+\mbox{\Hypertarget{structws__connection_a712eddfab03026a2ee60ea299eb366a2}\label{structws__connection_a712eddfab03026a2ee60ea299eb366a2}} 
+bool {\bfseries close\+\_\+thrd}
+\item 
+\mbox{\Hypertarget{structws__connection_a3a9c9f3f4dd045dd67f7b4cd692c79bf}\label{structws__connection_a3a9c9f3f4dd045dd67f7b4cd692c79bf}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries mtx\+\_\+snd}
+\item 
+\mbox{\Hypertarget{structws__connection_aa1a73d7df83f63550f835d8c1fdd6f6b}\label{structws__connection_aa1a73d7df83f63550f835d8c1fdd6f6b}} 
+char {\bfseries ip} \mbox{[}INET6\+\_\+\+ADDRSTRLEN\mbox{]}
+\item 
+\mbox{\Hypertarget{structws__connection_a759517dc40a2f870c28b63d74c8adacf}\label{structws__connection_a759517dc40a2f870c28b63d74c8adacf}} 
+int32\+\_\+t {\bfseries last\+\_\+pong\+\_\+id}
+\item 
+\mbox{\Hypertarget{structws__connection_a6ca690237169daf23ceda98e476e71e9}\label{structws__connection_a6ca690237169daf23ceda98e476e71e9}} 
+int32\+\_\+t {\bfseries current\+\_\+ping\+\_\+id}
+\item 
+\mbox{\Hypertarget{structws__connection_a41fa0a7d1bddf033ee92f3313624ef11}\label{structws__connection_a41fa0a7d1bddf033ee92f3313624ef11}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries mtx\+\_\+ping}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Client socks. 
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{structws__connection_a8c0a71be00ad2401c8f5800fa4bf73ab}\label{structws__connection_a8c0a71be00ad2401c8f5800fa4bf73ab}} 
+\index{ws\_connection@{ws\_connection}!client\_sock@{client\_sock}}
+\index{client\_sock@{client\_sock}!ws\_connection@{ws\_connection}}
+\doxysubsubsection{\texorpdfstring{client\_sock}{client\_sock}}
+{\footnotesize\ttfamily int ws\+\_\+connection\+::client\+\_\+sock}
+
+
+
+Client socket FD. 
+
+~\newline
+ 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+lib/ws\+Server/src/\mbox{\hyperlink{ws_8c}{ws.\+c}}\end{DoxyCompactItemize}

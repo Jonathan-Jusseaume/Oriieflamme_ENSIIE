@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: Référence du fichier lib/wsServer/examples/vtouchpad/mouse_x11.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1307711b428f7fec1457907a4e35c099.html">wsServer</a></li><li class="navelem"><a class="el" href="dir_e2a16d0e2e47a011f922e352084769ba.html">examples</a></li><li class="navelem"><a class="el" href="dir_fd91caa8c8285091cb908c7a9f6e6699.html">vtouchpad</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier mouse_x11.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Mouse X11 implementation.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;X11/Xlib.h&gt;</code><br />
+<code>#include &lt;X11/extensions/XTest.h&gt;</code><br />
+<code>#include &quot;vtouchpad.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de mouse_x11.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse__x11_8c__incl.png" border="0" usemap="#alib_2wsServer_2examples_2vtouchpad_2mouse__x11_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmouse.html">mouse</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stub structure.  <a href="structmouse.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:af898aec99e9cb861dd71bb4d8e4a7389"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmouse.html">mouse_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse__x11_8c.html#af898aec99e9cb861dd71bb4d8e4a7389">mouse_new</a> (void)</td></tr>
+<tr class="memdesc:af898aec99e9cb861dd71bb4d8e4a7389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a new mouse data structure.  <a href="mouse__x11_8c.html#af898aec99e9cb861dd71bb4d8e4a7389">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af898aec99e9cb861dd71bb4d8e4a7389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb1685fb0e861c631a71a9451c991ac9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse__x11_8c.html#abb1685fb0e861c631a71a9451c991ac9">mouse_free</a> (<a class="el" href="structmouse.html">mouse_t</a> *<a class="el" href="structmouse.html">mouse</a>)</td></tr>
+<tr class="memdesc:abb1685fb0e861c631a71a9451c991ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a previously allocated mouse_t pointer.  <a href="mouse__x11_8c.html#abb1685fb0e861c631a71a9451c991ac9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abb1685fb0e861c631a71a9451c991ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86b6bbccf10510158e1bc06e4608fa7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse__x11_8c.html#af86b6bbccf10510158e1bc06e4608fa7">mouse_move_relative</a> (<a class="el" href="structmouse.html">mouse_t</a> *<a class="el" href="structmouse.html">mouse</a>, int x_off, int y_off)</td></tr>
+<tr class="memdesc:af86b6bbccf10510158e1bc06e4608fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the mouse pointed by <code>mouse</code> to the offsets <code>x_off</code> and <code>y_off</code>.  <a href="mouse__x11_8c.html#af86b6bbccf10510158e1bc06e4608fa7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af86b6bbccf10510158e1bc06e4608fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac878b49cf71180922f55161caf20ea8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse__x11_8c.html#ac878b49cf71180922f55161caf20ea8e">mouse_down</a> (<a class="el" href="structmouse.html">mouse_t</a> *<a class="el" href="structmouse.html">mouse</a>, int button)</td></tr>
+<tr class="memdesc:ac878b49cf71180922f55161caf20ea8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a 'button press' event according to the <code>mouse</code> pointer and the <code>button</code> (left or right).  <a href="mouse__x11_8c.html#ac878b49cf71180922f55161caf20ea8e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac878b49cf71180922f55161caf20ea8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ef9287f890455396041b765c8b36f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse__x11_8c.html#a26ef9287f890455396041b765c8b36f7">mouse_up</a> (<a class="el" href="structmouse.html">mouse_t</a> *<a class="el" href="structmouse.html">mouse</a>, int button)</td></tr>
+<tr class="memdesc:a26ef9287f890455396041b765c8b36f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a 'button release' event according to the <code>mouse</code> pointer and the <code>button</code> (left or right).  <a href="mouse__x11_8c.html#a26ef9287f890455396041b765c8b36f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a26ef9287f890455396041b765c8b36f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Mouse X11 implementation. </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ac878b49cf71180922f55161caf20ea8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac878b49cf71180922f55161caf20ea8e">&#9670;&nbsp;</a></span>mouse_down()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mouse_down </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmouse.html">mouse_t</a> *&#160;</td>
+          <td class="paramname"><em>mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>button</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Makes a 'button press' event according to the <code>mouse</code> pointer and the <code>button</code> (left or right). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mouse</td><td>Mouse structure pointer. </td></tr>
+    <tr><td class="paramname">button</td><td>Which button was pressed (either MOUSE_BTN_LEFT or MOUSE_BTN_RIGHT).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns 0 if success, 1 otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="abb1685fb0e861c631a71a9451c991ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1685fb0e861c631a71a9451c991ac9">&#9670;&nbsp;</a></span>mouse_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* mouse_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmouse.html">mouse_t</a> *&#160;</td>
+          <td class="paramname"><em>mouse</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees a previously allocated mouse_t pointer. </p>
+<p>Do nothing, stub.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Always NULL. </dd></dl>
+
+</div>
+</div>
+<a id="af86b6bbccf10510158e1bc06e4608fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86b6bbccf10510158e1bc06e4608fa7">&#9670;&nbsp;</a></span>mouse_move_relative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mouse_move_relative </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmouse.html">mouse_t</a> *&#160;</td>
+          <td class="paramname"><em>mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x_off</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y_off</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Moves the mouse pointed by <code>mouse</code> to the offsets <code>x_off</code> and <code>y_off</code>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mouse</td><td>Mouse structure pointer. </td></tr>
+    <tr><td class="paramname">x_off</td><td>X-coordinate offset. </td></tr>
+    <tr><td class="paramname">y_off</td><td>Y-coordinate offset.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns 0 if success, 1 otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="af898aec99e9cb861dd71bb4d8e4a7389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af898aec99e9cb861dd71bb4d8e4a7389">&#9670;&nbsp;</a></span>mouse_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmouse.html">mouse_t</a>* mouse_new </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates a new mouse data structure. </p>
+<p>Do nothing, stub.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns a new mouse_t pointer object. </dd></dl>
+
+</div>
+</div>
+<a id="a26ef9287f890455396041b765c8b36f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ef9287f890455396041b765c8b36f7">&#9670;&nbsp;</a></span>mouse_up()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mouse_up </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmouse.html">mouse_t</a> *&#160;</td>
+          <td class="paramname"><em>mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>button</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Makes a 'button release' event according to the <code>mouse</code> pointer and the <code>button</code> (left or right). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mouse</td><td>Mouse structure pointer. </td></tr>
+    <tr><td class="paramname">button</td><td>Which button was released (either MOUSE_BTN_LEFT or MOUSE_BTN_RIGHT).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns 0 if success, 1 otherwise. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

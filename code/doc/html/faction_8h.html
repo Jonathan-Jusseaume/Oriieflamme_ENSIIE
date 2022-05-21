@@ -158,9 +158,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a0681b98ae3236eded45f840a356bb0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#a0681b98ae3236eded45f840a356bb0a8">set_pioche</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="structure_8h.html#a5b56032063ed6e73a62a41a349fadfcf">ensemble_entier</a> pioche)</td></tr>
 <tr class="memdesc:a0681b98ae3236eded45f840a356bb0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la pioche de la faction.  <a href="faction_8h.html#a0681b98ae3236eded45f840a356bb0a8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0681b98ae3236eded45f840a356bb0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef730c875b61285b6287b7723ea48cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#acef730c875b61285b6287b7723ea48cd">set_main</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> main)</td></tr>
+<tr class="memitem:acef730c875b61285b6287b7723ea48cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#acef730c875b61285b6287b7723ea48cd">set_main</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f, <a class="el" href="structure_8h.html#ab5d78d3bef6e63a3d2eb434f164cacaa">liste_chainee_carte</a> <a class="el" href="ws__file_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>)</td></tr>
 <tr class="memdesc:acef730c875b61285b6287b7723ea48cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction permettant de changer la main de la faction.  <a href="faction_8h.html#acef730c875b61285b6287b7723ea48cd">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acef730c875b61285b6287b7723ea48cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ba2975acbf286b26b6703fe3429aa7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="faction_8h.html#af3ba2975acbf286b26b6703fe3429aa7">faction_to_string</a> (<a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a> f)</td></tr>
+<tr class="memdesc:af3ba2975acbf286b26b6703fe3429aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la faction passée en paramètre sous forme de chaîne de caractères.  <a href="faction_8h.html#af3ba2975acbf286b26b6703fe3429aa7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af3ba2975acbf286b26b6703fe3429aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure et les fonctions liées aux factions. </p>
@@ -189,6 +192,33 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>un booleen indiquant si la faction à remélanger sa main (VRAI) ou non (FALSE). </dd></dl>
+
+</div>
+</div>
+<a id="af3ba2975acbf286b26b6703fe3429aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ba2975acbf286b26b6703fe3429aa7">&#9670;&nbsp;</a></span>faction_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* faction_to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="faction_8h.html#a1dfd262d186041503cbda6f0ee39abba">faction</a>&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la faction passée en paramètre sous forme de chaîne de caractères. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>la faction dont on veut obtenir les informations </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la chaîne sous la forme: "identifiant_faction|nom|a_remelanger|points_DDRS|manches_gagnees_main" </dd></dl>
 
 </div>
 </div>

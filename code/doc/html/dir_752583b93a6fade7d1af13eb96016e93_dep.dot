@@ -1,0 +1,11 @@
+digraph "lib/wsServer/examples/echo" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e2a16d0e2e47a011f922e352084769ba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="examples" fontname="Helvetica", fontsize="10", URL="dir_e2a16d0e2e47a011f922e352084769ba.html"]
+  dir_752583b93a6fade7d1af13eb96016e93 [shape=box, label="echo", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_752583b93a6fade7d1af13eb96016e93.html"];
+  }
+  dir_fa9307ea9689b9d9a6a5048837f9fbd4 [shape=box label="include" URL="dir_fa9307ea9689b9d9a6a5048837f9fbd4.html"];
+  dir_752583b93a6fade7d1af13eb96016e93->dir_fa9307ea9689b9d9a6a5048837f9fbd4 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000010.html"];
+}

@@ -1,0 +1,134 @@
+\hypertarget{mouse__win_8c}{}\doxysection{Référence du fichier lib/ws\+Server/examples/vtouchpad/mouse\+\_\+win.c}
+\label{mouse__win_8c}\index{lib/wsServer/examples/vtouchpad/mouse\_win.c@{lib/wsServer/examples/vtouchpad/mouse\_win.c}}
+
+
+Mouse windows implementation.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vtouchpad.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de mouse\+\_\+win.\+c\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmouse}{mouse}}
+\begin{DoxyCompactList}\small\item\em Stub structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$ \mbox{\hyperlink{mouse__win_8c_af898aec99e9cb861dd71bb4d8e4a7389}{mouse\+\_\+new}} (void)
+\begin{DoxyCompactList}\small\item\em Do nothing, stub. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{mouse__win_8c_abb1685fb0e861c631a71a9451c991ac9}{mouse\+\_\+free}} (\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$\mbox{\hyperlink{structmouse}{mouse}})
+\begin{DoxyCompactList}\small\item\em Do nothing, stub. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse__win_8c_af86b6bbccf10510158e1bc06e4608fa7}{mouse\+\_\+move\+\_\+relative}} (\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$\mbox{\hyperlink{structmouse}{mouse}}, int x\+\_\+off, int y\+\_\+off)
+\begin{DoxyCompactList}\small\item\em Moves the mouse pointed by {\ttfamily mouse} to the offsets {\ttfamily x\+\_\+off} and {\ttfamily y\+\_\+off}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse__win_8c_ac878b49cf71180922f55161caf20ea8e}{mouse\+\_\+down}} (\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$\mbox{\hyperlink{structmouse}{mouse}}, int button)
+\begin{DoxyCompactList}\small\item\em Makes a \textquotesingle{}button press\textquotesingle{} event according to the {\ttfamily mouse} pointer and the {\ttfamily button} (left or right). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse__win_8c_a26ef9287f890455396041b765c8b36f7}{mouse\+\_\+up}} (\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$\mbox{\hyperlink{structmouse}{mouse}}, int button)
+\begin{DoxyCompactList}\small\item\em Makes a \textquotesingle{}button release\textquotesingle{} event according to the {\ttfamily mouse} pointer and the {\ttfamily button} (left or right). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Mouse windows implementation. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{mouse__win_8c_ac878b49cf71180922f55161caf20ea8e}\label{mouse__win_8c_ac878b49cf71180922f55161caf20ea8e}} 
+\index{mouse\_win.c@{mouse\_win.c}!mouse\_down@{mouse\_down}}
+\index{mouse\_down@{mouse\_down}!mouse\_win.c@{mouse\_win.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_down()}{mouse\_down()}}
+{\footnotesize\ttfamily int mouse\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$}]{mouse,  }\item[{int}]{button }\end{DoxyParamCaption})}
+
+
+
+Makes a \textquotesingle{}button press\textquotesingle{} event according to the {\ttfamily mouse} pointer and the {\ttfamily button} (left or right). 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mouse} & Mouse structure pointer. \\
+\hline
+{\em button} & Which button was pressed (either MOUSE\+\_\+\+BTN\+\_\+\+LEFT or MOUSE\+\_\+\+BTN\+\_\+\+RIGHT).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success, 1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse__win_8c_abb1685fb0e861c631a71a9451c991ac9}\label{mouse__win_8c_abb1685fb0e861c631a71a9451c991ac9}} 
+\index{mouse\_win.c@{mouse\_win.c}!mouse\_free@{mouse\_free}}
+\index{mouse\_free@{mouse\_free}!mouse\_win.c@{mouse\_win.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_free()}{mouse\_free()}}
+{\footnotesize\ttfamily void$\ast$ mouse\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$}]{mouse }\end{DoxyParamCaption})}
+
+
+
+Do nothing, stub. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mouse} & Mouse structure pointer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns always NULL. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse__win_8c_af86b6bbccf10510158e1bc06e4608fa7}\label{mouse__win_8c_af86b6bbccf10510158e1bc06e4608fa7}} 
+\index{mouse\_win.c@{mouse\_win.c}!mouse\_move\_relative@{mouse\_move\_relative}}
+\index{mouse\_move\_relative@{mouse\_move\_relative}!mouse\_win.c@{mouse\_win.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_move\_relative()}{mouse\_move\_relative()}}
+{\footnotesize\ttfamily int mouse\+\_\+move\+\_\+relative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$}]{mouse,  }\item[{int}]{x\+\_\+off,  }\item[{int}]{y\+\_\+off }\end{DoxyParamCaption})}
+
+
+
+Moves the mouse pointed by {\ttfamily mouse} to the offsets {\ttfamily x\+\_\+off} and {\ttfamily y\+\_\+off}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mouse} & Mouse structure pointer. \\
+\hline
+{\em x\+\_\+off} & X-\/coordinate offset. \\
+\hline
+{\em y\+\_\+off} & Y-\/coordinate offset.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success, 1 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse__win_8c_af898aec99e9cb861dd71bb4d8e4a7389}\label{mouse__win_8c_af898aec99e9cb861dd71bb4d8e4a7389}} 
+\index{mouse\_win.c@{mouse\_win.c}!mouse\_new@{mouse\_new}}
+\index{mouse\_new@{mouse\_new}!mouse\_win.c@{mouse\_win.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_new()}{mouse\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmouse}{mouse\+\_\+t}}$\ast$ mouse\+\_\+new (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Do nothing, stub. 
+
+\begin{DoxyReturn}{Renvoie}
+Returns always 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse__win_8c_a26ef9287f890455396041b765c8b36f7}\label{mouse__win_8c_a26ef9287f890455396041b765c8b36f7}} 
+\index{mouse\_win.c@{mouse\_win.c}!mouse\_up@{mouse\_up}}
+\index{mouse\_up@{mouse\_up}!mouse\_win.c@{mouse\_win.c}}
+\doxysubsubsection{\texorpdfstring{mouse\_up()}{mouse\_up()}}
+{\footnotesize\ttfamily int mouse\+\_\+up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$}]{mouse,  }\item[{int}]{button }\end{DoxyParamCaption})}
+
+
+
+Makes a \textquotesingle{}button release\textquotesingle{} event according to the {\ttfamily mouse} pointer and the {\ttfamily button} (left or right). 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mouse} & Mouse structure pointer. \\
+\hline
+{\em button} & Which button was released (either MOUSE\+\_\+\+BTN\+\_\+\+LEFT or MOUSE\+\_\+\+BTN\+\_\+\+RIGHT).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns 0 if success, 1 otherwise. 
+\end{DoxyReturn}

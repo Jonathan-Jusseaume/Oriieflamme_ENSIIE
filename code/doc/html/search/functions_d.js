@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['parcours_5fsobriete_5fnumerique_293',['parcours_sobriete_numerique',['../effets_8h.html#aae78bc41c5e51655f508a47750409283',1,'effets.c']]],
-  ['poser_5fcarte_294',['poser_carte',['../plateau_8h.html#ae841bb53b5c0cbbee1a71563a3419764',1,'plateau.c']]],
-  ['poser_5fcarte_5fgrille_295',['poser_carte_grille',['../structure_8h.html#abfba164e76aec7e95adf2facf3df2b16',1,'structure.c']]]
+  ['onclose_416',['onclose',['../ping_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;ping.c'],['../vtouchpad_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;vtouchpad.c'],['../ws__file_8c.html#a75da9864e55abf37e022f421340398e1',1,'onclose(ws_cli_conn_t *client):&#160;ws_file.c']]],
+  ['onmessage_417',['onmessage',['../ping_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;ping.c'],['../vtouchpad_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;vtouchpad.c'],['../ws__file_8c.html#a2864d75de905dbfa15b7b19b327cc449',1,'onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type):&#160;ws_file.c']]],
+  ['onopen_418',['onopen',['../ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;ping.c'],['../vtouchpad_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;vtouchpad.c'],['../ws__file_8c.html#acad817bd7c7f16e077c8f4a411cf60c3',1,'onopen(ws_cli_conn_t *client):&#160;ws_file.c']]],
+  ['ouverture_5fconnexion_419',['ouverture_connexion',['../socket_8h.html#aaa497e289a1efd90ba914176762db3b3',1,'socket.c']]]
 ];

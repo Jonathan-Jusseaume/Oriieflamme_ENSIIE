@@ -18,8 +18,34 @@ struct \mbox{\hyperlink{structposition}{position}}
 \mbox{\Hypertarget{position_8h_ae95ed9c09d4ff44297273224ccfbe1dd}\label{position_8h_ae95ed9c09d4ff44297273224ccfbe1dd}} 
 typedef struct \mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{position_8h_ae95ed9c09d4ff44297273224ccfbe1dd}{position}}
 \begin{DoxyCompactList}\small\item\em structure correspondant à la position de la carte qui va être placée sur la grille \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{position_8h_a504910b1df81b945570aad2e2d1c2b4d}{position\+\_\+to\+\_\+string}} (\mbox{\hyperlink{structposition}{position}} p)
+\begin{DoxyCompactList}\small\item\em Fonction transformant une position en chaîne de caractères. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 Fichier contenant la structure liée à la position de la carte sur la grille. 
 
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{position_8h_a504910b1df81b945570aad2e2d1c2b4d}\label{position_8h_a504910b1df81b945570aad2e2d1c2b4d}} 
+\index{position.h@{position.h}!position\_to\_string@{position\_to\_string}}
+\index{position\_to\_string@{position\_to\_string}!position.h@{position.h}}
+\doxysubsubsection{\texorpdfstring{position\_to\_string()}{position\_to\_string()}}
+{\footnotesize\ttfamily char$\ast$ position\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structposition}{position}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Fonction transformant une position en chaîne de caractères. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p} & la position dont on veut avoir la chaîne de caractères \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+la position sous la forme\+: \char`\"{}abscisse,ordonnee\char`\"{} 
+\end{DoxyReturn}
