@@ -125,4 +125,9 @@ function getDescriptionByCardName(name) {
     return effets.get(name.split(" ").join("_")).description;
 }
 
+function getImageByCardName(name) {
+    return effets.get(name.split(" ").join("_")).image;
+}
+
+
 console.log(getDescriptionByCardName("FISE"));

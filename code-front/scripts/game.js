@@ -35,9 +35,11 @@ function lireMessage(message) {
         // On le stocke dans le sessionStorage
         sessionStorage.setItem("ID", message.split(":")[1]);
         // activer l'écran d'attente
+        document.getElementsByClassName("attente-connexion")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
     }
     // Si on nous envoie le plateau de jeu, alors il faut mettre à jour notre copie
     if (message.includes("PLATEAU")) {
+        document.getElementsByClassName("attente-connexion")[0].classList.add("hidden");
         // On récupère uniquement les infos, indice 0 -> grille, indice 1 -> faction 1, indice 2 -> faction 2
         const infos = (message.split("\n")).slice(1);
         const splitInfosGrille = infos[0].split("/")[0].split(',');
@@ -55,6 +57,9 @@ function lireMessage(message) {
         addMain(plateau.factions[parseInt(sessionStorage.getItem("ID"))].main);
         MAJScoreEtManche(plateau);
         afficherPlateau(plateau, false);
+        document.getElementsByClassName("attente-pose-carte")[0].innerHTML = "Veuillez attendre que l'adversaire pose une carte...";
+        document.getElementsByClassName("attente-pose-carte")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
+
     }
     if (message.includes("PIOCHE")) {
         demander_utilisateur_repioche = true;
@@ -64,14 +69,17 @@ function lireMessage(message) {
             "<button id='bouton-repiocher' class='boutons-pioche-clignote' onclick='envoyerDemandeRepioche(true)'>MELANGER</button>";
     }
     if (message.includes("POSE")) {
+        document.getElementsByClassName("attente-pose-carte")[0].classList.add("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
         demander_utilisateur_poser_carte = true;
         // demander à un utilisateur de poser une carte
+        document.getElementsByClassName("attente-pose-carte")[0].innerHTML = "Veuillez poser une carte de votre main...";
+        document.getElementsByClassName("attente-pose-carte")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
         afficherPlateau(plateau, true);
     }
     if (message.includes("RESULTAT")) {
         resultat = parseInt(message.split(":")[1]);
         if (resultat !== -1) {
-            document.getElementById('result').innerHTML = (resultat == sessionStorage.getItem('ID')) ? 'VICTOIRE' : 'DÉFAITE';
+            document.getElementById('result').innerHTML = (resultat === sessionStorage.getItem('ID')) ? 'VICTOIRE' : 'DÉFAITE';
         }
 
 
@@ -91,7 +99,7 @@ function parseCarte(carteString) {
 
 function parseGrille(grilleString) {
     const tableau = [];
-    if (grilleString != '') {
+    if (grilleString !== '') {
         const lignes = grilleString.split('|');
         lignes.forEach((ligne, indice) => {
             tableau.push([]);
@@ -120,7 +128,6 @@ function parseFaction(factionString) {
     faction["main"] = [];
     const main = tableau[5].split(";");
     if (tableau[5] !== "") {
-        console.log(main);
         main.forEach(carteString => {
             faction["main"].push(parseCarte(carteString))
         });
@@ -153,23 +160,48 @@ function rightUp(number) {
     document.getElementById('footer').getElementsByClassName("gradient-border")[number].classList.remove("zoom-zoom");
 }
 
-/* document.addEventListener('click', function (event) {
-    for (let i = 0; i < 8; i++) {
-        if (!document.getElementsByClassName("carte")[i].contains(event.target)) {
-            document.getElementsByClassName("carte")[previousCarteSelectedNumber].classList.remove("carte-select");
+document.addEventListener('click', (e) => {
+    let carteSelectionnee = document.getElementsByClassName("carte-select")[0];
+    if (carteSelectionnee !== undefined) {
+        // Une carte est bel et bien séléctionnée
+        if (e.target.className !== document.getElementsByClassName("gradient-border")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-creation")[0].className &&
+            e.target.className !== document.getElementsByClassName("back")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-creation")[0].className &&
+            e.target.className !== document.getElementsByClassName("contenu-carte")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-title")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-img-face-visible")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-description")[0].className) {
+            // Si on ne clique pas sur une carte, alors la carte séléctionnée est délésectionnée
+            carteSelectionnee.classList.remove('carte-select');
         }
     }
-}); */
+});
 
 function carteTemplate(carte, indice = null) {
     let resultatHTML = "";
-    if (carte.estFaceCachee && indice == null) {
-        resultatHTML +=
-            '<div class="gradient-border">' +
-            '<div  class="carte-creation carte-creation-face-cachee">' +
-            '<div class="carte-img-face-cachee"> <img src="' + "img/logo-ensiie.png" + '"></div>' +
-            '</div>' +
-            '</div>';
+    if (indice === null) {
+        if (carte.estFaceCachee) {
+            resultatHTML +=
+                '<div class="gradient-border">' +
+                '<div  class="carte-creation carte-creation-face-cachee">' +
+                '<div class="carte-img-face-cachee"> <img alt="logo-ensiie" src="' + "img/logo-ensiie.png" + '"></div>' +
+                '</div>' +
+                '</div>';
+        } else { // Les cartes sur le plateau
+            resultatHTML +=
+                '<div class="gradient-border">' +
+                '<div  class="carte-creation">' +
+                '<div class="back">' +
+                '<div class="carte-title">' + carte.nom + '</div>' +
+                '<div class="carte-img-face-visible"> <img alt="image-carte" src="' + getImageByCardName(carte.nom) + '""></div>' +
+                '<div class="contenu-carte">' +
+                '<div class="carte-description">' + getDescriptionByCardName(carte.nom) + '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }
     } else {
         resultatHTML +=
             '<div class="gradient-border" onclick="leftClick(' + indice + ')" oncontextmenu="event.preventDefault(); return false;" onmousedown="rightClick(event,' + indice + ')" ' +
@@ -177,7 +209,7 @@ function carteTemplate(carte, indice = null) {
             '<div  class="carte-creation">' +
             '<div class="back">' +
             '<div class="carte-title">' + carte.nom + '</div>' +
-            '<div class="carte-img-face-visible"> <img src="' + chemin_images_cartes[0] + '""></div>' +
+            '<div class="carte-img-face-visible"> <img alt="image-carte" src="' + getImageByCardName(carte.nom) + '""></div>' +
             '<div class="contenu-carte">' +
             '<div class="carte-description">' + getDescriptionByCardName(carte.nom) +
             '</div>' +
