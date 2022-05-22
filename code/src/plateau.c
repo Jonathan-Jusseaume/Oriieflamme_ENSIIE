@@ -232,11 +232,15 @@ char *plateau_to_string(plateau p) {
     char *grille = grille_carte_to_string(p->grille);
     char *faction_1 = faction_to_string(get_factions(p)[0]);
     char *faction_2 = faction_to_string(get_factions(p)[1]);
-    // On fait un snprintf afin de déterminer la taille à réserver
+    // On fait un snprintf afin de déterminer la taille à réserver, on met donc volontaire aucune destination et pour ignorer le warning -Wformat-truncation, on rajoute une macro
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wformat-truncation"
     taille = snprintf(NULL, taille, "PLATEAU\n%s\n%s\n%s",
                       grille,
                       faction_1,
                       faction_2);
+    #pragma GCC diagnostic pop
+
     char *str = (char *) malloc((taille + 1) * sizeof(char));
     taille = snprintf(str, taille + 1, "PLATEAU\n%s\n%s\n%s",
                       grille,

@@ -568,7 +568,6 @@ void test_retourner_carte() {
         CU_ASSERT(get_carte_grille(get_grille(p), 10, i) == NULL);
         CU_ASSERT(get_carte_grille(get_grille(p), 13, i) == NULL);
     }
-    int score_faction_1 = get_points_DDRS(get_factions(p)[FACTION1]);
     int score_faction_2 = get_points_DDRS(get_factions(p)[FACTION2]);
     // On retourne la carte Café pour vérifier que notre faction perd des points et que la carte Alcool a été supprimée
     c_retournee = retourner_carte(p);

@@ -4,6 +4,8 @@
 #include "../headers/plateau.h"
 #include "../headers/constante.h"
 #include "../headers/aleatoire.h"
+#include "../headers/position.h"
+#include <unistd.h>
 
 #define PARTIE_NON_TERMINEE -1
 #define NOMBRE_FACTIONS 2
@@ -44,7 +46,7 @@ void lire_message_poser_carte_et_mettre_a_jour_plateau(const unsigned char *mess
     int indice_carte = 0;
     int abscisse = 0;
     int ordonnee = 0;
-    sscanf(message, "%d;%d;%d;%d", &indice, &indice_carte, &abscisse, &ordonnee);
+    sscanf((char *) message, "%d;%d;%d;%d", &indice, &indice_carte, &abscisse, &ordonnee);
     liste_chainee_carte main_faction = get_main(factions[indice]);
     carte carte_choisie = supprimer_carte_liste_chainee(&main_faction, indice_carte - 1);
     set_main(factions[indice], main_faction);
@@ -55,7 +57,7 @@ void lire_message_poser_carte_et_mettre_a_jour_plateau(const unsigned char *mess
 void lire_message_demande_repioche(const unsigned char *msg) {
     int indice = 0;
     int veut_remelanger;
-    sscanf(msg, "%d;%d", &indice, &veut_remelanger);
+    sscanf((char *) msg, "%d;%d", &indice, &veut_remelanger);
     // On dit que la faction a répondu
     factions_reponse_repioche[indice] = VRAI;
     if (veut_remelanger) {
@@ -112,6 +114,15 @@ void fermeture_connexion(ws_cli_conn_t *client) {
         free(ordre_faction);
     }
     if (p != NULL) {
+        // On vide la main et la pioche si c'est le cas
+        for (int i = 0; i < NOMBRE_FACTIONS; i++) {
+            if (get_main(factions[i]) != NULL) {
+                liberer_liste_chainee(get_main(factions[i]));
+            }
+            if (get_pioche(factions[i]) != NULL) {
+                liberer_ensemble_entier(get_pioche(factions[i]));
+            }
+        }
         liberer_plateau(p);
     }
     exit(1);
@@ -119,6 +130,7 @@ void fermeture_connexion(ws_cli_conn_t *client) {
 
 void reception_message(ws_cli_conn_t *client,
                        const unsigned char *msg, uint64_t size, int type) {
+    PARAMETRE_NON_UTILISE(type);
     booleen a_lu_message = FAUX;
     // On log les messages
     char *cli;
@@ -156,18 +168,35 @@ void reception_message(ws_cli_conn_t *client,
     }
 
 
-
-
-
     // Lancement de fin de la manche, on retourne toutes les cartes une par une et on envoie les infos sur la fin de la manche
     if (get_nombre_cartes_posees(p) == NOMBRE_CARTES_MAXIMUM) {
-        carte carte_retournee = retourner_carte(p);
-        // Quand la carte retournée vaut NULL, ça veut dire qu'il n'y a plus de cartes à retourner, on envoie à chaque fois le tout en broadcast
-        while (carte_retournee != NULL) {
+        carte carte_retournee;
+        do {
+            // On cherche d'abord la carte retournée afin d'avoir son effet
+            position pos = get_position_carte_haut_gauche_grille(get_grille(p), VRAI);
+            if (pos.abscisse == -1) {
+                break;
+            }
+            carte_retournee = get_carte_grille(get_grille(p), pos.ordonnee, pos.abscisse);
+            size_t taille = 0;
+            #pragma GCC diagnostic push
+            #pragma GCC diagnostic ignored "-Wformat-truncation"
+            taille = snprintf(NULL, taille, "EFFET:%s\n",
+                              get_effet(carte_retournee));
+            #pragma GCC diagnostic pop
+            char *effet = (char *) malloc((taille + 1) * sizeof(char));
+            snprintf(effet, taille + 1, "EFFET:%s\n", get_effet(carte_retournee));
+            // On envoie à tout le monde l'effet de la carte qui va être retournée, il faut le faire avant de la retourner car elle pourrait potentiellement être supprimée
+            envoie_message_broadcast(effet);
+            free(effet);
+
+
+            carte_retournee = retourner_carte(p);
             envoie_plateau_broadcast();
             sleep(3);
-            carte_retournee = retourner_carte(p);
-        }
+        } while (carte_retournee != NULL);
+
+
         envoie_plateau_broadcast();
         int resultat_partie = initialiser_manche(p);
         envoie_plateau_broadcast();

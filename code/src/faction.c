@@ -179,7 +179,9 @@ void set_main(faction f, liste_chainee_carte main) {
 char* faction_to_string(faction f) {
     size_t taille = 0;
     char *str_main = liste_chainee_carte_to_string(f->main);
-    // On fait un snprintf afin de déterminer la taille à réserver
+    // On fait un snprintf afin de déterminer la taille à réserver, on met donc volontaire aucune destination et pour ignorer le warning -Wformat-truncation, on rajoute une macro
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wformat-truncation"
     taille = snprintf(NULL, taille, "%d|%s|%d|%d|%d|%s",
                       f->identifiant_faction,
                       f->nom,
@@ -187,6 +189,8 @@ char* faction_to_string(faction f) {
                       f->points_DDRS,
                       f->manches_gagnees,
                       str_main);
+    #pragma GCC diagnostic pop
+
     char *str = (char *) malloc((taille + 1) * sizeof(char));
     snprintf(str, taille + 1, "%d|%s|%d|%d|%d|%s",
              f->identifiant_faction,

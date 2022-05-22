@@ -73,6 +73,7 @@ void ecologiie(carte c, plateau p) {
 }
 
 void liiens(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     liste_chainee_carte fisa_fise_fc = initialiser_liste_chainee();
     for (int parcours_lignes = get_min_y_grille(get_grille(p));
          parcours_lignes <= get_max_y_grille(get_grille(p)); parcours_lignes++) {
@@ -243,7 +244,8 @@ void the(carte c, plateau p) {
 }
 
 void ecocup(carte c, plateau p) {
-    // NE FAIT RIEN
+    PARAMETRE_NON_UTILISE(c);
+    PARAMETRE_NON_UTILISE(p);
 }
 
 booleen liste_contient_carte(liste_chainee_carte lc_carte_deja_etudiees, carte carte_a_chercher) {
@@ -296,6 +298,7 @@ void reprographie(carte c, plateau p) {
 }
 
 void isolation_batiment(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     int nombre_points_a_ajouter = 1;
     for (int parcours_lignes = get_min_y_grille(get_grille(p));
          parcours_lignes <= get_max_y_grille(get_grille(p)); parcours_lignes++) {
@@ -311,6 +314,7 @@ void isolation_batiment(carte c, plateau p) {
 }
 
 void parcours_sobriete_numerique(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     grille_carte gc = get_grille(p);
     booleen carte_gauche_face_cachee_trouvee;
     booleen carte_droite_face_cachee_trouvee;
@@ -339,6 +343,7 @@ void parcours_sobriete_numerique(carte c, plateau p) {
 }
 
 void heures_supplementaires(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     int nombre_points_a_ajouter = -3;
     for (int parcours_lignes = get_min_y_grille(get_grille(p));
          parcours_lignes <= get_max_y_grille(get_grille(p)); parcours_lignes++) {
@@ -358,6 +363,7 @@ void heures_supplementaires(carte c, plateau p) {
 }
 
 void kahina_bouchama(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     grille_carte gc = get_grille(p);
     liste_chainee_carte cartes_supprimees = get_cartes_supprimees(p);
     srand(time(NULL));
@@ -435,6 +441,7 @@ void massinissa_merabet(carte c, plateau p) {
 }
 
 void vitera_y(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     int nombre_points_a_ajouter = 3;
     if (get_points_DDRS(get_factions(p)[FACTION1]) < get_points_DDRS(get_factions(p)[FACTION2])) {
         ajoute_points_DDRS(get_factions(p)[FACTION1], nombre_points_a_ajouter);
@@ -444,6 +451,7 @@ void vitera_y(carte c, plateau p) {
 }
 
 void jonas_senizergues(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     liste_chainee_carte cartes_supprimees = get_cartes_supprimees(p);
     for (int parcours_lignes = get_min_y_grille(get_grille(p));
          parcours_lignes <= get_max_y_grille(get_grille(p)); parcours_lignes++) {
@@ -592,6 +600,7 @@ void guillaume_burel(carte c, plateau p) { // Pas sûr d"avoir bien compris la c
 }
 
 void christophe_mouilleron(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
     booleen heures_supp_trouve = FAUX;
     liste_chainee_carte lc = initialiser_liste_chainee();
     liste_chainee_carte cartes_supprimees = get_cartes_supprimees(p);
@@ -869,5 +878,7 @@ void katrin_salhab(carte c, plateau p) {
 }
 
 void laurent_prevel(carte c, plateau p) {
+    PARAMETRE_NON_UTILISE(c);
+    PARAMETRE_NON_UTILISE(p);
     // Cet effet est géré par initialiser_manche() qui vérifie que la dernière carte retournée est Laurent Prével
 }

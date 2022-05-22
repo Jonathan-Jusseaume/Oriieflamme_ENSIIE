@@ -222,7 +222,7 @@ char *grille_carte_to_string(grille_carte g) {
             taille += 1;
         }
     }
-    char *string = (char *) malloc(taille * sizeof(char));
+    char *string = (char *) malloc(taille + 1 * sizeof(char));
     snprintf(string, taille + 1, "%d,%d,%d,%d/",
              g->min_x,
              g->min_y,
