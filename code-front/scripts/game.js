@@ -146,6 +146,7 @@ function rightClick(event, number) {
 }
 
 function leftClick(currentCarteNumber) {
+    console.log(event.target);
     if (previousCarteSelectedNumber === null) {
         document.getElementById('footer').getElementsByClassName("gradient-border")[currentCarteNumber].classList.add("carte-select");
         previousCarteSelectedNumber = currentCarteNumber;
@@ -171,6 +172,7 @@ document.addEventListener('click', (e) => {
             e.target.className !== document.getElementsByClassName("contenu-carte")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-title")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-img-face-visible")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-image")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-description")[0].className) {
             // Si on ne clique pas sur une carte, alors la carte séléctionnée est délésectionnée
             carteSelectionnee.classList.remove('carte-select');
@@ -209,7 +211,7 @@ function carteTemplate(carte, indice = null) {
             '<div  class="carte-creation">' +
             '<div class="back">' +
             '<div class="carte-title">' + carte.nom + '</div>' +
-            '<div class="carte-img-face-visible"> <img alt="image-carte" src="' + getImageByCardName(carte.nom) + '""></div>' +
+            '<div class="carte-img-face-visible"> <img class="carte-image" src="' + getImageByCardName(carte.nom) + '"/></div>' +
             '<div class="contenu-carte">' +
             '<div class="carte-description">' + getDescriptionByCardName(carte.nom) +
             '</div>' +
