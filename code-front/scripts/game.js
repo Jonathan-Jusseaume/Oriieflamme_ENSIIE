@@ -141,7 +141,9 @@ let previousCarteSelectedNumber = null;
 
 function rightClick(event, number) {
     if (event.button === 2) {
+        console.log(document.getElementsByClassName("gradient-border")[number]);
         document.getElementById('footer').getElementsByClassName("gradient-border")[number].classList.add("zoom-zoom");
+        console.log(document.getElementsByClassName("gradient-border")[number]);
     }
 }
 
@@ -205,7 +207,7 @@ function carteTemplate(carte, indice = null) {
     } else {
         resultatHTML +=
             '<div class="gradient-border" onclick="leftClick(' + indice + ')" oncontextmenu="event.preventDefault(); return false;" onmousedown="rightClick(event,' + indice + ')" ' +
-            'onmouseup="rightUp(' + indice + ')" onmouseout="rightUp(' + indice + ')">' +
+            'onmouseup="rightUp(' + indice + ')">' +
             '<div  class="carte-creation">' +
             '<div class="back">' +
             '<div class="carte-title">' + carte.nom + '</div>' +
