@@ -119,6 +119,7 @@ carte demander_carte_poser_face_cachee(faction f) {
  * @return position : Position en abscisse et en ordonnée de la carte à poser, calculée à partir des entrées de l'utilisateur.
  */
 position demander_position_poser_carte(plateau p, faction f, carte c) {
+    PARAMETRE_NON_UTILISE(f);
     set_numero_plateau(c, get_nombre_cartes_posees(p));
     int carte_a_coller;
     direction dir = INCONNU;
