@@ -146,7 +146,6 @@ function rightClick(event, number) {
 }
 
 function leftClick(currentCarteNumber) {
-    console.log(event.target);
     if (previousCarteSelectedNumber === null) {
         document.getElementById('footer').getElementsByClassName("gradient-border")[currentCarteNumber].classList.add("carte-select");
         previousCarteSelectedNumber = currentCarteNumber;
