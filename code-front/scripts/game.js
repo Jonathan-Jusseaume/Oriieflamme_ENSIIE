@@ -5,15 +5,20 @@ let attente_autre_joueur = true;
 let demander_utilisateur_repioche = false;
 let demander_utilisateur_poser_carte = false;
 let resultat;
+let phaseRetourneCarte = false;
 
 // La connexion est ouverte
 game.addEventListener('open', function (event) {
-
+    document.getElementsByClassName("serveur-indisponible")[0].classList.add("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
 });
 
 // Écouter les messages
 game.addEventListener('message', function (event) {
     lireMessage(event.data);
+});
+
+game.addEventListener('error', function (event) {
+    document.getElementsByClassName("serveur-indisponible")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
 });
 
 
@@ -57,16 +62,20 @@ function lireMessage(message) {
         addMain(plateau.factions[parseInt(sessionStorage.getItem("ID"))].main);
         MAJScoreEtManche(plateau);
         afficherPlateau(plateau, false);
-        document.getElementsByClassName("attente-pose-carte")[0].innerHTML = "Veuillez attendre que l'adversaire pose une carte...";
-        document.getElementsByClassName("attente-pose-carte")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
+        if (!phaseRetourneCarte) {
+            document.getElementsByClassName("attente-pose-carte")[0].innerHTML = "En attente d'une action de votre adversaire...";
+            document.getElementsByClassName("attente-pose-carte")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
+        }
 
     }
     if (message.includes("PIOCHE")) {
+        document.getElementsByClassName("attente-pose-carte")[0].classList.add("hidden");
         demander_utilisateur_repioche = true;
         // faire apparaitre le bouton pour demander à l'utilisateur de piocher
         document.getElementById('actions').innerHTML =
             "<button id='bouton-garder-pioche' class='boutons-pioche-clignote' onclick='envoyerDemandeRepioche(false)'>GARDER</button>" +
             "<button id='bouton-repiocher' class='boutons-pioche-clignote' onclick='envoyerDemandeRepioche(true)'>MELANGER</button>";
+        phaseRetourneCarte = false;
     }
     if (message.includes("POSE")) {
         document.getElementsByClassName("attente-pose-carte")[0].classList.add("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
@@ -75,15 +84,22 @@ function lireMessage(message) {
         document.getElementsByClassName("attente-pose-carte")[0].innerHTML = "Veuillez poser une carte de votre main...";
         document.getElementsByClassName("attente-pose-carte")[0].classList.remove("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
         afficherPlateau(plateau, true);
+        phaseRetourneCarte = false;
     }
     if (message.includes("RESULTAT")) {
         resultat = parseInt(message.split(":")[1]);
+        document.getElementsByClassName("attente-pose-carte")[0].classList.add("hidden"); // Si on met un id, il prend le dessus sur la classe, et hidden ne fonctionnera pas
         if (resultat !== -1) {
-            document.getElementById('result').innerHTML = (resultat === sessionStorage.getItem('ID')) ? 'VICTOIRE' : 'DÉFAITE';
+            document.getElementById('result').innerHTML = (resultat === parseInt(sessionStorage.getItem('ID'))) ? 'VICTOIRE' : 'DÉFAITE';
         }
-
+        phaseRetourneCarte = false;
+    }
+    if (message.includes("EFFET")) {
+        document.getElementsByClassName("attente-pose-carte")[0].innerHTML = 'Effet appliqué: ' + (message.split(":")[1]);
+        phaseRetourneCarte = true;
 
     }
+
 }
 
 function parseCarte(carteString) {
@@ -135,8 +151,6 @@ function parseFaction(factionString) {
     return faction;
 }
 
-// TODO : (echec) Faire disparaitre la séléction d'une carte au clic autre part sur la page
-
 let previousCarteSelectedNumber = null;
 
 function rightClick(event, number) {
@@ -171,7 +185,6 @@ document.addEventListener('click', (e) => {
             e.target.className !== document.getElementsByClassName("contenu-carte")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-title")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-img-face-visible")[0].className &&
-            e.target.className !== document.getElementsByClassName("carte-image")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-description")[0].className) {
             // Si on ne clique pas sur une carte, alors la carte séléctionnée est délésectionnée
             carteSelectionnee.classList.remove('carte-select');
@@ -195,7 +208,7 @@ function carteTemplate(carte, indice = null) {
                 '<div  class="carte-creation">' +
                 '<div class="back">' +
                 '<div class="carte-title">' + carte.nom + '</div>' +
-                '<div class="carte-img-face-visible"> <img alt="image-carte" src="' + getImageByCardName(carte.nom) + '""></div>' +
+                '<div class="carte-img-face-visible"> <img alt="image-carte" src="img/' + getImageByCardName(carte.nom) + '""></div>' +
                 '<div class="contenu-carte">' +
                 '<div class="carte-description">' + getDescriptionByCardName(carte.nom) + '</div>' +
                 '</div>' +
@@ -210,7 +223,7 @@ function carteTemplate(carte, indice = null) {
             '<div  class="carte-creation">' +
             '<div class="back">' +
             '<div class="carte-title">' + carte.nom + '</div>' +
-            '<div class="carte-img-face-visible"> <img class="carte-image" src="' + getImageByCardName(carte.nom) + '"/></div>' +
+            '<div class="carte-img-face-visible"> <img alt="carte-image" src="img/' + getImageByCardName(carte.nom) + '""></div>' +
             '<div class="contenu-carte">' +
             '<div class="carte-description">' + getDescriptionByCardName(carte.nom) +
             '</div>' +
@@ -227,7 +240,7 @@ function afficherPlateau(plateau, estCliquable) {
     if (plateau.grille.contenu.length && plateau.grille.contenu[0]?.length) {
         const nombreLignes = plateau.grille.contenu.length + 2;
         const nombreColonnes = plateau.grille.contenu[0].length + 2;
-        document.getElementById('plateau').setAttribute('style', 'grid-template-columns:' + 'repeat(' + nombreColonnes + ',194px);' + 'grid-template-rows: ' + 'repeat(' + nombreLignes + ',' + '266px);');
+        document.getElementById('plateau').setAttribute('style', 'grid-template-columns:' + 'repeat(' + nombreColonnes + ',194px);' + 'grid-template-rows: ' + 'repeat(' + nombreLignes + ',' + '266px);' + (nombreColonnes > 9 ? 'justify-content: unset!important;': '') );
         let grilleHTML = "";
         // On ajoute une ligne en haut
         for (let i = -1; i < nombreColonnes - 1; i++) {

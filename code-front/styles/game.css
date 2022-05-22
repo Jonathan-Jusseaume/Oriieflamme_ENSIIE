@@ -26,13 +26,14 @@ body {
     height: 100vh;
 }
 
-.attente-connexion {
+.attente-connexion, .serveur-indisponible {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    font-size: 42px;
+    font-size: 56px;
+    color: white;
 }
 
 .attente-pose-carte {
