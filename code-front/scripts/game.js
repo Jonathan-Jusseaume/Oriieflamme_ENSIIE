@@ -141,9 +141,7 @@ let previousCarteSelectedNumber = null;
 
 function rightClick(event, number) {
     if (event.button === 2) {
-        console.log(document.getElementsByClassName("gradient-border")[number]);
         document.getElementById('footer').getElementsByClassName("gradient-border")[number].classList.add("zoom-zoom");
-        console.log(document.getElementsByClassName("gradient-border")[number]);
     }
 }
 
