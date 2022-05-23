@@ -2,6 +2,7 @@
 #include "../headers/position.h"
 #include "../headers/carte.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * Structure représentant une carte.
@@ -56,6 +57,31 @@ carte initialiser_carte(char *nom, char *effet, void *effet_carte, int identifia
     c->numero_plateau = numero_plateau;
     c->est_face_cachee = est_face_cachee;
     return c;
+}
+
+char *to_string_carte(carte c) {
+    size_t taille = 0;
+    char *str_pos = position_to_string(c->pos);
+    // On fait un snprintf afin de déterminer la taille à réserver, on met donc volontaire aucune destination et pour ignorer le warning -Wformat-truncation, on rajoute une macro
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wformat-truncation"
+    taille = snprintf(NULL, taille, "%s,%s,%d,%d,%d",
+                      c->nom,
+                      str_pos,
+                      c->identifiant_faction,
+                      c->numero_plateau,
+                      c->est_face_cachee);
+    #pragma GCC diagnostic pop
+
+    char *str = (char *) malloc((taille + 2) * sizeof(char));
+    snprintf(str, taille + 2, "%s,%s,%d,%d,%d",
+             c->nom,
+             str_pos,
+             c->identifiant_faction,
+             c->numero_plateau,
+             c->est_face_cachee);
+    free(str_pos);
+    return str;
 }
 
 
@@ -115,3 +141,4 @@ void set_numero_plateau(carte c, int numero_plateau) {
 void set_est_face_cachee(carte c, booleen est_face_cachee) {
     c->est_face_cachee = est_face_cachee;
 }
+

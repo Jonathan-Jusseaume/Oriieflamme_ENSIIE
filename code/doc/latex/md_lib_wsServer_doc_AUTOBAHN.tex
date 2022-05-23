@@ -1,0 +1,32 @@
+Although ws\+Server strives to be as simple as possible, the library does intend to used in production and relies on two (but not limited to) tools for that\+: \mbox{\hyperlink{md_lib_wsServer_doc_FUZZING}{AFL}} and Autobahn Web\+Socket Testsuite. The former ensures that ws\+Server is stable enough to be run even under unexpected conditions, such as when under attack. The latter is discussed below.
+
+\href{https://github.com/crossbario/autobahn-testsuite}{\texttt{ Autobahn$\vert$\+Testsuite}} is a third-\/party tool that performs a series of automated tests that verify the correctness of client and server websocket implementations in conformance to the specification. With more than 500 test cases, Autobahn extensively tests client and server implementations and also evaluates its performance.\hypertarget{md_lib_wsServer_doc_AUTOBAHN_autotoc_md1}{}\doxysection{Run tests}\label{md_lib_wsServer_doc_AUTOBAHN_autotoc_md1}
+Testing requires pre-\/installation of \href{https://github.com/crossbario/autobahn-testsuite}{\texttt{ Autobahn$\vert$\+Testsuite}}. Alternatively, it is possible to use the Docker image used in the CI tests, in this case, export the environment variable \textquotesingle{}TRAVIS\textquotesingle{}, as {\ttfamily export TRAVIS=true}.
+
+After that, tests can be invoked via Makefile or CMake\+: \hypertarget{md_lib_wsServer_doc_AUTOBAHN_autotoc_md2}{}\doxysubsection{Makefile}\label{md_lib_wsServer_doc_AUTOBAHN_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Ensure project is in clean state}
+\DoxyCodeLine{\$ make clean}
+\DoxyCodeLine{\# Build and execute tests}
+\DoxyCodeLine{\$ make tests}
+
+\end{DoxyCode}
+ \hypertarget{md_lib_wsServer_doc_AUTOBAHN_autotoc_md3}{}\doxysubsection{CMake}\label{md_lib_wsServer_doc_AUTOBAHN_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ mkdir build \&\& cd build/}
+\DoxyCodeLine{\# Configure project and enable tests build}
+\DoxyCodeLine{\$ cmake .. \(\backslash\)}
+\DoxyCodeLine{  -\/DCMAKE\_BUILD\_TYPE=Release \(\backslash\)}
+\DoxyCodeLine{  -\/DENABLE\_WSSERVER\_TEST=On}
+\DoxyCodeLine{\# Build project}
+\DoxyCodeLine{\$ make -\/j4}
+\DoxyCodeLine{\# Execute tests}
+\DoxyCodeLine{\$ make test}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_doc_AUTOBAHN_autotoc_md4}{}\doxysection{Tests results}\label{md_lib_wsServer_doc_AUTOBAHN_autotoc_md4}
+From the \href{https://theldus.github.io/wsServer/autobahn}{\texttt{ tests}}, it can be seen that ws\+Server passes all Autobahn$\vert$\+Testsuite tests. The only tests that are not run (12.$\ast$ and 13.$\ast$) concern Web\+Socket Compression, which is defined as an extension of the websocket protocol and defined in \href{https://datatracker.ietf.org/doc/html/rfc7692}{\texttt{ RFC 7692}}. Compression does not belong to \href{https://tools.ietf.org/html/rfc6455}{\texttt{ RFC 6455}}.
+
+Therefore, I believe it is safe to say that ws\+Server is RFC 6455 compliant and should behave correctly in different scenarios. Any unexpected behavior regarding communication with the client is considered an error, and an issue must be reported. 

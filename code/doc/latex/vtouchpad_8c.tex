@@ -1,0 +1,122 @@
+\hypertarget{vtouchpad_8c}{}\doxysection{Référence du fichier lib/ws\+Server/examples/vtouchpad/vtouchpad.c}
+\label{vtouchpad_8c}\index{lib/wsServer/examples/vtouchpad/vtouchpad.c@{lib/wsServer/examples/vtouchpad/vtouchpad.c}}
+
+
+Main file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ws.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vtouchpad.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de vtouchpad.\+c\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmouse__event}{mouse\+\_\+event}} \mbox{\hyperlink{vtouchpad_8c_a531ce701f60e6aac34cebff29c310119}{parse\+\_\+event}} (const char $\ast$ev, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Given a string {\ttfamily ev} containing a single event, parses it as expected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vtouchpad_8c_acad817bd7c7f16e077c8f4a411cf60c3}{onopen}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em On open event, just signals that a new client has been connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vtouchpad_8c_a75da9864e55abf37e022f421340398e1}{onclose}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em On close event, just signals that a client has been disconnected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vtouchpad_8c_a2864d75de905dbfa15b7b19b327cc449}{onmessage}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const unsigned char $\ast$msg, uint64\+\_\+t size, int type)
+\begin{DoxyCompactList}\small\item\em For each new event, parses the string as expected all call the appropriate routines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vtouchpad_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{vtouchpad_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vtouchpad_8c_ab4e895b3d4aa209fc0ffc3adeffebb33}\label{vtouchpad_8c_ab4e895b3d4aa209fc0ffc3adeffebb33}} 
+\mbox{\hyperlink{structmouse}{mouse\+\_\+t}} $\ast$ {\bfseries mouse}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Main file. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{vtouchpad_8c_a75da9864e55abf37e022f421340398e1}\label{vtouchpad_8c_a75da9864e55abf37e022f421340398e1}} 
+\index{vtouchpad.c@{vtouchpad.c}!onclose@{onclose}}
+\index{onclose@{onclose}!vtouchpad.c@{vtouchpad.c}}
+\doxysubsubsection{\texorpdfstring{onclose()}{onclose()}}
+{\footnotesize\ttfamily void onclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+On close event, just signals that a client has been disconnected. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vtouchpad_8c_a2864d75de905dbfa15b7b19b327cc449}\label{vtouchpad_8c_a2864d75de905dbfa15b7b19b327cc449}} 
+\index{vtouchpad.c@{vtouchpad.c}!onmessage@{onmessage}}
+\index{onmessage@{onmessage}!vtouchpad.c@{vtouchpad.c}}
+\doxysubsubsection{\texorpdfstring{onmessage()}{onmessage()}}
+{\footnotesize\ttfamily void onmessage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const unsigned char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+For each new event, parses the string as expected all call the appropriate routines. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. (ignored)\\
+\hline
+{\em msg} & Received message/event.\\
+\hline
+{\em size} & Message size (in bytes). (ignored)\\
+\hline
+{\em type} & Message type. (ignored) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vtouchpad_8c_acad817bd7c7f16e077c8f4a411cf60c3}\label{vtouchpad_8c_acad817bd7c7f16e077c8f4a411cf60c3}} 
+\index{vtouchpad.c@{vtouchpad.c}!onopen@{onopen}}
+\index{onopen@{onopen}!vtouchpad.c@{vtouchpad.c}}
+\doxysubsubsection{\texorpdfstring{onopen()}{onopen()}}
+{\footnotesize\ttfamily void onopen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+On open event, just signals that a new client has been connected. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & Client connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vtouchpad_8c_a531ce701f60e6aac34cebff29c310119}\label{vtouchpad_8c_a531ce701f60e6aac34cebff29c310119}} 
+\index{vtouchpad.c@{vtouchpad.c}!parse\_event@{parse\_event}}
+\index{parse\_event@{parse\_event}!vtouchpad.c@{vtouchpad.c}}
+\doxysubsubsection{\texorpdfstring{parse\_event()}{parse\_event()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structmouse__event}{mouse\+\_\+event}} parse\+\_\+event (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ev,  }\item[{int $\ast$}]{error }\end{DoxyParamCaption})}
+
+
+
+Given a string {\ttfamily ev} containing a single event, parses it as expected. 
+
+The event can be (D stands to \textquotesingle{}delimiter\textquotesingle{}, currently \textquotesingle{};\textquotesingle{})\+: (Mouse Movement)\+: mouse\+\_\+move D off\+\_\+X D off\+\_\+Y, where the offset is an integer type that represents the amount of pixels the mouse have to move. Example\+: mouse\+\_\+move;10;-\/20.
+
+Negative offsets represents movement to the left and to the top. Positive offsets are the opposite.
+
+(Mouse Button Press)\+: Represents if a mouse button has been pressed or released.
+
+Valid events are\+: a) mouse\+\_\+btn\+\_\+left\+\_\+down (left button press) b) mouse\+\_\+btn\+\_\+left\+\_\+up (left button release) c) mouse\+\_\+btn\+\_\+right\+\_\+down d) mouse\+\_\+btn\+\_\+right\+\_\+up
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ev} & String representing the event. \\
+\hline
+{\em error} & Set to 1 if an error was found, 0 otherwise.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Returns a \mbox{\hyperlink{structmouse__event}{mouse\+\_\+event}} structure. 
+\end{DoxyReturn}

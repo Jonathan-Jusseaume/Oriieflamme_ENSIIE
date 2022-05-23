@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: Référence du fichier lib/wsServer/src/handshake.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1307711b428f7fec1457907a4e35c099.html">wsServer</a></li><li class="navelem"><a class="el" href="dir_b1a5d42271eee571ddedf7c798fca6b4.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier handshake.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Handshake routines.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;base64.h&gt;</code><br />
+<code>#include &lt;sha1.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="ws_8h_source.html">ws.h</a>&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de handshake.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="handshake_8c__incl.png" border="0" usemap="#alib_2wsServer_2src_2handshake_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3024ccd4a9af5109d24e6c57565d74a1"><td class="memItemLeft" align="right" valign="top"><a id="a3024ccd4a9af5109d24e6c57565d74a1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>_POSIX_C_SOURCE</b>&#160;&#160;&#160;200809L</td></tr>
+<tr class="separator:a3024ccd4a9af5109d24e6c57565d74a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4b23f0ffa1e04bb15f05d59eddde367d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="handshake_8c.html#a4b23f0ffa1e04bb15f05d59eddde367d">get_handshake_accept</a> (char *wsKey, unsigned char **dest)</td></tr>
+<tr class="memdesc:a4b23f0ffa1e04bb15f05d59eddde367d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the field Sec-WebSocket-Accept on response, by an previously informed key.  <a href="handshake_8c.html#a4b23f0ffa1e04bb15f05d59eddde367d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4b23f0ffa1e04bb15f05d59eddde367d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27482c3c5192c17f4f4f4e390ded31b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="handshake_8c.html#a27482c3c5192c17f4f4f4e390ded31b9">get_handshake_response</a> (char *hsrequest, char **hsresponse)</td></tr>
+<tr class="memdesc:a27482c3c5192c17f4f4f4e390ded31b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the complete response to accomplish a succesfully handshake.  <a href="handshake_8c.html#a27482c3c5192c17f4f4f4e390ded31b9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a27482c3c5192c17f4f4f4e390ded31b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Handshake routines. </p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a4b23f0ffa1e04bb15f05d59eddde367d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b23f0ffa1e04bb15f05d59eddde367d">&#9670;&nbsp;</a></span>get_handshake_accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_handshake_accept </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>wsKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the field Sec-WebSocket-Accept on response, by an previously informed key. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wsKey</td><td>Sec-WebSocket-Key </td></tr>
+    <tr><td class="paramname">dest</td><td>source to be stored the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns 0 if success and a negative number otherwise.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>This is part of the internal API and is documented just for completeness. </dd></dl>
+
+</div>
+</div>
+<a id="a27482c3c5192c17f4f4f4e390ded31b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27482c3c5192c17f4f4f4e390ded31b9">&#9670;&nbsp;</a></span>get_handshake_response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_handshake_response </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hsrequest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>hsresponse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the complete response to accomplish a succesfully handshake. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hsrequest</td><td>Client request. </td></tr>
+    <tr><td class="paramname">hsresponse</td><td>Server response.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Returns 0 if success and a negative number otherwise.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>This is part of the internal API and is documented just for completeness. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

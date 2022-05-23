@@ -1,0 +1,63 @@
+ws\+Server does not currently support encryption. However, it is possible to use it in conjunction with \href{https://www.stunnel.org/}{\texttt{ Stunnel}}, a proxy that adds TLS support to existing projects. Just follow these four easy steps below to get TLS support on ws\+Server.\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md30}{}\doxysubsection{1) Installing Stunnel}\label{md_lib_wsServer_doc_TLS_autotoc_md30}
+\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md31}{}\doxysubsubsection{Ubuntu}\label{md_lib_wsServer_doc_TLS_autotoc_md31}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo apt install stunnel}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md32}{}\doxysubsubsection{Other distros}\label{md_lib_wsServer_doc_TLS_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo something}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md33}{}\doxysubsection{2) Generating certificates/keys}\label{md_lib_wsServer_doc_TLS_autotoc_md33}
+After you have Stunnel installed, generate your CA, private key and copy to the Stunnel configure folder (usually /etc/stunnel/, but could be anywhere)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Private key}
+\DoxyCodeLine{\$ openssl genrsa -\/out server.key 2048}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Certificate Signing Request (CSR)}
+\DoxyCodeLine{\$ openssl req -\/new -\/key server.key -\/out server.csr}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Certificate}
+\DoxyCodeLine{\$ openssl x509 -\/req -\/days 1024 -\/in server.csr -\/signkey server.key -\/out server.crt}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Append private key, certificate and copy to the right place}
+\DoxyCodeLine{\$ cat server.key server.crt > server.pem }
+\DoxyCodeLine{\$ sudo cp server.pem /etc/stunnel/}
+
+\end{DoxyCode}
+
+
+Observations regarding localhost\+:
+
+1) If you want to run on localhost, the \textquotesingle{}Common Name\textquotesingle{} field (on CSR, 2nd command) {\itshape must} be \textquotesingle{}localhost\textquotesingle{} (without quotes).
+
+2) Make sure to add your .crt file to your browser\textquotesingle{}s Certificate Authorities before trying to use ws\+Server with TLS.
+
+3) Google Chrome does not like localhost SSL/\+TLS traffic, so you need to enable it first, go to {\ttfamily chrome\+://flags/\#allow-\/insecure-\/localhost} and enable this option. Firefox looks ok as long as you follow 2).\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md34}{}\doxysubsection{3) Stunnel configuration file}\label{md_lib_wsServer_doc_TLS_autotoc_md34}
+Stunnel works by creating a proxy server on a given port that connects to the original server on another, so we need to teach how it will talk to ws\+Server\+:
+
+Create a file /etc/stunnel/stunnel.conf with the following content\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[wsServer]}
+\DoxyCodeLine{cert = /etc/stunnel/server.pem}
+\DoxyCodeLine{accept = 0.0.0.0:443}
+\DoxyCodeLine{connect = 127.0.0.1:8080}
+
+\end{DoxyCode}
+\hypertarget{md_lib_wsServer_doc_TLS_autotoc_md35}{}\doxysubsection{4) Launch Stunnel and ws\+Server}\label{md_lib_wsServer_doc_TLS_autotoc_md35}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo stunnel /etc/stunnel/stunnel.conf}
+\DoxyCodeLine{\$ ./your\_program\_that\_uses\_wsServer}
+
+\end{DoxyCode}
+
+
+(Many thanks to \href{https://github.com/rlaneth}{\texttt{ @rlaneth}} for letting me know of this tool). 

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: Building on Windows</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Building on Windows </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md6"></a>
+Introduction</h1>
+<p>Unlike Linux, Windows does not have by default a package manager or native build tools, which makes the process a little more laborious, but the sections below clarify in detail what must be done to natively build the library.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+MSYS2 Setup</h1>
+<p>MSYS2 is a set of tools and libraries that provide an easy-to-use development environment and is, in my opinion, the most straightforward way to use C in Windows environments.</p>
+<p>The <a href="https://www.msys2.org/">home page</a> already illustrates the basic step-by-step for the initial setup of MSYS2 but below is a very brief description of what to do:</p>
+<p>(note: if you already have MinGW and CMake properly installed, you can skip this section entirely)</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+1) Download and install MSYS2</h2>
+<p>From the homepage (informed above) download the latest version available, or if you prefer, use the same version tested here: <a href="https://github.com/msys2/msys2-installer/releases/download/2021-06-04/msys2-x86_64-20210604.exe">msys2-x86_64-20210604.exe</a>.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+2) Update packages</h2>
+<p>MSYS2 uses Pacman, a package manager, that is, a program responsible for managing programs, libraries, and their dependencies installed on a machine. Very well known among Arch Linux users, it is very useful to have it on MSYS2.</p>
+<p>1) First, it is necessary to update the package database and base packages. If it hasn't already opened, run 'MSYS2 MSYS' from the Start menu and run <code>pacman -Syu</code>.</p>
+<p>2) To proceed with the update, the terminal needs to be closed and opened again. After that, continue the update with: <code>pacman -Su</code>.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+3) Install packages</h2>
+<p>In addition to the base packages, some packages need to be installed to have a minimal development environment:</p>
+<p>1) Basic packages and GCC toolchain: <code>pacman -S --needed base-devel mingw-w64-x86_64-toolchain</code>. 2) CMake and Git: <code>pacman -S mingw-w64-x86_64-cmake git</code>.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+wsServer build</h1>
+<p>With MSYS2 up and running, you have everything you need to download, compile and run the wsServer and its examples.</p>
+<p>To do this, run 'MSYS2 MinGW 64bit' from the Start menu and: </p><div class="fragment"><div class="line">$ git clone https://github.com/Theldus/wsServer.git</div>
+<div class="line">$ cd wsServer</div>
+<div class="line">$ mkdir build &amp;&amp; cd build/</div>
+<div class="line">$ cmake .. -DCMAKE_BUILD_TYPE=Release -G &quot;MinGW Makefiles&quot;</div>
+<div class="line">$ mingw32-make -j4</div>
+</div><!-- fragment --><p> And that's it, the static library (libws.a) and the examples files are located in the build/examples folder.</p>
+<p>The <code>echo</code> example can be run with: <code>./examples/echo/echo.exe</code>, and the test webpage can be found at <code>wsServer/examples/echo</code>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

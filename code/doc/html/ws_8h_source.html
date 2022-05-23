@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme:  Fichier source de lib/wsServer/include/ws.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1307711b428f7fec1457907a4e35c099.html">wsServer</a></li><li class="navelem"><a class="el" href="dir_fa9307ea9689b9d9a6a5048837f9fbd4.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ws.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ws_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2016-2022  Davidson Francis &lt;davidsondfgl@gmail.com&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef WS_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define WS_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    #include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">    #include &lt;inttypes.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifndef MAX_CLIENTS</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="ws_8h.html#a0a8f91f93d75a07f0ae45077db45b3eb">   44</a></span>&#160;<span class="preprocessor">    #define MAX_CLIENTS    8</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="ws_8h.html#ac146c3c7afc6f342ae4f476bd46d924a">   54</a></span>&#160;<span class="preprocessor">    #define MESSAGE_LENGTH 2048</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="ws_8h.html#aecae779890dfc6b313fe2854369e5497">   58</a></span>&#160;<span class="preprocessor">    #define MAX_FRAME_LENGTH (16*1024*1024)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="ws_8h.html#a99b7044cf6174b9a71ec0110ab4e4f06">   62</a></span>&#160;<span class="preprocessor">    #define WS_KEY_LEN     24</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="ws_8h.html#a0982da5873cb0636a9cd3c9b38e2fd6b">   66</a></span>&#160;<span class="preprocessor">    #define WS_MS_LEN      36</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="ws_8h.html#a3017bcf986aad8396dee9a8bd6ecd97a">   70</a></span>&#160;<span class="preprocessor">    #define WS_KEYMS_LEN   (WS_KEY_LEN + WS_MS_LEN)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="ws_8h.html#ac7b1a3f98e5ef53ab7ca035d85471e66">   74</a></span>&#160;<span class="preprocessor">    #define MAGIC_STRING   &quot;258EAFA5-E914-47DA-95CA-C5AB0DC85B11&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="ws_8h.html#ab9fdadc01700da8ac3a78ba6473c9fe9">   84</a></span>&#160;<span class="preprocessor">    #define WS_HS_REQ      &quot;Sec-WebSocket-Key&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="ws_8h.html#a986c51bec0dedd926053ab4185203cc0">   89</a></span>&#160;<span class="preprocessor">    #define WS_HS_ACCLEN   130</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="ws_8h.html#a7e97e32d281f1207b742728d6fe4c010">   94</a></span>&#160;<span class="preprocessor">    #define WS_HS_ACCEPT                       \</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">        &quot;HTTP/1.1 101 Switching Protocols\r\n&quot;</span> \</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        &quot;Upgrade: websocket\r\n&quot;               \</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        &quot;Connection: Upgrade\r\n&quot;              \</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        &quot;Sec-WebSocket-Accept: &quot;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="ws_8h.html#a92ac38df97a72ad13675c9392b6f0ef5">  108</a></span>&#160;<span class="preprocessor">    #define WS_FIN      128</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="ws_8h.html#a7fe11fc8d80fba497ce07483671da710">  113</a></span>&#160;<span class="preprocessor">    #define WS_FIN_SHIFT  7</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="ws_8h.html#a71e23145425a949410e8253a628160ec">  118</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_CONT 0</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="ws_8h.html#af6abad47b51003413393946d60bbc4ca">  123</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_TXT  1</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="ws_8h.html#a11579cec919cb1fa742865ef68a1ecbf">  128</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_BIN  2</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="ws_8h.html#a51dcb053c17f2a4b4bfcd38e4a90e88c">  133</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_CLSE 8</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="ws_8h.html#a95fcab327cc3b908e251d18387b926ab">  138</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_PING 0x9</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="ws_8h.html#a61067031f718130b0db190d556847620">  143</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_PONG 0xA</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="ws_8h.html#ae3529b135c003e493f9678f97ad04355">  148</a></span>&#160;<span class="preprocessor">    #define WS_FR_OP_UNSUPPORTED 0xF</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="ws_8h.html#a2ff326178afdc6da3905790161803fd5">  158</a></span>&#160;<span class="preprocessor">    #define WS_CLSE_NORMAL  1000</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="ws_8h.html#a194a5eaa86bb6f2ba2b7c8cd878416e8">  162</a></span>&#160;<span class="preprocessor">    #define WS_CLSE_PROTERR 1002</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="ws_8h.html#a67438f9d23bbcdc2e1927e9dce505008">  167</a></span>&#160;<span class="preprocessor">    #define WS_CLSE_INVUTF8 1007</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="ws_8h.html#a2e0dc474d59b4f6362baeb9c3f556523">  176</a></span>&#160;<span class="preprocessor">    #define WS_STATE_CONNECTING 0</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="ws_8h.html#a2fe743eb09e44700deb9f6bc1bc5e484">  180</a></span>&#160;<span class="preprocessor">    #define WS_STATE_OPEN       1</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="ws_8h.html#a0463873293d20536a4fa2445af3ca7e9">  184</a></span>&#160;<span class="preprocessor">    #define WS_STATE_CLOSING    2</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="ws_8h.html#a02363560e73ebd3d01c09902d2290c4d">  188</a></span>&#160;<span class="preprocessor">    #define WS_STATE_CLOSED     3</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="ws_8h.html#aab882fbb7595b97461f54850fc8eb217">  198</a></span>&#160;<span class="preprocessor">    #define MS_TO_NS(x) ((x)*1000000)</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="ws_8h.html#a53bb6ce0dbc843daa4ad914d78713ac2">  202</a></span>&#160;<span class="preprocessor">    #define TIMEOUT_MS (500)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">    #ifdef VERBOSE_MODE</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">    #define DEBUG(...) fprintf(stderr, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="ws_8h.html#a96dd473db0b3d10bd43390cdacb00120">  215</a></span>&#160;<span class="preprocessor">    #define DEBUG(...)</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">    #ifndef AFL_FUZZ</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">    #define SEND(client,buf,len) send_all((client), (buf), (len), MSG_NOSIGNAL)</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">    #define RECV(fd,buf,len) recv((fd)-&gt;client_sock, (buf), (len), 0)</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    #define SEND(client,buf,len) write(fileno(stdout), (buf), (len))</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">    #define RECV(fd,buf,len) read((fd)-&gt;client_sock, (buf), (len))</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">/* Opaque client connection type. */</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structws__connection.html">ws_connection</a> <a class="code" href="structws__connection.html">ws_cli_conn_t</a>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="structws__events.html">  233</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structws__events.html">ws_events</a></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20">  238</a></span>&#160;        void (*<a class="code" href="structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20">onopen</a>)(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="structws__events.html#ac0e799551d275b26b4bbf69642ed1b47">  243</a></span>&#160;        void (*<a class="code" href="structws__events.html#ac0e799551d275b26b4bbf69642ed1b47">onclose</a>)(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="structws__events.html#a2459884732b5485c35bf2840f2def453">  249</a></span>&#160;        void (*<a class="code" href="structws__events.html#a2459884732b5485c35bf2840f2def453">onmessage</a>)(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *msg, uint64_t msg_size, <span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    };</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">/* Forward declarations. */</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">/* Internal usage. */</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a4b23f0ffa1e04bb15f05d59eddde367d">get_handshake_accept</a>(<span class="keywordtype">char</span> *wsKey, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> **dest);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a27482c3c5192c17f4f4f4e390ded31b9">get_handshake_response</a>(<span class="keywordtype">char</span> *hsrequest, <span class="keywordtype">char</span> **hsresponse);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">/* External usage. */</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a2cd8113634018b506a948b6d42c75bae">ws_sendframe</a>(</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg, uint64_t size, <span class="keywordtype">int</span> type);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a513af9fe222b7b45550d8794afeca200">ws_sendframe_txt</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a1967a31496e31d5d0e7e47c0cede1e04">ws_sendframe_bin</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg, uint64_t size);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a0e9292115bab833001593a83e7ca167b">ws_get_state</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#a68609fbdb7cb996339c61be2aee37b52">ws_close_client</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="ws_8h.html#aa37bbcf33e10623a2e18f9587cee8508">ws_socket</a>(<span class="keyword">struct</span> <a class="code" href="structws__events.html">ws_events</a> *evs, uint16_t port, <span class="keywordtype">int</span> thread_loop,</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        uint32_t timeout_ms);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">/* Ping routines. */</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="ws_8h.html#abdfe68596e6987166559161a617c9b51">ws_ping</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *cli, <span class="keywordtype">int</span> threshold);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#ifdef AFL_FUZZ</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> ws_file(<span class="keyword">struct</span> <a class="code" href="structws__events.html">ws_events</a> *evs, <span class="keyword">const</span> <span class="keywordtype">char</span> *file);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="astructws__connection_html"><div class="ttname"><a href="structws__connection.html">ws_connection</a></div><div class="ttdoc">Client socks.</div><div class="ttdef"><b>Definition:</b> ws.c:70</div></div>
+<div class="ttc" id="astructws__events_html"><div class="ttname"><a href="structws__events.html">ws_events</a></div><div class="ttdoc">events Web Socket events types.</div><div class="ttdef"><b>Definition:</b> ws.h:234</div></div>
+<div class="ttc" id="astructws__events_html_a2459884732b5485c35bf2840f2def453"><div class="ttname"><a href="structws__events.html#a2459884732b5485c35bf2840f2def453">ws_events::onmessage</a></div><div class="ttdeci">void(* onmessage)(ws_cli_conn_t *client, const unsigned char *msg, uint64_t msg_size, int type)</div><div class="ttdoc">On message event, called when a client sends a text or binary message.</div><div class="ttdef"><b>Definition:</b> ws.h:249</div></div>
+<div class="ttc" id="astructws__events_html_a7eaba79ad2d2403ca3db16db00f58e20"><div class="ttname"><a href="structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20">ws_events::onopen</a></div><div class="ttdeci">void(* onopen)(ws_cli_conn_t *client)</div><div class="ttdoc">On open event, called when a new client connects.</div><div class="ttdef"><b>Definition:</b> ws.h:238</div></div>
+<div class="ttc" id="astructws__events_html_ac0e799551d275b26b4bbf69642ed1b47"><div class="ttname"><a href="structws__events.html#ac0e799551d275b26b4bbf69642ed1b47">ws_events::onclose</a></div><div class="ttdeci">void(* onclose)(ws_cli_conn_t *client)</div><div class="ttdoc">On close event, called when a client disconnects.</div><div class="ttdef"><b>Definition:</b> ws.h:243</div></div>
+<div class="ttc" id="aws_8h_html_a0e9292115bab833001593a83e7ca167b"><div class="ttname"><a href="ws_8h.html#a0e9292115bab833001593a83e7ca167b">ws_get_state</a></div><div class="ttdeci">int ws_get_state(ws_cli_conn_t *cli)</div><div class="ttdoc">For a given client, gets the current state for the connection, or -1 if invalid.</div><div class="ttdef"><b>Definition:</b> ws.c:716</div></div>
+<div class="ttc" id="aws_8h_html_a1967a31496e31d5d0e7e47c0cede1e04"><div class="ttname"><a href="ws_8h.html#a1967a31496e31d5d0e7e47c0cede1e04">ws_sendframe_bin</a></div><div class="ttdeci">int ws_sendframe_bin(ws_cli_conn_t *cli, const char *msg, uint64_t size)</div><div class="ttdoc">Sends a WebSocket binary frame.</div><div class="ttdef"><b>Definition:</b> ws.c:697</div></div>
+<div class="ttc" id="aws_8h_html_a27482c3c5192c17f4f4f4e390ded31b9"><div class="ttname"><a href="ws_8h.html#a27482c3c5192c17f4f4f4e390ded31b9">get_handshake_response</a></div><div class="ttdeci">int get_handshake_response(char *hsrequest, char **hsresponse)</div><div class="ttdoc">Gets the complete response to accomplish a succesfully handshake.</div><div class="ttdef"><b>Definition:</b> handshake.c:87</div></div>
+<div class="ttc" id="aws_8h_html_a2cd8113634018b506a948b6d42c75bae"><div class="ttname"><a href="ws_8h.html#a2cd8113634018b506a948b6d42c75bae">ws_sendframe</a></div><div class="ttdeci">int ws_sendframe(ws_cli_conn_t *cli, const char *msg, uint64_t size, int type)</div><div class="ttdoc">Creates and send an WebSocket frame with some payload data.</div><div class="ttdef"><b>Definition:</b> ws.c:459</div></div>
+<div class="ttc" id="aws_8h_html_a4b23f0ffa1e04bb15f05d59eddde367d"><div class="ttname"><a href="ws_8h.html#a4b23f0ffa1e04bb15f05d59eddde367d">get_handshake_accept</a></div><div class="ttdeci">int get_handshake_accept(char *wsKey, unsigned char **dest)</div><div class="ttdoc">Gets the field Sec-WebSocket-Accept on response, by an previously informed key.</div><div class="ttdef"><b>Definition:</b> handshake.c:47</div></div>
+<div class="ttc" id="aws_8h_html_a513af9fe222b7b45550d8794afeca200"><div class="ttname"><a href="ws_8h.html#a513af9fe222b7b45550d8794afeca200">ws_sendframe_txt</a></div><div class="ttdeci">int ws_sendframe_txt(ws_cli_conn_t *cli, const char *msg)</div><div class="ttdoc">Sends a WebSocket text frame.</div><div class="ttdef"><b>Definition:</b> ws.c:683</div></div>
+<div class="ttc" id="aws_8h_html_a68609fbdb7cb996339c61be2aee37b52"><div class="ttname"><a href="ws_8h.html#a68609fbdb7cb996339c61be2aee37b52">ws_close_client</a></div><div class="ttdeci">int ws_close_client(ws_cli_conn_t *cli)</div><div class="ttdoc">Close the client connection for the given client with normal close code (1000) and no reason string.</div><div class="ttdef"><b>Definition:</b> ws.c:734</div></div>
+<div class="ttc" id="aws_8h_html_a9e976bca5a46baee91569ef33bb74f21"><div class="ttname"><a href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a></div><div class="ttdeci">char * ws_getaddress(ws_cli_conn_t *client)</div><div class="ttdoc">Gets the IP address relative to a client connection opened by the server.</div><div class="ttdef"><b>Definition:</b> ws.c:434</div></div>
+<div class="ttc" id="aws_8h_html_aa37bbcf33e10623a2e18f9587cee8508"><div class="ttname"><a href="ws_8h.html#aa37bbcf33e10623a2e18f9587cee8508">ws_socket</a></div><div class="ttdeci">int ws_socket(struct ws_events *evs, uint16_t port, int thread_loop, uint32_t timeout_ms)</div><div class="ttdoc">Main loop for the server.</div><div class="ttdef"><b>Definition:</b> ws.c:1624</div></div>
+<div class="ttc" id="aws_8h_html_abdfe68596e6987166559161a617c9b51"><div class="ttname"><a href="ws_8h.html#abdfe68596e6987166559161a617c9b51">ws_ping</a></div><div class="ttdeci">void ws_ping(ws_cli_conn_t *cli, int threshold)</div><div class="ttdoc">Sends a PING frame to the client cli with threshold threshold.</div><div class="ttdef"><b>Definition:</b> ws.c:651</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

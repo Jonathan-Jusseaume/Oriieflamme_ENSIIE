@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: Fuzzing wsServer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Fuzzing wsServer </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>wsServer intends to be robust enough to be used safely in production. Thus, the project supports fuzzing through the <code>ws_file</code> routine, which reads a file containing previously captured packets from the network. This routine allows wsServer to be tested for common cases and expected to work and permits it to be used on fuzzers, such as the AFL, supported here.</p>
+<h1><a class="anchor" id="autotoc_md22"></a>
+1) Installing/building American Fuzzy Lop</h1>
+<p>While not the focus here, building AFL should not be an issue, so the following brief instructions should be sufficient:</p>
+<div class="fragment"><div class="line"># Clone the repository</div>
+<div class="line">git clone https://github.com/google/AFL</div>
+<div class="line"> </div>
+<div class="line"># Build</div>
+<div class="line">cd AFL/</div>
+<div class="line">make</div>
+<div class="line"> </div>
+<div class="line"># Set env vars</div>
+<div class="line">export PATH=$PATH:$(pwd)</div>
+<div class="line">export AFL_PATH=$(pwd)</div>
+<div class="line"> </div>
+<div class="line"># Add env vars into your ~/.bashrc</div>
+<div class="line">echo &quot;export PATH=\$PATH:$(pwd)/&quot; &gt;&gt; ~/.bashrc</div>
+<div class="line">echo &quot;AFL_PATH=$(pwd)&quot; &gt;&gt; ~/.bashrc</div>
+</div><!-- fragment --><p> If anything fails, please check if you have the common build tools on your system (such as <code>gcc</code>, <code>make</code>, etc.) and read the official or specific instructions for your system.</p>
+<h1><a class="anchor" id="autotoc_md23"></a>
+2) Fuzzing</h1>
+<p>Once AFL is up and running, fuzzing is pretty straightforward:</p>
+<div class="fragment"><div class="line"># Make sure wsServer is in a clean state</div>
+<div class="line">make clean</div>
+<div class="line"> </div>
+<div class="line"># Build with AFL_FUZZ var set to yes:</div>
+<div class="line">AFL_FUZZ=yes make</div>
+</div><!-- fragment --><p>wsServer and the test file will be compiled. Fuzzing starts automatically right after.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md25"></a>
+Input tests and file structures</h1>
+<p>All fuzzing-related parts are present in the <em>tests</em> folder and follow the following structure:</p>
+<div class="fragment"><div class="line">├── in</div>
+<div class="line">│   ├── ch_1b_1b_508b_close</div>
+<div class="line">│   └── ch_1b_close</div>
+<div class="line">│</div>
+<div class="line">├── out</div>
+<div class="line">│</div>
+<div class="line">├── packets</div>
+<div class="line">│   ├── ch_508b_close</div>
+<div class="line">│   ├── ch_close</div>
+<div class="line">│   ├── ff_1b_close</div>
+<div class="line">│   ├── ff_384kB_close</div>
+<div class="line">│   ├── ff_ping_ping_close</div>
+<div class="line">│   ├── ws_1b_close</div>
+<div class="line">│   ├── ws_508b_ping_close</div>
+<div class="line">│   ├── ws_98305b_close</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── frames</div>
+<div class="line">│   │   ├── close</div>
+<div class="line">│   │   ├── ping</div>
+<div class="line">│   │   ├── req_chrome</div>
+<div class="line">│   │   ├── req_firefox</div>
+<div class="line">│   │   └── req_websocat</div>
+<div class="line">│   │</div>
+<div class="line">│   └── msgs</div>
+<div class="line">│       ├── msg_1byte</div>
+<div class="line">│       ├── msg_384kB_cont</div>
+<div class="line">│       ├── msg_508bytes</div>
+<div class="line">│       └── msg_98305bytes</div>
+<div class="line">│</div>
+<div class="line">├── Makefile</div>
+<div class="line">├── run-fuzzy.sh</div>
+<div class="line">└── ws_file.c</div>
+</div><!-- fragment --><ul>
+<li><b>in/:</b> Contains the input files that will be used in AFL (parameter <code>-i</code>).</li>
+<li><b>out/:</b> Contains the AFL output (parameter <code>-o</code>). Note that the execution script (<code>run-fuzzy.sh</code>) allows you to customize the output by the environment variable <code>AFL_OUT</code>.</li>
+<li><b>packets/:</b> Contains packets and parts of packets captured from the network from multiple clients (currently: Firefox, Google Chrome, and Websocat) with wsServer. It serves as a way to 'assemble' new test files for wsServer, whether for fuzzing or not.<ul>
+<li><b>packets/frames:/</b> Contains request frames (handshake) and control frames from multiple clients.</li>
+<li><b>packets/msgs/:</b> Contains packets of messages sent to wsServer of varying sizes, with FRAMES of type <code>FIN</code> and <code>CONT</code>.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Creating new inputs</h2>
+<p>New input files are pretty simple to make: either you create from existing packets or capture new ones via tcpdump, wireshark, etc.</p>
+<p>Let's say you want to create one that uses a Firefox handshake, sends two messages of one byte each, one ping and disconnect, we can then do: </p><div class="fragment"><div class="line">cd tests/packets</div>
+<div class="line">cat frames/req_firefox            \</div>
+<div class="line">    msgs/msg_1byte msgs/msg_1byte \</div>
+<div class="line">    frames/ping                   \</div>
+<div class="line">    frames/close &gt; ../in/ff_1b_1b_ping_close</div>
+</div><!-- fragment --><p>For new packets, the idea is similar.</p>
+<p><b>Attention:</b> Since inputs need to be valid, when creating new packets, be sure to always use a handshake (req_*) as the first file and a close frame at the end.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md28"></a>
+Acknowledgments</h1>
+<p>Thanks to <a href="https://github.com/rlaneth">@rlaneth</a>, who performed fuzzing tests on wsServer and who discovered and helped me to fix many bugs in the source code. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

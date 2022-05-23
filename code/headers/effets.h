@@ -2,6 +2,12 @@
  * @file effets.h
  * @brief Fichier contenant les différents effets des cartes
  */
+#ifdef __GNUC__
+#define VARIABLE_NOT_USED_IGNORE __attribute__ ((unused))
+#else
+#define VARIABLE_NOT_USED_IGNORE
+#endif
+
 #ifndef ORIIEFLAMME_GR_11_EFFETS_H
 #define ORIIEFLAMME_GR_11_EFFETS_H
 
@@ -9,6 +15,7 @@
 #include "carte.h"
 #include "plateau.h"
 #include "faction.h"
+#include <stdio.h>
 
 /**
  * Le prototype des fonctions correspondant à l'effet des cartes qui est toujouo
@@ -322,7 +329,7 @@ void laurent_prevel(carte c, plateau p);
  * Tableau de pointeurs sur les différentes fonctions qui n'a pas été mis dans constante pour éviter
  * des problèmes d'include circulaire
  */
-static void (*effets[])(carte c, plateau p) = {
+static VARIABLE_NOT_USED_IGNORE void (*effets[])(carte c, plateau p) = {
         fise,
         fisa,
         fc,

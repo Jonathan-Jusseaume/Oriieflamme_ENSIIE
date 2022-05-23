@@ -67,7 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Définitions de type</a>  </div>
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier position.h</div>  </div>
 </div><!--header-->
@@ -95,10 +96,44 @@ Définitions de type</h2></td></tr>
 typedef struct <a class="el" href="structposition.html">position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#ae95ed9c09d4ff44297273224ccfbe1dd">position</a></td></tr>
 <tr class="memdesc:ae95ed9c09d4ff44297273224ccfbe1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure correspondant à la position de la carte qui va être placée sur la grille <br /></td></tr>
 <tr class="separator:ae95ed9c09d4ff44297273224ccfbe1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a504910b1df81b945570aad2e2d1c2b4d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a504910b1df81b945570aad2e2d1c2b4d">position_to_string</a> (<a class="el" href="structposition.html">position</a> p)</td></tr>
+<tr class="memdesc:a504910b1df81b945570aad2e2d1c2b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction transformant une position en chaîne de caractères.  <a href="position_8h.html#a504910b1df81b945570aad2e2d1c2b4d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a504910b1df81b945570aad2e2d1c2b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier contenant la structure liée à la position de la carte sur la grille. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a504910b1df81b945570aad2e2d1c2b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504910b1df81b945570aad2e2d1c2b4d">&#9670;&nbsp;</a></span>position_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* position_to_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structposition.html">position</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction transformant une position en chaîne de caractères. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>la position dont on veut avoir la chaîne de caractères </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>la position sous la forme: "abscisse,ordonnee" </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

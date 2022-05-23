@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: ToyWS</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">ToyWS </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Since there is some demand to support a client, 'ToyWS' is a response to those requests: ToyWS is a toy WebSocket client, meaning that it's quite simple and made to work (guaranteed) only with wsServer.</p>
+<p>Limitations:</p><ul>
+<li>Fixed handshake header</li>
+<li>Fixed frame mask (it should be random)</li>
+<li>No PING/PONG frame support</li>
+<li>No close handshake support: although it can identify CLOSE frames, it does not send the response, only aborts the connection.</li>
+<li>No support for CONT frames, that is, the entire content of a frame (TXT or BIN) must be contained within a single frame.</li>
+<li>Possibly other things too.</li>
+</ul>
+<p>Although extremely limited, ToyWS was designed for those who want to <em>also</em> have a C client that is lightweight and compatible with wsServer, thus, freeing the need for a browser and/or third-party libraries to test and use wsServer.</p>
+<p>Maybe this client will evolve into something more complete and general in the future, but that's not in the roadmap at the moment.</p>
+<h1><a class="anchor" id="autotoc_md42"></a>
+API</h1>
+<p>The API is quite simple and is summarized in 4 routines, to connect, disconnect, send and receive frame, as follows:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> tws_connect(<span class="keyword">struct</span> <a class="code" href="structtws__ctx.html">tws_ctx</a> *ctx, <span class="keyword">const</span> <span class="keywordtype">char</span> *ip, uint16_t port);</div>
+<div class="ttc" id="astructtws__ctx_html"><div class="ttname"><a href="structtws__ctx.html">tws_ctx</a></div><div class="ttdef"><b>Definition:</b> toyws.h:38</div></div>
+</div><!-- fragment --><p> Connect to a given <code>ip</code> address and <code>port</code>.</p>
+<p><b>Return</b>: Returns a positive number if success, otherwise, a negative number.</p>
+<p><b>Note:</b> <code>struct <a class="el" href="structtws__ctx.html">tws_ctx</a> *ctx</code> is for internal usage and initialized within this function. There is no need to access this structure or modify its values, ToyWS just needs it to maintain the consistent client state.</p>
+<hr  />
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> tws_close(<span class="keyword">struct</span> <a class="code" href="structtws__ctx.html">tws_ctx</a> *ctx);</div>
+</div><!-- fragment --><p> Close the connection for the given <code>ctx</code>.</p>
+<hr  />
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> tws_sendframe(<span class="keyword">struct</span> <a class="code" href="structtws__ctx.html">tws_ctx</a> *ctx, uint8_t *msg, uint64_t size, <span class="keywordtype">int</span> type);</div>
+</div><!-- fragment --><p> Send a frame of type <code>type</code> with content <code>msg</code> and size <code>size</code> for a given context <code>ctx</code>.</p>
+<p>Valid frame types are:</p><ul>
+<li>FRM_TXT</li>
+<li>FRM_BIN</li>
+</ul>
+<p><b>Return</b>: Returns 0 if success, otherwise, a negative number.</p>
+<hr  />
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> tws_receiveframe(<span class="keyword">struct</span> <a class="code" href="structtws__ctx.html">tws_ctx</a> *ctx, <span class="keywordtype">char</span> **buff, <span class="keywordtype">size_t</span> *buff_size,</div>
+<div class="line">    <span class="keywordtype">int</span> *frm_type);</div>
+</div><!-- fragment --><p> Receive a frame and save it on <code>buff</code>.</p>
+<p><b>Parameters:</b></p>
+<p>**<code>buff</code>:**</p>
+<p>Pointer to the target buffer. If NULL, ToyWS will allocate a new buffer that is capable to hold the frame and save into <code>buff</code>.</p>
+<p>If already exists: the function will try to fill the buffer with the frame content, if the frame size is bigger than <code>buff_size</code>, the function will reallocate <code>buff</code> and update <code>buff_size</code> with the new size.</p>
+<p>**<code>buff_size</code>:**</p>
+<p>Current buffer size. <b>Must</b> point the a valid memory region. If <code>*buff</code> points to NULL, <code>*buff_size</code> must be equals to 0.</p>
+<p>**<code>frm_type</code>:**</p>
+<p>Frame type read. The frame type received will be reflected into the contents of this pointer.</p>
+<p><b>Return</b>: Returns 0 if success, a negative number otherwise.</p>
+<p><b>Note</b>:</p>
+<ul>
+<li>This routine is blocking, that is, it will only return if it manages to read a frame or if there is an error during the reading (such as invalid (or unsupported) frame or server disconnection).</li>
+<li>At the end of everything, don't forget to free the buffer!. Once its size is relocated, a single call to 'free' is sufficient.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md46"></a>
+Example</h1>
+<p>The example below illustrates the usage (also available at (extra/toyws/tws_test.c)): </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;toyws.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="ping_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structtws__ctx.html">tws_ctx</a> ctx;</div>
+<div class="line">    <span class="keywordtype">char</span> msg[] = <span class="stringliteral">&quot;Hello&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Buffer/frame params. */</span></div>
+<div class="line">    <span class="keywordtype">char</span> *buff;</div>
+<div class="line">    <span class="keywordtype">int</span> frm_type;</div>
+<div class="line">    <span class="keywordtype">size_t</span> buff_size;</div>
+<div class="line"> </div>
+<div class="line">    buff      = NULL;</div>
+<div class="line">    buff_size = 0;</div>
+<div class="line">    frm_type  = 0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (tws_connect(&amp;ctx, <span class="stringliteral">&quot;127.0.0.1&quot;</span>, 8080) &lt; 0)</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;Unable to connect!\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Send message. */</span></div>
+<div class="line">    printf(<span class="stringliteral">&quot;Send: %s\n&quot;</span>,</div>
+<div class="line">        (tws_sendframe(&amp;ctx, msg, strlen(msg), FRM_TXT) &gt;= 0 ?</div>
+<div class="line">            <span class="stringliteral">&quot;Success&quot;</span> : <span class="stringliteral">&quot;Failed&quot;</span>));</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/* Blocks until receive a single message. */</span></div>
+<div class="line">    <span class="keywordflow">if</span> (tws_receiveframe(&amp;ctx, &amp;buff, &amp;buff_size, &amp;frm_type) &lt; 0)</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;Unable to receive message!\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    printf(<span class="stringliteral">&quot;I received: (%s) (type: %s)\n&quot;</span>, buff,</div>
+<div class="line">        (frm_type == FRM_TXT ? <span class="stringliteral">&quot;Text&quot;</span> : <span class="stringliteral">&quot;Binary&quot;</span>));</div>
+<div class="line"> </div>
+<div class="line">    tws_close(&amp;ctx);</div>
+<div class="line"> </div>
+<div class="line">    free(buff);</div>
+<div class="line">    <span class="keywordflow">return</span> (0);</div>
+<div class="line">}</div>
+<div class="ttc" id="aping_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="ping_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Main routine.</div><div class="ttdef"><b>Definition:</b> ping.c:75</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

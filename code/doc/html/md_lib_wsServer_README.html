@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme: wsServer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">wsServer </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a href="https://opensource.org/licenses/GPL-3.0"><img src="https://img.shields.io/badge/license-GPLv3-blue" alt="License: GPL v3" class="inline"/></a> <a href="https://app.travis-ci.com/Theldus/wsServer"><img src="https://app.travis-ci.com/Theldus/wsServer.svg?branch=master" alt="Build Status for Windows, Linux, macOS and FreeBSD" style="pointer-events: none;" class="inline"/></a></p>
+<p>wsServer - a very tiny WebSocket server library written in C</p>
+<h1><a class="anchor" id="autotoc_md48"></a>
+Library</h1>
+<p>wsServer is a tiny, lightweight WebSocket server library written in C that intends to be easy to use, fast, hackable, and compliant to the <a href="https://tools.ietf.org/html/rfc6455">RFC 6455</a>.</p>
+<p>The main features are:</p><ul>
+<li>Send/Receive Text and Binary messages</li>
+<li>PING/PONG frames</li>
+<li>Opening/Closing handshakes</li>
+<li>Event based (onmessage, onopen, onclose)</li>
+<li>Portability: Works fine on Windows, Linux (Android included), macOS and FreeBSD</li>
+</ul>
+<p>See Autobahn <a href="https://theldus.github.io/wsServer/autobahn">report</a> and the <a class="el" href="md_lib_wsServer_doc_AUTOBAHN.html">docs</a> for an 'in-depth' analysis.</p>
+<h1><a class="anchor" id="autotoc_md49"></a>
+Building</h1>
+<p>wsServer only requires a C99-compatible compiler (such as GCC, Clang, TCC and others) and no external libraries.</p>
+<h2><a class="anchor" id="autotoc_md50"></a>
+Make</h2>
+<p>The preferred way to build wsServer on Linux environments: </p><div class="fragment"><div class="line">git clone https://github.com/Theldus/wsServer</div>
+<div class="line">cd wsServer/</div>
+<div class="line">make</div>
+<div class="line"> </div>
+<div class="line"># Optionally, a user can also install wsServer into the system,</div>
+<div class="line"># either on default paths or by providing PREFIX or DESTDIR env</div>
+<div class="line"># vars to the Makefile.</div>
+<div class="line"> </div>
+<div class="line">make install # Or make install DESTDIR=/my/folder/</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md51"></a>
+CMake</h2>
+<p>CMake enables the user to easily build wsServer in others environments other than Linux and also allows the use of an IDE to build the project automatically. If that's your case: </p><div class="fragment"><div class="line">git clone https://github.com/Theldus/wsServer</div>
+<div class="line">cd wsServer/</div>
+<div class="line">mkdir build &amp;&amp; cd build/</div>
+<div class="line">cmake ..</div>
+<div class="line">make</div>
+<div class="line">./examples/echo/echo # Waiting for incoming connections...</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md52"></a>
+Windows support</h2>
+<p>Windows has native support via MinGW, toolchain setup and build steps are detailed <a href="https://github.com/Theldus/wsServer/blob/master/doc/BUILD_WINDOWS.md">here</a>.</p>
+<h1><a class="anchor" id="autotoc_md53"></a>
+Why to complicate if things can be simple?</h1>
+<p>wsServer abstracts the idea of sockets and you only need to deal with three types of events defined:</p>
+<div class="fragment"><div class="line"><span class="comment">/* New client. */</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3">onopen</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Client disconnected. */</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#a75da9864e55abf37e022f421340398e1">onclose</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* Client sent a text message. */</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#a2864d75de905dbfa15b7b19b327cc449">onmessage</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *msg,</div>
+<div class="line">    uint64_t size, <span class="keywordtype">int</span> type);</div>
+<div class="ttc" id="aping_8c_html_a2864d75de905dbfa15b7b19b327cc449"><div class="ttname"><a href="ping_8c.html#a2864d75de905dbfa15b7b19b327cc449">onmessage</a></div><div class="ttdeci">void onmessage(ws_cli_conn_t *client, const unsigned char *msg, uint64_t size, int type)</div><div class="ttdoc">Called when a client connects to the server.</div><div class="ttdef"><b>Definition:</b> ping.c:63</div></div>
+<div class="ttc" id="aping_8c_html_a75da9864e55abf37e022f421340398e1"><div class="ttname"><a href="ping_8c.html#a75da9864e55abf37e022f421340398e1">onclose</a></div><div class="ttdeci">void onclose(ws_cli_conn_t *client)</div><div class="ttdoc">Called when a client disconnects to the server.</div><div class="ttdef"><b>Definition:</b> ping.c:48</div></div>
+<div class="ttc" id="aping_8c_html_acad817bd7c7f16e077c8f4a411cf60c3"><div class="ttname"><a href="ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3">onopen</a></div><div class="ttdeci">void onopen(ws_cli_conn_t *client)</div><div class="ttdoc">Called when a client connects to the server.</div><div class="ttdef"><b>Definition:</b> ping.c:37</div></div>
+<div class="ttc" id="astructws__connection_html"><div class="ttname"><a href="structws__connection.html">ws_connection</a></div><div class="ttdoc">Client socks.</div><div class="ttdef"><b>Definition:</b> ws.c:70</div></div>
+</div><!-- fragment --><p>this is all you need to worry about, nothing to think about return values in socket, accepting connections, and so on.</p>
+<p>As a gift, each client is handled in a separate thread, so you will not have to worry about it.</p>
+<h2><a class="anchor" id="autotoc_md54"></a>
+A complete example</h2>
+<p>More examples, including the respective html files, can be found in examples/ folder, ;-).</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="ws_8h.html">ws.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3">onopen</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">char</span> *cli;</div>
+<div class="line">    cli = <a class="code" href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a>(client);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Connection opened, addr: %s\n&quot;</span>, cli);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#a75da9864e55abf37e022f421340398e1">onclose</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">char</span> *cli;</div>
+<div class="line">    cli = <a class="code" href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a>(client);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Connection closed, addr: %s\n&quot;</span>, cli);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code" href="ping_8c.html#a2864d75de905dbfa15b7b19b327cc449">onmessage</a>(<a class="code" href="structws__connection.html">ws_cli_conn_t</a> *client,</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *msg, uint64_t size, <span class="keywordtype">int</span> type)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">char</span> *cli;</div>
+<div class="line">    cli = <a class="code" href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a>(client);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;I receive a message: %s (%zu), from: %s\n&quot;</span>, msg,</div>
+<div class="line">        size, cli);</div>
+<div class="line"> </div>
+<div class="line">    sleep(2);</div>
+<div class="line">    <a class="code" href="ws_8h.html#a513af9fe222b7b45550d8794afeca200">ws_sendframe_txt</a>(client, <span class="stringliteral">&quot;hello&quot;</span>);</div>
+<div class="line">    sleep(2);</div>
+<div class="line">    <a class="code" href="ws_8h.html#a513af9fe222b7b45550d8794afeca200">ws_sendframe_txt</a>(client, <span class="stringliteral">&quot;world&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="ping_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">/* Register events. */</span></div>
+<div class="line">    <span class="keyword">struct </span><a class="code" href="structws__events.html">ws_events</a> evs;</div>
+<div class="line">    evs.<a class="code" href="structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20">onopen</a>    = &amp;<a class="code" href="ping_8c.html#acad817bd7c7f16e077c8f4a411cf60c3">onopen</a>;</div>
+<div class="line">    evs.onclose   = &amp;<a class="code" href="ping_8c.html#a75da9864e55abf37e022f421340398e1">onclose</a>;</div>
+<div class="line">    evs.onmessage = &amp;<a class="code" href="ping_8c.html#a2864d75de905dbfa15b7b19b327cc449">onmessage</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">/*</span></div>
+<div class="line"><span class="comment">     * Main loop, this function never* returns.</span></div>
+<div class="line"><span class="comment">     *</span></div>
+<div class="line"><span class="comment">     * *If the third argument is != 0, a new thread is created</span></div>
+<div class="line"><span class="comment">     * to handle new connections.</span></div>
+<div class="line"><span class="comment">     */</span></div>
+<div class="line">    <a class="code" href="ws_8h.html#aa37bbcf33e10623a2e18f9587cee8508">ws_socket</a>(&amp;evs, 8080, 0, 1000);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> (0);</div>
+<div class="line">}</div>
+<div class="ttc" id="aping_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="ping_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Main routine.</div><div class="ttdef"><b>Definition:</b> ping.c:75</div></div>
+<div class="ttc" id="astructws__events_html"><div class="ttname"><a href="structws__events.html">ws_events</a></div><div class="ttdoc">events Web Socket events types.</div><div class="ttdef"><b>Definition:</b> ws.h:234</div></div>
+<div class="ttc" id="astructws__events_html_a7eaba79ad2d2403ca3db16db00f58e20"><div class="ttname"><a href="structws__events.html#a7eaba79ad2d2403ca3db16db00f58e20">ws_events::onopen</a></div><div class="ttdeci">void(* onopen)(ws_cli_conn_t *client)</div><div class="ttdoc">On open event, called when a new client connects.</div><div class="ttdef"><b>Definition:</b> ws.h:238</div></div>
+<div class="ttc" id="aws_8h_html"><div class="ttname"><a href="ws_8h.html">ws.h</a></div><div class="ttdoc">wsServer constants and functions.</div></div>
+<div class="ttc" id="aws_8h_html_a513af9fe222b7b45550d8794afeca200"><div class="ttname"><a href="ws_8h.html#a513af9fe222b7b45550d8794afeca200">ws_sendframe_txt</a></div><div class="ttdeci">int ws_sendframe_txt(ws_cli_conn_t *cli, const char *msg)</div><div class="ttdoc">Sends a WebSocket text frame.</div><div class="ttdef"><b>Definition:</b> ws.c:683</div></div>
+<div class="ttc" id="aws_8h_html_a9e976bca5a46baee91569ef33bb74f21"><div class="ttname"><a href="ws_8h.html#a9e976bca5a46baee91569ef33bb74f21">ws_getaddress</a></div><div class="ttdeci">char * ws_getaddress(ws_cli_conn_t *client)</div><div class="ttdoc">Gets the IP address relative to a client connection opened by the server.</div><div class="ttdef"><b>Definition:</b> ws.c:434</div></div>
+<div class="ttc" id="aws_8h_html_aa37bbcf33e10623a2e18f9587cee8508"><div class="ttname"><a href="ws_8h.html#aa37bbcf33e10623a2e18f9587cee8508">ws_socket</a></div><div class="ttdeci">int ws_socket(struct ws_events *evs, uint16_t port, int thread_loop, uint32_t timeout_ms)</div><div class="ttdoc">Main loop for the server.</div><div class="ttdef"><b>Definition:</b> ws.c:1624</div></div>
+</div><!-- fragment --><p>the example above can be built with: <code>make examples</code>.</p>
+<h1><a class="anchor" id="autotoc_md55"></a>
+WebSocket client: ToyWS</h1>
+<p>Inside <code>extra/toyws</code> there is a companion project called ToyWS. ToyWS is a very simple &amp; dumb WebSocket client made exclusively to work with wsServer. Extremely limited, its usage is highly discouraged with other servers other than wsServer and is only meant to be used in conjunction with wsServer.</p>
+<p>This mini-project only serves as an aid to wsServer and frees the user from using additional projects to use wsServer in its entirety.</p>
+<p>More info at: <a class="el" href="md_lib_wsServer_extra_toyws_README.html">extra/toyws/README.md</a></p>
+<h1><a class="anchor" id="autotoc_md56"></a>
+SSL/TLS Support</h1>
+<p>wsServer does not currently support encryption. However, it is possible to use it in conjunction with <a href="https://www.stunnel.org/">Stunnel</a>, a proxy that adds TLS support to existing projects. Just follow <a class="el" href="md_lib_wsServer_doc_TLS.html">these</a> four easy steps to get TLS support on wsServer.</p>
+<h1><a class="anchor" id="autotoc_md57"></a>
+Contributing</h1>
+<p>wsServer is always open to the community and willing to accept contributions, whether with issues, documentation, testing, new features, bugfixes, typos... welcome aboard. Make sure to read the <a class="el" href="md_lib_wsServer_doc_CODING_STYLE.html">coding-style</a> guidelines before sending a PR.</p>
+<p>Was the project helpful to you? Have something to say about it? Leave your comments <a href="https://github.com/Theldus/wsServer/discussions/30">here</a>.</p>
+<h1><a class="anchor" id="autotoc_md58"></a>
+License and Authors</h1>
+<p>wsServer is licensed under GPLv3 License. Written by Davidson Francis and <a href="https://github.com/Theldus/wsServer/graphs/contributors">others</a> contributors. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,136 @@
+Since there is some demand to support a client, \textquotesingle{}Toy\+WS\textquotesingle{} is a response to those requests\+: Toy\+WS is a toy Web\+Socket client, meaning that it\textquotesingle{}s quite simple and made to work (guaranteed) only with ws\+Server.
+
+Limitations\+:
+\begin{DoxyItemize}
+\item Fixed handshake header
+\item Fixed frame mask (it should be random)
+\item No PING/\+PONG frame support
+\item No close handshake support\+: although it can identify CLOSE frames, it does not send the response, only aborts the connection.
+\item No support for CONT frames, that is, the entire content of a frame (TXT or BIN) must be contained within a single frame.
+\item Possibly other things too.
+\end{DoxyItemize}
+
+Although extremely limited, Toy\+WS was designed for those who want to {\itshape also} have a C client that is lightweight and compatible with ws\+Server, thus, freeing the need for a browser and/or third-\/party libraries to test and use ws\+Server.
+
+Maybe this client will evolve into something more complete and general in the future, but that\textquotesingle{}s not in the roadmap at the moment.\hypertarget{md_lib_wsServer_extra_toyws_README_autotoc_md42}{}\doxysection{API}\label{md_lib_wsServer_extra_toyws_README_autotoc_md42}
+The API is quite simple and is summarized in 4 routines, to connect, disconnect, send and receive frame, as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} tws\_connect(\textcolor{keyword}{struct} \mbox{\hyperlink{structtws__ctx}{tws\_ctx}} *ctx, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *ip, uint16\_t port);}
+
+\end{DoxyCode}
+ Connect to a given {\ttfamily ip} address and {\ttfamily port}.
+
+{\bfseries{Return}}\+: Returns a positive number if success, otherwise, a negative number.
+
+{\bfseries{Note\+:}} {\ttfamily struct \mbox{\hyperlink{structtws__ctx}{tws\+\_\+ctx}} $\ast$ctx} is for internal usage and initialized within this function. There is no need to access this structure or modify its values, Toy\+WS just needs it to maintain the consistent client state.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} tws\_close(\textcolor{keyword}{struct} \mbox{\hyperlink{structtws__ctx}{tws\_ctx}} *ctx);}
+
+\end{DoxyCode}
+ Close the connection for the given {\ttfamily ctx}.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} tws\_sendframe(\textcolor{keyword}{struct} \mbox{\hyperlink{structtws__ctx}{tws\_ctx}} *ctx, uint8\_t *msg, uint64\_t size, \textcolor{keywordtype}{int} type);}
+
+\end{DoxyCode}
+ Send a frame of type {\ttfamily type} with content {\ttfamily msg} and size {\ttfamily size} for a given context {\ttfamily ctx}.
+
+Valid frame types are\+:
+\begin{DoxyItemize}
+\item FRM\+\_\+\+TXT
+\item FRM\+\_\+\+BIN
+\end{DoxyItemize}
+
+{\bfseries{Return}}\+: Returns 0 if success, otherwise, a negative number.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} tws\_receiveframe(\textcolor{keyword}{struct} \mbox{\hyperlink{structtws__ctx}{tws\_ctx}} *ctx, \textcolor{keywordtype}{char} **buff, \textcolor{keywordtype}{size\_t} *buff\_size,}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} *frm\_type);}
+
+\end{DoxyCode}
+ Receive a frame and save it on {\ttfamily buff}.
+
+{\bfseries{Parameters\+:}}
+
+$\ast$$\ast${\ttfamily buff}\+:$\ast$$\ast$
+
+Pointer to the target buffer. If NULL, Toy\+WS will allocate a new buffer that is capable to hold the frame and save into {\ttfamily buff}.
+
+If already exists\+: the function will try to fill the buffer with the frame content, if the frame size is bigger than {\ttfamily buff\+\_\+size}, the function will reallocate {\ttfamily buff} and update {\ttfamily buff\+\_\+size} with the new size.
+
+$\ast$$\ast${\ttfamily buff\+\_\+size}\+:$\ast$$\ast$
+
+Current buffer size. {\bfseries{Must}} point the a valid memory region. If {\ttfamily $\ast$buff} points to NULL, {\ttfamily $\ast$buff\+\_\+size} must be equals to 0.
+
+$\ast$$\ast${\ttfamily frm\+\_\+type}\+:$\ast$$\ast$
+
+Frame type read. The frame type received will be reflected into the contents of this pointer.
+
+{\bfseries{Return}}\+: Returns 0 if success, a negative number otherwise.
+
+{\bfseries{Note}}\+:
+
+
+\begin{DoxyItemize}
+\item This routine is blocking, that is, it will only return if it manages to read a frame or if there is an error during the reading (such as invalid (or unsupported) frame or server disconnection).
+\item At the end of everything, don\textquotesingle{}t forget to free the buffer!. Once its size is relocated, a single call to \textquotesingle{}free\textquotesingle{} is sufficient.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_extra_toyws_README_autotoc_md46}{}\doxysection{Example}\label{md_lib_wsServer_extra_toyws_README_autotoc_md46}
+The example below illustrates the usage (also available at (extra/toyws/tws\+\_\+test.\+c))\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}toyws.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{ping_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{struct }\mbox{\hyperlink{structtws__ctx}{tws\_ctx}} ctx;}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} msg[] = \textcolor{stringliteral}{"{}Hello"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Buffer/frame params. */}}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} *buff;}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} frm\_type;}
+\DoxyCodeLine{    \textcolor{keywordtype}{size\_t} buff\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    buff      = NULL;}
+\DoxyCodeLine{    buff\_size = 0;}
+\DoxyCodeLine{    frm\_type  = 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (tws\_connect(\&ctx, \textcolor{stringliteral}{"{}127.0.0.1"{}}, 8080) < 0)}
+\DoxyCodeLine{        fprintf(stderr, \textcolor{stringliteral}{"{}Unable to connect!\(\backslash\)n"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Send message. */}}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}Send: \%s\(\backslash\)n"{}},}
+\DoxyCodeLine{        (tws\_sendframe(\&ctx, msg, strlen(msg), FRM\_TXT) >= 0 ?}
+\DoxyCodeLine{            \textcolor{stringliteral}{"{}Success"{}} : \textcolor{stringliteral}{"{}Failed"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Blocks until receive a single message. */}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (tws\_receiveframe(\&ctx, \&buff, \&buff\_size, \&frm\_type) < 0)}
+\DoxyCodeLine{        fprintf(stderr, \textcolor{stringliteral}{"{}Unable to receive message!\(\backslash\)n"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"{}I received: (\%s) (type: \%s)\(\backslash\)n"{}}, buff,}
+\DoxyCodeLine{        (frm\_type == FRM\_TXT ? \textcolor{stringliteral}{"{}Text"{}} : \textcolor{stringliteral}{"{}Binary"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{    tws\_close(\&ctx);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    free(buff);}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} (0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

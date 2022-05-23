@@ -1,0 +1,109 @@
+ws\+Server intends to be robust enough to be used safely in production. Thus, the project supports fuzzing through the {\ttfamily ws\+\_\+file} routine, which reads a file containing previously captured packets from the network. This routine allows ws\+Server to be tested for common cases and expected to work and permits it to be used on fuzzers, such as the AFL, supported here.\hypertarget{md_lib_wsServer_doc_FUZZING_autotoc_md22}{}\doxysection{1) Installing/building American Fuzzy Lop}\label{md_lib_wsServer_doc_FUZZING_autotoc_md22}
+While not the focus here, building AFL should not be an issue, so the following brief instructions should be sufficient\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Clone the repository}
+\DoxyCodeLine{git clone https://github.com/google/AFL}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Build}
+\DoxyCodeLine{cd AFL/}
+\DoxyCodeLine{make}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Set env vars}
+\DoxyCodeLine{export PATH=\$PATH:\$(pwd)}
+\DoxyCodeLine{export AFL\_PATH=\$(pwd)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Add env vars into your \string~/.bashrc}
+\DoxyCodeLine{echo "{}export PATH=\(\backslash\)\$PATH:\$(pwd)/"{} >> \string~/.bashrc}
+\DoxyCodeLine{echo "{}AFL\_PATH=\$(pwd)"{} >> \string~/.bashrc}
+
+\end{DoxyCode}
+ If anything fails, please check if you have the common build tools on your system (such as {\ttfamily gcc}, {\ttfamily make}, etc.) and read the official or specific instructions for your system.\hypertarget{md_lib_wsServer_doc_FUZZING_autotoc_md23}{}\doxysection{2) Fuzzing}\label{md_lib_wsServer_doc_FUZZING_autotoc_md23}
+Once AFL is up and running, fuzzing is pretty straightforward\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Make sure wsServer is in a clean state}
+\DoxyCodeLine{make clean}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Build with AFL\_FUZZ var set to yes:}
+\DoxyCodeLine{AFL\_FUZZ=yes make}
+
+\end{DoxyCode}
+
+
+ws\+Server and the test file will be compiled. Fuzzing starts automatically right after.
+
+\DoxyHorRuler{0}
+\hypertarget{md_lib_wsServer_doc_FUZZING_autotoc_md25}{}\doxysection{Input tests and file structures}\label{md_lib_wsServer_doc_FUZZING_autotoc_md25}
+All fuzzing-\/related parts are present in the {\itshape tests} folder and follow the following structure\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{├── in}
+\DoxyCodeLine{│   ├── ch\_1b\_1b\_508b\_close}
+\DoxyCodeLine{│   └── ch\_1b\_close}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├── out}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├── packets}
+\DoxyCodeLine{│   ├── ch\_508b\_close}
+\DoxyCodeLine{│   ├── ch\_close}
+\DoxyCodeLine{│   ├── ff\_1b\_close}
+\DoxyCodeLine{│   ├── ff\_384kB\_close}
+\DoxyCodeLine{│   ├── ff\_ping\_ping\_close}
+\DoxyCodeLine{│   ├── ws\_1b\_close}
+\DoxyCodeLine{│   ├── ws\_508b\_ping\_close}
+\DoxyCodeLine{│   ├── ws\_98305b\_close}
+\DoxyCodeLine{│   │}
+\DoxyCodeLine{│   ├── frames}
+\DoxyCodeLine{│   │   ├── close}
+\DoxyCodeLine{│   │   ├── ping}
+\DoxyCodeLine{│   │   ├── req\_chrome}
+\DoxyCodeLine{│   │   ├── req\_firefox}
+\DoxyCodeLine{│   │   └── req\_websocat}
+\DoxyCodeLine{│   │}
+\DoxyCodeLine{│   └── msgs}
+\DoxyCodeLine{│       ├── msg\_1byte}
+\DoxyCodeLine{│       ├── msg\_384kB\_cont}
+\DoxyCodeLine{│       ├── msg\_508bytes}
+\DoxyCodeLine{│       └── msg\_98305bytes}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├── Makefile}
+\DoxyCodeLine{├── run-\/fuzzy.sh}
+\DoxyCodeLine{└── ws\_file.c}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{in/\+:}} Contains the input files that will be used in AFL (parameter {\ttfamily -\/i}).
+\item {\bfseries{out/\+:}} Contains the AFL output (parameter {\ttfamily -\/o}). Note that the execution script ({\ttfamily run-\/fuzzy.\+sh}) allows you to customize the output by the environment variable {\ttfamily AFL\+\_\+\+OUT}.
+\item {\bfseries{packets/\+:}} Contains packets and parts of packets captured from the network from multiple clients (currently\+: Firefox, Google Chrome, and Websocat) with ws\+Server. It serves as a way to \textquotesingle{}assemble\textquotesingle{} new test files for ws\+Server, whether for fuzzing or not.
+\begin{DoxyItemize}
+\item {\bfseries{packets/frames\+:/}} Contains request frames (handshake) and control frames from multiple clients.
+\item {\bfseries{packets/msgs/\+:}} Contains packets of messages sent to ws\+Server of varying sizes, with FRAMES of type {\ttfamily FIN} and {\ttfamily CONT}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_FUZZING_autotoc_md26}{}\doxysubsection{Creating new inputs}\label{md_lib_wsServer_doc_FUZZING_autotoc_md26}
+New input files are pretty simple to make\+: either you create from existing packets or capture new ones via tcpdump, wireshark, etc.
+
+Let\textquotesingle{}s say you want to create one that uses a Firefox handshake, sends two messages of one byte each, one ping and disconnect, we can then do\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd tests/packets}
+\DoxyCodeLine{cat frames/req\_firefox            \(\backslash\)}
+\DoxyCodeLine{    msgs/msg\_1byte msgs/msg\_1byte \(\backslash\)}
+\DoxyCodeLine{    frames/ping                   \(\backslash\)}
+\DoxyCodeLine{    frames/close > ../in/ff\_1b\_1b\_ping\_close}
+
+\end{DoxyCode}
+
+
+For new packets, the idea is similar.
+
+{\bfseries{Attention\+:}} Since inputs need to be valid, when creating new packets, be sure to always use a handshake (req\+\_\+$\ast$) as the first file and a close frame at the end.
+
+\DoxyHorRuler{0}
+\hypertarget{md_lib_wsServer_doc_FUZZING_autotoc_md28}{}\doxysection{Acknowledgments}\label{md_lib_wsServer_doc_FUZZING_autotoc_md28}
+Thanks to \href{https://github.com/rlaneth}{\texttt{ @rlaneth}}, who performed fuzzing tests on ws\+Server and who discovered and helped me to fix many bugs in the source code. 

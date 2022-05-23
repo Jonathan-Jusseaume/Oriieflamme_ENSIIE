@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Oriieflamme:  Fichier source de lib/wsServer/examples/vtouchpad/vtouchpad.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Oriieflamme
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_1307711b428f7fec1457907a4e35c099.html">wsServer</a></li><li class="navelem"><a class="el" href="dir_e2a16d0e2e47a011f922e352084769ba.html">examples</a></li><li class="navelem"><a class="el" href="dir_fd91caa8c8285091cb908c7a9f6e6699.html">vtouchpad</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vtouchpad.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2022  Davidson Francis &lt;davidsondfgl@gmail.com&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef VTOUCHPAD_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define VTOUCHPAD_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/* Debug. */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #ifndef DISABLE_VERBOSE</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #define VTOUCH_DEBUG(x) printf x</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    #define VTOUCH_DEBUG(x)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/* Mouse definitions. */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">    #define MOUSE_MOVE 1</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_LEFT_DOWN   2</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_LEFT_UP     4</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_RIGHT_DOWN  8</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_RIGHT_UP   16</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">    #define EVENT_DELIMITER &quot;; &quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/* Mouse buttons. */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_LEFT  1</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">    #define MOUSE_BTN_RIGHT 3</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">/* Mouse event structure. */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structmouse__event.html">   41</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structmouse__event.html">mouse_event</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> event;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> x_off;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> y_off;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/* Opaque type to &#39;struct mouse&#39;. */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmouse.html">mouse</a> <a class="code" href="structmouse.html">mouse_t</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/* External declarations. */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">extern</span> <a class="code" href="structmouse.html">mouse_t</a> *<a class="code" href="mouse__win_8c.html#af898aec99e9cb861dd71bb4d8e4a7389">mouse_new</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">void</span>* <a class="code" href="mouse__win_8c.html#abb1685fb0e861c631a71a9451c991ac9">mouse_free</a>(<a class="code" href="structmouse.html">mouse_t</a> *<a class="code" href="structmouse.html">mouse</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="mouse__win_8c.html#af86b6bbccf10510158e1bc06e4608fa7">mouse_move_relative</a>(<a class="code" href="structmouse.html">mouse_t</a> *<a class="code" href="structmouse.html">mouse</a>, <span class="keywordtype">int</span> x_off, <span class="keywordtype">int</span> y_off);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="mouse__win_8c.html#ac878b49cf71180922f55161caf20ea8e">mouse_down</a>(<a class="code" href="structmouse.html">mouse_t</a> *<a class="code" href="structmouse.html">mouse</a>, <span class="keywordtype">int</span> button);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="mouse__win_8c.html#a26ef9287f890455396041b765c8b36f7">mouse_up</a>(<a class="code" href="structmouse.html">mouse_t</a> *<a class="code" href="structmouse.html">mouse</a>, <span class="keywordtype">int</span> button);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MAIN_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="amouse__win_8c_html_a26ef9287f890455396041b765c8b36f7"><div class="ttname"><a href="mouse__win_8c.html#a26ef9287f890455396041b765c8b36f7">mouse_up</a></div><div class="ttdeci">int mouse_up(mouse_t *mouse, int button)</div><div class="ttdoc">Makes a 'button release' event according to the mouse pointer and the button (left or right).</div><div class="ttdef"><b>Definition:</b> mouse_win.c:126</div></div>
+<div class="ttc" id="amouse__win_8c_html_abb1685fb0e861c631a71a9451c991ac9"><div class="ttname"><a href="mouse__win_8c.html#abb1685fb0e861c631a71a9451c991ac9">mouse_free</a></div><div class="ttdeci">void * mouse_free(mouse_t *mouse)</div><div class="ttdoc">Do nothing, stub.</div><div class="ttdef"><b>Definition:</b> mouse_win.c:60</div></div>
+<div class="ttc" id="amouse__win_8c_html_ac878b49cf71180922f55161caf20ea8e"><div class="ttname"><a href="mouse__win_8c.html#ac878b49cf71180922f55161caf20ea8e">mouse_down</a></div><div class="ttdeci">int mouse_down(mouse_t *mouse, int button)</div><div class="ttdoc">Makes a 'button press' event according to the mouse pointer and the button (left or right).</div><div class="ttdef"><b>Definition:</b> mouse_win.c:99</div></div>
+<div class="ttc" id="amouse__win_8c_html_af86b6bbccf10510158e1bc06e4608fa7"><div class="ttname"><a href="mouse__win_8c.html#af86b6bbccf10510158e1bc06e4608fa7">mouse_move_relative</a></div><div class="ttdeci">int mouse_move_relative(mouse_t *mouse, int x_off, int y_off)</div><div class="ttdoc">Moves the mouse pointed by mouse to the offsets x_off and y_off.</div><div class="ttdef"><b>Definition:</b> mouse_win.c:76</div></div>
+<div class="ttc" id="amouse__win_8c_html_af898aec99e9cb861dd71bb4d8e4a7389"><div class="ttname"><a href="mouse__win_8c.html#af898aec99e9cb861dd71bb4d8e4a7389">mouse_new</a></div><div class="ttdeci">mouse_t * mouse_new(void)</div><div class="ttdoc">Do nothing, stub.</div><div class="ttdef"><b>Definition:</b> mouse_win.c:48</div></div>
+<div class="ttc" id="astructmouse__event_html"><div class="ttname"><a href="structmouse__event.html">mouse_event</a></div><div class="ttdef"><b>Definition:</b> vtouchpad.h:42</div></div>
+<div class="ttc" id="astructmouse_html"><div class="ttname"><a href="structmouse.html">mouse</a></div><div class="ttdoc">Stub structure.</div><div class="ttdef"><b>Definition:</b> mouse_win.c:41</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

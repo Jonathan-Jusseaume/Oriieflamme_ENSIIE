@@ -1,0 +1,97 @@
+ws\+Server is a simple project, and therefore I don\textquotesingle{}t believe there is so much interest in it. However, as I have received a few contributions over the years, it may be interesting to write something about it.
+
+(much of what is here is (heavily-\/)based on \href{https://github.com/nanvix/documentation/blob/master/6-contrib/3-coding-style.md}{\texttt{ Nanvix}}\textquotesingle{}s and \href{https://www.kernel.org/doc/html/v4.10/process/coding-style.html}{\texttt{ Linux}}\textquotesingle{}s coding style.)\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md13}{}\doxysection{Indentation}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md13}
+
+\begin{DoxyItemize}
+\item {\itshape Always} use {\bfseries{tab}} characters for indentation.
+\item Tab width\+: 4 characters.
+\item Indent case labels in switch statements, such as\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (var)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} bar:}
+\DoxyCodeLine{        something;}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} beef:}
+\DoxyCodeLine{        something}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\item Do not put multiples statements nor multiples assignments in a single line.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md14}{}\doxysection{Long lines length}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Even though Mr. Torvalds has \href{https://www.theregister.com/2020/06/01/linux_5_7/}{\texttt{ said}} that nowadays it is ok to use large lines, I\textquotesingle{}ll keep to 80 columns with five (85) of tolerance. However, use common sense here.
+\item While breaking long lines, indent the next line at one level.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md15}{}\doxysection{Placing Braces and Spaces}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Allman style\+: whether functions or control statements, place the braces always in the next line. Statements within the braces are indented at one level.
+\end{DoxyItemize}
+
+Ex\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} foo(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (something)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        bar();}
+\DoxyCodeLine{        baz();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{        deadbeef();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    something\_else(); \textcolor{comment}{/* put always a blank line between a control block}}
+\DoxyCodeLine{\textcolor{comment}{                without braces and the next statement. */}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item If one line is enough (like function call or variable assignment), do not put braces. Keep in mind the readability\+: put a blank line between statements.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md16}{}\doxysection{Spaces}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Use one space after these keywords\+: {\ttfamily if, switch, case, for, do, while}.
+\item Use one space around (on each side of) most binary and ternary operators\+: {\ttfamily = + -\/ $<$ $>$ $\ast$ / \% $\vert$ \& $^\wedge$ $<$= $>$= == != ? \+:}.
+\item But no space after unary operators\+: {\ttfamily \& $\ast$ + -\/ $\sim$ ! sizeof}.
+\item No space after/before the postfix/prefix increment \& decrement unary operators\+: {\ttfamily ++ -\/-\/}.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md17}{}\doxysection{Variables and Naming}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md17}
+
+\begin{DoxyItemize}
+\item Do not use mixed-\/cases to name your variables. Always use lower-\/case for variables and functions name. Underscores are acceptable to give a more descriptive name, e.\+g., {\ttfamily int next\+\_\+frame(...)}.
+\item Always use uppercase for macros.
+\item Do not use {\itshape typedef} s unless for totally opaque objects. The reasoning is simple\+: it {\itshape hides} the original meaning of the variable. Is it a union, struct, an integer?.
+\item (Try to) do not mix variable declaration with your code. Declare your variables at the very beginning of the scope of that variable.
+\end{DoxyItemize}\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md18}{}\doxysection{Commenting/\+Documenting}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Use always {\ttfamily /$\ast$ c89 style. $\ast$/} in your code, even for a single line.
+\item Use Doxygen syntax to document functions and structures, even for the internal API.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_lib_wsServer_doc_CODING_STYLE_autotoc_md20}{}\doxysection{Using clang-\/format}\label{md_lib_wsServer_doc_CODING_STYLE_autotoc_md20}
+{\ttfamily clang-\/format} is a command-\/line tool, part of the LLVM project that, for a pre-\/defined set of rules or a given file, automatically formats source code. ws\+Server comes with a .clang-\/format file in the root directory that tries to embrace most of these rules above.
+
+Please note that the .clang-\/format file does not fully cover everything described here and even in cases that do, it is always important to carefully evaluate the output generated by it, since sometimes it may be far from ideal, use common sense here.
+
+My suggestion would be something like\+:
+\begin{DoxyItemize}
+\item Commit what you need to commit ({\bfseries{locally}}).
+\item Apply clang-\/format over the file\+: {\ttfamily clang-\/format -\/style=file -\/i src/file.\+c}.
+\item Manually check changes on the file.
+\item Make a commit amend if applicable.
+\end{DoxyItemize}
+
+Similarly, instead of performing an amend, you can also generate a newly formatted file and then perform a diff of the original with the new one\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{clang-\/format -\/style=file file.c > newfile.c}
+\DoxyCodeLine{diff -\/u file.c newfile.c > diffs.patch        \# see this file}
+
+\end{DoxyCode}
+ Pick what you think is best. 

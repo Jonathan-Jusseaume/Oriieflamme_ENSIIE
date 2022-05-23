@@ -32,3 +32,12 @@ Tache B.7 - Effets des cartes: KADILAR Michel
 
 Tache B.8 - Interface: MENESSIER Axel
 
+# 	LOT C: Objectif: ajouter au main.c la possibilité de se transformer en véritable serveur websocket 	avec l'option --online  et réaliser une interface web communiquant acvec ce serveur pour jouer au jeu
+
+Tâche C1: Organisation du lot, makefile et ajout des librairies nécessaires - Samy HALASSA
+
+Tâche C2: Réalisation d'une maquette pour les cartes - Axel MENNESSIER
+
+Tâche C3: Mise en place du serveur websocket - Jonathan JUSSEAUME
+
+Tâche C4: Mise en place de l'interface web - Michel KADILAR

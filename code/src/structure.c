@@ -2,6 +2,7 @@
 #include "../headers/structure.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 struct s_grille_carte {
     /**
@@ -170,6 +171,7 @@ carte supprimer_carte_grille(grille_carte g, int y, int x) {
     return c_supprimee;
 }
 
+
 int get_min_x_grille(grille_carte g) {
     return g->min_x;
 }
@@ -190,6 +192,7 @@ int get_taille_grille(grille_carte g) {
     return g->taille;
 }
 
+
 position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face_cachee) {
     // On initialise une valeur par défaut pour la position que l'on va retourner
     position p = {-1, -1};
@@ -204,6 +207,43 @@ position get_position_carte_haut_gauche_grille(grille_carte g, booleen veut_face
         }
     }
     return p;
+}
+
+char *grille_carte_to_string(grille_carte g) {
+    // On parcourt afin de connaître la taille de notre chaine
+    int taille = 10;
+    for (int y = g->min_y; y <= g->max_y; y++) {
+        for (int x = g->min_x; x <= g->max_x; x++) {
+            if (g->grille[y][x] != NULL) {
+                char *carte_str = to_string_carte(g->grille[y][x]);
+                taille += strlen(carte_str);
+                free(carte_str);
+            }
+            taille += 1;
+        }
+    }
+    char *string = (char *) malloc(taille + 1 * sizeof(char));
+    snprintf(string, taille + 1, "%d,%d,%d,%d/",
+             g->min_x,
+             g->min_y,
+             g->max_x,
+             g->max_y);
+    for (int y = g->min_y; y <= g->max_y; y++) {
+        for (int x = g->min_x; x <= g->max_x; x++) {
+            if (g->grille[y][x] != NULL) {
+                char *carte_str = to_string_carte(g->grille[y][x]);
+                strncat(string, carte_str, taille);
+                free(carte_str);
+            }
+            if (x != g->max_x) {
+                strncat(string, ";", taille);
+            }
+        }
+        if (y != g->max_y) {
+            strncat(string, "|", taille);
+        }
+    }
+    return string;
 }
 
 
@@ -298,6 +338,32 @@ void liberer_liste_chainee(liste_chainee_carte l) {
     liberer_liste_chainee(l->queue);
     free(l->tete);
     free(l);
+}
+
+char *liste_chainee_carte_to_string(liste_chainee_carte l) {
+    liste_chainee_carte courant = l;
+    // On parcourt afin de connaître la taille de notre chaine
+    int taille = 1;
+    while (courant != NULL) {
+        char *carte_str = to_string_carte(get_valeur_tete_liste_chainee(courant));
+        taille += strlen(carte_str) + 1;
+        free(carte_str);
+        courant = get_queue_liste_chainee(courant);
+    }
+    char *string = (char *) malloc(taille * sizeof(char));
+    string[0] = '\0';
+    courant = l;
+    while (courant != NULL) {
+        char *carte_str = to_string_carte(get_valeur_tete_liste_chainee(courant));
+        strncat(string, carte_str, taille);;
+        courant = get_queue_liste_chainee(courant);
+        if (courant != NULL) {
+            strncat(string, ";", taille);;
+        }
+        free(carte_str);
+    }
+    return string;
+
 }
 
 struct s_ensemble_entier {

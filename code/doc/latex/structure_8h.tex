@@ -49,6 +49,8 @@ int \mbox{\hyperlink{structure_8h_abe08b4ecaddff87c859bd1d253c4325e}{get\+\_\+ma
 \begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}ordonnée de la carte la plus en bas de la grille. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structposition}{position}} \mbox{\hyperlink{structure_8h_a9555a358ab6ffbac1edf446c6770285c}{get\+\_\+position\+\_\+carte\+\_\+haut\+\_\+gauche\+\_\+grille}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} veut\+\_\+face\+\_\+cachee)
 \begin{DoxyCompactList}\small\item\em Renvoie la position de la carte non retournée la plus en haut à gauche de la grille de carté passée en paramètre qui peut être soit non retourné, soit retourné selon qu\textquotesingle{}on veuille qu\textquotesingle{}elle soit face cachée ou non. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{structure_8h_aef199b41def6f199a40655b6de5d0c93}{grille\+\_\+carte\+\_\+to\+\_\+string}} (\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}} g)
+\begin{DoxyCompactList}\small\item\em Renvoie la grille sous forme de chaîne de caractères. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structure_8h_ad3b8d3cd27c621d7417e94e7f2779cb2}{initialiser\+\_\+liste\+\_\+chainee}} ()
 \begin{DoxyCompactList}\small\item\em Fonction qui permet d\textquotesingle{}initialiser la liste chaînée des cartes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structure_8h_aa43b51f52aa7af5445f599d85fb08bcb}{ajouter\+\_\+tete\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} $\ast$l, \mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
@@ -65,6 +67,8 @@ int \mbox{\hyperlink{structure_8h_ae5a7cb2b30e92eaaa4cdfdcb3ce7311c}{taille\+\_\
 \begin{DoxyCompactList}\small\item\em Renvoie la valeur de la tête de la chaine passée en paramètre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} \mbox{\hyperlink{structure_8h_ac43433c6738f520eb7ff87ce256a48c7}{get\+\_\+queue\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
 \begin{DoxyCompactList}\small\item\em Renvoie la queue de la liste chaînée passée en paramètre. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{structure_8h_a675f1714dcd363b451ffc1456a9d6810}{liste\+\_\+chainee\+\_\+carte\+\_\+to\+\_\+string}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
+\begin{DoxyCompactList}\small\item\em Renvoie la liste chaînée sous forme de chaîne. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structure_8h_a43e024c8562347a8500553270189dda9}{liberer\+\_\+liste\+\_\+chainee}} (\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}} l)
 \begin{DoxyCompactList}\small\item\em Libère la mémoire de la liste chainée passée en paramètre. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structure_8h_a5b56032063ed6e73a62a41a349fadfcf}{ensemble\+\_\+entier}} \mbox{\hyperlink{structure_8h_a3b3ea4ca664aa6250430a16d7df4987d}{creer\+\_\+ensemble\+\_\+entier}} ()
@@ -409,6 +413,24 @@ Renvoie la valeur de la tête de la chaine passée en paramètre.
 \begin{DoxyReturn}{Renvoie}
 NULL s\textquotesingle{}il y a pas de tete, la carte sinon 
 \end{DoxyReturn}
+\mbox{\Hypertarget{structure_8h_aef199b41def6f199a40655b6de5d0c93}\label{structure_8h_aef199b41def6f199a40655b6de5d0c93}} 
+\index{structure.h@{structure.h}!grille\_carte\_to\_string@{grille\_carte\_to\_string}}
+\index{grille\_carte\_to\_string@{grille\_carte\_to\_string}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{grille\_carte\_to\_string()}{grille\_carte\_to\_string()}}
+{\footnotesize\ttfamily char$\ast$ grille\+\_\+carte\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_a493794ff82cc8798d9287f486d1a0f1a}{grille\+\_\+carte}}}]{g }\end{DoxyParamCaption})}
+
+
+
+Renvoie la grille sous forme de chaîne de caractères. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em g} & la grille dont on veut la chaîne de caractères \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoie une concaténation de la forme \char`\"{}carte;carte;;$\vert$;;carte;carte\char`\"{}; on sépare les lignes par $\vert$ et chaque colonne par ;. S\textquotesingle{}il n\textquotesingle{}y a pas de carte sur la case, on ne met rien sinon on fait appel à carte\+\_\+to\+\_\+string 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_a105217be86406505628df49e55f9b0d2}\label{structure_8h_a105217be86406505628df49e55f9b0d2}} 
 \index{structure.h@{structure.h}!initialiser\_grille@{initialiser\_grille}}
 \index{initialiser\_grille@{initialiser\_grille}!structure.h@{structure.h}}
@@ -485,6 +507,24 @@ Libère la mémoire de la liste chainée passée en paramètre.
 {\em l} & la liste que l\textquotesingle{}on veut libérer \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{structure_8h_a675f1714dcd363b451ffc1456a9d6810}\label{structure_8h_a675f1714dcd363b451ffc1456a9d6810}} 
+\index{structure.h@{structure.h}!liste\_chainee\_carte\_to\_string@{liste\_chainee\_carte\_to\_string}}
+\index{liste\_chainee\_carte\_to\_string@{liste\_chainee\_carte\_to\_string}!structure.h@{structure.h}}
+\doxysubsubsection{\texorpdfstring{liste\_chainee\_carte\_to\_string()}{liste\_chainee\_carte\_to\_string()}}
+{\footnotesize\ttfamily char$\ast$ liste\+\_\+chainee\+\_\+carte\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structure_8h_ab5d78d3bef6e63a3d2eb434f164cacaa}{liste\+\_\+chainee\+\_\+carte}}}]{l }\end{DoxyParamCaption})}
+
+
+
+Renvoie la liste chaînée sous forme de chaîne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & la liste dont on veut la châine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+une chaîne au format\+: \char`\"{}carte;carte;carte\char`\"{} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structure_8h_a5787f14f1b914e6e65fd5924a7b962d6}\label{structure_8h_a5787f14f1b914e6e65fd5924a7b962d6}} 
 \index{structure.h@{structure.h}!liste\_chainee\_est\_vide@{liste\_chainee\_est\_vide}}
 \index{liste\_chainee\_est\_vide@{liste\_chainee\_est\_vide}!structure.h@{structure.h}}

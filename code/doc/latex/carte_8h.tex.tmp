@@ -50,7 +50,9 @@ void \mbox{\hyperlink{carte_8h_a3883e2f1aca05694430fc4412e385dea}{set\+\_\+effet
 void \mbox{\hyperlink{carte_8h_a3f87ed70bf8c3b793f4ce8d82af3cd6e}{set\+\_\+numero\+\_\+plateau}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, int numero\+\_\+plateau)
 \begin{DoxyCompactList}\small\item\em Fonction permettant de changer le numero\+\_\+plateau de la carte. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{carte_8h_af0e89662818d742ec9a22897615d3fcf}{set\+\_\+est\+\_\+face\+\_\+cachee}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c, \mbox{\hyperlink{constante_8h_a741a7664ae46ffb773db384a85a497e7}{booleen}} est\+\_\+face\+\_\+cachee)
-\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le est\+\_\+face\+\_\+cachee de la carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction permettant de changer le est\+\_\+face\+\_\+cachee de la carte. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{carte_8h_a6069c59635f342061282e0260df6e093}{to\+\_\+string\+\_\+carte}} (\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}} c)
+\begin{DoxyCompactList}\small\item\em Renvoie une chaine de caractères avec les informations de la carte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -319,6 +321,24 @@ Fonction permettant de changer la position de la carte.
 {\em p} & \+: position que l\textquotesingle{}on va associer à la carte. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{carte_8h_a6069c59635f342061282e0260df6e093}\label{carte_8h_a6069c59635f342061282e0260df6e093}} 
+\index{carte.h@{carte.h}!to\_string\_carte@{to\_string\_carte}}
+\index{to\_string\_carte@{to\_string\_carte}!carte.h@{carte.h}}
+\doxysubsubsection{\texorpdfstring{to\_string\_carte()}{to\_string\_carte()}}
+{\footnotesize\ttfamily char$\ast$ to\+\_\+string\+\_\+carte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carte_8h_a730c95e5b081b03f99f9189e8e90236c}{carte}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Renvoie une chaine de caractères avec les informations de la carte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & les informations de la carte sous forme de chaîne de caractères \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+une chaîne de caractères de la forme\+: \char`\"{}nom,position,identifiant\+\_\+faction,numero\+\_\+plateau,est\+\_\+face\+\_\+cachee\char`\"{} 
+\end{DoxyReturn}
 
 
 \doxysubsection{Documentation des variables}

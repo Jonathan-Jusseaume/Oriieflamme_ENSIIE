@@ -1,0 +1,81 @@
+\hypertarget{socket_8h}{}\doxysection{Référence du fichier headers/socket.h}
+\label{socket_8h}\index{headers/socket.h@{headers/socket.h}}
+
+
+Fichier contenant les fonctions concernant les différents événements de communication entre le serveur web\+Socket et ses clients.  
+
+
+{\ttfamily \#include \char`\"{}../lib/ws\+Server/include/ws.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Graphe des dépendances par inclusion de socket.\+h\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{socket_8h_aaa497e289a1efd90ba914176762db3b3}{ouverture\+\_\+connexion}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em La fonction se déclenchant à l\textquotesingle{}ouverture d\textquotesingle{}une connexion par un client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{socket_8h_a2061fdebb4908d52b91392129281a6e5}{fermeture\+\_\+connexion}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client)
+\begin{DoxyCompactList}\small\item\em La fonction se déclenchant à la fermeture de la connexion par un client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{socket_8h_a254f32ebe8fc4ea0457f56332a6ab64f}{reception\+\_\+message}} (\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$client, const unsigned char $\ast$msg, uint64\+\_\+t size, int type)
+\begin{DoxyCompactList}\small\item\em La fonction se déclenchant à la fermeture d\textquotesingle{}un message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier contenant les fonctions concernant les différents événements de communication entre le serveur web\+Socket et ses clients. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{socket_8h_a2061fdebb4908d52b91392129281a6e5}\label{socket_8h_a2061fdebb4908d52b91392129281a6e5}} 
+\index{socket.h@{socket.h}!fermeture\_connexion@{fermeture\_connexion}}
+\index{fermeture\_connexion@{fermeture\_connexion}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{fermeture\_connexion()}{fermeture\_connexion()}}
+{\footnotesize\ttfamily void fermeture\+\_\+connexion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+La fonction se déclenchant à la fermeture de la connexion par un client. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & le client qui vient de se déconnecter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{socket_8h_aaa497e289a1efd90ba914176762db3b3}\label{socket_8h_aaa497e289a1efd90ba914176762db3b3}} 
+\index{socket.h@{socket.h}!ouverture\_connexion@{ouverture\_connexion}}
+\index{ouverture\_connexion@{ouverture\_connexion}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{ouverture\_connexion()}{ouverture\_connexion()}}
+{\footnotesize\ttfamily void ouverture\+\_\+connexion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+
+
+La fonction se déclenchant à l\textquotesingle{}ouverture d\textquotesingle{}une connexion par un client. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & le client qui vient de se connecter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{socket_8h_a254f32ebe8fc4ea0457f56332a6ab64f}\label{socket_8h_a254f32ebe8fc4ea0457f56332a6ab64f}} 
+\index{socket.h@{socket.h}!reception\_message@{reception\_message}}
+\index{reception\_message@{reception\_message}!socket.h@{socket.h}}
+\doxysubsubsection{\texorpdfstring{reception\_message()}{reception\_message()}}
+{\footnotesize\ttfamily void reception\+\_\+message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structws__connection}{ws\+\_\+cli\+\_\+conn\+\_\+t}} $\ast$}]{client,  }\item[{const unsigned char $\ast$}]{msg,  }\item[{uint64\+\_\+t}]{size,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+La fonction se déclenchant à la fermeture d\textquotesingle{}un message. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em client} & le client qui envoie le message \\
+\hline
+{\em msg} & le contenu du message \\
+\hline
+{\em size} & la taille du message \\
+\hline
+{\em type} & le type de message \\
+\hline
+\end{DoxyParams}

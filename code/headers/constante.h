@@ -2,6 +2,13 @@
  * @file constante.h
  * @brief Fichier contenant différentes constantes qui seront utiles pour l'application
  */
+#ifdef __GNUC__
+#define VARIABLE_NOT_USED_IGNORE __attribute__ ((unused))
+#else
+#define VARIABLE_NOT_USED_IGNORE
+#endif
+#define PARAMETRE_NON_UTILISE(x) (void)(x)
+
 #ifndef ORIIEFLAMME_GR_11_CONSTANTE_H
 #define ORIIEFLAMME_GR_11_CONSTANTE_H
 
@@ -69,13 +76,13 @@ enum cartes {
 /*
  * Tableau statique constant contenant le nombre d'occurrences de chaque carte
  */
-static const int nombre_occurrences[] = {4, 4, 4, 2, 2, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+static VARIABLE_NOT_USED_IGNORE const int nombre_occurrences[] = {4, 4, 4, 2, 2, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                          1, 1,
                                          1, 1, 1, 1};
 /**
  * Tableau de chaine de caractère contenant les noms des cartes
  */
-static char *nom_cartes[] = {
+static VARIABLE_NOT_USED_IGNORE char *nom_cartes[] = {
         "FISE",
         "FISA",
         "FC",
@@ -113,7 +120,7 @@ static char *nom_cartes[] = {
 /**
  * Tableau de chaine de caractère contenant les différents effets
  */
-static char *effets_description[] = {
+static VARIABLE_NOT_USED_IGNORE char *effets_description[] = {
         "La faction qui a posé cette carte gagne 1 point DDRS.",
         "La faction qui a posé cette carte gagne 2 points DDRS si le nombre de cartes retournées sur le plateau (y compris celle-ci) est pair, et 0 sinon.",
         "La faction qui a posé cette carte gagne 4 points DDRS si au moins une autre carte FC est retournée sur le plateau et 0 sinon",
@@ -147,4 +154,6 @@ static char *effets_description[] = {
         "Si les cartes Djibril-Aurélien Djembele-Cabeau, Eric Lejeune et Lucienne Pacavé sont retournées, la faction qui a posé cette carte gagne 10 points DDRS. Sinon, retournez toutes les cartes dans la même ligne de cette carte sans appliquer leurs effets.",
         "Si Laurent Prével est la dernière carte retournée du plateau, la faction qui a posé cette carte gagne la manche, quel que soit le nombre de points DDRS des deux factions."
 };
+
+
 #endif //ORIIEFLAMME_GR_11_CONSTANTE_H

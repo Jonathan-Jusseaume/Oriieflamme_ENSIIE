@@ -1,0 +1,250 @@
+/* L'ordre des classes dans ce fichier a une impportance, ne pas les bouger n'importe comment !!!! */
+
+:root {
+    --card-background: #563d36;
+    --card-text-color: #eae0e0;
+    --gradient-left: rgb(254, 106, 0);
+    --gradient-right: rgb(247, 145, 35);
+    --gradient-background-left: #835d19;
+    --gradient-background-right: #812501;
+}
+
+body {
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(to left, var(--gradient-background-left), var(--gradient-background-right));
+    font-family: sans-serif;
+}
+
+.body-container {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.attente-connexion, .serveur-indisponible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 56px;
+    color: white;
+}
+
+.attente-pose-carte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    color: white;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.carte-title {
+    text-align: center;
+}
+
+header {
+    color: whitesmoke;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4px;
+    margin-top: 2px;
+}
+
+.first-faction-infos, .current-round, .second-faction-infos {
+    text-align: center;
+    outline: 2px solid whitesmoke;
+    border-radius: 100px;
+    user-select: none;
+}
+
+.first-faction-infos {
+    background: linear-gradient(to right, darkolivegreen, green);
+}
+
+.first-faction-infos h2, .first-faction-infos h4 {
+
+}
+
+.current-round {
+    background: linear-gradient(to bottom, var(--gradient-left), var(--gradient-right));
+}
+
+.second-faction-infos {
+    background: linear-gradient(to right, red, darkred)
+}
+
+.boutons-pioche-clignote, #result {
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+
+.boutons-pioche-clignote {
+    animation-name: boutons-clignoter;
+}
+
+#result {
+    animation-name: texte-clignoter;
+}
+
+@keyframes texte-clignoter {
+    0% {
+        color: white;
+    }
+    40% {
+        color: gray;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes boutons-clignoter {
+    0% {
+        outline: 6px solid white;
+    }
+    40% {
+        outline: 2px solid yellow;
+    }
+    100% {
+        outline: 6px solid white;
+    }
+}
+
+#actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 8px;
+}
+
+#bouton-garder-pioche, #bouton-repiocher {
+    color: white;
+    font-size: 14px;
+    padding: 18px;
+    border-radius: 12px;
+    min-width: 114px;
+    background: linear-gradient(to right, var(--gradient-left), var(--gradient-right));
+}
+
+.plateau-container {
+    padding: 8px 0;
+    display: grid;
+    width: 100%;
+    height: 55%;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2px;
+}
+
+.gradient-border {
+    background: linear-gradient(to right, var(--gradient-left), var(--gradient-right));
+    width: fit-content;
+    height: fit-content;
+    border-radius: 8px;
+    user-select: none; /* Standard */
+    outline: 2px solid white;
+    /* transform: translate(0, -30px); */
+}
+
+.carte-creation {
+    width: 170px; /* Un calcul très savant de proportion a été réalisé */
+    height: 242px;
+    background-color: var(--card-background);
+    margin: 8px;
+    padding: 4px;
+    color: var(--card-text-color);
+    transition: all ease 200ms;
+}
+
+.carte-creation-face-cachee {
+    display: flex;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    row-gap: 10px;
+}
+
+.contenu-carte {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.carte-img {
+    outline: 2px solid white;
+}
+
+.carte-img-face-cachee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.carte-creation-face-cachee img {
+    width: 150px;
+    height: 150px;
+}
+
+.carte-img-face-visible {
+    border-radius: 8px;
+}
+
+.carte-img-face-visible img {
+    width: 150px;
+    height: 100px;
+}
+
+.carte-description {
+    text-align: center;
+    font-size: 9px;
+}
+
+.carte {
+    transition: all ease 200ms;
+}
+
+.carte-select {
+    outline: 3px solid yellow;
+    transform: scale(1.3) translate(0, -30px);
+}
+
+.zoom-zoom {
+    z-index: 1;
+    transform: scale(2.5) translate(0, -60px);
+}
+
+.pose-carte {
+    background-color: transparent;
+    box-shadow: 0 0 18px white;
+    height: 100%;
+}
