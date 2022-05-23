@@ -184,6 +184,7 @@ document.addEventListener('click', (e) => {
             e.target.className !== document.getElementsByClassName("carte-creation")[0].className &&
             e.target.className !== document.getElementsByClassName("contenu-carte")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-title")[0].className &&
+            e.target.className !== document.getElementsByClassName("carte-image")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-img-face-visible")[0].className &&
             e.target.className !== document.getElementsByClassName("carte-description")[0].className) {
             // Si on ne clique pas sur une carte, alors la carte séléctionnée est délésectionnée
